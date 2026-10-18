@@ -1,0 +1,1128 @@
+<!-- page: 1 -->
+
+## Trí Tuệ Nhân Tạo
+
+## (Artificial Intelligence)
+
+**Lê Thanh Hương**
+
+Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội
+
+<!-- page: 2 -->
+
+## Nội dung môn học
+
+Chương 1. Tổng quan
+
+Chương 2. Tác tử thông minh
+
+Chương 3. Giải quyết vấn đề
+
+3.1. Tìm kiếm cơ bản
+
+3.2. Tìm kiếm với tri thức bổ sung
+
+3.3. Tìm kiếm dựa trên thỏa mãn ràng buộc
+
+Chương 4. Tri thức và suy diễn
+
+Chương 5. Học máy
+
+<!-- page: 3 -->
+
+## Giải quyết vấn đề bằng tìm kiếm
+
+## ◼ Giải quyết vấn đề bằng tìm kiếm
+
+❑ Tìm chuỗi các hành động cho phép đạt đến (các) trạng thái mong muốn
+
+## ◼ Các bước chính
+
+❑ Xác định **mục tiêu** cần đạt đến (goal formulation)
+
+◼ Là một tập hợp của các trạng thái (đích)
+
+◼ Dựa trên: trạng thái hiện tại (của môi trường) và đánh giá hiệu quả hành động (của tác tử)
+
+❑ Phát biểu **bài toán** (problem formulation)
+
+◼ Với một mục tiêu, xác định các hành động và trạng thái cần xem xét
+
+❑ Quá trình **tìm kiếm** (search process)
+
+◼ Xem xét các chuỗi hành động có thể
+
+◼ Chọn chuỗi hành động tốt nhất
+
+## ◼ Giải thuật tìm kiếm
+
+❑ Đầu vào: một bài toán (cần giải quyết)
+
+❑ Đầu ra: một giải pháp, dưới dạng một chuỗi các hành động cần thực hiện
+
+<!-- page: 4 -->
+
+## Tác tử giải quyết vấn đề
+
+```txt
+function SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action
+    static: seq, an action sequence, initially empty
+        state, some description of the current world state
+        goal, a goal, initially null
+        problem, a problem formulation
+    state ← UPDATE-STATE(state, percept)
+    if seq is empty then do
+        goal ← FORMULATE-GOAL(state)
+        problem ← FORMULATE-PROBLEM(state, goal)
+        seq ← SEARCH(problem)
+    action ← FIRST(seq)
+    seq ← REST(seq)
+    return action
+```
+
+<!-- page: 5 -->
+
+## Giải quyết vấn đề bằng tìm kiếm
+
+◼ Một người du lịch đang trong chuyến đi du lịch ở Rumani ❑ Anh ta hiện thời đang ở Arad
+
+❑ Ngày mai, anh ta có chuyến bay khởi hành từ Bucharest
+
+❑ Bây giờ, anh ta cần di chuyển (lái xe) từ Arad đến Bucharest
+
+## ◼ Phát biểu mục tiêu:
+
+❑ Cần phải có mặt ở Bucharest
+
+## ◼ Phát biểu bài toán:
+
+❑ Các trạng thái: các thành phố (đi qua)
+
+❑ Các hành động: lái xe giữa các thành phố
+
+## ◼ Tìm kiếm giải pháp:
+
+![](images/page_4_image_10.jpg)
+
+❑ Chuỗi các thành phố cần đi qua, ví dụ: Arad, Sibiu, Fagaras, Bucharest
+
+<!-- page: 6 -->
+
+## Giải quyết vấn đề bằng tìm kiếm
+
+![](images/page_5_image_1.jpg)
+
+<!-- page: 7 -->
+
+## Các kiểu bài toán
+
+**Xác định, có thể quan sát hoàn toàn** → Bài toán trạng thái đơn
+
+❑ Tác tử biết chính xác trạng thái tiếp theo mà nó sẽ chuyển qua
+
+❑ Giải pháp của bài toán: một chuỗi hành động
+
+◼ **Không quan sát được** → Bài toán thiếu cảm nhận
+
+❑ Tác tử có thể không biết là nó đang ở trạng thái nào
+
+❑ Giải pháp của bài toán: một chuỗi hành động
+
+**Không xác định** và/hoặc **có thể quan sát một phần** → Bài toán có sự kiện ngẫu nhiên
+
+❑ Các nhận thức cung cấp các thông tin mới về trạng thái hiện tại
+
+❑ Giải pháp của bài toán: một kế hoạch (chính sách)
+
+❑ Thường kết hợp đan xen giữa: tìm kiếm và thực hiện
+
+**Không biết về không gian trạng thái** → Bài toán thăm dò
+
+<!-- page: 8 -->
+
+## Ví dụ: Bài toán máy hút bụi (1)
+
+## ◼ Nếu là bài toán trạng thái đơn
+
+❑ Bắt đầu $\dot { \alpha }$ trạng thái #5.
+
+## ◼ Giải pháp?
+
+![](images/page_7_image_4.jpg)
+
+![](images/page_7_image_5.jpg)
+
+3
+
+2
+
+![](images/page_7_image_8.jpg)
+
+![](images/page_7_image_9.jpg)
+
+![](images/page_7_image_10.jpg)
+
+7
+
+5
+
+![](images/page_7_image_13.jpg)
+
+4
+
+6
+
+![](images/page_7_image_16.jpg)
+
+8
+
+![](images/page_7_image_18.jpg)
+
+<!-- page: 9 -->
+
+## Ví dụ: Bài toán máy hút bụi (2)
+
+## ◼ Nếu là bài toán trạng thái đơn
+
+❑ Bắt đầu ở trạng thái #5.
+
+## ◼ Giải pháp?
+
+❑ [Sang phải, Hút bụi]
+
+![](images/page_8_image_5.jpg)
+
+![](images/page_8_image_6.jpg)
+
+3
+
+5
+
+![](images/page_8_image_9.jpg)
+
+7
+
+2
+
+![](images/page_8_image_12.jpg)
+
+![](images/page_8_image_13.jpg)
+
+4
+
+![](images/page_8_image_15.jpg)
+
+6
+
+![](images/page_8_image_17.jpg)
+
+8
+
+![](images/page_8_image_19.jpg)
+
+<!-- page: 10 -->
+
+## Ví dụ: Bài toán máy hút bụi (3)
+
+## ◼ Nếu là bài toán thiếu cảm nhận
+
+Bắt đầu (có thể) ở trạng thái {#1,#2,#3,#4,#5,#6,#7,#8}
+
+❑ Luôn bắt đầu bằng di chuyển sang phải
+
+## ◼ Giải pháp?
+
+![](images/page_9_image_5.jpg)
+
+2
+
+3
+
+![](images/page_9_image_8.jpg)
+
+![](images/page_9_image_9.jpg)
+
+![](images/page_9_image_10.jpg)
+
+![](images/page_9_image_11.jpg)
+
+7
+
+5
+
+4
+
+![](images/page_9_image_15.jpg)
+
+6
+
+![](images/page_9_image_17.jpg)
+
+8
+
+![](images/page_9_image_19.jpg)
+
+<!-- page: 11 -->
+
+## Ví dụ: Bài toán máy hút bụi (4)
+
+## ◼ Nếu là bài toán thiếu cảm nhận
+
+Bắt đầu (có thể) ở trạng thái {#1,#2,#3,#4,#5,#6,#7,#8}
+
+❑ Luôn bắt đầu bằng di chuyển sang phải
+
+## ◼ Giải pháp?
+
+[Sang phải, Hút bụi, Sang trái, Hút bụi]
+
+![](images/page_10_image_6.jpg)
+
+2
+
+3
+
+![](images/page_10_image_9.jpg)
+
+![](images/page_10_image_10.jpg)
+
+4
+
+5
+
+![](images/page_10_image_13.jpg)
+
+![](images/page_10_image_14.jpg)
+
+![](images/page_10_image_15.jpg)
+
+7
+
+6
+
+![](images/page_10_image_18.jpg)
+
+8
+
+![](images/page_10_image_20.jpg)
+
+<!-- page: 12 -->
+
+## Ví dụ: Bài toán máy hút bụi (5)
+
+## ◼ Nếu là bài toán có sự kiện ngẫu nhiên
+
+❑ Bắt đầu ở trạng thái #5
+
+❑ Không xác định: Hút bụi có thể làm bẩn một cái thảm sạch!
+
+❑ Có thể quan sát một phần: vị trí, mức độ bẩn ở vị trí hiện thời
+
+## ◼ Giải pháp?
+
+![](images/page_11_image_6.jpg)
+
+3
+
+2
+
+![](images/page_11_image_9.jpg)
+
+![](images/page_11_image_10.jpg)
+
+![](images/page_11_image_11.jpg)
+
+7
+
+![](images/page_11_image_13.jpg)
+
+5
+
+4
+
+![](images/page_11_image_16.jpg)
+
+6
+
+![](images/page_11_image_18.jpg)
+
+8
+
+![](images/page_11_image_20.jpg)
+
+<!-- page: 13 -->
+
+## Ví dụ: Bài toán máy hút bụi (6)
+
+## ◼ Nếu là bài toán có sự kiện ngẫu nhiên
+
+❑ Bắt đầu ở trạng thái #5
+
+❑ Không xác định: Hút bụi có thể làm bẩn một cái thảm sạch!
+
+❑ Có thể quan sát một phần: vị trí, mức độ bẩn ở vị trí hiện thời
+
+## ◼ Giải pháp?
+
+❑ [Sang phải, **if** Bẩn **then** Hút bụi]
+
+![](images/page_12_image_7.jpg)
+
+2
+
+![](images/page_12_image_9.jpg)
+
+3
+
+![](images/page_12_image_11.jpg)
+
+4
+
+![](images/page_12_image_13.jpg)
+
+5
+
+![](images/page_12_image_15.jpg)
+
+6
+
+![](images/page_12_image_17.jpg)
+
+7
+
+![](images/page_12_image_19.jpg)
+
+8
+
+![](images/page_12_image_21.jpg)
+
+<!-- page: 14 -->
+
+## Phát biểu bài toán trạng thái đơn
+
+Bài toán được định nghĩa bởi 4 thành phần:
+
+## ◼ Trạng thái đầu
+
+❑ Ví dụ: “đang ở thành phố Arad“
+
+Các hành động – Xác định bởi hàm chuyển trạng thái: S(trạng\_thái\_hiện\_thời) = tập các cặp &lt;hành_động, trạng_thái_tiếp_theo&gt; ❑ Ví dụ: S(Arad) = {&lt;Arad → Zerind, Zerind&gt;, … }
+
+◼ Kiểm tra mục tiêu, có thể là
+
+❑ Trực tiếp – ví dụ: Trạng thái hiện thời x = “Đang ở thành phố Bucharest"
+
+❑ Gián tiếp – ví dụ: HếtCờ(x), Sạch(x), …
+
+◼ Chi phí đường đi (giải pháp)
+
+❑ Ví dụ: Tổng các khoảng cách, Số lượng các hành động phải thực hiện,…
+
+❑ c(x,a,y) ≥ 0 là chi phí bước (bộ phận) – chi phí cho việc áp dụng hành động a để chuyển từ trạng thái x sang trạng thái y
+
+Một giải pháp: Một chuỗi các hành động cho phép dẫn từ trạng thái đầu đến trạng thái đích
+
+<!-- page: 15 -->
+
+## Xác định không gian trạng thái
+
+◼ Các bài toán thực tế thường được mô tả phức tạp → Không gian trạng thái cần được khái quát (abstracted) để phục vụ cho việc giải quyết bài toán
+
+◼ Trạng thái (khái quát) = Một tập các trạng thái thực tế
+
+Hành động (khái quát) = Một kết hợp phức tạp của các hành động thực tế
+
+❑ Ví dụ: Hành động "Arad → Zerind" biểu diễn một tập kết hợp các đường, đường vòng, chỗ nghỉ,
+
+Để đảm bảo việc thực hiện (quá trình tìm kiếm), bất kỳ trạng thái thực tế nào cũng phải có thể đạt đến được từ trạng thái thực tế khác
+
+◼ Giải pháp (khái quát) = Một tập các đường đi giải pháp trong thực tế
+
+<!-- page: 16 -->
+
+## Đồ thị không gian trạng thái (1)
+
+**Bài**
+
+**toán**
+
+\_
+
+**hút**
+
+![](images/page_15_image_5.jpg)
+
+◼ Các trạng thái?
+
+◼ Các hành động?
+
+◼ Kiểm tra mục tiêu?
+
+◼ Chi phí đường đi?
+
+<!-- page: 17 -->
+
+## Đồ thị không gian trạng thái (2)
+
+**Bài**
+
+**toán**
+
+**hút**
+
+**bụi**
+
+![](images/page_16_image_5.jpg)
+
+◼ Các trạng thái? Chỗ bẩn và vị trí máy hút bụi
+
+Các hành động? Sang trái, sang phải, hút bụi, không làm gì
+
+◼ Kiểm tra mục tiêu?
+
+Không còn chỗ (vị trí) nào bẩn
+
+Chi phí đường đi? 1 (mỗi hành động), 0 (không làm gì cả)
+
+<!-- page: 18 -->
+
+## Biểu diễn bằng cây và đồ thị
+
+B là cha của C
+
+C là con của B
+
+A là tổ tiên của C
+
+C là con cháu của A
+
+Tree
+
+-root
+
+terminal (leaf)
+
+![](images/page_17_image_8.jpg)
+
+Directed graph (one-way street)
+
+![](images/page_17_image_10.jpg)
+
+Undirected graph (two-way streets)
+
+![](images/page_17_image_12.jpg)
+
+<!-- page: 19 -->
+
+## Đồ thị tìm kiếm → Cây tìm kiếm
+
+![](images/page_18_image_1.jpg)
+
+Các bài toán tìm kiếm trên đồ thị có thể được chuyển thành các bài toán tìm kiếm trên cây
+
+❑ Thay thế mỗi liên kết (cạnh) vô hướng bằng 2 liên kết (cạnh) có hướng
+
+❑ Loại bỏ các vòng lặp tồn tại trong đồ thị (để tránh không duyệt 2 lần đối với một nút trong bất kỳ đường đi nào)
+
+<!-- page: 20 -->
+
+## Các giải thuật tìm kiếm theo cấu trúc cây
+
+## ◼ Ý tưởng:
+
+Khám phá (xét) không gian trạng thái bằng cách sinh ra các trạng thái kế tiếp của các trạng thái đã khám phá (đã xét)
+
+Còn gọi là phương pháp khai triển (phát triển) các trạng thái
+
+![](images/page_19_image_4.jpg)
+
+function TREE-SEARCH( problem, strategy) returns a solution, or failure initialize the search tree using the initial state of problem loop do
+
+if there are no candidates for expansion then return failure choose a leaf node for expansion according to strategy if the node contains a goal state then return the corresponding solution else expand the node and add the resulting nodes to the search tree
+
+<!-- page: 21 -->
+
+## Ví dụ biểu diễn theo cấu trúc cây (1)
+
+![](images/page_20_image_1.jpg)
+
+<!-- page: 22 -->
+
+## Ví dụ biểu diễn theo cấu trúc cây (2)
+
+![](images/page_21_image_1.jpg)
+
+<!-- page: 23 -->
+
+## Ví dụ biểu diễn theo cấu trúc cây (3)
+
+![](images/page_22_image_1.jpg)
+
+<!-- page: 24 -->
+
+## Ví dụ trò chơi cờ ca-rô (Tic-Tac-Toe)
+
+![](images/page_23_image_1.jpg)
+
+<!-- page: 25 -->
+
+## Tìm kiếm theo cấu trúc cây - Giải thuật
+
+```txt
+function TREE-SEARCH(problem, fringe) returns a solution, or failure
+    fringe ← INSERT(MAKE-NODE(INITIAL-STATE[problem]), fringe)
+loop do
+    if fringe is empty then return failure
+        node ← REMOVE-FRONT(fringe)
+    if GOAL-TEST[problem](STATE[node]) then return SOLUTION(node)
+        fringe ← INSERTALL(EXPAND(node, problem), fringe)
+```
+
+```txt
+function EXPAND(node, problem) returns a set of nodes
+    successors ← the empty set
+    for each action, result in SUCCESSOR-FN[problem](STATE[node]) do
+        s ← a new NODE
+        PARENT-NODE[s] ← node; ACTION[s] ← action; STATE[s] ← result
+        PATH-COST[s] ← PATH-COST[node] + STEP-COST(node, action, s)
+        DEPTH[s] ← DEPTH[node] + 1
+        add s to successors
+    return successors
+```
+
+<!-- page: 26 -->
+
+## Biểu diễn cây tìm kiếm (1)
+
+Một trạng thái là một biểu diễn của một hình trạng (configuration) thực tế
+
+◼ Một nút (của cây) là một phần cấu thành nên cấu trúc dữ liệu của một cây tìm kiếm
+
+❑ Một nút chứa các thuộc tính: trạng thái, nút cha, nút con, hành động, độ sâu, chi phí đường đi g(x)
+
+![](images/page_25_image_4.jpg)
+
+◼ Hàm Expand tạo nên các nút mới,
+
+Gán giá trị cho các thuộc tính (của nút mới)
+
+❑ Sử dụng hàm Successor-Fn để tạo nên các trạng thái tương ứng với các nút mới đó
+
+<!-- page: 27 -->
+
+## Biểu diễn cây tìm kiếm (2)
+
+![](images/page_26_image_1.jpg)
+
+<!-- page: 28 -->
+
+## Các chiến lược tìm kiếm
+
+◼ Một chiến lược tìm kiếm được xác định bằng việc chọn trình tự phát triển (khai triển) các nút
+
+Các chiến lược tìm kiếm được đánh giá theo các tiêu chí:
+
+❑ Tính hoàn chỉnh: Có đảm bảo tìm được một lời giải (nếu thực sự tồn tại một lời giải)?
+
+❑ Độ phức tạp về thời gian: Số lượng các nút được sinh ra
+
+❑ Độ phức tạp về bộ nhớ: Số lượng tối đa các nút được lưu trong bộ nhớ
+
+❑ Tính tối ưu: Có đảm bảo tìm được lời giải có chi phí thấp nhất?
+
+Độ phức tạp về thời gian và bộ nhớ được đánh giá bởi:
+
+❑ b: Hệ số phân nhánh tối đa của cây tìm kiếm
+
+❑ d: Độ sâu của lời giải có chi phí thấp nhất
+
+❑ m: Độ sâu tối đa của không gian trạng thái (độ sâu của cây) – có thể là ∞
+
+<!-- page: 29 -->
+
+## Các chiến lược tìm kiếm cơ bản
+
+Các chiến lược tìm kiếm cơ bản (uninformed search strategies) **chỉ sử dụng các thông tin chứa trong định nghĩa của bài toán**
+
+❑ Tìm kiếm theo chiều rộng (Breadth-first search)
+
+❑ Tìm kiếm với chi phí cực tiểu (Uniform-cost search)
+
+❑ Tìm kiếm theo chiều sâu (Depth-first search)
+
+❑ Tìm kiếm giới hạn độ sâu (Depth-limited search)
+
+❑ Tìm kiếm sâu dần (Iterative deepening search)
+
+<!-- page: 30 -->
+
+## Tìm kiếm theo chiều rộng – BFS
+
+◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần
+
+## ◼ Cài đặt giải thuật BFS
+
+❑ fringe là một cấu trúc kiểu hàng đợi FIFO (các nút mới được bổ sung vào cuối của fringe)
+
+## ◼ Các ký hiệu được sử dụng trong giải thuật BFS
+
+fringe: Cấu trúc kiểu hàng đợi (queue) lưu giữ các nút (trạng thái) **sẽ** được duyệt
+
+❑ closed: Cấu trúc kiểu hàng đợi (queue) lưu giữ các nút (trạng thái) **đã** được duyệt
+
+❑ G=(N,A): Cây biểu diễn không gian trạng thái của bài toán
+
+❑ $n _ { o } ;$ Trạng thái đầu của bài toán (nút gốc của cây)
+
+ĐICH: Tập các trạng thái đích của bài toán
+
+❑ (n): Tập các trạng thái (nút) con của trạng thái (nút) đang xét n
+
+<!-- page: 31 -->
+
+## BFS – Giải thuật
+
+```txt
+BFS (N, A, n₀, ĐICH)
+{
+    fringe ← n₀;
+    closed ← ∅;
+    while (fringe ≠ ∅) do
+    {    n ← GET_FIRST(fringe);          // lấy phần tử đầu tiên của fringe
+        closed ← closed ⊕ n;
+        if (n ∈ ĐICH) then return SOLUTION(n);
+        if (Γ(n) ≠ ∅) then fringe ← fringe ⊕ Γ(n);
+    }
+    return (“No solution”);
+}
+```
+
+<!-- page: 32 -->
+
+## BFS – Ví dụ (1)
+
+◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần
+
+![](images/page_31_image_2.jpg)
+
+<!-- page: 33 -->
+
+## BFS – Ví dụ (2)
+
+◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần
+
+![](images/page_32_image_2.jpg)
+
+<!-- page: 34 -->
+
+## BFS – Ví dụ (3)
+
+◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần
+
+![](images/page_33_image_2.jpg)
+
+<!-- page: 35 -->
+
+## BFS – Ví dụ (4)
+
+◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần
+
+![](images/page_34_image_2.jpg)
+
+<!-- page: 36 -->
+
+Bài tập 1: Vẽ bảng minh họa quá trình duyệt của thuật toán BFS cho cây tìm kiếm dưới đây, đỉnh đầu x1, đích x12
+
+![](images/page_35_image_1.jpg)
+
+| n | (n) | Fringe | Closed |
+| --- | --- | --- | --- |
+|  |  |  |  |
+
+<!-- page: 37 -->
+
+Bài tập 2: Vẽ bảng minh họa quá trình tìm kiếm lời giải trên KGTT của bài toán Tháp Hà nội sử dụng BFS, đỉnh xuất phát 1, đích 9.
+
+![](images/page_36_image_1.jpg)
+
+<!-- page: 38 -->
+
+## BFS – Các đặc điểm
+
+◼ Tính hoàn chỉnh?
+
+❑ Có (nếu b là hữu hạn)
+
+◼ Độ phức tạp về thời gian?
+
+❑ $1 + b + b ^ { 2 } + b ^ { 3 } + \cdots + b ^ { d } = O ( b ^ { d + 1 } )$
+
+◼ Độ phức tạp về bộ nhớ?
+
+❑ O(b<sup>d+1</sup>) – Lưu tất cả các nút trong bộ nhớ)
+
+◼ Tính tối ưu?
+
+❑ Có (nếu chi phí =1 cho mỗi bước)
+
+![](images/page_37_image_9.jpg)
+
+1 node
+
+b nodes
+
+b² nodes
+
+b⁵ nodes
+
+bmnodes
+
+<!-- page: 39 -->
+
+## Tìm kiếm với chi phí cực tiểu (UCS)
+
+Phát triển các nút chưa xét có chi phí thấp nhất – Các nút được xét theo thứ tự chi phí (từ nút gốc đến nút đang xét) tăng dần
+
+◼ Cài đặt:
+
+❑ fringe là một cấu trúc hàng đợi, trong đó các phần tử được sắp xếp theo chi phí đường đi
+
+Trở thành phương pháp tìm kiếm theo chiều rộng, nếu các chi phí ở mỗi bước (mỗi cạnh của cây tìm kiếm) là như nhau
+
+<!-- page: 40 -->
+
+## UCS: Giải thuật
+
+```txt
+UCS (N, A, n₀, ĐICH, c)
+{
+    fringe ← n₀;
+    closed ← ∅;
+    while (fringe ≠ ∅) do
+    {    n ← GET_LOWEST_COST(fringe);      // lấy phần tử có chi phí
+                                // đường đi c(n) nhỏ nhất
+        closed ← closed ⊕ n;
+        if (n ∈ ĐICH) then return SOLUTION(n);
+        if (Γ(n) ≠ ∅) then fringe ← fringe ⊕ Γ(n);
+    }
+    return ("No solution");
+}
+```
+
+<!-- page: 41 -->
+
+![](images/page_40_image_0.jpg)
+
+Tìm đường đi ngắn nhất từ HN đến V
+
+<!-- page: 42 -->
+
+## UCS: Các đặc điểm
+
+## ◼ Tính hoàn chỉnh?
+
+❑ Có (nếu chi phí ở mỗi bước $\geq \varepsilon > 0 )$
+
+## ◼ Độ phức tạp về thời gian?
+
+❑ Phụ thuộc vào tổng số các nút có chi phí ≤ chi phí của lời giải tối ưu: $O ( b ^ { \lceil c \gamma _ { \varepsilon } \rceil } )$ , trong đó C\*là chi phí của lời giải tối ưu
+
+## ◼ Độ phức tạp về bộ nhớ?
+
+❑ Phụ thuộc vào tổng số các nút có chi phí ≤ chi phí của lời giải tối ưu: $O ( b ^ { \lceil c \gamma _ { \varepsilon } \rceil } )$
+
+## ◼ Tính tối ưu?
+
+❑ Có (nếu các nút được xét theo thứ tự tăng dần về chi phí g(n))
+
+<!-- page: 43 -->
+
+## Tìm kiếm theo chiều sâu (DFS)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+◼ Cài đặt:
+
+❑ fringe là một cấu trúc kiểu ngăn xếp LIFO (Các nút mới được bổ sung vào đầu của fringe)
+
+<!-- page: 44 -->
+
+## DFS: Giải thuật
+
+```txt
+DFS (N, A, n₀, ĐICH)
+{
+    fringe ← n₀;
+    closed ← ∅;
+    while (fringe ≠ ∅) do
+    {    n ← GET_FIRST(fringe);          // lấy phần tử đầu tiên của fringe
+        closed ← closed ⊕ n;
+        if (n ∈ ĐICH) then return SOLUTION(n);
+        if (Γ(n) ≠ ∅) then fringe ← Γ(n) ⊕ fringe;
+    }
+    return (“No solution”);
+}
+```
+
+<!-- page: 45 -->
+
+## DFS: Ví dụ (1)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+![](images/page_44_image_2.jpg)
+
+<!-- page: 46 -->
+
+## DFS: Ví dụ (2)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+![](images/page_45_image_2.jpg)
+
+<!-- page: 47 -->
+
+## DFS: Ví dụ (3)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+![](images/page_46_image_2.jpg)
+
+<!-- page: 48 -->
+
+## DFS: Ví dụ (4)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+![](images/page_47_image_2.jpg)
+
+<!-- page: 49 -->
+
+## DFS: Ví dụ (5)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+![](images/page_48_image_2.jpg)
+
+<!-- page: 50 -->
+
+## DFS: Ví dụ (6)
+
+◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần
+
+![](images/page_49_image_2.jpg)
+
+Trí tuệ nhân tạo
+
+<!-- page: 51 -->
+
+## DFS: Các đặc điểm
+
+◼ Tính hoàn chỉnh?
+
+❑ Không, chỉ hoàn chỉnh với không gian trạng thái hữu hạn
+
+◼ Độ phức tạp về thời gian?
+
+❑ $O ( b ^ { m } )$ : rất lớn, nếu m lớn hơn nhiều so với d
+
+◼ Độ phức tạp về bộ nhớ?
+
+❑ O(bm) - độ phức tạp tuyến tính
+
+◼ Tính tối ưu?
+
+❑ Không
+
+![](images/page_50_image_9.jpg)
+
+<!-- page: 52 -->
+
+## Tìm kiếm giới hạn độ sâu (DLS)
+
+= Phương pháp tìm kiếm theo chiều sâu (DFS) + Sử dụng giới hạn về độ sâu l trong quá trình tìm kiếm
+
+→ các nút ở độ sâu l không có nút con
+
+```txt
+function DEPTH-LIMITED-SEARCH(problem, limit) returns soln/fail/cutoff
+    RECURSIVE-DLS(MAKE-NODE(INITIAL-STATE[problem]), problem, limit)
+function RECURSIVE-DLS(node, problem, limit) returns soln/fail/cutoff
+    cutoff-occurred? ← false
+    if GOAL-TEST[problem](STATE[node]) then return SOLUTION(node)
+    else if DEPTH[node] = limit then return cutoff
+    else for each successor in EXPAND(node, problem) do
+        result ← RECURSIVE-DLS(successor, problem, limit)
+        if result = cutoff then cutoff-occurred? ← true
+        else if result ≠ failure then return result
+    if cutoff-occurred? then return cutoff else return failure
+```
+
+<!-- page: 53 -->
+
+## Tìm kiếm sâu dần (IDS)
+
+◼ Vấn đề với giải thuật tìm kiếm với giới hạn độ sâu (DLS) ❑ Nếu tất cả các lời giải (các nút đích) nằm ở độ sâu lớn hơn giới hạn độ sâu l, thì giải thuật DLS thất bại (không tìm được lời giải)
+
+## ◼ Giải thuật tìm kiếm sâu dần
+
+❑ Áp dụng giải thuật DFS đối với các đường đi (trong cây) có độ dài <=1
+
+❑ Nếu thất bại (không tìm được lời giải), tiếp tục áp dụng giải thuật DFS đối với các đường đi có độ dài <=2
+
+❑ Nếu thất bại (không tìm được lời giải), tiếp tục áp dụng giải thuật DFS đối với các đường đi có độ dài <=3
+
+❑ …(tiếp tục như trên, cho đến khi: 1) tìm được lời giải, hoặc 2) toàn bộ cây đã được xét mà không tìm được lời giải)
+
+<!-- page: 54 -->
+
+## IDS: Giải thuật (1)
+
+```txt
+function ITERATIVE-DEEPENING-SEARCH(problem) returns a solution, or failure
+    inputs: problem, a problem
+    for depth ← 0 to ∞ do
+        result ← DEPTH-LIMITED-SEARCH(problem, depth)
+        if result ≠ cutoff then return result
+```
+
+<!-- page: 55 -->
+
+## IDS: Ví dụ (1)
+
+Giới hạn độ sâu l = 0
+
+![](images/page_54_image_2.jpg)
+
+<!-- page: 56 -->
+
+## IDS: Ví dụ (2)
+
+Giới hạn độ sâu l = 1
+
+![](images/page_55_image_2.jpg)
+
+<!-- page: 57 -->
+
+## IDS: Ví dụ (3)
+
+Giới hạn độ sâu l = 2
+
+![](images/page_56_image_2.jpg)
+
+<!-- page: 58 -->
+
+## IDS: Ví dụ (4)
+
+## Giới hạn độ sâu l = 3
+
+![](images/page_57_image_2.jpg)
+
+<!-- page: 59 -->
+
+## IDS: Giải thuật (2)
+
+```txt
+IDS (N, A, n₀, ĐICH, I) // I: giới hạn độ sâu
+{
+    fringe ← n₀;      closed ← ∅;      depth ← I;
+    while (fringe ≠ ∅) do
+    { n ← GET_FIRST(fringe);   // lấy phần tử đầu tiên của fringe
+        closed ← closed ⊕ n;
+        if (n ∈ ĐICH) then return SOLUTION(n);
+        if (Γ(n) ≠ ∅) then
+        { case d(n) do          // d(n): độ sâu của nút n
+            [0..(depth-1)]: fringe ← Γ(n) ⊕ fringe;
+            depth:      fringe ← fringe ⊕ Γ(n);
+            (depth+1):  { depth ← depth + I;
+                if (l=1) then fringe ← fringe ⊕ Γ(n)
+                    else fringe ← Γ(n) ⊕ fringe;
+            }
+        }
+    }
+    return ("No solution");
+}
+```
+
+<!-- page: 60 -->
+
+![](images/page_59_image_0.jpg)
+
+<!-- page: 61 -->
+
+## DLS vs. IDS
+
+Với độ sâu d và hệ số phân nhánh b, thì số lượng các nút được sinh ra trong giải thuật tìm kiếm giới hạn độ sâu là:
+
+$$
+N _ {D L S} = b ^ {0} + b ^ {1} + b ^ {2} + \ldots + b ^ {d - 2} + b ^ {d - 1} + b ^ {d}
+$$
+
+Số lượng các nút được sinh ra trong giải thuật tìm kiếm sâu dần là:
+
+$$
+N _ {\text {IDS}} = (d + 1). b ^ {0} + d. b ^ {1} + (d - 1). b ^ {2} + \ldots + 3. b ^ {d - 2} + 2. b ^ {d - 1} + 1. b ^ {d}
+$$
+
+◼ Ví dụ với b = 10, d = 5:
+
+❑ N<sub>DLS</sub> = 1 + 10 + 100 + 1,000 + 10,000 + 100,000 = 111,111
+
+❑ N<sub>IDS</sub> = 6 + 50 + 400 + 3,000 + 20,000 + 100,000 = 123,456
+
+❑ Lãng phí = (123,456 - 111,111)/111,111 = 11%
+
+<!-- page: 62 -->
+
+## IDS: Các đặc điểm
+
+◼ Tính hoàn chỉnh?
+
+◼ Độ phức tạp về thời gian?
+
+$$
+(d + 1) b ^ {0} + d b ^ {1} + (d - 1) b ^ {2} + \dots + b ^ {d} = O (b ^ {d + 1})
+$$
+
+◼ Độ phức tạp về bộ nhớ?
+
+❑ $O ( b d )$
+
+◼ Tính tối ưu?
+
+❑ Có, nếu chi phí cho mỗi bước (mỗi cạnh của cây tìm kiếm) = 1
+
+<!-- page: 63 -->
+
+## So sánh giữa các giải thuật tìm kiếm cơ bản
+
+| Criterion | Breadth-First | Uniform-Cost | Depth-First | Depth-Limited | Iterative Deepening |
+| --- | --- | --- | --- | --- | --- |
+| Complete? | Yes | Yes | No | No | Yes |
+| Time | O(b<sup>d+1</sup>) | 𝑂(𝑏 𝐶<sup>∗</sup>/𝜖 ) | O(b<sup>m</sup>) | O(b<sup>l</sup>) | O(b<sup>d+1</sup>) |
+| Space | O(b<sup>d+1</sup>) | 𝑂(𝑏 𝐶<sup>∗</sup>/𝜖 ) | O(bm) | O(bl) | O(bd) |
+| Optimal? | Yes (some cases) | Yes (some cases) | No | No | Yes (some cases) |
+
+<!-- page: 64 -->
+
+## Tổng kết
+
+◼ Việc phát biểu bài toán thường yêu cầu việc khái quát hóa các chi tiết của bài toán thực tế, để có thể định nghĩa không gian trạng thái sao cho việc xét (khám phá) các trạng thái trong quá trình tìm kiếm được thuận tiện
+
+◼ Có nhiều chiến lược tìm kiếm cơ bản
+
+❑ Tìm kiếm theo chiều rộng (BFS)
+
+❑ Tìm kiếm theo chiều sâu (DFS)
+
+❑ Tìm kiếm với chi phí cực tiểu (UCS)
+
+❑ Tìm kiếm giới hạn độ sâu (DLS)
+
+❑ Tìm kiếm sâu dần (IDS)
+
+◼ Phương pháp tìm kiếm sâu dần (IDS)
+
+❑ Chi phí về bộ nhớ ở mức hàm tuyến tính
+
+❑ Chi phí về thời gian chỉ nhiều hơn một chút so với các phương pháp tìm kiếm cơ bản khác

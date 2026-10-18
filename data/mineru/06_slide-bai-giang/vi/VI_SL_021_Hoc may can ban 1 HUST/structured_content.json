@@ -1,0 +1,5292 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.17,
+            0.185,
+            0.821,
+            0.301
+          ],
+          "level": 2,
+          "content": "Trí Tuệ Nhân Tạo"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.26,
+            0.349,
+            0.731,
+            0.417
+          ],
+          "level": 2,
+          "content": "(Artificial Intelligence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.368,
+            0.586,
+            0.605,
+            0.633
+          ],
+          "content": "**Lê Thanh Hương**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.286,
+            0.75,
+            0.73,
+            0.844
+          ],
+          "content": "Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.268,
+            0.045,
+            0.735,
+            0.123
+          ],
+          "level": 2,
+          "content": "Nội dung môn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.203,
+            0.521,
+            0.259
+          ],
+          "content": "▪ Chương 1. Tổng quan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.271,
+            0.631,
+            0.321
+          ],
+          "content": "▪ Chương 2. Tác tử thông minh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.331,
+            0.622,
+            0.387
+          ],
+          "content": "▪ Chương 3. Giải quyết vấn đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.397,
+            0.652,
+            0.449
+          ],
+          "content": "▪ Chương 4. Tri thức và suy diễn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.458,
+            0.617,
+            0.512
+          ],
+          "content": "▪ Chương 5. Biểu diễn tri thức"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.524,
+            0.495,
+            0.576
+          ],
+          "content": "▪ Chương 6. Học máy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.591,
+            0.506,
+            0.637
+          ],
+          "content": "Giới thiệu về học máy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.645,
+            0.447,
+            0.694
+          ],
+          "content": "▪ K láng giềng gần"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.703,
+            0.514,
+            0.748
+          ],
+          "content": "▪ Phân lớp Naïve Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.757,
+            0.473,
+            0.805
+          ],
+          "content": "▪ Học cây quyết định"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.816,
+            0.39,
+            0.861
+          ],
+          "content": "▪ Mạng nơron"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.945,
+            0.943,
+            0.966
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.058,
+            0.603,
+            0.144
+          ],
+          "level": 2,
+          "content": "Giới thiệu về Học máy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.198,
+            0.945,
+            0.288
+          ],
+          "content": "◼ Học máy (ML - Machine Learning) là một lĩnh vực nghiên cứu của Trí tuệ nhân tạo (Artificial Intelligence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.319,
+            0.421,
+            0.361
+          ],
+          "content": "◼ Câu hỏi trung tâm của ML:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.37,
+            0.942,
+            0.489
+          ],
+          "content": "“How can we build computer systems that <u>automatically improve with experience</u>, and what are the <u>fundamental laws</u> that govern all learning processes?” [Mitchell, 2006]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.52,
+            0.428,
+            0.566
+          ],
+          "content": "◼ Vài quan điểm về học máy:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.572,
+            0.918,
+            0.653
+          ],
+          "content": "→ Một quá trình nhờ đó một hệ thống cải thiện hiệu suất (hiệu quả hoạt động) của nó [Simon, 1983]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.668,
+            0.951,
+            0.751
+          ],
+          "content": "→ Việc lập trình các máy tính để tối ưu hóa một tiêu chí hiệu suất dựa trên các dữ liệu hoặc kinh nghiệm trong quá khứ [Alpaydin, 2010]"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.795,
+            0.982,
+            1.0
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.059,
+            0.38,
+            0.144
+          ],
+          "level": 2,
+          "content": "Một máy học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.196,
+            0.933,
+            0.328
+          ],
+          "content": "◼ Ta nói một máy tính có khả năng học nếu nó tự cải thiện hiệu suất hoạt động P cho một công việc T cụ thể, dựa vào kinh nghiệm E của nó."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.354,
+            0.949,
+            0.401
+          ],
+          "content": "Như vậy một bài toán học máy có thể biểu diễn bằng 1 bộ (**T, P, E**)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.411,
+            0.487,
+            0.451
+          ],
+          "content": "• **T:** một công việc (nhiệm vụ)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.463,
+            0.508,
+            0.503
+          ],
+          "content": "• **P:** tiêu chí đánh giá hiệu năng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.134,
+            0.515,
+            0.343,
+            0.553
+          ],
+          "content": "• **E:** kinh nghiệm"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.812,
+            0.795,
+            0.984,
+            1.0
+          ],
+          "content": ""
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.057,
+            0.718,
+            0.145
+          ],
+          "level": 2,
+          "content": "Ví dụ bài toán học máy (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.211,
+            0.55,
+            0.264
+          ],
+          "content": "Lọc thư rác (email spam filtering)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.292,
+            0.559,
+            0.387
+          ],
+          "content": "•T: Dự đoán (để lọc) những thư điện tử nào là thư rác (spam email)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.401,
+            0.551,
+            0.497
+          ],
+          "content": "•P: số lượng thư điện tử gửi đến được phân loại chính xác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.516,
+            0.551,
+            0.744
+          ],
+          "content": "•E: Một tập các thư điện tử (emails) mẫu, mỗi thư điện tử được biểu diễn bằng một tập thuộc tính (vd: tập từ khóa) và nhãn lớp (thư thường/thư rác) tương ứng"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.628,
+            0.276,
+            0.929,
+            0.837
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_5.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.367,
+            0.919,
+            0.499,
+            0.949
+          ],
+          "content": "Trí Tu Nhân To"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.057,
+            0.718,
+            0.145
+          ],
+          "level": 2,
+          "content": "Ví dụ bài toán học máy (2)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.071,
+            0.23,
+            0.425,
+            0.285
+          ],
+          "level": 2,
+          "content": "Nhận dạng chữ viết tay"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.318,
+            0.478,
+            0.408
+          ],
+          "content": "◼T: Nhận dạng và phân loại các từ trong các ảnh chữ viết"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.429,
+            0.473,
+            0.521
+          ],
+          "content": "◼P: Tỷ lệ (%) các từ được nhận dạng và phân loại đúng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.539,
+            0.463,
+            0.676
+          ],
+          "content": "◼E: Một tập các ảnh chữ viết, trong đó mỗi ảnh được gắn với một định danh của một từ"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.546,
+            0.249,
+            0.931,
+            0.679
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_5.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.367,
+            0.919,
+            0.499,
+            0.949
+          ],
+          "content": "Trí Tu Nhân To"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.057,
+            0.717,
+            0.143
+          ],
+          "level": 2,
+          "content": "Ví dụ bài toán học máy (3)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.199,
+            0.274,
+            0.247
+          ],
+          "level": 2,
+          "content": "Gán nhãn ảnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.284,
+            0.535,
+            0.37
+          ],
+          "content": "◼ T: đưa ra một vài mô tả ý nghĩa của 1 bức ảnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.396,
+            0.137,
+            0.435
+          ],
+          "content": "◼ P: ?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.655,
+            0.242,
+            0.944,
+            0.457
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.461,
+            0.781,
+            0.553
+          ],
+          "content": "◼ E: Một tập các bức ảnh, trong đó mỗi ảnh đã được gán một tập các từ mô tả ý nghĩa của chúng"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.688,
+            0.282,
+            0.869
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.048,
+                0.891,
+                0.312,
+                0.969
+              ],
+              "content": "FISH WATER OCEAN TREE CORAL"
+            }
+          ],
+          "image_source": "images/page_6_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.42,
+            0.686,
+            0.624,
+            0.87
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.342,
+                0.891,
+                0.701,
+                0.969
+              ],
+              "content": "PEOPLE MARKET PATTERN TEXTILE DISPLAY"
+            }
+          ],
+          "image_source": "images/page_6_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.746,
+            0.687,
+            0.951,
+            0.869
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.731,
+                0.891,
+                0.967,
+                0.969
+              ],
+              "content": "BIRDS NEST TREE BRANCH LEAVES"
+            }
+          ],
+          "image_source": "images/page_6_image_10.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.058,
+            0.347,
+            0.145
+          ],
+          "level": 2,
+          "content": "Máy học (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.2,
+            0.432,
+            0.251
+          ],
+          "content": "◼ Học một ánh xạ (hàm):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.162,
+            0.255,
+            0.328,
+            0.31
+          ],
+          "content": "f: x \\mapsto y",
+          "image_source": "images/page_7_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.323,
+            0.55,
+            0.367
+          ],
+          "content": "• x: quan sát (dữ liệu), kinh nghiệm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.385,
+            0.716,
+            0.43
+          ],
+          "content": "• y: phán đoán, tri thức mới, kinh nghiệm mới, …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.453,
+            0.562,
+            0.499
+          ],
+          "content": "◼ Hồi quy (regression): nếu y là một số thực"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.523,
+            0.84,
+            0.567
+          ],
+          "content": "Phân loại (classification): nếu y thuộc một tập rời rạc (tập nhãn lớp)"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.058,
+            0.346,
+            0.145
+          ],
+          "level": 2,
+          "content": "Máy học (2)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.2,
+            0.278,
+            0.248
+          ],
+          "level": 2,
+          "content": "◼ Học từ đâu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.26,
+            0.634,
+            0.304
+          ],
+          "content": "❑ Từ các quan sát trong quá khứ (tập học)."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.308,
+            0.544,
+            0.362
+          ],
+          "content": "\\{\\mathsf {x} _ {1}, \\mathsf {x} _ {2}, \\dots , \\mathsf {x} _ {N} \\}; \\{\\mathsf {y} _ {1}, \\mathsf {y} _ {2}, \\dots , \\mathsf {y} _ {M} \\}",
+          "image_source": "images/page_8_equation_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.415,
+            0.324,
+            0.464
+          ],
+          "level": 2,
+          "content": "◼ Sau khi đã học:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.497,
+            0.742,
+            0.543
+          ],
+          "content": "❑ Thu được một mô hình, kinh nghiệm, tri thức mới."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.571,
+            0.903,
+            0.671
+          ],
+          "content": "❑ Dùng nó để suy diễn (phán đoán) cho quan sát trong tương lai. $Y = f ( X )$"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.057,
+            0.635,
+            0.143
+          ],
+          "level": 2,
+          "content": "Hai bài toán học cơ bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.197,
+            0.928,
+            0.359
+          ],
+          "content": "◼ Học có giám sát (supervised learning): cần học một hàm $y = f(x)$ từ tập học $\\{ \\{ { \\sf x } _ { 1 } ,   { \\sf x } _ { 2 } ,   \\ldots ,   { \\sf x } _ { \\sf N } \\} ;   \\{ { \\sf y } _ { 1 } ,   { \\sf y } _ { 2 } ,   \\ldots ,   { \\sf y } _ { \\sf N } \\} \\}$ sao cho $\\mathbf { y } _ { \\mathrm { { i } } } \\mathrm { ~ E ~ }   \\mathsf { f } ( \\mathbf { x } _ { \\mathrm { { i } } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.365,
+            0.88,
+            0.456
+          ],
+          "content": "❑ Phân loại (phân lớp): nếu y chỉ nhận giá trị từ một tập rời rạc, chẳng hạn {cá, cây, quả, mèo}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.461,
+            0.556,
+            0.51
+          ],
+          "content": "❑ Hồi quy: nếu y nhận giá trị số thực"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.519,
+            0.883,
+            0.629
+          ],
+          "content": "Học không giám sát (unsupervised learning): cần học một hàm $y = f(x)$ từ tập học cho trước $\\{ \\mathsf { x } _ { 1 } ,   \\mathsf { x } _ { 2 } ,   . . . ,   \\mathsf { x } _ { \\mathsf { N } } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.653,
+            0.472,
+            0.702
+          ],
+          "content": "❑ Y có thể là các cụm dữ liệu."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.727,
+            0.464,
+            0.777
+          ],
+          "content": "❑ Y có thể là các cấu trúc ẩn."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.62,
+            0.628,
+            1.0,
+            0.991
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.555,
+            0.137
+          ],
+          "level": 2,
+          "content": "Học có giám sát: ví dụ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.201,
+            0.26,
+            0.248
+          ],
+          "content": "◼ Lọc thư rác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.264,
+            0.385,
+            0.314
+          ],
+          "content": "◼ Phân loại trang web"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.327,
+            0.441,
+            0.376
+          ],
+          "content": "◼ Dự đoán rủi ro tài chính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.388,
+            0.675,
+            0.443
+          ],
+          "content": "Dự đoán biến động chỉ số chứng khoán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.453,
+            0.46,
+            0.508
+          ],
+          "content": "◼ Phát hiện tấn công mạng"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.071,
+            0.545,
+            0.398,
+            0.881
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.699,
+            0.231,
+            0.985,
+            0.463
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.608,
+            0.486,
+            0.982,
+            0.825
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.644,
+                0.831,
+                0.912,
+                0.867
+              ],
+              "content": "10:00 AM 11:00 AM 12:00 PM 1:00 PM 2:00 PM"
+            }
+          ],
+          "image_source": "images/page_10_image_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.723,
+            0.137
+          ],
+          "level": 2,
+          "content": "Học không giám sát: ví dụ (1)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.201,
+            0.412,
+            0.251
+          ],
+          "level": 2,
+          "content": "◼ Phân cụm (clustering)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.261,
+            0.66,
+            0.306
+          ],
+          "content": "❑ Phát hiện các cụm dữ liệu, cụm tính chất,…"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.114,
+            0.331,
+            0.349,
+            0.62
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.363,
+            0.331,
+            0.601,
+            0.621
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_4.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.69,
+            0.401,
+            0.74
+          ],
+          "level": 2,
+          "content": "◼ Community detection"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.772,
+            0.658,
+            0.819
+          ],
+          "content": "◼ Phát hiện các cộng đồng trong mạng xã hội"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.655,
+            0.493,
+            0.998,
+            0.89
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.723,
+            0.137
+          ],
+          "level": 2,
+          "content": "Học không giám sát: ví dụ (2)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.201,
+            0.336,
+            0.247
+          ],
+          "level": 2,
+          "content": "◼ Trends detection"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.26,
+            0.5,
+            0.309
+          ],
+          "content": "❑ Phát hiện xu hướng, thị $y \\hat { \\Theta } \\mathsf { U } ,$"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.689,
+            0.19,
+            0.947,
+            0.543
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_chart_3.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.516,
+            0.466,
+            0.567
+          ],
+          "level": 2,
+          "content": "◼ Entity-interaction analysis"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.086,
+            0.607,
+            0.955,
+            0.891
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.721,
+            0.145
+          ],
+          "level": 2,
+          "content": "Quá trình học máy: cơ bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.346,
+            0.209,
+            0.431
+          ],
+          "content": "Tập dữ liệu (Dataset)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.352,
+            0.215,
+            0.501,
+            0.299
+          ],
+          "content": "Tập học (Training set)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.674,
+            0.323,
+            0.816,
+            0.413
+          ],
+          "content": "**Huấn luyện** hệ thống"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.32,
+            0.689,
+            0.501,
+            0.776
+          ],
+          "content": "Tập thử nghiệm (Test set)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.678,
+            0.751,
+            0.83,
+            0.874
+          ],
+          "content": "**Thử nghiệm** hệ thống đã học"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.783,
+            0.145
+          ],
+          "level": 2,
+          "content": "Quá trình học máy: toàn diện"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.347,
+            0.209,
+            0.43
+          ],
+          "content": "Tập dữ liệu (Dataset)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.352,
+            0.215,
+            0.501,
+            0.298
+          ],
+          "content": "Tập học (Training set)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.343,
+            0.455,
+            0.515,
+            0.545
+          ],
+          "content": "Tập tối ưu (Validation set)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.321,
+            0.69,
+            0.501,
+            0.775
+          ],
+          "content": "Tập thử nghiệm (Test set)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.675,
+            0.323,
+            0.816,
+            0.413
+          ],
+          "content": "**Huấn luyện** hệ thống"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.68,
+            0.54,
+            0.821,
+            0.663
+          ],
+          "content": "**Tối ưu hóa** các tham số (nếu có)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.678,
+            0.751,
+            0.83,
+            0.874
+          ],
+          "content": "**Thử nghiệm** hệ thống đã học"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.063,
+            0.832,
+            0.144
+          ],
+          "level": 2,
+          "content": "Đánh giá và lựa chọn mô hình"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.212,
+            0.888,
+            0.369
+          ],
+          "content": "Cho trưóc tp quan sát D, ta cn lra chn tham sλ (model selection) cho phương pháp hc A và đánh giá (assessment) cht lưng tng th ca A."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.377,
+            0.827,
+            0.422
+          ],
+          "content": "• Chn tp hu hn S mà cha các giá tr tim năng cho λ."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.429,
+            0.589,
+            0.473
+          ],
+          "content": "• Chn đ đo P đ đánh giá hiu năng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.482,
+            0.795,
+            0.529
+          ],
+          "content": "• Chia tp D thành 3 tp ri nhau: $\\mathsf { D _ { t r a i n } } , \\mathsf { T _ { v a l i d a t i o n } } ,$ và $\\mathsf { T } _ { \\mathsf { t e s t } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.532,
+            0.391,
+            0.574
+          ],
+          "content": "• Vi mõi giá trį $\\lambda \\in \\mathbb { S }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.579,
+            0.91,
+            0.665
+          ],
+          "content": "• Hc A tù tp hc $\\mathsf { D _ { t r a i n } }$ vi tham s đu vào λ. Đo hiu năng trên tp $\\mathsf { T _ { v a l i d a t i o n } } \\xrightarrow { }$ thu đưc $\\mathsf { P } _ { \\mathsf { h } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.668,
+            0.458,
+            0.714
+          ],
+          "content": "·Chon $\\lambda ^ { \\star }$ mà có $\\mathsf { P } _ { \\lambda }$ tt nht."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.721,
+            0.887,
+            0.767
+          ],
+          "content": "• Huân luyn A trên tp $\\mathsf { D _ { t r a i n } } \\cup \\mathsf { T _ { v a l i d a t i o n } } ,$ vi tham s đu vào $\\lambda ^ { \\star }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.773,
+            0.626,
+            0.819
+          ],
+          "content": "• Đo hiu năng ca h thng trên tp $\\mathsf { T } _ { \\mathsf { t e s t } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.821,
+            0.903,
+            0.88
+          ],
+          "content": "Có th thay Hold-out bng k thut khác (cross-validation)."
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.061,
+            0.516,
+            0.141
+          ],
+          "level": 2,
+          "content": "Đo độ chính xác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.178,
+            0.437,
+            0.222
+          ],
+          "content": "◼ Làm sao để biết $h \\approx f ?$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.233,
+            0.488,
+            0.279
+          ],
+          "content": "◼ Sử dụng lý thuyết tính toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.286,
+            0.905,
+            0.379
+          ],
+          "content": "Thử giả thiết h trên 1 tập các ví dụ mới (tập thử) (sử dụng cùng 1 mức độ phân bố các mẫu như tập luyện)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.385,
+            0.908,
+            0.475
+          ],
+          "content": "Learning curve = % chính xác trên tập thử, sử dụng hàm xây dựng trên tập luyện"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.227,
+            0.495,
+            0.741,
+            0.976
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_chart_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.056,
+            0.794,
+            0.145
+          ],
+          "level": 2,
+          "content": "Thiết kế một hệ thống học (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.201,
+            0.862,
+            0.251
+          ],
+          "content": "◼ Lựa chọn các ví dụ học (training/learning examples)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.267,
+            0.91,
+            0.388
+          ],
+          "content": "• Các thông tin hướng dẫn quá trình học (training feedback) được chứa ngay trong các ví dụ học, hay là được cung cấp gián tiếp (vd: từ môi trường hoạt động)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.401,
+            0.934,
+            0.483
+          ],
+          "content": "• Các ví dụ học theo kiểu có giám sát (supervised) hay không có giám sát (unsupervised)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.499,
+            0.927,
+            0.581
+          ],
+          "content": "• Các ví dụ học nên tương thích với (đại diện cho) các ví dụ sẽ được làm việc bởi hệ thống trong tương lai (future test examples)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.615,
+            0.87,
+            0.67
+          ],
+          "content": "◼ Xác định hàm mục tiêu (giả thiết, khái niệm) cần học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.685,
+            0.281,
+            0.725
+          ],
+          "content": "• F: X → {0,1}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.741,
+            0.464,
+            0.781
+          ],
+          "content": "• F: X → Một tập các nhãn lớp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.795,
+            0.62,
+            0.839
+          ],
+          "content": "• F: X → R+(miền các giá trị số thực dương)"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.802,
+            0.145
+          ],
+          "level": 2,
+          "content": "Thiết kế một hệ thống học (2)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.207,
+            0.859,
+            0.261
+          ],
+          "level": 2,
+          "content": "Lựa chọn cách biểu diễn cho hàm mục tiêu cần học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.27,
+            0.54,
+            0.309
+          ],
+          "content": "• Hàm đa thức (a polynomial function)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.319,
+            0.481,
+            0.358
+          ],
+          "content": "• Một tập các luật (a set of rules)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.365,
+            0.534,
+            0.407
+          ],
+          "content": "• Một cây quyết định (a decision tree)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.413,
+            0.748,
+            0.455
+          ],
+          "content": "• Một mạng nơ-ron nhân tạo (an artificial neural network)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.527,
+            0.95,
+            0.632
+          ],
+          "level": 2,
+          "content": "Lựa chọn một giải thuật học máy có thể học (xấp xỉ) được hàm mục tiêu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.642,
+            0.652,
+            0.685
+          ],
+          "content": "• Phương pháp học hồi quy (Regression-based)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.691,
+            0.663,
+            0.732
+          ],
+          "content": "• Phương pháp học quy nạp luật (Rule induction)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.738,
+            0.691,
+            0.78
+          ],
+          "content": "• Phương pháp học cây quyết định (ID3 hoặc C4.5)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.786,
+            0.753,
+            0.829
+          ],
+          "content": "• Phương pháp học lan truyền ngược (Back-propagation)"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.056,
+            0.802,
+            0.145
+          ],
+          "level": 2,
+          "content": "Các vấn đề trong Học máy (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.68,
+            0.253
+          ],
+          "content": "◼ Giải thuật học máy (Learning algorithm)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.283,
+            0.931,
+            0.382
+          ],
+          "content": "• Những giải thuật học máy nào có thể học (xấp xỉ) một hàm mục tiêu cần học?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.415,
+            0.912,
+            0.516
+          ],
+          "content": "• Với những điều kiện nào, một giải thuật học máy đã chọn sẽ hội tụ (tiệm cận) hàm mục tiêu cần học?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.544,
+            0.909,
+            0.693
+          ],
+          "content": "• Đối với một lĩnh vực bài toán cụ thể và đối với một cách biểu diễn các ví dụ (đối tượng) cụ thể, giải thuật học máy nào thực hiện tốt nhất?"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.057,
+            0.802,
+            0.145
+          ],
+          "level": 2,
+          "content": "Các vấn đề trong Học máy (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.2,
+            0.602,
+            0.252
+          ],
+          "content": "◼ Các ví dụ học (Training examples)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.285,
+            0.498,
+            0.332
+          ],
+          "content": "• Bao nhiêu ví dụ học là đủ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.364,
+            0.893,
+            0.466
+          ],
+          "content": "• Kích thước của tập học (tập huấn luyện) ảnh hưởng thế nào đối với độ chính xác của hàm mục tiêu học được?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.496,
+            0.899,
+            0.641
+          ],
+          "content": "• Các ví dụ lỗi (nhiễu) và/hoặc các ví dụ thiếu giá trị thuộc tính (missing-value) ảnh hưởng thế nào đối với độ chính xác?"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.056,
+            0.802,
+            0.145
+          ],
+          "level": 2,
+          "content": "Các vấn đề trong Học máy (3)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.591,
+            0.253
+          ],
+          "content": "◼ Quá trình học (Learning process)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.282,
+            0.909,
+            0.383
+          ],
+          "content": "• Chiến lược tối ưu cho việc lựa chọn thứ tự sử dụng (khai thác) các ví dụ học?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.413,
+            0.893,
+            0.515
+          ],
+          "content": "Các chiến lược lựa chọn này làm thay đổi mức độ phức tạp của bài toán học máy như thế nào?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.546,
+            0.895,
+            0.647
+          ],
+          "content": "Các tri thức cụ thể của bài toán (ngoài các ví dụ học) có thể đóng góp thế nào đối với quá trình học?"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.802,
+            0.145
+          ],
+          "level": 2,
+          "content": "Các vấn đề trong Học máy (4)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.188,
+            0.637,
+            0.241
+          ],
+          "content": "◼ Khả năng/giới hạn học (Learnability)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.247,
+            0.63,
+            0.293
+          ],
+          "content": "• Hàm mục tiêu nào mà hệ thống cần học?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.299,
+            0.951,
+            0.435
+          ],
+          "content": "❑ Biểu diễn hàm mục tiêu: Khả năng biểu diễn (vd: hàm tuyến tính / hàm phi tuyến) vs. Độ phức tạp của giải thuật và quá trình học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.451,
+            0.954,
+            0.542
+          ],
+          "content": "• Các giới hạn (trên lý thuyết) đối với khả năng học của các giải thuật học máy?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.558,
+            0.798,
+            0.605
+          ],
+          "content": "• Khả năng khái quát hóa (generalization) của hệ thống?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.609,
+            0.919,
+            0.695
+          ],
+          "content": "❑ Để tránh vấn đề “over-fitting” (đạt độ chính xác cao trên tập học, nhưng đạt độ chính xác thấp trên tập thử nghiệm)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.705,
+            0.956,
+            0.797
+          ],
+          "content": "• Khả năng hệ thống tự động thay đổi (thích nghi) biểu diễn (cấu trúc) bên trong của nó?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.152,
+            0.803,
+            0.942,
+            0.887
+          ],
+          "content": "❑ Để cải thiện khả năng (của hệ thống đối với việc) biểu diễn và học hàm mục tiêu"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.203,
+            0.415,
+            0.79,
+            0.501
+          ],
+          "content": "Phương pháp phân loại"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.665,
+            0.136
+          ],
+          "level": 2,
+          "content": "Các bạn phân loại thế nào?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.209,
+            0.214,
+            0.245
+          ],
+          "content": "Class a"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.115,
+            0.251,
+            0.227,
+            0.386
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.323,
+                0.241,
+                0.414,
+                0.28
+              ],
+              "content": "Class b"
+            }
+          ],
+          "image_source": "images/page_24_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.314,
+            0.284,
+            0.427,
+            0.419
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.69,
+                0.319,
+                0.78,
+                0.357
+              ],
+              "content": "Class a"
+            }
+          ],
+          "image_source": "images/page_24_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.68,
+            0.364,
+            0.793,
+            0.498
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.123,
+                0.5,
+                0.213,
+                0.536
+              ],
+              "content": "Class a"
+            }
+          ],
+          "image_source": "images/page_24_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.115,
+            0.54,
+            0.228,
+            0.675
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.438,
+                0.499,
+                0.472,
+                0.535
+              ],
+              "content": "??"
+            }
+          ],
+          "image_source": "images/page_24_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.398,
+            0.551,
+            0.509,
+            0.687
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.557,
+                0.698,
+                0.647,
+                0.735
+              ],
+              "content": "Class a"
+            }
+          ],
+          "image_source": "images/page_24_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.547,
+            0.741,
+            0.66,
+            0.875
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.79,
+                0.635,
+                0.88,
+                0.671
+              ],
+              "content": "Class b"
+            }
+          ],
+          "image_source": "images/page_24_image_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.763,
+            0.635,
+            0.92,
+            0.865
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_14.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.048,
+            0.055,
+            0.889,
+            0.136
+          ],
+          "level": 2,
+          "content": "Học dựa trên các láng giềng gần nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.187,
+            0.945,
+            0.285
+          ],
+          "content": "◼ **K-nearest neighbors** (k-NN) là một trong số các phương pháp phổ biến trong học máy. Vài tên gọi khác như:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.295,
+            0.422,
+            0.337
+          ],
+          "content": "• Instance-based learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.348,
+            0.291,
+            0.391
+          ],
+          "content": "• Lazy learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.401,
+            0.417,
+            0.445
+          ],
+          "content": "• Memory-based learning"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.471,
+            0.452,
+            0.523
+          ],
+          "level": 2,
+          "content": "◼ Ý tưởng của phương pháp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.53,
+            0.959,
+            0.619
+          ],
+          "content": "• Không xây dựng một mô hình (mô tả) rõ ràng cho hàm mục tiêu cần học."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.628,
+            0.713,
+            0.674
+          ],
+          "content": "• Quá trình học chỉ lưu lại các dữ liệu huấn luyện."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.682,
+            0.945,
+            0.772
+          ],
+          "content": "• Việc dự đoán cho một quan sát mới sẽ dựa vào các hàng xóm gần nhất trong tập học."
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.051,
+            0.062,
+            0.162,
+            0.123
+          ],
+          "level": 2,
+          "content": "k-NN"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.185,
+            0.388,
+            0.233
+          ],
+          "level": 2,
+          "content": "◼ Hai thành phần chính:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.245,
+            0.884,
+            0.335
+          ],
+          "content": "• Độ đo tương đồng (similarity measure/distance) giữa các đối tượng."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.347,
+            0.679,
+            0.392
+          ],
+          "content": "• Các hàng xóm sẽ dùng vào việc phán đoán."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.417,
+            0.873,
+            0.565
+          ],
+          "content": "Trong một số điều kiện thì k-NN có thể đạt mức lỗi tối ưu Bayes (mức lỗi mong muốn của bất kỳ phương pháp nào) [Gyuader and Hengartner, JMLR 2013]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.577,
+            0.928,
+            0.671
+          ],
+          "content": "• Thậm chí khi chỉ dùng 1 hàng xóm gần nhất thì nó cũng có thể đạt đến mức lỗi tối ưu Bayes. [Kontorovich & Weiss, AISTATS 2015]"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.054,
+            0.596,
+            0.136
+          ],
+          "level": 2,
+          "content": "Ví dụ: bài toán phân lớp"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.065,
+            0.227,
+            0.404,
+            0.333
+          ],
+          "level": 2,
+          "content": "Xét 1 láng giềng gần nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.115,
+            0.347,
+            0.418,
+            0.398
+          ],
+          "content": "→Gán z vào lớp c2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.429,
+            0.404,
+            0.536
+          ],
+          "content": "Xét 3 láng giềng gần nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.549,
+            0.417,
+            0.601
+          ],
+          "content": "→Gán z vào lớp c1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.633,
+            0.404,
+            0.739
+          ],
+          "content": "Xét 5 láng giềng gần nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.752,
+            0.417,
+            0.804
+          ],
+          "content": "→Gán z vào lớp c1"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.481,
+            0.25,
+            0.911,
+            0.821
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_27_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.704,
+            0.135
+          ],
+          "level": 2,
+          "content": "Giải thuật k-NN cho phân lớp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.183,
+            0.818,
+            0.239
+          ],
+          "content": "◼ Mỗi ví dụ học 𝒙 được biểu diễn bởi 2 thành phần:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.249,
+            0.722,
+            0.294
+          ],
+          "content": "• Mô tả của ví dụ: ${ \\pmb x } = ( x _ { 1 } , x _ { 2 } , \\ldots , x _ { n } )$ , trong đó $x _ { i } { \\in } R$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.301,
+            0.9,
+            0.348
+          ],
+          "content": "• Nhãn lớp : $c \\in C$ , với 𝐶 là tập các nhãn lớp được xác định trước"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.381,
+            0.296,
+            0.429
+          ],
+          "level": 2,
+          "content": "◼ Giai đoạn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.438,
+            0.727,
+            0.484
+          ],
+          "content": "• Đơn giản là lưu lại các ví dụ học trong tập học: 𝑫"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.514,
+            0.899,
+            0.568
+          ],
+          "content": "◼ Giai đoạn phân lớp: Để phân lớp cho một ví dụ (mới) 𝒛"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.577,
+            0.77,
+            0.624
+          ],
+          "content": "• Với mỗi ví dụ học $x   \\in   D$ , tính khoảng cách giữa 𝒙 và 𝒛"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.637,
+            0.879,
+            0.783
+          ],
+          "content": "• Xác định tập 𝑁𝐵(𝒛) – các láng giềng gần nhất của 𝒛 →Gồm k ví dụ học trong 𝑫 gần nhất với 𝒛 tính theo một hàm khoảng cách 𝑑"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.799,
+            0.936,
+            0.89
+          ],
+          "content": "• Phân 𝒛 vào lớp chiếm số đông (the majority class) trong số các lớp của các ví dụ trong 𝑁𝐵(𝒛)"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.674,
+            0.134
+          ],
+          "level": 2,
+          "content": "Giải thuật k-NN cho hồi quy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.183,
+            0.818,
+            0.238
+          ],
+          "content": "◼ Mỗi ví dụ học 𝒙 được biểu diễn bởi 2 thành phần:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.249,
+            0.728,
+            0.293
+          ],
+          "content": "• Mô tả của ví dụ: ${ \\pmb x } = ( x _ { 1 } , x _ { 2 } , \\ldots , x _ { n } )$ , trong đó $x _ { i } { \\in } R$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.299,
+            0.733,
+            0.349
+          ],
+          "content": "• Giá trị đầu ra mong muốn: $y _ { x }   \\in   R$ (là một số thực)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.383,
+            0.296,
+            0.431
+          ],
+          "content": "◼ Giai đoạn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.439,
+            0.725,
+            0.485
+          ],
+          "content": "• Đơn giản là lưu lại các ví dụ học trong tập học 𝑫"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.516,
+            0.925,
+            0.627
+          ],
+          "content": "◼ Giai đoạn dự đoán: Để dự đoán giá trị đầu ra cho ví dụ 𝒛 • Đối với mỗi ví dụ học $x   \\in   D$ , tính khoảng cách giữa 𝒙 và 𝒛"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.64,
+            0.904,
+            0.774
+          ],
+          "content": "• Xác định tập 𝑁𝐵(𝒛) – các láng giềng gần nhất của 𝒛 → Gồm k ví dụ học trong 𝑫 gần nhất với 𝒛 tính theo một hàm khoảng cách 𝑑"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.807,
+            0.816,
+            0.884
+          ],
+          "content": "• Dự đoán giá trị đầu ra đối với 𝒛: $\\begin{array} { r } { y _ { z } = \\frac { 1 } { k } { \\sum _ { x \\in N B ( z ) } y _ { x } } } \\end{array}$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.056,
+            0.597,
+            0.126
+          ],
+          "level": 2,
+          "content": "k-NN: Các vấn đề cốt lõi"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.174,
+            0.242,
+            0.799,
+            0.755
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.597,
+            0.125
+          ],
+          "level": 2,
+          "content": "k-NN: Các vấn đề cốt lõi"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.189,
+            0.357,
+            0.238
+          ],
+          "level": 2,
+          "content": "◼ Hàm khoảng cách"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.261,
+            0.784,
+            0.307
+          ],
+          "content": "❑ Mỗi hàm sẽ tương ứng với một cách nhìn về dữ liệu."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.329,
+            0.31,
+            0.372
+          ],
+          "content": "❑ Vô hạn hàm!!!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.396,
+            0.335,
+            0.439
+          ],
+          "content": "❑ Chọn hàm nào?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.453,
+            0.32,
+            0.939,
+            0.91
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.056,
+            0.597,
+            0.125
+          ],
+          "level": 2,
+          "content": "k-NN: Các vấn đề cốt lõi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.187,
+            0.486,
+            0.241
+          ],
+          "content": "◼ Chọn tập láng giềng 𝑁𝐵(𝒛)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.261,
+            0.484,
+            0.307
+          ],
+          "content": "❑ Chọn bao nhiêu láng giềng?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.329,
+            0.456,
+            0.373
+          ],
+          "content": "❑ Giới hạn chọn theo vùng?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.396,
+            0.369,
+            0.947,
+            0.911
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.055,
+            0.777,
+            0.137
+          ],
+          "level": 2,
+          "content": "k-NN: một hay nhiều láng giềng?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.183,
+            0.919,
+            0.285
+          ],
+          "content": "◼ Về lý thuyết thì 1-NN cũng có thể là một trong số các phương pháp tối ưu."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.301,
+            0.934,
+            0.45
+          ],
+          "content": "◼ k-NN là một phương pháp tối ưu Bayes nếu gặp một số điều kiện, chẳng hạn: y bị chặn, cỡ M của tập học lớn, hàm hồi quy liên tục, và"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.175,
+            0.471,
+            0.836,
+            0.531
+          ],
+          "content": "k \\to \\infty , (k / M) \\to 0, (k / \\log M) \\to + \\infty",
+          "image_source": "images/page_33_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.563,
+            0.883,
+            0.666
+          ],
+          "content": "◼ Trong thực tiễn ta nên lấy nhiều hàng xóm (𝑘 > 1) khi cần phân lớp/dự đoán, nhưng không quá nhiều. Lý do:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.679,
+            0.843,
+            0.727
+          ],
+          "content": "• Tránh ảnh hưởng của lỗi/nhiễu nếu chỉ dùng 1 hàng xóm."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.739,
+            0.933,
+            0.832
+          ],
+          "content": "• Nếu quá nhiều hàng xóm thì sẽ phá vỡ cấu trúc tiềm ẩn trong dữ liệu."
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.638,
+            0.135
+          ],
+          "level": 2,
+          "content": "Hàm tính khoảng cách (1)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.185,
+            0.455,
+            0.235
+          ],
+          "level": 2,
+          "content": "◼ Hàm tính khoảng cách d"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.249,
+            0.93,
+            0.339
+          ],
+          "content": "• Đóng vai trò rất quan trọng trong phương pháp học dựa trên các láng giềng gần nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.353,
+            0.916,
+            0.445
+          ],
+          "content": "• Thường được xác định trước, và không thay đổi trong suốt quá trình học và phân loại/dự đoán"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.487,
+            0.535,
+            0.537
+          ],
+          "level": 2,
+          "content": "◼ Lựa chọn hàm khoảng cách d"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.558,
+            0.916,
+            0.648
+          ],
+          "content": "• Các hàm khoảng cách hình học: Dành cho các bài toán có các thuộc tính đầu vào là kiểu số thực $( x _ { j } { \\in } R )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.665,
+            0.877,
+            0.756
+          ],
+          "content": "• Hàm khoảng cách Hamming: Dành cho các bài toán có các thuộc tính đầu vào là kiểu nhị phân $( x _ { j } { \\in } \\{ 0 , 1 \\} )$"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.053,
+            0.639,
+            0.137
+          ],
+          "level": 2,
+          "content": "Hàm tính khoảng cách (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.187,
+            0.518,
+            0.347
+          ],
+          "content": "Các hàm tính khoảng cách hình học (Geometry distance functions)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.377,
+            0.457,
+            0.429
+          ],
+          "content": "• Hàm Minkowski (𝑝-norm):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.488,
+            0.44,
+            0.54
+          ],
+          "content": "• Hàm Manhattan (𝑝 = 1):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.621,
+            0.385,
+            0.672
+          ],
+          "content": "• Hàm Euclid (𝑝 = 2):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.746,
+            0.456,
+            0.798
+          ],
+          "content": "• Hàm Chebyshev (𝑝 = ∞):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.573,
+            0.336,
+            0.866,
+            0.449
+          ],
+          "content": "d (x, z) = \\left(\\sum_ {i = 1} ^ {n} \\left| x _ {i} - z _ {i} \\right| ^ {p}\\right) ^ {1 / p}",
+          "image_source": "images/page_35_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.59,
+            0.464,
+            0.818,
+            0.563
+          ],
+          "content": "d (x, z) = \\sum_ {i = 1} ^ {n} \\left| x _ {i} - z _ {i} \\right|",
+          "image_source": "images/page_35_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.573,
+            0.581,
+            0.823,
+            0.687
+          ],
+          "content": "d (x, z) = \\sqrt {\\sum_ {i = 1} ^ {n} \\left(x _ {i} - z _ {i}\\right) ^ {2}}",
+          "image_source": "images/page_35_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.573,
+            0.705,
+            0.919,
+            0.907
+          ],
+          "content": "\\begin{array}{c} d (x, z) = \\lim _ {p \\to \\infty} \\left(\\sum_ {i = 1} ^ {n} \\left| x _ {i} - z _ {i} \\right| ^ {p}\\right) ^ {1 / p} \\\\ = \\max _ {i} \\left| x _ {i} - z _ {i} \\right| \\end{array}",
+          "image_source": "images/page_35_equation_9.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.054,
+            0.638,
+            0.135
+          ],
+          "level": 2,
+          "content": "Hàm tính khoảng cách (3)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.357,
+            0.306
+          ],
+          "content": "◼ Hàm khoảng cách Hamming"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.322,
+            0.454,
+            0.418
+          ],
+          "content": "• Đối với các thuộc tính đầu vào là kiểu nhị phân ()"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.535,
+            0.232,
+            0.856,
+            0.324
+          ],
+          "content": "d (x, z) = \\sum_ {i = 1} ^ {n} D i f f e r e n c e (x _ {i}, z _ {i})",
+          "image_source": "images/page_36_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.525,
+            0.336,
+            0.857,
+            0.437
+          ],
+          "content": "\\text {Difference} (a, b) = \\left\\{ \\begin{array}{l} 1, \\text {if} (a \\neq b) \\\\ 0, \\text {if} (a = b) \\end{array} \\right.",
+          "image_source": "images/page_36_equation_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.052,
+            0.545,
+            0.134
+          ],
+          "level": 2,
+          "content": "k-NN: Ưu nhược điểm"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.184,
+            0.28,
+            0.235
+          ],
+          "level": 2,
+          "content": "◼ Các ưu điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.246,
+            0.951,
+            0.294
+          ],
+          "content": "• Chi phí thấp cho quá trình huấn luyện (chỉ việc lưu lại các ví dụ học)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.3,
+            0.791,
+            0.347
+          ],
+          "content": "• Hoạt động tốt với các bài toán phân loại gồm nhiều lớp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.353,
+            0.664,
+            0.395
+          ],
+          "content": "→ Không cần phải học c bộ phân loại cho c lớp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.399,
+            0.856,
+            0.446
+          ],
+          "content": "• Phương pháp học $k - \\mathsf { N N } ( k > > 1 )$ có khả năng xử lý nhiễu cao"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.452,
+            0.9,
+            0.497
+          ],
+          "content": "→ Phân loại/dự đoán được thực hiện dựa trên k láng giềng gần nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.504,
+            0.74,
+            0.549
+          ],
+          "content": "• Rất Linh động trong việc chọn hàm khoảng cách."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.555,
+            0.655,
+            0.598
+          ],
+          "content": "→ Có thể dùng độ tương tự (similarity): cosine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.603,
+            0.884,
+            0.687
+          ],
+          "content": "→ Có thể dùng độ đo khác, chẳng hạn Kullback-Leibler divergence, Bregman divergence,"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.707,
+            0.337,
+            0.757
+          ],
+          "level": 2,
+          "content": "◼ Các nhược điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.767,
+            0.931,
+            0.81
+          ],
+          "content": "• Phải lựa chọn hàm tính khoảng cách (sự khác biệt) thích hợp với bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.815,
+            0.912,
+            0.858
+          ],
+          "content": "• Chi phí tính toán (thời gian, bộ nhớ) cao tại thời điểm phân loại/dự đoán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.862,
+            0.806,
+            0.906
+          ],
+          "content": "• Có thể cho kết quả kém/sai với các thuộc tính không liên quan"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.058,
+            0.591,
+            0.143
+          ],
+          "level": 2,
+          "content": "Phân lớp Naïve Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.9,
+            0.301
+          ],
+          "content": "◼ Là các phương pháp học phân lớp có giám sát và dựa trên xác suất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.33,
+            0.652,
+            0.385
+          ],
+          "content": "◼ Dựa trên một mô hình (hàm) xác suất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.411,
+            0.911,
+            0.52
+          ],
+          "content": "◼ Việc phân loại dựa trên các giá trị xác suất của các khả năng xảy ra của các giả thiết"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.546,
+            0.897,
+            0.653
+          ],
+          "content": "◼ Là một trong các phương pháp học máy thường được sử dụng trong các bài toán thực tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.679,
+            0.69,
+            0.733
+          ],
+          "content": "◼ Dựa trên định lý Bayes (Bayes theorem)"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.056,
+            0.363,
+            0.136
+          ],
+          "level": 2,
+          "content": "Định lý Bayes"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.225,
+            0.195,
+            0.622,
+            0.327
+          ],
+          "content": "P (h \\mid D) = \\frac {P (D \\mid h) . P (h)}{P (D)}",
+          "image_source": "images/page_39_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.359,
+            0.782,
+            0.412
+          ],
+          "content": "• P(h): Xác suất trước (tiên nghiệm) của giả thiết h"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.429,
+            0.908,
+            0.527
+          ],
+          "content": "• P(D): Xác suất trước (tiên nghiệm) của việc quan sát được dữ liệu D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.545,
+            0.912,
+            0.647
+          ],
+          "content": "• P(D|h): Xác suất (có điều kiện) của việc quan sát được dữ liệu D, nếu biết giả thiết h là đúng. (likelihood)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.662,
+            0.913,
+            0.763
+          ],
+          "content": "• P(h|D): Xác suất (hậu nghiệm) của giả thiết h là đúng, nếu quan sát được dữ liệu D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.774,
+            0.928,
+            0.876
+          ],
+          "content": "➢**Nhiều phương pháp phân loại dựa trên xác suất sẽ sử dụng xác suất hậu nghiệm (**posterior probability**) này!**"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.589,
+            0.137
+          ],
+          "level": 2,
+          "content": "Định lý Bayes: Ví dụ (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.185,
+            0.918,
+            0.233
+          ],
+          "content": "Giả sử chúng ta có tập dữ liệu sau (dự đoán 1 người có chơi tennis)?"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.065,
+            0.251,
+            0.918,
+            0.9
+          ],
+          "content": "| Ngày | Ngoài trời | Nhiệt độ | Độ ẩm | Gió | Chơi tennis |\n| --- | --- | --- | --- | --- | --- |\n| N1 | Nắng | Nóng | Cao | Yếu | Không |\n| N2 | Nắng | Nóng | Cao | Mạnh | Không |\n| N3 | Âm u | Nóng | Cao | Yếu | Có |\n| N4 | Mưa | Bình thường | Cao | Yếu | Có |\n| N5 | Mưa | Mát mẻ | Bình thường | Yếu | Có |\n| N6 | Mưa | Mát mẻ | Bình thường | Mạnh | Không |\n| N7 | Âm u | Mát mẻ | Bình thường | Mạnh | Có |\n| N8 | Nắng | Bình thường | Cao | Yếu | Không |\n| N9 | Nắng | Mát mẻ | Bình thường | Yếu | Có |\n| N10 | Mưa | Bình thường | Bình thường | Yếu | Có |\n| N11 | Nắng | Bình thường | Bình thường | Mạnh | Có |\n| N12 | Âm u | Bình thường | Cao | Mạnh | Có |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.102,
+                0.918,
+                0.288,
+                0.949
+              ],
+              "content": "[Mitchell, 1997]"
+            }
+          ],
+          "image_source": "images/page_40_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.589,
+            0.137
+          ],
+          "level": 2,
+          "content": "Định lý Bayes: Ví dụ (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.205,
+            0.687,
+            0.256
+          ],
+          "content": "◼ Dữ liệu D. Ngoài trời là nắng và Gió là mạnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.273,
+            0.647,
+            0.323
+          ],
+          "content": "◼ Giả thiết (phân loại) h. Anh ta chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.339,
+            0.931,
+            0.444
+          ],
+          "content": "◼ Xác suất trước P(h). Xác suất rằng anh ta chơi tennis (<u>bất kể Ngoài trời như thế nào và Gió ra sao</u>)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.457,
+            0.926,
+            0.56
+          ],
+          "content": "◼ Xác suất trước P(D). Xác suất rằng Ngoài trời là nắng và Gió là mạnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.573,
+            0.925,
+            0.679
+          ],
+          "content": "◼ P(D|h). Xác suất Ngoài trời là nắng và Gió là mạnh, nếu biết rằng anh ta chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.692,
+            0.924,
+            0.797
+          ],
+          "content": "◼ P(h|D). Xác suất anh ta chơi tennis, nếu biết rằng Ngoài trời là nắng và Gió là mạnh"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.052,
+            0.053,
+            0.85,
+            0.137
+          ],
+          "level": 2,
+          "content": "Xác suất hậu nghiệm cực đại (MAP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.203,
+            0.937,
+            0.355
+          ],
+          "content": "◼ Với một tập các giả thiết (các phân lớp) có thể H, hệ thống học sẽ tìm **giả thiết có thể xảy ra nhất (the most probable hypothesis)** h(H) đối với các dữ liệu quan sát được D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.383,
+            0.917,
+            0.49
+          ],
+          "content": "◼ Giả thiết h này được gọi là giả thiết có xác suất hậu nghiệm cực đại (**Maximum a posteriori – MAP**)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.517,
+            0.467,
+            0.604
+          ],
+          "content": "h _ {M A P} = \\underset {h \\in H} {\\arg \\max} P (h \\mid D)",
+          "image_source": "images/page_42_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.122,
+            0.615,
+            0.544,
+            0.735
+          ],
+          "content": "h _ {M A P} = \\arg \\max _ {h \\in H} \\frac {P (D \\mid h) . P (h)}{P (D)}",
+          "image_source": "images/page_42_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.123,
+            0.783,
+            0.537,
+            0.871
+          ],
+          "content": "h _ {M A P} = \\underset {h \\in H} {\\arg \\max} P (D \\mid h). P (h)",
+          "image_source": "images/page_42_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.604,
+            0.627,
+            0.892,
+            0.691
+          ],
+          "content": "(bởi định lý Bayes)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.603,
+            0.762,
+            0.941,
+            0.873
+          ],
+          "content": "(P(D) là như nhau đối với các giả thiết h)"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.303,
+            0.134
+          ],
+          "level": 2,
+          "content": "MAP: Ví dụ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.191,
+            0.548,
+            0.244
+          ],
+          "content": "◼ Tập H bao gồm 2 giả thiết (có thể)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.253,
+            0.387,
+            0.291
+          ],
+          "content": "• $\\mathrm { h } _ { 1 }$ : Anh ta chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.108,
+            0.299,
+            0.461,
+            0.341
+          ],
+          "content": "$\\mathrm { h } _ { 2 }$ : Anh ta không chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.357,
+            0.89,
+            0.409
+          ],
+          "content": "◼ Tính giá trị của 2 xác xuất có điều kiện: $\\mathbb { P } \\left( \\mathrm { h } _ { 1 } \\mid \\mathbb { D } \\right) , \\mathbb { P } \\left( \\mathrm { h } _ { 2 } \\mid \\mathbb { D } \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.423,
+            0.847,
+            0.529
+          ],
+          "content": "◼ Giả thiết có thể nhất $\\mathrm { h _ { M A P } { = } h _ { 1 } }$ nếu $\\mathbb { P } \\left( \\mathrm { h } _ { 1 } \\mid \\mathrm { D } \\right) \\geq \\mathbb { P } \\left( \\mathrm { h } _ { 2 } \\mid \\mathrm { D } \\right)$ ngược lại thì $\\mathrm { h _ { M A P } = h _ { 2 } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.551,
+            0.766,
+            0.655
+          ],
+          "content": "Vì vậy, cần tính 2 biểu thức: $\\mathbb { P } \\left( \\mathbb { D } \\left| \\mathrm {  ~ h } _ { \\perp } \\right. \\right) \\mathrm {  ~ . ~ } \\mathbb { P } \\left( \\mathrm {  ~ h } _ { \\perp } \\right)$ và $\\mathbb { P } \\left( \\mathbb { D } \\left| \\mathrm {  ~ h } _ { 2 } \\right) \\right. . \\mathbb { P } \\left( \\mathrm {  ~ h } _ { 2 } \\right)$ , và đưa ra quyết định tương ứng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.667,
+            0.894,
+            0.749
+          ],
+          "content": "• Nếu $\\mathbb { P } \\left( \\mathbb { D }   |   \\mathbb { h } _ { 1 } \\right)   .   \\mathbb { P } \\left( \\mathbb { h } _ { 1 } \\right)   \\geq   \\mathbb { P } \\left( \\mathbb { D }   |   \\mathbb { h } _ { 2 } \\right)   .   \\mathbb { P } \\left( \\mathbb { h } _ { 2 } \\right)$ , thì kết luận là anh ta chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.765,
+            0.691,
+            0.809
+          ],
+          "content": "• Ngược lại, thì kết luận là anh ta không chơi tennis"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.052,
+            0.892,
+            0.137
+          ],
+          "level": 2,
+          "content": "Đánh giá khả năng có thể nhất (MLE)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.203,
+            0.949,
+            0.306
+          ],
+          "content": "◼ Phương pháp MAP: Với một tập các giả thiết có thể H, cần tìm một giả thiết cực đại hóa giá trị: $\\mathbb { P } \\left( \\mathbb { D } \\left| \\mathbb { h } \\right. \\right) . \\mathbb { P } \\left( \\mathbb { h } \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.329,
+            0.964,
+            0.528
+          ],
+          "content": "Giả sử (assumption) trong phương pháp **đánh giá khả năng có thể nhất (Maximum likelihood estimation – MLE)**: Tất cả các giả thiết đều có giá trị xác suất trước như nhau: $\\mathbb { P } \\left( \\mathrm { h } _ { \\mathrm { i } } \\right) \\mathrm { = } \\mathbb { P } \\left( \\mathrm { h } _ { \\mathrm { j } } \\right)$ $\\forall \\mathrm { h _ { i } , } \\mathrm { h _ { j } \\in } \\mathrm { H }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.543,
+            0.93,
+            0.69
+          ],
+          "content": "◼ Phương pháp MLE tìm giả thiết cực đại hóa giá trị $\\mathrm { ~ P ~ } ( \\mathrm { ~ D ~ } | \\mathrm { ~ h ~ } )$ trong đó P(D|h) được gọi là khả năng có thể (likelihood) của dữ liệu D đối với h"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.712,
+            0.903,
+            0.767
+          ],
+          "content": "Giả thiết có khả năng nhất (maximum likelihood hypothesis)"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.275,
+            0.809,
+            0.638,
+            0.903
+          ],
+          "content": "h_{ML} = \\arg \\max_{h\\in H}P(D|h)",
+          "image_source": "images/page_44_equation_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.298,
+            0.135
+          ],
+          "level": 2,
+          "content": "MLE: Ví dụ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.179,
+            0.528,
+            0.233
+          ],
+          "content": "◼ Tập H bao gồm 2 giả thiết có thể"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.242,
+            0.387,
+            0.281
+          ],
+          "content": "$\\mathrm { h } _ { 1 }$ : Anh ta chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.289,
+            0.461,
+            0.329
+          ],
+          "content": "• $\\mathrm { h } _ { 2 } !$ Anh ta không chơi tennis"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.335,
+            0.93,
+            0.42
+          ],
+          "content": "D: Tập dữ liệu (các ngày) mà trong đó thuộc tính Outlook có giá trị Sunny và thuộc tính Wind có giá trị Strong"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.441,
+            0.924,
+            0.541
+          ],
+          "content": "◼ Tính 2 giá trị khả năng xảy ra (likelihood values) của dữ liệu D đối với 2 giả thiết: $\\mathrm { ~ P ~ } ( \\mathrm { ~ D ~ } | \\mathrm { ~ h } _ { 1 } )$ và $\\mathrm { ~ P ~ } ( \\mathrm { ~ D ~ } | \\mathrm { ~ h } _ { 2 } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.131,
+            0.551,
+            0.711,
+            0.594
+          ],
+          "content": "\\mathrm{P} (\\text {Outlook = Sunny, Wind = Strong | h}_1) = 1 / 8",
+          "image_source": "images/page_45_equation_6.jpg"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.108,
+            0.603,
+            0.71,
+            0.647
+          ],
+          "sub_type": "code",
+          "content": "```javascript\n- P (Outlook=Sunny, Wind=Strong|h₂)=1/4\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.667,
+            0.906,
+            0.771
+          ],
+          "content": "◼ Giả thiết MLE $\\mathrm { h _ { M L E } { = } h _ { 1 } }$ nếu $\\mathbb { P }   (   \\mathrm { D }   |   \\mathrm { h } _ { 1 } )   \\geq   \\mathbb { P }   (   \\mathrm { D }   |   \\mathrm { h } _ { 2 } )$ ; và ngược lại thì $\\mathrm { h _ { M L E } { = } h _ { 2 } }$"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.106,
+            0.781,
+            0.914,
+            0.909
+          ],
+          "sub_type": "code",
+          "content": "```txt\n→ Bôi vì P(Outlook=Sunny, Wind=Strong|h₁) < P(Outlook=Sunny, Wind=Strong|h₂), hệ thống kết luận rằng: Anh ta sẽ không chơi tennis!\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.627,
+            0.135
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.206,
+            0.787,
+            0.258
+          ],
+          "content": "Biểu diễn bài toán phân loại (classification problem)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.273,
+            0.943,
+            0.367
+          ],
+          "content": "• Một tập học D\\_train, trong đó mỗi ví dụ học x được biểu diễn là một vectơ n chiều: $( \\mathtt { x _ { 1 } } , \\mathtt { x _ { 2 } } , \\dots , \\mathtt { x _ { n } } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.386,
+            0.828,
+            0.431
+          ],
+          "content": "• Một tập xác định các nhãn lớp: $\\mathrm{C}=\\left\\{\\mathrm{C}_{1}, \\quad \\mathrm{C}_{2}, \\quad \\cdots, \\quad \\mathrm{C}_{\\mathrm{m}}\\right\\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.449,
+            0.82,
+            0.495
+          ],
+          "content": "• Với một ví dụ (mới) z, thì z sẽ được phân vào lớp nào?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.522,
+            0.905,
+            0.575
+          ],
+          "content": "◼ Mục tiêu: Xác định phân lớp có thể (phù hợp) nhất đối với z"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.141,
+            0.599,
+            0.412,
+            0.673
+          ],
+          "content": "c _ {M A P} = \\underset {c _ {i} \\in C} {\\arg \\max} P (c _ {i} \\mid z)",
+          "image_source": "images/page_46_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.149,
+            0.699,
+            0.52,
+            0.77
+          ],
+          "content": "c _ {M A P} = \\underset {c _ {i} \\in C} {\\arg \\max} P (c _ {i} \\mid z _ {1}, z _ {2},..., z _ {n})",
+          "image_source": "images/page_46_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.157,
+            0.78,
+            0.621,
+            0.882
+          ],
+          "content": "c_{MAP} = \\arg \\max_{c_i\\in C}\\frac{P(z_1,z_2,\\dots,z_n\\mid c_i).P(c_i)}{P(z_1,z_2,\\dots,z_n)}",
+          "image_source": "images/page_46_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.681,
+            0.794,
+            0.919,
+            0.845
+          ],
+          "content": "(bởi định lý Bayes)"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.628,
+            0.136
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.202,
+            0.76,
+            0.259
+          ],
+          "content": "◼ Để tìm được phân lớp có thể nhất đối với $z$ …"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.089,
+            0.285,
+            0.936,
+            0.381
+          ],
+          "content": "c _ {M A P} = \\underset {c _ {i} \\in C} {\\arg \\max} P (z _ {1}, z _ {2}, \\dots , z _ {n} \\mid c _ {i}). P (c _ {i}) \\quad \\begin{array}{l} (\\mathrm{P} (z _ {1}, z _ {2}, \\dots , z _ {n}) \\text {là} \\\\ \\text {nhu' nhau với các lớp}) \\end{array}",
+          "image_source": "images/page_47_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.419,
+            0.925,
+            0.581
+          ],
+          "content": "◼ **Giả thuyết (assumption) trong phương pháp phân loại Naïve Bayes**: Các thuộc tính là độc lập có điều kiện (conditionally independent) đối với các lớp"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.205,
+            0.579,
+            0.632,
+            0.692
+          ],
+          "content": "P (z_1, z_2, \\dots, z_n \\mid c_i) = \\prod_{j=1}^n P(z_j \\mid c_i)",
+          "image_source": "images/page_47_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.705,
+            0.94,
+            0.761
+          ],
+          "content": "◼ Phân loại Naïve Bayes tìm phân lớp có thể nhất đối với z"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.206,
+            0.78,
+            0.649,
+            0.901
+          ],
+          "content": "c _ {N B} = \\underset {c _ {i} \\in C} {\\arg \\max} P (c _ {i}). \\prod_ {j = 1} ^ {n} P (z _ {j} \\mid c _ {i})",
+          "image_source": "images/page_47_equation_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.795,
+            0.135
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes: Giải thuật"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.209,
+            0.797,
+            0.309
+          ],
+          "content": "Giai đoạn học (training phase), sử dụng một tập học <u>Đối với mỗi phân lớp có thể</u> (mỗi nhãn lớp) $\\mathbf { C } _ { \\downarrow }   \\in   \\mathsf { C }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.317,
+            0.676,
+            0.363
+          ],
+          "content": "• Tính giá trị xác suất tiên nghiệm: $\\mathrm { ~ P ~ } ( \\mathbf { c } _ { \\downarrow } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.368,
+            0.911,
+            0.463
+          ],
+          "content": "• <u>Đối với mỗi giá trị thuộc tính</u> $\\mathbf { x } _ { j }$ , tính giá trị xác suất xảy ra của giá trị thuộc tính đó đối với một phân lớp $\\mathbf { c } _ { \\mathrm { i } } \\colon \\mathbb { P } \\left( \\mathbf { x } _ { \\mathrm { j } } \\mid \\mathbf { c } _ { \\mathrm { i } } \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.496,
+            0.945,
+            0.597
+          ],
+          "content": "◼ Giai đoạn phân lớp (classification phase), đối với một ví dụ mới • Đối với mỗi phân lớp $\\mathbf { C } _ { \\downarrow }   \\in   \\mathbb { C }$ , tính giá trị của biểu thức:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.283,
+            0.602,
+            0.555,
+            0.725
+          ],
+          "content": "P (c _ {i}). \\prod_ {j = 1} ^ {n} P (x _ {j} \\mid c _ {i})",
+          "image_source": "images/page_48_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.109,
+            0.726,
+            0.692,
+            0.773
+          ],
+          "content": "• Xác định phân lớp của $Z$ là lớp có th $\\dot { \\dot { \\theta } }$ nhất $\\mathrm { ~ C ~ } ^ { \\star }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.223,
+            0.779,
+            0.645,
+            0.893
+          ],
+          "content": "c ^ {*} = \\underset {c _ {i} \\in C} {\\arg \\max} P (c _ {i}). \\prod_ {j = 1} ^ {n} P (x _ {j} \\mid c _ {i})",
+          "image_source": "images/page_48_equation_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.773,
+            0.135
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes: Ví dụ (1)"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.072,
+            0.23,
+            0.893,
+            0.9
+          ],
+          "content": "| Rec. ID | Age | Income | Student | Credit_Rating | Buy_Computer |\n| --- | --- | --- | --- | --- | --- |\n| 1 | Young | High | No | Fair | No |\n| 2 | Young | High | No | Excellent | No |\n| 3 | Medium | High | No | Fair | Yes |\n| 4 | Old | Medium | No | Fair | Yes |\n| 5 | Old | Low | Yes | Fair | Yes |\n| 6 | Old | Low | Yes | Excellent | No |\n| 7 | Medium | Low | Yes | Excellent | Yes |\n| 8 | Young | Medium | No | Fair | No |\n| 9 | Young | Low | Yes | Fair | Yes |\n| 10 | Old | Medium | Yes | Fair | Yes |\n| 11 | Young | Medium | Yes | Excellent | Yes |\n| 12 | Medium | Medium | No | Excellent | Yes |\n| 13 | Medium | High | Yes | Fair | Yes |\n| 14 | Old | Medium | No | Excellent | No |",
+          "captions": [
+            {
+              "bbox": [
+                0.04,
+                0.183,
+                0.958,
+                0.219
+              ],
+              "content": "Một sinh viên trẻ với thu nhập trung bình và mức đánh giá tín dụng bình thường sẽ mua một cái máy tính?"
+            }
+          ],
+          "footnotes": [
+            {
+              "bbox": [
+                0.072,
+                0.908,
+                0.755,
+                0.935
+              ],
+              "content": "http://www.cs.sunysb.edu/\\~cse634/lecture\\_notes/07classification.pdf"
+            }
+          ],
+          "image_source": "images/page_49_table_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.773,
+            0.136
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes: Ví dụ (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.205,
+            0.466,
+            0.256
+          ],
+          "content": "◼ Biểu diễn bài toán phân loại"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.271,
+            0.923,
+            0.312
+          ],
+          "content": "$z = ( A g e = Y o u n g )$ ,Income=Medium,Student=Yes,Credit\\_Rating=Fair)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.325,
+            0.947,
+            0.371
+          ],
+          "content": "• Có 2 phân lớp có thể: $C _ { 1 }$ (“Mua máy tính”) và $\\mathbf { C } _ { 2 }$ (“Không mua máy tính”)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.402,
+            0.683,
+            0.453
+          ],
+          "content": "◼ Tính giá trị xác suất trước cho mỗi phân lớp"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.1,
+            0.465,
+            0.263,
+            0.508
+          ],
+          "sub_type": "algorithm",
+          "content": "- $\\mathrm{P}(\\mathrm{C}_{1}) = 9 / 14$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.1,
+            0.521,
+            0.263,
+            0.565
+          ],
+          "sub_type": "algorithm",
+          "content": "- $P(c_{2}) = 5 / 14$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.593,
+            0.901,
+            0.641
+          ],
+          "content": "◼ Tính giá trị xác suất của mỗi giá trị thuộc tính đối với mỗi phân lớp"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.1,
+            0.653,
+            0.394,
+            0.696
+          ],
+          "sub_type": "algorithm",
+          "content": "- $P(Age=Young|c_1) = 2/9$;",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.555,
+            0.653,
+            0.827,
+            0.697
+          ],
+          "sub_type": "algorithm",
+          "content": "$P(Age=Young|c_{2}) = 3/5$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.1,
+            0.71,
+            0.446,
+            0.751
+          ],
+          "sub_type": "algorithm",
+          "content": "- $P(\\text{Income} = \\text{Medium}|c_1) = 4/9$;",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.556,
+            0.709,
+            0.878,
+            0.751
+          ],
+          "sub_type": "algorithm",
+          "content": "$P(\\text{Income}=\\text{Medium}|c_{2}) = 2/5$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.766,
+            0.406,
+            0.807
+          ],
+          "content": "• P(Student=Yes|c<sub>1</sub>) = 6/9;"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.556,
+            0.765,
+            0.838,
+            0.808
+          ],
+          "sub_type": "algorithm",
+          "content": "$P(Student=Yes|c_{2}) = 1/5$",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.1,
+            0.821,
+            0.487,
+            0.863
+          ],
+          "sub_type": "code",
+          "content": "```txt\n- P(Credit_Rating=Fair|c₁) = 6/9;\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.556,
+            0.821,
+            0.918,
+            0.864
+          ],
+          "sub_type": "code",
+          "content": "```txt\nP(Credit_Rating=Fair|c₂) = 2/5\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.772,
+            0.137
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes: Ví dụ (3)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.056,
+            0.177,
+            0.94,
+            0.914
+          ],
+          "sub_type": "code",
+          "content": "```txt\n■ Tính toán xác suất có thể xảy ra (likelihood) của ví dụ z đối với mỗi phân lớp\n• Đối với phân lớp c₁\n    P(z|c₁) = P(Age=Young|c₁).P(Income=Medium|c₁).P(Student=Yes|c₁).\n    P(Credit_Rating=Fair|c₁) = (2/9).(4/9).(6/9).(6/9) = 0.044\n• Đối với phân lớp c₂\n    P(z|c₂) = P(Age=Young|c₂).P(Income=Medium|c₂).P(Student=Yes|c₂).\n    P(Credit_Rating=Fair|c₂) = (3/5).(2/5).(1/5).(2/5) = 0.019\n■ Xác định phân lớp có thể nhất (the most probable class)\n• Đối với phân lớp c₁\n    P(c₁).P(z|c₁) = (9/14).(0.044) = 0.028\n• Đối với phân lớp c₂\n    P(c₂).P(z|c₂) = (5/14).(0.019) = 0.007\n→ Kết luận: Anh ta (z) sẽ mua một máy tính!\n```",
+          "captions": [],
+          "footnotes": []
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.056,
+            0.815,
+            0.135
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes: Vấn đề (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.192,
+            0.938,
+            0.244
+          ],
+          "content": "◼ Nếu không có ví dụ nào gắn với phân lớp $\\mathbf { C _ { i } }$ có giá trị thuộc tính $\\mathbf { x } _ { j }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.249,
+            0.765,
+            0.351
+          ],
+          "content": "$\\mathbb { P } \\left( \\mathbf { x } _ { \\mathbf { j } } \\mid \\mathbf { c } _ { \\mathbf { i } } \\right) \\mathbf { = } 0$ , và vì vậy: $P(c_i).\\prod_{j = 1}^{n} P(x_j \\mid c_i) = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.359,
+            0.899,
+            0.408
+          ],
+          "content": "Giải pháp: Sử dụng phương pháp Bayes để ước lượng $\\mathbb { P } \\left( \\mathbf { x } _ { \\mathrm { j } } \\mid \\mathbf { c } _ { \\mathrm { i } } \\right)$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.159,
+            0.429,
+            0.451,
+            0.528
+          ],
+          "content": "P (x _ {j} \\mid c _ {i}) = \\frac {n (c _ {i} , x _ {j}) + m p}{n (c _ {i}) + m}",
+          "image_source": "images/page_52_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.535,
+            0.693,
+            0.58
+          ],
+          "content": "$\\mathrm { n }   ( \\mathbf { c } _ { \\downarrow } )$ : số lượng các ví dụ học gắn với phân lớp $\\mathbf { C _ { i } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.583,
+            0.896,
+            0.67
+          ],
+          "content": "$\\mathbf { n } \\left( \\mathbf { c } _ { \\mathrm { i } } , \\mathbf { x } _ { \\mathrm { j } } \\right)$ : số lượng các ví dụ học gắn với phân lớp $C _ { i }$ có giá trị thuộc tính $\\mathbf { x } _ { j }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.098,
+            0.672,
+            0.638,
+            0.716
+          ],
+          "content": "• p: ước lượng đối với giá trị xác suất $\\mathbb { P } \\left( \\mathbf { x } _ { \\mathrm { j } } \\mid \\mathbf { c } _ { \\mathrm { i } } \\right)$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.153,
+            0.719,
+            0.908,
+            0.765
+          ],
+          "content": "→ Các ước lượng đồng mức: $\\scriptstyle \\mathbb { P } = 1 / \\mathbb { k } ,$ , nếu thuộc tính $\\mathsf { E } _ { \\mathsf { j } }$ có k giá trị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.766,
+            0.384,
+            0.81
+          ],
+          "content": "• m: một hệ số (trọng số)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.814,
+            0.942,
+            0.9
+          ],
+          "content": "→ Để bổ sung cho $\\mathrm { n }   ( \\mathbf { c } _ { \\downarrow } )$ các ví dụ thực sự được quan sát với thêm m mẫu ví dụ với ước lượng p"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.053,
+            0.816,
+            0.131
+          ],
+          "level": 2,
+          "content": "Phân loại Naïve Bayes: Vấn đề (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.208,
+            0.881,
+            0.371
+          ],
+          "content": "◼ Giới hạn về độ chính xác trong tính toán của máy tính $\\mathbb { P } \\left( \\mathbf { x } _ { \\mathcal { j } } \\mid \\mathbf { c } _ { \\mathcal { i } } \\right) \\leq 1$ , đối với mọi giá trị thuộc tính x và phân lớp $\\mathbf { x } _ { j }$ $\\mathbf { C _ { i } }$ • Vì vậy, khi số lượng các giá trị thuộc tính là rất lớn, thì:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.246,
+            0.378,
+            0.592,
+            0.513
+          ],
+          "content": "\\lim _ {n \\to \\infty} \\left(\\prod_ {j = 1} ^ {n} P (x _ {j} \\mid c _ {i})\\right) = 0",
+          "image_source": "images/page_53_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.533,
+            0.911,
+            0.588
+          ],
+          "content": "◼ Giải pháp: Sử dụng hàm lôgarit cho các giá trị xác suất"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.595,
+            0.657,
+            0.733
+          ],
+          "content": "c _ {N B} = \\arg \\max _ {c _ {i} \\in C} \\left(\\log \\left[ P (c _ {i}). \\prod_ {j = 1} ^ {n} P (x _ {j} \\mid c _ {i}) \\right]\\right)",
+          "image_source": "images/page_53_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.138,
+            0.745,
+            0.694,
+            0.873
+          ],
+          "content": "c _ {N B} = \\arg \\max _ {c _ {i} \\in C} \\left(\\log P (c _ {i}) + \\sum_ {j = 1} ^ {n} \\log P (x _ {j} \\mid c _ {i})\\right)",
+          "image_source": "images/page_53_equation_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.053,
+            0.739,
+            0.135
+          ],
+          "level": 2,
+          "content": "Phân loại văn bản bằng NB (1)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.183,
+            0.628,
+            0.237
+          ],
+          "level": 2,
+          "content": "◼ Biểu diễn bài toán phân loại văn bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.242,
+            0.923,
+            0.329
+          ],
+          "content": "• Tập học D, trong đó mỗi ví dụ học là một biểu diễn văn bản gắn với một nhãn lớp: $\\mathbb { D } = \\{ ( \\mathrm { d } _ { \\mathrm { k } } ,   \\mathrm { c } _ { \\mathrm { i } } ) \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.335,
+            0.572,
+            0.377
+          ],
+          "content": "• Một tập các nhãn lớp xác định: $C = \\{ c _ { \\downarrow } \\}$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.402,
+            0.295,
+            0.449
+          ],
+          "level": 2,
+          "content": "◼ Giai đoạn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.457,
+            0.795,
+            0.501
+          ],
+          "content": "• Từ tập các văn bản trong D, trích ra tập các từ khóa $\\mathbf { T } = \\{ t _ { j } \\}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.505,
+            0.692,
+            0.55
+          ],
+          "content": "• Gọi $D _ { c _ { i } }$ là tập các văn bản trong D có nhãn lớp $\\mathbf { C _ { i } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.566,
+            0.802,
+            0.682
+          ],
+          "content": "Đối với mỗi phân lớp - Tính giá trị xác suất trước của phân lớp $\\mathbf { C _ { i } }$ $\\mathbf { C } _ { i }$ $P ( c _ { _ i } )   =   \\frac { \\left| D _ { _ { c _ { _ i } } } \\right| } { \\left| D \\right| }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.679,
+            0.955,
+            0.727
+          ],
+          "content": "\\- Đối với mỗi từ khóa $t _ { j }$ , tính xác suất từ khóa $t _ { j }$ xuất hiện đối với lớp $\\mathbf { C _ { i } }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.1,
+            0.727,
+            0.6,
+            0.906
+          ],
+          "content": "P (t _ {j} \\mid c _ {i}) = \\frac {\\left(\\sum_ {d _ {k} \\in D _ {c _ {i}}} n (d _ {k} , t _ {j})\\right) + 1}{\\left(\\sum_ {d _ {k} \\in D _ {c _ {i}}} \\sum_ {t _ {m} \\in T} n (d _ {k} , t _ {m})\\right) + | T |}",
+          "image_source": "images/page_54_equation_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.614,
+            0.802,
+            0.919,
+            0.873
+          ],
+          "content": "$\\mathrm { ( n \\Omega ( d _ { k } , t _ { j } ) }$ : số lần xuất hiện của từ khóa $t _ { j }$ trong văn bản $\\mathrm { d _ { k } ) }$"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.054,
+            0.739,
+            0.136
+          ],
+          "level": 2,
+          "content": "Phân loại văn bản bằng NB (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.194,
+            0.78,
+            0.247
+          ],
+          "content": "◼ Giai đoạn phân lớp đối với một văn bản mới $d$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.112,
+            0.258,
+            0.918,
+            0.352
+          ],
+          "content": "• Từ văn bản $d ,$ trích ra tập $\\mathsf { T _ { d } }$ gồm các từ khóa (keywords) $t _ { j }$ đã được định nghĩa trong tập T"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.363,
+            0.926,
+            0.457
+          ],
+          "content": "• **Giả sử (assumption)**. Xác suất từ khóa $t _ { j }$ xuất hiện đối với lớp $\\mathbf { C _ { i } }$ là độc lập đối với vị trí của từ khóa đó trong văn bản"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.182,
+            0.465,
+            0.694,
+            0.511
+          ],
+          "content": "\\mathrm{P} \\left(\\mathrm{t} _ {\\mathrm{j}} \\text {♂vifirik} \\mid \\mathrm{c} _ {\\mathrm{i}}\\right) = \\mathrm{P} \\left(\\mathrm{t} _ {\\mathrm{j}} \\text {♂vifirim} \\mid \\mathrm{c} _ {\\mathrm{i}}\\right), \\forall \\mathrm{k}, \\mathrm{m}",
+          "image_source": "images/page_55_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.52,
+            0.939,
+            0.698
+          ],
+          "content": "• Đối với mỗi phân lớp $\\mathbf { C } _ { i }$ , tính xác suất hậu nghiệm của văn bản $d$ đối với $\\mathbf { C _ { i } }$ $P ( c _ { i } ) . \\prod _ { t _ { j } \\in T _ { d } } P ( t _ { j }   |   c _ { i } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.707,
+            0.598,
+            0.751
+          ],
+          "content": "• Phân lớp văn bản d thuộc vào lớp $\\mathbf { C } ^ { \\star }$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.224,
+            0.769,
+            0.699,
+            0.884
+          ],
+          "content": "c ^ {*} = \\underset {c _ {i} \\in C} {\\arg \\max} P (c _ {i}). \\prod_ {t _ {j} \\in T _ {d}} P (t _ {j} \\mid c _ {i})",
+          "image_source": "images/page_55_equation_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.057,
+            0.608,
+            0.146
+          ],
+          "level": 2,
+          "content": "Tài liệu tham khảo"
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.059,
+            0.214,
+            0.899,
+            0.273
+          ],
+          "content": "• E. Alpaydin. Introduction to Machine Learning. The MIT Press, 2010."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.058,
+            0.293,
+            0.78,
+            0.327
+          ],
+          "content": "• T. M. Mitchell. Machine Learning. McGraw-Hill, 1997."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.059,
+            0.344,
+            0.824,
+            0.404
+          ],
+          "content": "• T. M. Mitchell. The discipline of machine learning. CMU technical report, 2006."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.059,
+            0.423,
+            0.916,
+            0.54
+          ],
+          "content": "• H. A. Simon. Why Should Machines Learn? In R. S. Michalski, J. Carbonell, and T. M. Mitchell (Eds.): Machine learning: An artificial intelligence approach, chapter 2, pp. 25-38. Morgan Kaufmann, 1983."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.059,
+            0.559,
+            0.916,
+            0.675
+          ],
+          "content": "• A. Kontorovich and Weiss. A Bayes consistent 1-NN classifier. Proceedings of the 18th International Conference on Artificial Intelligence and Statistics (AISTATS). JMLR: W&CP volume 38, 2015."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.059,
+            0.696,
+            0.929,
+            0.784
+          ],
+          "content": "• A. Guyader, N. Hengartner. On the Mutual Nearest Neighbors Estimate in Regression. Journal of Machine Learning Research 14 (2013) 2361-2376."
+        },
+        {
+          "type": "ref_text",
+          "bbox": [
+            0.058,
+            0.803,
+            0.888,
+            0.892
+          ],
+          "content": "• L. Gottlieb, A. Kontorovich, and P. Nisnevitch. Near-optimal sample compression for nearest neighbors. Advances in Neural Information Processing Systems, 2014."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.12"
+    },
+    "document": {
+      "title": "Trí Tuệ Nhân Tạo",
+      "authors": [
+        "Khoat Than;Quang Nhat NGUYEN"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2021-02-21T21:47:15+07:00",
+      "modified_at": "2021-02-21T21:47:15+07:00",
+      "creator_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "producer_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "page_count": 57,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

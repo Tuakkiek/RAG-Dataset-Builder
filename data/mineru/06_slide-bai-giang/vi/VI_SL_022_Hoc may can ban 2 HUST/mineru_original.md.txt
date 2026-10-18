@@ -1,0 +1,865 @@
+# Trí Tuệ Nhân Tạo
+
+## (Artificial Intelligence)
+
+**Lê Thanh Hương**
+
+Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội
+
+## Nội dung môn học
+
+▪ Chương 1. Tổng quan
+
+▪ Chương 2. Tác tử thông minh
+
+▪ Chương 3. Giải quyết vấn đề
+
+▪ Chương 4. Tri thức và suy diễn
+
+▪ Chương 5. Biểu diễn tri thức
+
+▪ Chương 6. Học máy
+
+▪ Giới thiệu về học máy
+
+▪ K láng giềng gần
+
+▪ Phân lớp Naïve Bayes
+
+▪ Học cây quyết định
+
+Mạng nơron
+
+## Học cây quyết định
+
+Bài toán: quyết định có đợi 1 bàn ở quán ăn không, dựa trên các thông tin sau:
+
+1. Lựa chọn khác: có quán ăn nào khác gần đó không?
+
+2. Quán rượu: có khu vực phục vụ đồ uống gần đó không?
+
+3. Fri/Sat: hôm nay là thứ sáu hay thứ bảy?
+
+4. Đói: chúng ta đã đói chưa?
+
+5. Khách hàng: số khách trong quán (không có, vài người, đầy)
+
+Giá cả: khoảng giá (\$,\$\$,\$\$\$)
+
+7. Mưa: ngoài trời có mưa không?
+
+8. Đặt chỗ: chúng ta đã đặt trước chưa?
+
+9. Loại: loại quán ăn (Pháp, Ý, Thái, quán ăn nhanh)
+
+10. Thời gian đợi: 0-10, 10-30, 30-60, >60
+
+## Phép biểu diễn dựa trên thuộc
+
+**tính** ◼ Các mẫu được miêu tả dưới dạng các giá trị thuộc tính (logic, rời rạc, liên tục)
+
+◼ Ví dụ, tình huống khi đợi 1 bàn ăn
+
+<table><tr><td rowspan="2">Example</td><td colspan="10">Attributes</td><td rowspan="2">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td> $X_1$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td> $\$ \$\$$ </td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td> $X_2$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>\$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td> $X_3$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>\$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td> $X_4$ </td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>\$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td> $X_5$ </td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td> $\$ \$\$$ </td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_6$ </td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td>\$</td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td> $X_7$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>\$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td> $X_8$ </td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>\$</td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td> $X_9$ </td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>\$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_{10}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td> $\$ \$\$$ </td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td> $X_{11}$ </td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>\$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td> $X_{12}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>\$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>
+
+Các loại (lớp) của mẫu là khẳng định (T) hoặc phủ định (F)
+
+<table><tr><td rowspan="2"></td><td colspan="10">Attributes</td><td rowspan="2">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td></td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>$$$</td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td></td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td></td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td></td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td></td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td>$$$</td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td></td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td></td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td></td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td></td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td></td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>$$$</td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td></td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td></td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>
+
+Patrons, WaitEstimates, Alternative, Hungry, Rain
+
+## Cây quyết định
+
+… là cách biểu diễn các giả thiết.
+
+![](images/page_5_image_2.jpg)
+
+## Không gian giả thiết
+
+<u>Khi có n thuộc tính Boolean, số lượng các cây quyết định là?</u>
+
+= số các hàm Boolean
+
+$= s \hat { \delta }$ các giá trị khác nhau trong bảng ví dụ mẫu với $2 ^ { n }$ hàng $= 2 ^ { 2 ^ { n } }$
+
+Ví dụ, với 6 thuộc tính Boolean, có 18,446,744,073,709,551,616 cây
+
+## Thuật toán ID3
+
+Mục đích: tìm cây thoả mãn tập mẫu
+
+Ý tưởng: (lặp) chọn thuộc tính quan trọng nhất làm gốc của cây/cây con
+
+ID3(Examples, Target\_attribute, Attributes)
+
+/\* Examples: các mẫu luyện
+
+Target\_attribute: thuộc tính cần đoán giá trị
+
+Attributes: các thuộc tính có thể được kiểm tra qua phép học cây quyết định. \*/
+
+◼ Tạo 1 nút gốc Root cho cây
+
+◼ If  Examples +, trả về cây chỉ có 1 nút Root, với nhãn +
+
+◼ If  Examples -, trả về cây chỉ có 1 nút Root, với nhãn –
+
+If Attributes rỗng, trả về cây chỉ có 1 nút Root, với nhãn = giá trị thường xuất hiện nhất của Target\_attribute trong Examples
+
+## Thuật toán ID3
+
+## ◼ Otherwise Begin:
+
+❑ $A \leftarrow$ thuộc tính trong Attributes cho phép phân loại tốt nhất Examples
+
+❑ Thuộc tính quyết định của nút gốc $\leftarrow \mathsf { A }$
+
+❑ Với các giá trị $v _ { i }$ có thể có của A,
+
+◼ Thêm 1 nhánh mới dưới gốc, ứng với phép kiểm tra $A = v _ { i }$
+
+◼ Đặt Examples $v = t \hat { a } p$ con của Examples với giá trị thuộc tính $\mathsf { A } = \mathsf { v } _ { \mathrm { i } }$
+
+◼ If $E x a m p l e s _ { v i } \tilde { \mathsf { r o n g } }$
+
+❑ Then, dưới nhánh mới này, thêm 1 lá với nhãn = giá trị thường xuất hiện nhất của Target\_attribute trong Examples
+
+❑ Else, dưới nhánh mới này thêm cây con ID3(Examples<sub>vi</sub>, Target\_attribute, Attributes - $\{ \mathbb { A } \} ) )$
+
+## ◼ End
+
+## ◼ Return Root
+
+## Thuộc tính nào tốt nhất?
+
+![](images/page_9_image_1.jpg)
+
+![](images/page_9_image_2.jpg)
+
+Sử dụng lượng thông tin đạt được Information Gain  xác định thông qua độ đo Entropy
+
+## Entropy của một tập mẫu
+
+![](images/page_10_chart_1.jpg)
+
+•S là một tập mẫu của tập luyện $^ { \bullet } P _ { + }$ là tỷ lệ các mẫu dương trong S •p- là tỷ lệ các mẫu âm trong S
+
+•Entropy đo độ nhiễu của $\mathbf { S } = \mathbf { s } { \hat { \mathbf { 0 } } }$ các bit cần thiết để mã hoá lớp + hoặc - của các thành viên ngẫu nhiên của S
+
+•Entropy(S) = - p+\*log<sub>2</sub>p+ - p-\*log<sub>2</sub>p-
+
+## Entropy
+
+Entropy $H ( X )$ của biến ngẫu nhiên X:
+
+$$
+H (X) = - \sum_ {i = 1} ^ {n} P (X = i) \log_ {2} P (X = i)
+$$
+
+Ví dụ, với S gồm 9 mẫu dương và 5 mẫu âm, kí hiệu S([9+,5-]).
+
+$$
+\begin{array}{r l} & {\mathrm{Entropy} ([ 9 +, 5 - ])} \\ & {= - (9 / 1 4) \log_ {2} (9 / 1 4) - (5 / 1 4) \log_ {2} (5 / 1 4)} \\ & {= 0. 9 4 0} \end{array}
+$$
+
+## Information Gain
+
+Gain(S, A) = độ giảm entropy do việc phân loại trong A
+
+$$
+G a i n (S, A) = E n t r o p y (S) - \sum_ {v \in V a l u e s (A)} \frac {| S v |}{| S |} E n t r o p y (S v)
+$$
+
+![](images/page_12_image_3.jpg)
+
+![](images/page_12_image_4.jpg)
+
+## Ví dụ: tập luyện
+
+| Day | Outlook | Temperature | Humidity | Wind | PlayTennis |
+| --- | --- | --- | --- | --- | --- |
+| D1 | Sunny | Hot | High | Weak | No |
+| D2 | Sunny | Hot | High | Strong | No |
+| D3 | Overcast | Hot | High | Weak | Yes |
+| D4 | Rain | Mild | High | Weak | Yes |
+| D5 | Rain | Cool | Normal | Weak | Yes |
+| D6 | Rain | Cool | Normal | Strong | No |
+| D7 | Overcast | Cool | Normal | Strong | Yes |
+| D8 | Sunny | Mild | High | Weak | No |
+| D9 | Sunny | Cool | Normal | Weak | Yes |
+| D10 | Rain | Mild | Normal | Weak | Yes |
+| D11 | Sunny | Mild | Normal | Strong | Yes |
+| D12 | Overcast | Mild | High | Strong | Yes |
+| D13 | Overcast | Hot | Normal | Weak | Yes |
+| D14 | Rain | Mild | High | Strong | No |
+
+$$
+\mathsf {S} = [ 9 +, 5 - ]
+$$
+
+$$
+= \{\text {High, Normal} \}:
+$$
+
+$$
+S _ {\text {high}} = [ 3 +, 4 - ];
+$$
+
+$$
+S _ {\text {normal}} = [ 6 +, 1 - ]
+$$
+
+$$
+\text {Wind} = \{\text {Weak}, \text {Strong} \}:
+$$
+
+$$
+S _ {\text {weak}} = [ 6 +, 2 - ];
+$$
+
+$$
+S _ {\text {strong}} = [ 3 +, 3 - ]
+$$
+
+## Thuộc tính nào phân loại tốt nhất?
+
+$$
+\begin{array}{l} \text {Gain(S,Wind)} = \text {Entropy(S)} - \sum_ {v \in \text {Values (A)}} \frac {|Sv|}{|S|} \text {Entropy(Sv)} \\ = \text {Entropy(S)} - (8 / 14) \text {Entropy(SWeak)} - (6 / 14) \text {Entropy(SStrong)} \\ = 0.940 - (8 / 14) * 0.811 - (6 / 14) * 1.00 = 0.048 \\ \text {Gain(S,Humidity)} = 0.940 - (7 / 14) * 0.985 - (7 / 14) * 0.592 = 0.151 \\ \text {Gain(S,Outlook)} = 0.246; \text {Gain(S,Humidity)} = 0.151 \\ \text {Gain(S,Wind)} = 0.048; \text {Gain(S,Temperature)} = 0.029 \end{array}
+$$
+
+![](images/page_15_image_0.jpg)
+
+$$
+\begin{array}{l} \text {Gain(S_{Sunny}, Temperature)} \\ = . 9 7 0 - (2 / 5) ^ {*} 0. 0 - (2 / 5) ^ {*} 1. 0 - (1 / 5) ^ {*} 0. 0 = . 5 7 0 \\ \text {Gain(S_{Sunny}, Wind)} \\ = 0. 9 7 0 - (2 / 5) ^ {*} 1. 0 - (3 / 5) ^ {*} 0. 9 1 8 = 0. 0 1 9 \end{array}
+$$
+
+## Cây quyết định sử dụng khi nào?
+
+Các bài toán với các đặc tính sau thích hợp với học cây quyết định:
+
+• Các mẫu mô tả được bởi các cặp thuộc tính-giá trị
+
+• Hàm đích có giá trị rời rạc
+
+• Cần có các giả thiết rời rạc
+
+• Các dữ liệu luyện có thể có nhiễu
+
+• Dữ liệu luyện có thể thiếu giá trị thuộc tính
+
+## Ví dụ:
+
+• Chẩn đoán y tế
+
+• Phân tích các nguy cơ về tín dụng
+
+• Mô hình hoá việc lập lịch
+
+## Mạng nơron nhân tạo
+
+nghiên cứu và mô phỏng các tiến trình xử lý song song và phân tán khổng lồ diễn ra trong bộ não con người
+
+![](images/page_17_image_2.jpg)
+
+**Các vấn đề:**
+
+• Tốc độ bộ não nhận dạng hình ảnh
+
+• Rất nhiều nơron trong một bộ não
+
+• Tốc độ một nơron truyền dữ liệu
+
+## Ví dụ
+
+## Lái xe
+
+Luyện bộ phận điền khiển xe lái xe chính xác trên nhiều địa hình khác nhau
+
+![](images/page_18_image_3.jpg)
+
+## Biểu diễn mạng nơron
+
+Tầng ra
+
+Tầng ẩn
+
+Tầng vào
+
+Trái
+
+Giữa
+
+![](images/page_19_image_6.jpg)
+
+Phải
+
+## Định nghĩa
+
+Là một hệ thống gồm rất nhiều phần tử xử lý đơn giản hoạt động song song.
+
+◼ Tính năng: phụ thuộc vào
+
+❑ cấu trúc hệ thống
+
+❑ mức độ liên kết giữa các phần tử
+
+❑ quá trình xử lý bên trong các phần tử
+
+◼ Có thể học từ số liệu và tổng quát hoá từ các số liệu đó.
+
+## Khi nào sử dụng mạng nơron?
+
+Mạng nơron thích hợp với những bài toán có đặc điểm sau:
+
+Các mẫu luyện được thể hiện bởi nhiều cặp giá trị-thuộc tính (ví dụ, điểm ảnh)
+
+◼ Các mẫu luyện có thể có lỗi
+
+◼ Chấp nhận thời gian huấn luyện dài
+
+Cần đánh giá nhanh hàm mục tiêu được học
+
+◼ Không cần hiểu giả thiết cuối cùng vì NN được coi là hộp đen
+
+## Perceptron
+
+nguöng
+
+![](images/page_22_image_2.jpg)
+
+$\mathbf { o } ( x _ { 1 } , \ldots , x _ { n } ) = \mathbf { f }$ 1 nếu $\mathsf{W}_{0}+\mathsf{W}_{1}\mathsf{X}_{1}+\mathsf{W}_{2}\mathsf{X}_{2}+\ldots\ldots+\mathsf{W}_{\mathsf{n}}\mathsf{X}_{\mathsf{n}}>0$
+
+-1 trong trường hợp ngược lại
+
+hay:
+
+$$
+\mathsf {o} (\vec {x}) = \mathsf {s g n} (\vec {w}. \vec {x})
+$$
+
+trong đó
+
+$$
+\operatorname{sgn} (y) = \left\{ \begin{array}{l} 1 \text {neéu y > 0} \\ - 1 \text {neéu ngược lại} \end{array} \right.
+$$
+
+**Nhiệm vụ học**: tìm các giá trị của w <s><strong>Không gian giả thiết</strong></s>~~: không gian các vectơ trọng số~~
+
+## Khả năng của Perceptron
+
+Mỗi perceptron tạo ra 1 mặt phân cách siêu phẳng trên không gian đầu vào n chiều
+
+Mặt phân cách (WX = 0)
+
+![](images/page_23_image_3.jpg)
+
+## Khả năng của Perceptron
+
+– có thể học các hàm $\pi , \lambda , V$ , NAND, NOR
+
+không biểu diễn được các hàm không phân tách được bằng đường tuyến tính, vd XOR
+
+$$
+\begin{array}{c c c} & 1 & 0 \\ & 0 & 1 \end{array} \quad (x _ {1} \lor x _ {2}) \land (\neg x _ {1} \lor \neg x _ {2})
+$$
+
+➢ Mọi hàm logic đều có thể biểu diễn bằng 1 mạng perceptron có ít nhất 2 tầng
+
+## Mạng nơron biểu diễn hàm XOR
+
+$$
+\mathsf {V} _ {1} = \mathsf {X} _ {1} \vee \mathsf {X} _ {2}
+$$
+
+![](images/page_25_image_2.jpg)
+
+![](images/page_25_image_3.jpg)
+
+## Học các trọng số mạng
+
+## ◼ Luật perceptron:
+
+dùng khi tập luyện
+
+❑ phân tách được bằng 1 đường tuyến tính
+
+❑ đủ nhỏ
+
+## ◼ Luật delta:
+
+dùng khi tập luyện không phân thể tách tuyến tính
+
+## Luật huấn luyện Perceptron
+
+◼ Khởi tạo một vector có các trọng số ngẫu nhiên
+
+Lặp lại hàm perceptron cho mỗi mẫu luyện đến khi hàm perceptron phân loại đúng tất cả các mẫu luyện:
+
+◼ Các trọng số được sửa đổi tại mỗi bước dựa vào luật huấn luyện perceptron:
+
+$$
+w _ {i} \longleftarrow w _ {i} + \Delta w _ {i}
+$$
+
+trong đó
+
+$$
+\Delta w _ {i} \longleftarrow \Delta w _ {i} + \eta (t - o) x _ {i}
+$$
+
+với
+
+❑ t = c( ) là hàm đích
+
+❑ o là đầu ra perceptron
+
+❑  = tốc độ học, là hằng số nhỏ
+
+**Ví dụ...**
+
+Biểu diễn $g(x1,x2)=\overline{A}\overline{N}D(x1,x2)$
+
+![](images/page_28_image_2.jpg)
+
+| x1 | x2 | g |
+| --- | --- | --- |
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+$$
+\mathrm{w0+1.w1+1.w2>0}
+$$
+
+o(x) = 1 nếu > 0 0 nếu ngược lại
+
+$$
+\mathrm{w0+1.w1+0.w2< 0}
+$$
+
+$$
+\mathrm{w0+0.w1+1.w2< 0}
+$$
+
+$$
+\mathrm{w0+0.w1+0.w2< 0}
+$$
+
+$$
+\Leftrightarrow \mathrm{w0} = - 0. 8; \mathrm{w1} = 0. 5; \mathrm{w2} = 0. 5
+$$
+
+## Ví dụ 1...
+
+$$
+\vec {w}. \vec {x} = \sum_ {i = 0} ^ {2} w _ {i} * x _ {i} \quad w _ {i} \longleftarrow w _ {i} + \Delta w _ {i} \quad \Delta w _ {i} \longleftarrow \Delta w _ {i} + \eta (t - o) x _ {i}
+$$
+
+Khởi tạo các giá trị đầu: $\Delta \mathsf { w } 0 = 0 \text {, } \Delta \mathsf { w } 1 = 0 \text {, } \Delta \mathsf { w } 2 = 0$
+
+w0 = -1.5, w1 = -0.5, w2 = 0.5,  = 0.1
+
+$$
+\Sigma = x 0. w 0 + x 1. w 1 + x 2. w 2 = 1. w 0 + 0. w 1 + 0. w 2 = w 0 = - 1. 5
+$$
+
+| x0 | x1 | x2 | t |  | o | w0 | w1 | w2 | w0 w1 | w2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 0 | 0 | -1.5 | 0 | 0 | 0 | 0 | -1.5 -0.5 | 0.5 |
+| 1 | 0 | 1 | 0 | -1 | 0 | 0 | 0 | 0 | -1.5 -0.5 | 0.5 |
+| 1 | 1 | 0 | 0 | -2 | 0 | 0 | 0 | 0 | -1.5 -0.5 | 0.5 |
+| 1 | 1 | 1 | 1 | -1.5 | 0 | 0.1 | 0.1 | 0.1 |  |  |
+
+## Ví dụ 1...
+
+$$
+\vec {w}. \vec {x} = \sum_ {i = 0} ^ {2} w _ {i} * x _ {i} \quad w _ {i} \longleftarrow w _ {i} + \Delta w _ {i} \quad \Delta w _ {i} \longleftarrow \Delta w _ {i} + \eta (t - o) x _ {i}
+$$
+
+Khởi tạo các giá trị đầu: $\Delta \mathsf { w } 0 = 0 \text {, } \Delta \mathsf { w } 1 = 0 \text {, } \Delta \mathsf { w } 2 = 0$
+
+$$
+\mathrm{w} 0 = - 1. 5, \mathrm{w} 1 = - 0. 5, \mathrm{w} 2 = 0. 5, \eta = 0. 1
+$$
+
+$$
+\Delta w 0 = \Delta w 0 + \eta^ {*} (t - o) ^ {*} x 0 = 0 + 0. 1 ^ {*} (0 - 0) ^ {*} 1 = 0
+$$
+
+$$
+w 0 = w 0 + \Delta w 0 = - 1. 5 + 0 = - 1. 5, w 1 = - 0. 5, w 2 = 0. 5
+$$
+
+| x0 | x1 | x2 | t |  | o | w0 | w1 | w2 | w0 | w1 | w2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 0 | 0 | -1.5 | 0 | 0 | 0 | 0 | -1.5 | -0.5 | 0.5 |
+| 1 | 0 | 1 | 0 | -1 | 0 | 0 | 0 | 0 | -1.5 | -0.5 | 0.5 |
+| 1 | 1 | 0 | 0 | -2 | 0 | 0 | 0 | 0 | -1.5 | -0.5 | 0.5 |
+| 1 | 1 | 1 | 1 | -1.5 | 0 | 0.1 | 0.1 | 0.1 |  |  |  |
+
+## Ví dụ 1...
+
+$$
+\vec {w}. \vec {x} = \sum_ {i = 0} ^ {2} w _ {i} * x _ {i}
+$$
+
+$$
+w _ {i} \longleftarrow w _ {i} + \Delta w _ {i} \quad \Delta w _ {i} \longleftarrow \Delta w _ {i} + \eta (t - o) x _ {i}
+$$
+
+Khởi tạo các giá trị đầu: $\Delta \mathsf { w } 0 = 0 \text {, } \Delta \mathsf { w } 1 = 0 \text {, } \Delta \mathsf { w } 2 = 0$
+
+w0 = -1.5, w1 = -0.5, w2 = 0.5,  = 0.1
+
+| x0 | x1 | x2 | t |  | o | w0 | w1 | w2 | w0 | w1 | w2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0 | 0 | 0 | -1.5 | 0 | 0 | 0 | 0 |  |  |  |
+| 1 | 0 | 1 | 0 | -1 | 0 | 0 | 0 | 0 |  |  |  |
+| 1 | 1 | 0 | 0 | -2 | 0 | 0 | 0 | 0 |  |  |  |
+| 1 | 1 | 1 | 1 | -1.5 | 0 | 0.1 | 0.1 | 0.1 |  |  |  |
+
+$$
+\Delta w 0 = \Delta w 0 + \eta^ {*} (t - o) ^ {*} x 0 = 0 + 0. 1 ^ {*} (1 - 0) ^ {*} 1 = 0. 1
+$$
+
+$$
+\mathrm{w0} = \mathrm{w0} + \Delta \mathrm{w0} = - 1. 5 + 0. 1 = - 1. 4, \mathrm{w1} = - 0. 4, \mathrm{w2} = 0. 6
+$$
+
+## Ví dụ 2
+
+$$
+\begin{array}{l} \mathrm{w=[0.25 - 0.1 0.5]} \\ \mathrm {x_ {2} = 0.2 x_ {1} - 0.5} \end{array}
+$$
+
+![](images/page_32_chart_2.jpg)
+
+![](images/page_32_chart_3.jpg)
+
+![](images/page_32_chart_4.jpg)
+
+## Luật học Gradient Descent
+
+◼ Giả sử một nơ ron có đầu ra tuyến tính và liên tục
+
+❑ $0 = W_{0} + W_{1}X_{1} + \ldots + W_{n}X_{n}$
+
+◼ Nhiệm vụ học là xác định tập trọng số để tối thiểu hàm lỗi
+
+❑ $\mathbb{E}[\mathsf{w}_1,\ldots,\mathsf{w}_n]=\gamma_2\sum_{\mathsf{d}\in\mathsf{D}}(\mathsf{t}_{\mathsf{d}}-\mathsf{o}_{\mathsf{d}})^2$
+
+D là tập mẫu học
+
+## Gradient descent
+
+◼ **Gradient của E (ký hiệu là****E) là một vectơ**
+
+❑ Có hướng chỉ đi lên (dốc)
+
+❑ Có độ dài tỷ lệ thuận với độ dốc
+
+Gradient  E xác định hướng gây ra việc **tăng nhanh nhất (steepest increase) đối với giá trị lỗi E**
+
+$$
+\nabla E (w) = \left(\frac {\partial E}{\partial w _ {1}}, \frac {\partial E}{\partial w _ {2}}, \dots , \frac {\partial E}{\partial w _ {N}}\right)
+$$
+
+trong đó N là tổng số các trọng số (các liên kết) trong mạng
+
+Vì vậy, hướng gây ra việc **giảm nhanh nhất (steepest decrease) là** giá trị phủ định của gradient của E
+
+$$
+\Delta w = - \eta . \nabla E (w); \quad \Delta w _ {i} = - \eta . \nabla E (w _ {i}), \forall i = 1.. N
+$$
+
+Yêu cầu: Các hàm tác động được sử dụng trong mạng phải là các hàm liên tục đối với các trọng số và có đạo hàm liên tục
+
+## Luật học Gradient Descent
+
+$$
+\begin{array}{c} \mathsf {D} = \{\langle (1, 1), 1 \rangle , \langle (- 1, - 1), 1 \rangle , \\ \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \end{array}
+$$
+
+Gradient:
+
+$$
+\begin{array}{l} \nabla E [ w ] = [ \partial E / \partial w _ {0}, \dots \partial E / \partial w _ {n} ] \\ \Delta w = - \eta \nabla E [ w ] \\ \Delta w _ {i} = - \eta \partial E / \partial w _ {i} \\ = - \eta \partial / \partial w _ {i} 1 / 2 \Sigma_ {d} (t _ {d} - o _ {d}) ^ {2} \\ = - \eta \partial / \partial w _ {i} 1 / 2 \Sigma_ {d} (t _ {d} - \Sigma_ {i} w _ {i} x _ {i}) ^ {2} \\ = - \eta \Sigma_ {d} (t _ {d} - o _ {d}) (- x _ {i}) \end{array}
+$$
+
+![](images/page_35_image_4.jpg)
+
+## Luật học Gradient Descent
+
+## Gradient-Descent(tập mẫu, )
+
+Mỗi mẫu là một bộ $d = < ( x _ { 1 } , \ldots x _ { n } ) , t > v o i ( x _ { 1 } , \ldots , x _ { n } )$ là véc tơ đầu vào và t là giá trị đích,  là hệ số học
+
+◼ Khởi tạo ngẫu nghiên wi
+
+◼ Lặp cho tới khi gặp điều kiện dừng
+
+❑ Khởi tạo $\Delta W _ { \mathrm { i } }$ bằng 0
+
+❑ Với mỗi mẫu d trong tập mẫu D
+
+◼ Đưa $( x _ { 1 } , \ldots , x _ { n } )$ vào mạng để tính toán giá trị đầu ra o
+
+◼ Với mỗi trọng số w<sub>i</sub>
+
+❑ $\Delta W _ { i } = - \eta \partial E _ { d } / \partial W _ { i }$
+
+◼ Với mỗi trọng số w<sub>i</sub>
+
+❑ $\mathsf{W}_{\mathrm{j}} = \mathsf{W}_{\mathrm{j}} + \Delta \mathsf{W}_{\mathrm{j}}$
+
+## Luật học Gradient Descent
+
+◼ Chế độ 1: cập nhật một lần
+
+$$
+\mathsf{w} = \mathsf{w} - \eta \nabla E_{D}[\mathsf{w}]
+$$
+
+$$
+E _ {D} [ w ] = 1 / 2 \Sigma_ {d} (t _ {d} - o _ {d}) ^ {2}
+$$
+
+◼ Chế độ 2 : cập nhật với từng mẫu
+
+$$
+\mathsf{w} = \mathsf{w} - \eta \nabla E_{\mathrm{d}}[\mathsf{w}]
+$$
+
+$$
+E _ {d} [ w ] = 1 / 2 (t _ {d} - o _ {d}) ^ {2}
+$$
+
+## So sánh luật học của Perceptron và Gradient Descent
+
+Perceptron đảm bảo thành công nếu
+
+◼ Tập mẫu khả tách tuyến tính
+
+◼ Hằng số học $\eta$ đủ nhỏ
+
+Huấn luyện với Gradient Descent
+
+◼ Đảm bảo hội tụ với lỗi nhỏ nhất
+
+◼ Hằng số học  nhỏ
+
+◼ Có thể sử dụng mẫu có nhiễu
+
+◼ Dữ liệu học thậm chí không khả tách tuyến tính
+
+## Mạng nơ ron nhiều lớp
+
+Lớp ra
+
+![](images/page_39_image_2.jpg)
+
+Lớp ẩn
+
+Lớp vào
+
+## Hàm Sigmoid
+
+$$
+\mathrm{W} _ {0} \quad \text {net} = \sum_ {\mathrm{i} = 0} ^ {\mathrm{n}} \mathrm{w} _ {\mathrm{i}} \mathrm{x} _ {\mathrm{i}}
+$$
+
+$$
+o = \sigma (\text {net}) = 1 / (1 + e ^ {- \text {net}})
+$$
+
+(x) gọi là hàm sigmoid: $1 / ( 1 + e ^ { - x } )$
+
+$$
+\mathrm{d}\sigma (\mathsf{x}) / \mathrm{dx} = \sigma (\mathsf{x}) (1 - \sigma (\mathsf{x}))
+$$
+
+Sử dụng luật học Gradient Descent:
+
+$$
+\cdot \partial E / \partial w _ {i} = - \sum_ {d} (t _ {d} - o _ {d}) o _ {d} (1 - o _ {d})
+$$
+
+• Mạng nhiều lớp thường sử dụng hàm Sigmoid làm hàm truyền
+
+## Giải thuật lan truyền ngược sai số
+
+◼ Khởi tạo $w _ { i }$ với các giá trị ngẫu nhiên nhỏ
+
+◼ Lặp cho tới khi đạt điều kiện dừng
+
+❑ Với mỗi mẫu huấn luyện $< ( x _ { 1 } , \ldots x _ { n } ) , t >$
+
+◼ Đưa $( x _ { 1 } , \ldots , x _ { n } )$ vào mạng để tính toán giá trị ra $\mathbf { o } _ { \mathsf { k } }$
+
+◼ Với mỗi đầu ra k
+
+❑ $\delta _ { k } = o _ { k } ( 1 - o _ { k } ) ( t _ { k } - o _ { k } )$
+
+◼ Với mỗi nút ẩn h
+
+❑ $\delta _ { h } = o _ { h } ( 1 - o _ { h } ) \sum _ { k } w _ { h , k } \delta _ { k }$
+
+◼ Với mỗi trọng số $\mathsf { W } _ { \mathsf { i } , \mathsf { j } }$
+
+❑ $\mathsf { W _ { i , j } } { = } \mathsf { W _ { i , j } } { + } \Delta \mathsf { W _ { i , j } }$ với
+
+$$
+\Delta \mathrm{w} _ {\mathrm{i}, \mathrm{j}} = \eta \delta_ {\mathrm{j}} \mathrm{x} _ {\mathrm{i}}
+$$
+
+![](images/page_41_image_12.jpg)
+
+## Giải thuật lan truyền ngược sai số
+
+◼ Sử dụng Gradient Descent trên toàn bộ các trọng số
+
+◼ Chỉ tìm được tối ưu cục bộ
+
+◼ Thường bổ sung hệ số quán tính :
+
+$$
+\Delta \mathrm{w}_{\mathrm{i},\mathrm{j}}(\mathrm{n}) = \eta \delta_{\mathrm{j}}\mathrm{x}_{\mathrm{i}} + \alpha \Delta \mathrm{w}_{\mathrm{i},\mathrm{j}}(\mathrm{n - 1})
+$$
+
+Tối ưu được hàm lỗi trên tập mẫu nhưng chưa chắc trên dữ liệu thực tế ( hiệu ứng overfitting)
+
+◼ Thời gian học lâu ( 1000-10000 vòng)
+
+◼ Sử dụng mô hình nhanh
+
+## 8-3-8 mã hoá và giải mã
+
+8 đầu vào
+
+![](images/page_43_image_2.jpg)
+
+8 đầu ra
+
+A target function:
+
+| Input | Output | Giá trị nút ẩn |
+| --- | --- | --- |
+| 100000000 → | 100000000 | .89 .04 .08 |
+| 01000000 → | 01000000 | .01 .11 .88 |
+| 00100000 → | 00100000 | .01 .97 .27 |
+| 00010000 → | 00010000 | .99 .97 .71 |
+| 00001000 → | 00001000 | .03 .05 .02 |
+| 00000100 → | 00000100 | .22 .99 .99 |
+| 00000010 → | 00000010 | .80 .01 .98 |
+| 00000001 → | 00000001 | .60 .94 .01 |
+
+## Thống kê lỗi cho các nút ra
+
+Sum of squared errors for each output unit
+
+![](images/page_44_chart_2.jpg)
+
+## Sự hội tụ của giải thuật lan truyền ngược sai số
+
+◼ Có thể không phải cực trị toàn cục
+
+◼ Cải thiện bằng hệ số quán tính
+
+◼ Kết hợp với một giải thuật tối ưu toàn cục khác
+
+Điều kiện hội tụ
+
+◼ Khởi tạo trọng số gần 0
+
+◼ Mạng khởi tạo gần như mang tính chất tuyến tính
+
+◼ Tính chất phi tuyến của mạng sẽ dần dần xuất hiện trong quá trình học
+
+## Ứng dụng của mạng nơron - Nhận dạng mặt
+
+![](images/page_46_image_1.jpg)
+
+![](images/page_46_image_2.jpg)
+
+![](images/page_46_image_3.jpg)
+
+![](images/page_46_image_4.jpg)
+
+## Ứng dụng của mạng nơron - Nhận dạng mặt
+
+◼ Có nhiều hàm đích có thể học trong việc nhận dạng ảnh:
+
+❑ xác định người
+
+❑ hướng quay (trái, phải, thẳng, ...)
+
+❑ giới tính
+
+❑ có đeo kính hay không
+
+# Ứng dụng của mạng nơron - Nhận dạng mặt
+
+Nhiệm vụ học: phân loại các hình ảnh camera về mặt người với nhiều góc độ khác nhau
+
+◼ CSDL hình ảnh
+
+◼ Các hình ảnh với 624 grayscale: 20 người, mỗi người khoảng 32 ảnh
+
+◼ Nhiều cách biểu cảm (vui, buồn, giận, bình thường)
+
+◼ Các hướng khác nhau (trái, phải, thẳng, hướng lên)
+
+◼ Độ phân giải 120x128
+
+◼ Học hướng quay của mặt người:
+
+❑ không cần các lựa chọn tối ưu, phương pháp này cho kết quả tốt
+
+❑ sau khi luyện trên 260 hình ảnh, việc phân loại đạt độ chính xác trên tập thử là 90%
+
+## Các lựa chọn
+
+1. Mã hoá đầu vào: hình ảnh hay các đặc tính
+
+2. Mã hoá đầu ra: số lượng đầu ra, các hàm đích cho đầu ra
+
+3. Cấu trúc mạng: số lượng nút mạng và liên kết giữa chúng
+
+4. Các tham số thuật toán học
+
+❑ Tốc độ học
+
+❑ giá trị momentum
+
+## Mã hoá đầu vào
+
+◼ Thiết kế các lựa chọn
+
+Tiền xử lý hình ảnh để rút ra các hướng, các vùng có mật độ giống nhau, hoặc các đặc tính hình ảnh cục bộ khác
+
+◼ Khó khăn: số cạnh có thể thay đổi, trong khi NN có số lượng cố định các đầu vào
+
+Các hình đã mã hoá là 1 tập cố định các giá trị mật độ 30x32 điểm ảnh (tóm tắt về độ phân giải của ảnh ban
+
+đầu), từ 0 đến 255
+
+![](images/page_50_image_6.jpg)
+
+## Mã hoá đầu ra
+
+◼ Mỗi đầu ra: 4 giá trị xác định hướng mà người nhìn (trái, phải, thẳng, hướng lên)
+
+◼ Mỗi đơn vị: phân loại sử dụng 1 đầu ra, gán 0.2, 0.4, 0.6 và 0.8 cho 4 giá trị
+
+◼ Chọn 1 trong n đầu ra mã hoá:
+
+❑ cung cấp nhiều mức độ tự do để biểu diễn hàm đích (n lần số trọng số ở tầng ra)
+
+❑ độ khác nhau giữa giá trị cao nhất và nhì dùng để đo độ tin cậy
+
+## Cấu trúc mạng
+
+![](images/page_52_image_1.jpg)
+
+mạng 960 x 3 x 4

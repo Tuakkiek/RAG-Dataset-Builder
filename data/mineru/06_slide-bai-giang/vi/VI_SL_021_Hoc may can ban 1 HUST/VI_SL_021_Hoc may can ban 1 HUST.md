@@ -1,0 +1,1111 @@
+<!-- page: 1 -->
+
+## Trí Tuệ Nhân Tạo
+
+## (Artificial Intelligence)
+
+**Lê Thanh Hương**
+
+Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội
+
+<!-- page: 2 -->
+
+## Nội dung môn học
+
+▪ Chương 1. Tổng quan
+
+▪ Chương 2. Tác tử thông minh
+
+▪ Chương 3. Giải quyết vấn đề
+
+▪ Chương 4. Tri thức và suy diễn
+
+▪ Chương 5. Biểu diễn tri thức
+
+▪ Chương 6. Học máy
+
+Giới thiệu về học máy
+
+▪ K láng giềng gần
+
+▪ Phân lớp Naïve Bayes
+
+▪ Học cây quyết định
+
+▪ Mạng nơron
+
+<!-- page: 3 -->
+
+## Giới thiệu về Học máy
+
+◼ Học máy (ML - Machine Learning) là một lĩnh vực nghiên cứu của Trí tuệ nhân tạo (Artificial Intelligence)
+
+◼ Câu hỏi trung tâm của ML:
+
+“How can we build computer systems that <u>automatically improve with experience</u>, and what are the <u>fundamental laws</u> that govern all learning processes?” [Mitchell, 2006]
+
+◼ Vài quan điểm về học máy:
+
+→ Một quá trình nhờ đó một hệ thống cải thiện hiệu suất (hiệu quả hoạt động) của nó [Simon, 1983]
+
+→ Việc lập trình các máy tính để tối ưu hóa một tiêu chí hiệu suất dựa trên các dữ liệu hoặc kinh nghiệm trong quá khứ [Alpaydin, 2010]
+
+![](images/page_2_image_7.jpg)
+
+<!-- page: 4 -->
+
+## Một máy học
+
+◼ Ta nói một máy tính có khả năng học nếu nó tự cải thiện hiệu suất hoạt động P cho một công việc T cụ thể, dựa vào kinh nghiệm E của nó.
+
+Như vậy một bài toán học máy có thể biểu diễn bằng 1 bộ (**T, P, E**)
+
+• **T:** một công việc (nhiệm vụ)
+
+• **P:** tiêu chí đánh giá hiệu năng
+
+• **E:** kinh nghiệm
+
+<!-- page: 5 -->
+
+## Ví dụ bài toán học máy (1)
+
+Lọc thư rác (email spam filtering)
+
+•T: Dự đoán (để lọc) những thư điện tử nào là thư rác (spam email)
+
+•P: số lượng thư điện tử gửi đến được phân loại chính xác
+
+•E: Một tập các thư điện tử (emails) mẫu, mỗi thư điện tử được biểu diễn bằng một tập thuộc tính (vd: tập từ khóa) và nhãn lớp (thư thường/thư rác) tương ứng
+
+![](images/page_4_image_5.jpg)
+
+<!-- page: 6 -->
+
+## Ví dụ bài toán học máy (2)
+
+## Nhận dạng chữ viết tay
+
+◼T: Nhận dạng và phân loại các từ trong các ảnh chữ viết
+
+◼P: Tỷ lệ (%) các từ được nhận dạng và phân loại đúng
+
+◼E: Một tập các ảnh chữ viết, trong đó mỗi ảnh được gắn với một định danh của một từ
+
+![](images/page_5_image_5.jpg)
+
+<!-- page: 7 -->
+
+## Ví dụ bài toán học máy (3)
+
+## Gán nhãn ảnh
+
+◼ T: đưa ra một vài mô tả ý nghĩa của 1 bức ảnh
+
+◼ P: ?
+
+![](images/page_6_image_4.jpg)
+
+◼ E: Một tập các bức ảnh, trong đó mỗi ảnh đã được gán một tập các từ mô tả ý nghĩa của chúng
+
+![](images/page_6_image_6.jpg)
+
+FISH WATER OCEAN TREE CORAL
+
+![](images/page_6_image_8.jpg)
+
+PEOPLE MARKET PATTERN TEXTILE DISPLAY
+
+![](images/page_6_image_10.jpg)
+
+BIRDS NEST TREE BRANCH LEAVES
+
+<!-- page: 8 -->
+
+## Máy học (1)
+
+◼ Học một ánh xạ (hàm):
+
+$$
+f: x \mapsto y
+$$
+
+• x: quan sát (dữ liệu), kinh nghiệm
+
+• y: phán đoán, tri thức mới, kinh nghiệm mới, …
+
+◼ Hồi quy (regression): nếu y là một số thực
+
+Phân loại (classification): nếu y thuộc một tập rời rạc (tập nhãn lớp)
+
+<!-- page: 9 -->
+
+## Máy học (2)
+
+## ◼ Học từ đâu?
+
+❑ Từ các quan sát trong quá khứ (tập học).
+
+$$
+\{\mathsf {x} _ {1}, \mathsf {x} _ {2}, \dots , \mathsf {x} _ {N} \}; \{\mathsf {y} _ {1}, \mathsf {y} _ {2}, \dots , \mathsf {y} _ {M} \}
+$$
+
+## ◼ Sau khi đã học:
+
+❑ Thu được một mô hình, kinh nghiệm, tri thức mới.
+
+❑ Dùng nó để suy diễn (phán đoán) cho quan sát trong tương lai. $Y = f ( X )$
+
+<!-- page: 10 -->
+
+## Hai bài toán học cơ bản
+
+◼ Học có giám sát (supervised learning): cần học một hàm $y = f(x)$ từ tập học $\{ \{ { \sf x } _ { 1 } ,   { \sf x } _ { 2 } ,   \ldots ,   { \sf x } _ { \sf N } \} ;   \{ { \sf y } _ { 1 } ,   { \sf y } _ { 2 } ,   \ldots ,   { \sf y } _ { \sf N } \} \}$ sao cho $\mathbf { y } _ { \mathrm { { i } } } \mathrm { ~ E ~ }   \mathsf { f } ( \mathbf { x } _ { \mathrm { { i } } } )$
+
+❑ Phân loại (phân lớp): nếu y chỉ nhận giá trị từ một tập rời rạc, chẳng hạn {cá, cây, quả, mèo}
+
+❑ Hồi quy: nếu y nhận giá trị số thực
+
+Học không giám sát (unsupervised learning): cần học một hàm $y = f(x)$ từ tập học cho trước $\{ \mathsf { x } _ { 1 } ,   \mathsf { x } _ { 2 } ,   . . . ,   \mathsf { x } _ { \mathsf { N } } \}$
+
+❑ Y có thể là các cụm dữ liệu.
+
+❑ Y có thể là các cấu trúc ẩn.
+
+![](images/page_9_image_7.jpg)
+
+<!-- page: 11 -->
+
+## Học có giám sát: ví dụ
+
+◼ Lọc thư rác
+
+◼ Phân loại trang web
+
+◼ Dự đoán rủi ro tài chính
+
+Dự đoán biến động chỉ số chứng khoán
+
+◼ Phát hiện tấn công mạng
+
+![](images/page_10_image_6.jpg)
+
+![](images/page_10_image_7.jpg)
+
+![](images/page_10_image_8.jpg)
+
+10:00 AM 11:00 AM 12:00 PM 1:00 PM 2:00 PM
+
+<!-- page: 12 -->
+
+## Học không giám sát: ví dụ (1)
+
+## ◼ Phân cụm (clustering)
+
+❑ Phát hiện các cụm dữ liệu, cụm tính chất,…
+
+![](images/page_11_image_3.jpg)
+
+![](images/page_11_image_4.jpg)
+
+## ◼ Community detection
+
+◼ Phát hiện các cộng đồng trong mạng xã hội
+
+![](images/page_11_image_7.jpg)
+
+<!-- page: 13 -->
+
+## Học không giám sát: ví dụ (2)
+
+## ◼ Trends detection
+
+❑ Phát hiện xu hướng, thị $y \hat { \Theta } \mathsf { U } ,$
+
+![](images/page_12_chart_3.jpg)
+
+## ◼ Entity-interaction analysis
+
+![](images/page_12_image_5.jpg)
+
+<!-- page: 14 -->
+
+## Quá trình học máy: cơ bản
+
+Tập dữ liệu (Dataset)
+
+Tập học (Training set)
+
+**Huấn luyện** hệ thống
+
+Tập thử nghiệm (Test set)
+
+**Thử nghiệm** hệ thống đã học
+
+<!-- page: 15 -->
+
+## Quá trình học máy: toàn diện
+
+Tập dữ liệu (Dataset)
+
+Tập học (Training set)
+
+Tập tối ưu (Validation set)
+
+Tập thử nghiệm (Test set)
+
+**Huấn luyện** hệ thống
+
+**Tối ưu hóa** các tham số (nếu có)
+
+**Thử nghiệm** hệ thống đã học
+
+<!-- page: 16 -->
+
+## Đánh giá và lựa chọn mô hình
+
+Cho trưóc tp quan sát D, ta cn lra chn tham sλ (model selection) cho phương pháp hc A và đánh giá (assessment) cht lưng tng th ca A.
+
+• Chn tp hu hn S mà cha các giá tr tim năng cho λ.
+
+• Chn đ đo P đ đánh giá hiu năng.
+
+• Chia tp D thành 3 tp ri nhau: $\mathsf { D _ { t r a i n } } , \mathsf { T _ { v a l i d a t i o n } } ,$ và $\mathsf { T } _ { \mathsf { t e s t } }$
+
+• Vi mõi giá trį $\lambda \in \mathbb { S }$
+
+• Hc A tù tp hc $\mathsf { D _ { t r a i n } }$ vi tham s đu vào λ. Đo hiu năng trên tp $\mathsf { T _ { v a l i d a t i o n } } \xrightarrow { }$ thu đưc $\mathsf { P } _ { \mathsf { h } }$
+
+·Chon $\lambda ^ { \star }$ mà có $\mathsf { P } _ { \lambda }$ tt nht.
+
+• Huân luyn A trên tp $\mathsf { D _ { t r a i n } } \cup \mathsf { T _ { v a l i d a t i o n } } ,$ vi tham s đu vào $\lambda ^ { \star }$
+
+• Đo hiu năng ca h thng trên tp $\mathsf { T } _ { \mathsf { t e s t } }$
+
+Có th thay Hold-out bng k thut khác (cross-validation).
+
+<!-- page: 17 -->
+
+## Đo độ chính xác
+
+◼ Làm sao để biết $h \approx f ?$
+
+◼ Sử dụng lý thuyết tính toán
+
+Thử giả thiết h trên 1 tập các ví dụ mới (tập thử) (sử dụng cùng 1 mức độ phân bố các mẫu như tập luyện)
+
+Learning curve = % chính xác trên tập thử, sử dụng hàm xây dựng trên tập luyện
+
+![](images/page_16_chart_5.jpg)
+
+<!-- page: 18 -->
+
+## Thiết kế một hệ thống học (1)
+
+◼ Lựa chọn các ví dụ học (training/learning examples)
+
+• Các thông tin hướng dẫn quá trình học (training feedback) được chứa ngay trong các ví dụ học, hay là được cung cấp gián tiếp (vd: từ môi trường hoạt động)
+
+• Các ví dụ học theo kiểu có giám sát (supervised) hay không có giám sát (unsupervised)
+
+• Các ví dụ học nên tương thích với (đại diện cho) các ví dụ sẽ được làm việc bởi hệ thống trong tương lai (future test examples)
+
+◼ Xác định hàm mục tiêu (giả thiết, khái niệm) cần học
+
+• F: X → {0,1}
+
+• F: X → Một tập các nhãn lớp
+
+• F: X → R+(miền các giá trị số thực dương)
+
+<!-- page: 19 -->
+
+## Thiết kế một hệ thống học (2)
+
+## Lựa chọn cách biểu diễn cho hàm mục tiêu cần học
+
+• Hàm đa thức (a polynomial function)
+
+• Một tập các luật (a set of rules)
+
+• Một cây quyết định (a decision tree)
+
+• Một mạng nơ-ron nhân tạo (an artificial neural network)
+
+## Lựa chọn một giải thuật học máy có thể học (xấp xỉ) được hàm mục tiêu
+
+• Phương pháp học hồi quy (Regression-based)
+
+• Phương pháp học quy nạp luật (Rule induction)
+
+• Phương pháp học cây quyết định (ID3 hoặc C4.5)
+
+• Phương pháp học lan truyền ngược (Back-propagation)
+
+<!-- page: 20 -->
+
+## Các vấn đề trong Học máy (1)
+
+◼ Giải thuật học máy (Learning algorithm)
+
+• Những giải thuật học máy nào có thể học (xấp xỉ) một hàm mục tiêu cần học?
+
+• Với những điều kiện nào, một giải thuật học máy đã chọn sẽ hội tụ (tiệm cận) hàm mục tiêu cần học?
+
+• Đối với một lĩnh vực bài toán cụ thể và đối với một cách biểu diễn các ví dụ (đối tượng) cụ thể, giải thuật học máy nào thực hiện tốt nhất?
+
+<!-- page: 21 -->
+
+## Các vấn đề trong Học máy (2)
+
+◼ Các ví dụ học (Training examples)
+
+• Bao nhiêu ví dụ học là đủ?
+
+• Kích thước của tập học (tập huấn luyện) ảnh hưởng thế nào đối với độ chính xác của hàm mục tiêu học được?
+
+• Các ví dụ lỗi (nhiễu) và/hoặc các ví dụ thiếu giá trị thuộc tính (missing-value) ảnh hưởng thế nào đối với độ chính xác?
+
+<!-- page: 22 -->
+
+## Các vấn đề trong Học máy (3)
+
+◼ Quá trình học (Learning process)
+
+• Chiến lược tối ưu cho việc lựa chọn thứ tự sử dụng (khai thác) các ví dụ học?
+
+Các chiến lược lựa chọn này làm thay đổi mức độ phức tạp của bài toán học máy như thế nào?
+
+Các tri thức cụ thể của bài toán (ngoài các ví dụ học) có thể đóng góp thế nào đối với quá trình học?
+
+<!-- page: 23 -->
+
+## Các vấn đề trong Học máy (4)
+
+◼ Khả năng/giới hạn học (Learnability)
+
+• Hàm mục tiêu nào mà hệ thống cần học?
+
+❑ Biểu diễn hàm mục tiêu: Khả năng biểu diễn (vd: hàm tuyến tính / hàm phi tuyến) vs. Độ phức tạp của giải thuật và quá trình học
+
+• Các giới hạn (trên lý thuyết) đối với khả năng học của các giải thuật học máy?
+
+• Khả năng khái quát hóa (generalization) của hệ thống?
+
+❑ Để tránh vấn đề “over-fitting” (đạt độ chính xác cao trên tập học, nhưng đạt độ chính xác thấp trên tập thử nghiệm)
+
+• Khả năng hệ thống tự động thay đổi (thích nghi) biểu diễn (cấu trúc) bên trong của nó?
+
+❑ Để cải thiện khả năng (của hệ thống đối với việc) biểu diễn và học hàm mục tiêu
+
+<!-- page: 24 -->
+
+Phương pháp phân loại
+
+<!-- page: 25 -->
+
+## Các bạn phân loại thế nào?
+
+Class a
+
+![](images/page_24_image_2.jpg)
+
+Class b
+
+![](images/page_24_image_4.jpg)
+
+Class a
+
+![](images/page_24_image_6.jpg)
+
+Class a
+
+![](images/page_24_image_8.jpg)
+
+??
+
+![](images/page_24_image_10.jpg)
+
+Class a
+
+![](images/page_24_image_12.jpg)
+
+Class b
+
+![](images/page_24_image_14.jpg)
+
+<!-- page: 26 -->
+
+## Học dựa trên các láng giềng gần nhất
+
+◼ **K-nearest neighbors** (k-NN) là một trong số các phương pháp phổ biến trong học máy. Vài tên gọi khác như:
+
+• Instance-based learning
+
+• Lazy learning
+
+• Memory-based learning
+
+## ◼ Ý tưởng của phương pháp
+
+• Không xây dựng một mô hình (mô tả) rõ ràng cho hàm mục tiêu cần học.
+
+• Quá trình học chỉ lưu lại các dữ liệu huấn luyện.
+
+• Việc dự đoán cho một quan sát mới sẽ dựa vào các hàng xóm gần nhất trong tập học.
+
+<!-- page: 27 -->
+
+## k-NN
+
+## ◼ Hai thành phần chính:
+
+• Độ đo tương đồng (similarity measure/distance) giữa các đối tượng.
+
+• Các hàng xóm sẽ dùng vào việc phán đoán.
+
+Trong một số điều kiện thì k-NN có thể đạt mức lỗi tối ưu Bayes (mức lỗi mong muốn của bất kỳ phương pháp nào) [Gyuader and Hengartner, JMLR 2013]
+
+• Thậm chí khi chỉ dùng 1 hàng xóm gần nhất thì nó cũng có thể đạt đến mức lỗi tối ưu Bayes. [Kontorovich & Weiss, AISTATS 2015]
+
+<!-- page: 28 -->
+
+## Ví dụ: bài toán phân lớp
+
+## Xét 1 láng giềng gần nhất
+
+→Gán z vào lớp c2
+
+Xét 3 láng giềng gần nhất
+
+→Gán z vào lớp c1
+
+Xét 5 láng giềng gần nhất
+
+→Gán z vào lớp c1
+
+![](images/page_27_image_7.jpg)
+
+<!-- page: 29 -->
+
+## Giải thuật k-NN cho phân lớp
+
+◼ Mỗi ví dụ học 𝒙 được biểu diễn bởi 2 thành phần:
+
+• Mô tả của ví dụ: ${ \pmb x } = ( x _ { 1 } , x _ { 2 } , \ldots , x _ { n } )$ , trong đó $x _ { i } { \in } R$
+
+• Nhãn lớp : $c \in C$ , với 𝐶 là tập các nhãn lớp được xác định trước
+
+## ◼ Giai đoạn học
+
+• Đơn giản là lưu lại các ví dụ học trong tập học: 𝑫
+
+◼ Giai đoạn phân lớp: Để phân lớp cho một ví dụ (mới) 𝒛
+
+• Với mỗi ví dụ học $x   \in   D$ , tính khoảng cách giữa 𝒙 và 𝒛
+
+• Xác định tập 𝑁𝐵(𝒛) – các láng giềng gần nhất của 𝒛 →Gồm k ví dụ học trong 𝑫 gần nhất với 𝒛 tính theo một hàm khoảng cách 𝑑
+
+• Phân 𝒛 vào lớp chiếm số đông (the majority class) trong số các lớp của các ví dụ trong 𝑁𝐵(𝒛)
+
+<!-- page: 30 -->
+
+## Giải thuật k-NN cho hồi quy
+
+◼ Mỗi ví dụ học 𝒙 được biểu diễn bởi 2 thành phần:
+
+• Mô tả của ví dụ: ${ \pmb x } = ( x _ { 1 } , x _ { 2 } , \ldots , x _ { n } )$ , trong đó $x _ { i } { \in } R$
+
+• Giá trị đầu ra mong muốn: $y _ { x }   \in   R$ (là một số thực)
+
+◼ Giai đoạn học
+
+• Đơn giản là lưu lại các ví dụ học trong tập học 𝑫
+
+◼ Giai đoạn dự đoán: Để dự đoán giá trị đầu ra cho ví dụ 𝒛 • Đối với mỗi ví dụ học $x   \in   D$ , tính khoảng cách giữa 𝒙 và 𝒛
+
+• Xác định tập 𝑁𝐵(𝒛) – các láng giềng gần nhất của 𝒛 → Gồm k ví dụ học trong 𝑫 gần nhất với 𝒛 tính theo một hàm khoảng cách 𝑑
+
+• Dự đoán giá trị đầu ra đối với 𝒛: $\begin{array} { r } { y _ { z } = \frac { 1 } { k } { \sum _ { x \in N B ( z ) } y _ { x } } } \end{array}$
+
+<!-- page: 31 -->
+
+## k-NN: Các vấn đề cốt lõi
+
+![](images/page_30_image_1.jpg)
+
+<!-- page: 32 -->
+
+## k-NN: Các vấn đề cốt lõi
+
+## ◼ Hàm khoảng cách
+
+❑ Mỗi hàm sẽ tương ứng với một cách nhìn về dữ liệu.
+
+❑ Vô hạn hàm!!!
+
+❑ Chọn hàm nào?
+
+![](images/page_31_image_5.jpg)
+
+<!-- page: 33 -->
+
+## k-NN: Các vấn đề cốt lõi
+
+◼ Chọn tập láng giềng 𝑁𝐵(𝒛)
+
+❑ Chọn bao nhiêu láng giềng?
+
+❑ Giới hạn chọn theo vùng?
+
+![](images/page_32_image_4.jpg)
+
+<!-- page: 34 -->
+
+## k-NN: một hay nhiều láng giềng?
+
+◼ Về lý thuyết thì 1-NN cũng có thể là một trong số các phương pháp tối ưu.
+
+◼ k-NN là một phương pháp tối ưu Bayes nếu gặp một số điều kiện, chẳng hạn: y bị chặn, cỡ M của tập học lớn, hàm hồi quy liên tục, và
+
+$$
+k \to \infty , (k / M) \to 0, (k / \log M) \to + \infty
+$$
+
+◼ Trong thực tiễn ta nên lấy nhiều hàng xóm (𝑘 > 1) khi cần phân lớp/dự đoán, nhưng không quá nhiều. Lý do:
+
+• Tránh ảnh hưởng của lỗi/nhiễu nếu chỉ dùng 1 hàng xóm.
+
+• Nếu quá nhiều hàng xóm thì sẽ phá vỡ cấu trúc tiềm ẩn trong dữ liệu.
+
+<!-- page: 35 -->
+
+## Hàm tính khoảng cách (1)
+
+## ◼ Hàm tính khoảng cách d
+
+• Đóng vai trò rất quan trọng trong phương pháp học dựa trên các láng giềng gần nhất
+
+• Thường được xác định trước, và không thay đổi trong suốt quá trình học và phân loại/dự đoán
+
+## ◼ Lựa chọn hàm khoảng cách d
+
+• Các hàm khoảng cách hình học: Dành cho các bài toán có các thuộc tính đầu vào là kiểu số thực $( x _ { j } { \in } R )$
+
+• Hàm khoảng cách Hamming: Dành cho các bài toán có các thuộc tính đầu vào là kiểu nhị phân $( x _ { j } { \in } \{ 0 , 1 \} )$
+
+<!-- page: 36 -->
+
+## Hàm tính khoảng cách (2)
+
+Các hàm tính khoảng cách hình học (Geometry distance functions)
+
+• Hàm Minkowski (𝑝-norm):
+
+• Hàm Manhattan (𝑝 = 1):
+
+• Hàm Euclid (𝑝 = 2):
+
+• Hàm Chebyshev (𝑝 = ∞):
+
+$$
+d (x, z) = \left(\sum_ {i = 1} ^ {n} \left| x _ {i} - z _ {i} \right| ^ {p}\right) ^ {1 / p}
+$$
+
+$$
+d (x, z) = \sum_ {i = 1} ^ {n} \left| x _ {i} - z _ {i} \right|
+$$
+
+$$
+d (x, z) = \sqrt {\sum_ {i = 1} ^ {n} \left(x _ {i} - z _ {i}\right) ^ {2}}
+$$
+
+$$
+\begin{array}{c} d (x, z) = \lim _ {p \to \infty} \left(\sum_ {i = 1} ^ {n} \left| x _ {i} - z _ {i} \right| ^ {p}\right) ^ {1 / p} \\ = \max _ {i} \left| x _ {i} - z _ {i} \right| \end{array}
+$$
+
+<!-- page: 37 -->
+
+## Hàm tính khoảng cách (3)
+
+◼ Hàm khoảng cách Hamming
+
+• Đối với các thuộc tính đầu vào là kiểu nhị phân ()
+
+$$
+d (x, z) = \sum_ {i = 1} ^ {n} D i f f e r e n c e (x _ {i}, z _ {i})
+$$
+
+$$
+\text {Difference} (a, b) = \left\{ \begin{array}{l} 1, \text {if} (a \neq b) \\ 0, \text {if} (a = b) \end{array} \right.
+$$
+
+<!-- page: 38 -->
+
+## k-NN: Ưu nhược điểm
+
+## ◼ Các ưu điểm
+
+• Chi phí thấp cho quá trình huấn luyện (chỉ việc lưu lại các ví dụ học)
+
+• Hoạt động tốt với các bài toán phân loại gồm nhiều lớp
+
+→ Không cần phải học c bộ phân loại cho c lớp
+
+• Phương pháp học $k - \mathsf { N N } ( k > > 1 )$ có khả năng xử lý nhiễu cao
+
+→ Phân loại/dự đoán được thực hiện dựa trên k láng giềng gần nhất
+
+• Rất Linh động trong việc chọn hàm khoảng cách.
+
+→ Có thể dùng độ tương tự (similarity): cosine
+
+→ Có thể dùng độ đo khác, chẳng hạn Kullback-Leibler divergence, Bregman divergence,
+
+## ◼ Các nhược điểm
+
+• Phải lựa chọn hàm tính khoảng cách (sự khác biệt) thích hợp với bài toán
+
+• Chi phí tính toán (thời gian, bộ nhớ) cao tại thời điểm phân loại/dự đoán
+
+• Có thể cho kết quả kém/sai với các thuộc tính không liên quan
+
+<!-- page: 39 -->
+
+## Phân lớp Naïve Bayes
+
+◼ Là các phương pháp học phân lớp có giám sát và dựa trên xác suất
+
+◼ Dựa trên một mô hình (hàm) xác suất
+
+◼ Việc phân loại dựa trên các giá trị xác suất của các khả năng xảy ra của các giả thiết
+
+◼ Là một trong các phương pháp học máy thường được sử dụng trong các bài toán thực tế
+
+◼ Dựa trên định lý Bayes (Bayes theorem)
+
+<!-- page: 40 -->
+
+## Định lý Bayes
+
+$$
+P (h \mid D) = \frac {P (D \mid h) . P (h)}{P (D)}
+$$
+
+• P(h): Xác suất trước (tiên nghiệm) của giả thiết h
+
+• P(D): Xác suất trước (tiên nghiệm) của việc quan sát được dữ liệu D
+
+• P(D|h): Xác suất (có điều kiện) của việc quan sát được dữ liệu D, nếu biết giả thiết h là đúng. (likelihood)
+
+• P(h|D): Xác suất (hậu nghiệm) của giả thiết h là đúng, nếu quan sát được dữ liệu D
+
+➢**Nhiều phương pháp phân loại dựa trên xác suất sẽ sử dụng xác suất hậu nghiệm (**posterior probability**) này!**
+
+<!-- page: 41 -->
+
+## Định lý Bayes: Ví dụ (1)
+
+Giả sử chúng ta có tập dữ liệu sau (dự đoán 1 người có chơi tennis)?
+
+| Ngày | Ngoài trời | Nhiệt độ | Độ ẩm | Gió | Chơi tennis |
+| --- | --- | --- | --- | --- | --- |
+| N1 | Nắng | Nóng | Cao | Yếu | Không |
+| N2 | Nắng | Nóng | Cao | Mạnh | Không |
+| N3 | Âm u | Nóng | Cao | Yếu | Có |
+| N4 | Mưa | Bình thường | Cao | Yếu | Có |
+| N5 | Mưa | Mát mẻ | Bình thường | Yếu | Có |
+| N6 | Mưa | Mát mẻ | Bình thường | Mạnh | Không |
+| N7 | Âm u | Mát mẻ | Bình thường | Mạnh | Có |
+| N8 | Nắng | Bình thường | Cao | Yếu | Không |
+| N9 | Nắng | Mát mẻ | Bình thường | Yếu | Có |
+| N10 | Mưa | Bình thường | Bình thường | Yếu | Có |
+| N11 | Nắng | Bình thường | Bình thường | Mạnh | Có |
+| N12 | Âm u | Bình thường | Cao | Mạnh | Có |
+
+[Mitchell, 1997]
+
+<!-- page: 42 -->
+
+## Định lý Bayes: Ví dụ (2)
+
+◼ Dữ liệu D. Ngoài trời là nắng và Gió là mạnh
+
+◼ Giả thiết (phân loại) h. Anh ta chơi tennis
+
+◼ Xác suất trước P(h). Xác suất rằng anh ta chơi tennis (<u>bất kể Ngoài trời như thế nào và Gió ra sao</u>)
+
+◼ Xác suất trước P(D). Xác suất rằng Ngoài trời là nắng và Gió là mạnh
+
+◼ P(D|h). Xác suất Ngoài trời là nắng và Gió là mạnh, nếu biết rằng anh ta chơi tennis
+
+◼ P(h|D). Xác suất anh ta chơi tennis, nếu biết rằng Ngoài trời là nắng và Gió là mạnh
+
+<!-- page: 43 -->
+
+## Xác suất hậu nghiệm cực đại (MAP)
+
+◼ Với một tập các giả thiết (các phân lớp) có thể H, hệ thống học sẽ tìm **giả thiết có thể xảy ra nhất (the most probable hypothesis)** h(H) đối với các dữ liệu quan sát được D
+
+◼ Giả thiết h này được gọi là giả thiết có xác suất hậu nghiệm cực đại (**Maximum a posteriori – MAP**)
+
+$$
+h _ {M A P} = \underset {h \in H} {\arg \max} P (h \mid D)
+$$
+
+$$
+h _ {M A P} = \arg \max _ {h \in H} \frac {P (D \mid h) . P (h)}{P (D)}
+$$
+
+$$
+h _ {M A P} = \underset {h \in H} {\arg \max} P (D \mid h). P (h)
+$$
+
+(bởi định lý Bayes)
+
+(P(D) là như nhau đối với các giả thiết h)
+
+<!-- page: 44 -->
+
+## MAP: Ví dụ
+
+◼ Tập H bao gồm 2 giả thiết (có thể)
+
+• $\mathrm { h } _ { 1 }$ : Anh ta chơi tennis
+
+$\mathrm { h } _ { 2 }$ : Anh ta không chơi tennis
+
+◼ Tính giá trị của 2 xác xuất có điều kiện: $\mathbb { P } \left( \mathrm { h } _ { 1 } \mid \mathbb { D } \right) , \mathbb { P } \left( \mathrm { h } _ { 2 } \mid \mathbb { D } \right)$
+
+◼ Giả thiết có thể nhất $\mathrm { h _ { M A P } { = } h _ { 1 } }$ nếu $\mathbb { P } \left( \mathrm { h } _ { 1 } \mid \mathrm { D } \right) \geq \mathbb { P } \left( \mathrm { h } _ { 2 } \mid \mathrm { D } \right)$ ngược lại thì $\mathrm { h _ { M A P } = h _ { 2 } }$
+
+Vì vậy, cần tính 2 biểu thức: $\mathbb { P } \left( \mathbb { D } \left| \mathrm {  ~ h } _ { \perp } \right. \right) \mathrm {  ~ . ~ } \mathbb { P } \left( \mathrm {  ~ h } _ { \perp } \right)$ và $\mathbb { P } \left( \mathbb { D } \left| \mathrm {  ~ h } _ { 2 } \right) \right. . \mathbb { P } \left( \mathrm {  ~ h } _ { 2 } \right)$ , và đưa ra quyết định tương ứng
+
+• Nếu $\mathbb { P } \left( \mathbb { D }   |   \mathbb { h } _ { 1 } \right)   .   \mathbb { P } \left( \mathbb { h } _ { 1 } \right)   \geq   \mathbb { P } \left( \mathbb { D }   |   \mathbb { h } _ { 2 } \right)   .   \mathbb { P } \left( \mathbb { h } _ { 2 } \right)$ , thì kết luận là anh ta chơi tennis
+
+• Ngược lại, thì kết luận là anh ta không chơi tennis
+
+<!-- page: 45 -->
+
+## Đánh giá khả năng có thể nhất (MLE)
+
+◼ Phương pháp MAP: Với một tập các giả thiết có thể H, cần tìm một giả thiết cực đại hóa giá trị: $\mathbb { P } \left( \mathbb { D } \left| \mathbb { h } \right. \right) . \mathbb { P } \left( \mathbb { h } \right)$
+
+Giả sử (assumption) trong phương pháp **đánh giá khả năng có thể nhất (Maximum likelihood estimation – MLE)**: Tất cả các giả thiết đều có giá trị xác suất trước như nhau: $\mathbb { P } \left( \mathrm { h } _ { \mathrm { i } } \right) \mathrm { = } \mathbb { P } \left( \mathrm { h } _ { \mathrm { j } } \right)$ $\forall \mathrm { h _ { i } , } \mathrm { h _ { j } \in } \mathrm { H }$
+
+◼ Phương pháp MLE tìm giả thiết cực đại hóa giá trị $\mathrm { ~ P ~ } ( \mathrm { ~ D ~ } | \mathrm { ~ h ~ } )$ trong đó P(D|h) được gọi là khả năng có thể (likelihood) của dữ liệu D đối với h
+
+Giả thiết có khả năng nhất (maximum likelihood hypothesis)
+
+$$
+h_{ML} = \arg \max_{h\in H}P(D|h)
+$$
+
+<!-- page: 46 -->
+
+## MLE: Ví dụ
+
+◼ Tập H bao gồm 2 giả thiết có thể
+
+$\mathrm { h } _ { 1 }$ : Anh ta chơi tennis
+
+• $\mathrm { h } _ { 2 } !$ Anh ta không chơi tennis
+
+D: Tập dữ liệu (các ngày) mà trong đó thuộc tính Outlook có giá trị Sunny và thuộc tính Wind có giá trị Strong
+
+◼ Tính 2 giá trị khả năng xảy ra (likelihood values) của dữ liệu D đối với 2 giả thiết: $\mathrm { ~ P ~ } ( \mathrm { ~ D ~ } | \mathrm { ~ h } _ { 1 } )$ và $\mathrm { ~ P ~ } ( \mathrm { ~ D ~ } | \mathrm { ~ h } _ { 2 } )$
+
+$$
+\mathrm{P} (\text {Outlook = Sunny, Wind = Strong | h}_1) = 1 / 8
+$$
+
+```javascript
+- P (Outlook=Sunny, Wind=Strong|h₂)=1/4
+```
+
+◼ Giả thiết MLE $\mathrm { h _ { M L E } { = } h _ { 1 } }$ nếu $\mathbb { P }   (   \mathrm { D }   |   \mathrm { h } _ { 1 } )   \geq   \mathbb { P }   (   \mathrm { D }   |   \mathrm { h } _ { 2 } )$ ; và ngược lại thì $\mathrm { h _ { M L E } { = } h _ { 2 } }$
+
+```txt
+→ Bôi vì P(Outlook=Sunny, Wind=Strong|h₁) < P(Outlook=Sunny, Wind=Strong|h₂), hệ thống kết luận rằng: Anh ta sẽ không chơi tennis!
+```
+
+<!-- page: 47 -->
+
+## Phân loại Naïve Bayes (1)
+
+Biểu diễn bài toán phân loại (classification problem)
+
+• Một tập học D\_train, trong đó mỗi ví dụ học x được biểu diễn là một vectơ n chiều: $( \mathtt { x _ { 1 } } , \mathtt { x _ { 2 } } , \dots , \mathtt { x _ { n } } )$
+
+• Một tập xác định các nhãn lớp: $\mathrm{C}=\left\{\mathrm{C}_{1}, \quad \mathrm{C}_{2}, \quad \cdots, \quad \mathrm{C}_{\mathrm{m}}\right\}$
+
+• Với một ví dụ (mới) z, thì z sẽ được phân vào lớp nào?
+
+◼ Mục tiêu: Xác định phân lớp có thể (phù hợp) nhất đối với z
+
+$$
+c _ {M A P} = \underset {c _ {i} \in C} {\arg \max} P (c _ {i} \mid z)
+$$
+
+$$
+c _ {M A P} = \underset {c _ {i} \in C} {\arg \max} P (c _ {i} \mid z _ {1}, z _ {2},..., z _ {n})
+$$
+
+$$
+c_{MAP} = \arg \max_{c_i\in C}\frac{P(z_1,z_2,\dots,z_n\mid c_i).P(c_i)}{P(z_1,z_2,\dots,z_n)}
+$$
+
+(bởi định lý Bayes)
+
+<!-- page: 48 -->
+
+## Phân loại Naïve Bayes (2)
+
+◼ Để tìm được phân lớp có thể nhất đối với $z$ …
+
+$$
+c _ {M A P} = \underset {c _ {i} \in C} {\arg \max} P (z _ {1}, z _ {2}, \dots , z _ {n} \mid c _ {i}). P (c _ {i}) \quad \begin{array}{l} (\mathrm{P} (z _ {1}, z _ {2}, \dots , z _ {n}) \text {là} \\ \text {nhu' nhau với các lớp}) \end{array}
+$$
+
+◼ **Giả thuyết (assumption) trong phương pháp phân loại Naïve Bayes**: Các thuộc tính là độc lập có điều kiện (conditionally independent) đối với các lớp
+
+$$
+P (z_1, z_2, \dots, z_n \mid c_i) = \prod_{j=1}^n P(z_j \mid c_i)
+$$
+
+◼ Phân loại Naïve Bayes tìm phân lớp có thể nhất đối với z
+
+$$
+c _ {N B} = \underset {c _ {i} \in C} {\arg \max} P (c _ {i}). \prod_ {j = 1} ^ {n} P (z _ {j} \mid c _ {i})
+$$
+
+<!-- page: 49 -->
+
+## Phân loại Naïve Bayes: Giải thuật
+
+Giai đoạn học (training phase), sử dụng một tập học <u>Đối với mỗi phân lớp có thể</u> (mỗi nhãn lớp) $\mathbf { C } _ { \downarrow }   \in   \mathsf { C }$
+
+• Tính giá trị xác suất tiên nghiệm: $\mathrm { ~ P ~ } ( \mathbf { c } _ { \downarrow } )$
+
+• <u>Đối với mỗi giá trị thuộc tính</u> $\mathbf { x } _ { j }$ , tính giá trị xác suất xảy ra của giá trị thuộc tính đó đối với một phân lớp $\mathbf { c } _ { \mathrm { i } } \colon \mathbb { P } \left( \mathbf { x } _ { \mathrm { j } } \mid \mathbf { c } _ { \mathrm { i } } \right)$
+
+◼ Giai đoạn phân lớp (classification phase), đối với một ví dụ mới • Đối với mỗi phân lớp $\mathbf { C } _ { \downarrow }   \in   \mathbb { C }$ , tính giá trị của biểu thức:
+
+$$
+P (c _ {i}). \prod_ {j = 1} ^ {n} P (x _ {j} \mid c _ {i})
+$$
+
+• Xác định phân lớp của $Z$ là lớp có th $\dot { \dot { \theta } }$ nhất $\mathrm { ~ C ~ } ^ { \star }$
+
+$$
+c ^ {*} = \underset {c _ {i} \in C} {\arg \max} P (c _ {i}). \prod_ {j = 1} ^ {n} P (x _ {j} \mid c _ {i})
+$$
+
+<!-- page: 50 -->
+
+## Phân loại Naïve Bayes: Ví dụ (1)
+
+Một sinh viên trẻ với thu nhập trung bình và mức đánh giá tín dụng bình thường sẽ mua một cái máy tính?
+
+| Rec. ID | Age | Income | Student | Credit_Rating | Buy_Computer |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Young | High | No | Fair | No |
+| 2 | Young | High | No | Excellent | No |
+| 3 | Medium | High | No | Fair | Yes |
+| 4 | Old | Medium | No | Fair | Yes |
+| 5 | Old | Low | Yes | Fair | Yes |
+| 6 | Old | Low | Yes | Excellent | No |
+| 7 | Medium | Low | Yes | Excellent | Yes |
+| 8 | Young | Medium | No | Fair | No |
+| 9 | Young | Low | Yes | Fair | Yes |
+| 10 | Old | Medium | Yes | Fair | Yes |
+| 11 | Young | Medium | Yes | Excellent | Yes |
+| 12 | Medium | Medium | No | Excellent | Yes |
+| 13 | Medium | High | Yes | Fair | Yes |
+| 14 | Old | Medium | No | Excellent | No |
+
+http://www.cs.sunysb.edu/\~cse634/lecture\_notes/07classification.pdf
+
+<!-- page: 51 -->
+
+## Phân loại Naïve Bayes: Ví dụ (2)
+
+◼ Biểu diễn bài toán phân loại
+
+$z = ( A g e = Y o u n g )$ ,Income=Medium,Student=Yes,Credit\_Rating=Fair)
+
+• Có 2 phân lớp có thể: $C _ { 1 }$ (“Mua máy tính”) và $\mathbf { C } _ { 2 }$ (“Không mua máy tính”)
+
+◼ Tính giá trị xác suất trước cho mỗi phân lớp
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+- $\mathrm{P}(\mathrm{C}_{1}) = 9 / 14$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+- $P(c_{2}) = 5 / 14$
+</div>
+
+◼ Tính giá trị xác suất của mỗi giá trị thuộc tính đối với mỗi phân lớp
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+- $P(Age=Young|c_1) = 2/9$;
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$P(Age=Young|c_{2}) = 3/5$
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+- $P(\text{Income} = \text{Medium}|c_1) = 4/9$;
+</div>
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$P(\text{Income}=\text{Medium}|c_{2}) = 2/5$
+</div>
+
+• P(Student=Yes|c<sub>1</sub>) = 6/9;
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+$P(Student=Yes|c_{2}) = 1/5$
+</div>
+
+```txt
+- P(Credit_Rating=Fair|c₁) = 6/9;
+```
+
+```txt
+P(Credit_Rating=Fair|c₂) = 2/5
+```
+
+<!-- page: 52 -->
+
+## Phân loại Naïve Bayes: Ví dụ (3)
+
+```txt
+■ Tính toán xác suất có thể xảy ra (likelihood) của ví dụ z đối với mỗi phân lớp
+• Đối với phân lớp c₁
+    P(z|c₁) = P(Age=Young|c₁).P(Income=Medium|c₁).P(Student=Yes|c₁).
+    P(Credit_Rating=Fair|c₁) = (2/9).(4/9).(6/9).(6/9) = 0.044
+• Đối với phân lớp c₂
+    P(z|c₂) = P(Age=Young|c₂).P(Income=Medium|c₂).P(Student=Yes|c₂).
+    P(Credit_Rating=Fair|c₂) = (3/5).(2/5).(1/5).(2/5) = 0.019
+■ Xác định phân lớp có thể nhất (the most probable class)
+• Đối với phân lớp c₁
+    P(c₁).P(z|c₁) = (9/14).(0.044) = 0.028
+• Đối với phân lớp c₂
+    P(c₂).P(z|c₂) = (5/14).(0.019) = 0.007
+→ Kết luận: Anh ta (z) sẽ mua một máy tính!
+```
+
+<!-- page: 53 -->
+
+## Phân loại Naïve Bayes: Vấn đề (1)
+
+◼ Nếu không có ví dụ nào gắn với phân lớp $\mathbf { C _ { i } }$ có giá trị thuộc tính $\mathbf { x } _ { j }$
+
+$\mathbb { P } \left( \mathbf { x } _ { \mathbf { j } } \mid \mathbf { c } _ { \mathbf { i } } \right) \mathbf { = } 0$ , và vì vậy: $P(c_i).\prod_{j = 1}^{n} P(x_j \mid c_i) = 0$
+
+Giải pháp: Sử dụng phương pháp Bayes để ước lượng $\mathbb { P } \left( \mathbf { x } _ { \mathrm { j } } \mid \mathbf { c } _ { \mathrm { i } } \right)$
+
+$$
+P (x _ {j} \mid c _ {i}) = \frac {n (c _ {i} , x _ {j}) + m p}{n (c _ {i}) + m}
+$$
+
+$\mathrm { n }   ( \mathbf { c } _ { \downarrow } )$ : số lượng các ví dụ học gắn với phân lớp $\mathbf { C _ { i } }$
+
+$\mathbf { n } \left( \mathbf { c } _ { \mathrm { i } } , \mathbf { x } _ { \mathrm { j } } \right)$ : số lượng các ví dụ học gắn với phân lớp $C _ { i }$ có giá trị thuộc tính $\mathbf { x } _ { j }$
+
+• p: ước lượng đối với giá trị xác suất $\mathbb { P } \left( \mathbf { x } _ { \mathrm { j } } \mid \mathbf { c } _ { \mathrm { i } } \right)$
+
+→ Các ước lượng đồng mức: $\scriptstyle \mathbb { P } = 1 / \mathbb { k } ,$ , nếu thuộc tính $\mathsf { E } _ { \mathsf { j } }$ có k giá trị
+
+• m: một hệ số (trọng số)
+
+→ Để bổ sung cho $\mathrm { n }   ( \mathbf { c } _ { \downarrow } )$ các ví dụ thực sự được quan sát với thêm m mẫu ví dụ với ước lượng p
+
+<!-- page: 54 -->
+
+## Phân loại Naïve Bayes: Vấn đề (2)
+
+◼ Giới hạn về độ chính xác trong tính toán của máy tính $\mathbb { P } \left( \mathbf { x } _ { \mathcal { j } } \mid \mathbf { c } _ { \mathcal { i } } \right) \leq 1$ , đối với mọi giá trị thuộc tính x và phân lớp $\mathbf { x } _ { j }$ $\mathbf { C _ { i } }$ • Vì vậy, khi số lượng các giá trị thuộc tính là rất lớn, thì:
+
+$$
+\lim _ {n \to \infty} \left(\prod_ {j = 1} ^ {n} P (x _ {j} \mid c _ {i})\right) = 0
+$$
+
+◼ Giải pháp: Sử dụng hàm lôgarit cho các giá trị xác suất
+
+$$
+c _ {N B} = \arg \max _ {c _ {i} \in C} \left(\log \left[ P (c _ {i}). \prod_ {j = 1} ^ {n} P (x _ {j} \mid c _ {i}) \right]\right)
+$$
+
+$$
+c _ {N B} = \arg \max _ {c _ {i} \in C} \left(\log P (c _ {i}) + \sum_ {j = 1} ^ {n} \log P (x _ {j} \mid c _ {i})\right)
+$$
+
+<!-- page: 55 -->
+
+## Phân loại văn bản bằng NB (1)
+
+## ◼ Biểu diễn bài toán phân loại văn bản
+
+• Tập học D, trong đó mỗi ví dụ học là một biểu diễn văn bản gắn với một nhãn lớp: $\mathbb { D } = \{ ( \mathrm { d } _ { \mathrm { k } } ,   \mathrm { c } _ { \mathrm { i } } ) \}$
+
+• Một tập các nhãn lớp xác định: $C = \{ c _ { \downarrow } \}$
+
+## ◼ Giai đoạn học
+
+• Từ tập các văn bản trong D, trích ra tập các từ khóa $\mathbf { T } = \{ t _ { j } \}$
+
+• Gọi $D _ { c _ { i } }$ là tập các văn bản trong D có nhãn lớp $\mathbf { C _ { i } }$
+
+Đối với mỗi phân lớp - Tính giá trị xác suất trước của phân lớp $\mathbf { C _ { i } }$ $\mathbf { C } _ { i }$ $P ( c _ { _ i } )   =   \frac { \left| D _ { _ { c _ { _ i } } } \right| } { \left| D \right| }$
+
+\- Đối với mỗi từ khóa $t _ { j }$ , tính xác suất từ khóa $t _ { j }$ xuất hiện đối với lớp $\mathbf { C _ { i } }$
+
+$$
+P (t _ {j} \mid c _ {i}) = \frac {\left(\sum_ {d _ {k} \in D _ {c _ {i}}} n (d _ {k} , t _ {j})\right) + 1}{\left(\sum_ {d _ {k} \in D _ {c _ {i}}} \sum_ {t _ {m} \in T} n (d _ {k} , t _ {m})\right) + | T |}
+$$
+
+$\mathrm { ( n \Omega ( d _ { k } , t _ { j } ) }$ : số lần xuất hiện của từ khóa $t _ { j }$ trong văn bản $\mathrm { d _ { k } ) }$
+
+<!-- page: 56 -->
+
+## Phân loại văn bản bằng NB (2)
+
+◼ Giai đoạn phân lớp đối với một văn bản mới $d$
+
+• Từ văn bản $d ,$ trích ra tập $\mathsf { T _ { d } }$ gồm các từ khóa (keywords) $t _ { j }$ đã được định nghĩa trong tập T
+
+• **Giả sử (assumption)**. Xác suất từ khóa $t _ { j }$ xuất hiện đối với lớp $\mathbf { C _ { i } }$ là độc lập đối với vị trí của từ khóa đó trong văn bản
+
+$$
+\mathrm{P} \left(\mathrm{t} _ {\mathrm{j}} \text {♂vifirik} \mid \mathrm{c} _ {\mathrm{i}}\right) = \mathrm{P} \left(\mathrm{t} _ {\mathrm{j}} \text {♂vifirim} \mid \mathrm{c} _ {\mathrm{i}}\right), \forall \mathrm{k}, \mathrm{m}
+$$
+
+• Đối với mỗi phân lớp $\mathbf { C } _ { i }$ , tính xác suất hậu nghiệm của văn bản $d$ đối với $\mathbf { C _ { i } }$ $P ( c _ { i } ) . \prod _ { t _ { j } \in T _ { d } } P ( t _ { j }   |   c _ { i } )$
+
+• Phân lớp văn bản d thuộc vào lớp $\mathbf { C } ^ { \star }$
+
+$$
+c ^ {*} = \underset {c _ {i} \in C} {\arg \max} P (c _ {i}). \prod_ {t _ {j} \in T _ {d}} P (t _ {j} \mid c _ {i})
+$$
+
+<!-- page: 57 -->
+
+## Tài liệu tham khảo
+
+• E. Alpaydin. Introduction to Machine Learning. The MIT Press, 2010.
+
+• T. M. Mitchell. Machine Learning. McGraw-Hill, 1997.
+
+• T. M. Mitchell. The discipline of machine learning. CMU technical report, 2006.
+
+• H. A. Simon. Why Should Machines Learn? In R. S. Michalski, J. Carbonell, and T. M. Mitchell (Eds.): Machine learning: An artificial intelligence approach, chapter 2, pp. 25-38. Morgan Kaufmann, 1983.
+
+• A. Kontorovich and Weiss. A Bayes consistent 1-NN classifier. Proceedings of the 18th International Conference on Artificial Intelligence and Statistics (AISTATS). JMLR: W&CP volume 38, 2015.
+
+• A. Guyader, N. Hengartner. On the Mutual Nearest Neighbors Estimate in Regression. Journal of Machine Learning Research 14 (2013) 2361-2376.
+
+• L. Gottlieb, A. Kontorovich, and P. Nisnevitch. Near-optimal sample compression for nearest neighbors. Advances in Neural Information Processing Systems, 2014.

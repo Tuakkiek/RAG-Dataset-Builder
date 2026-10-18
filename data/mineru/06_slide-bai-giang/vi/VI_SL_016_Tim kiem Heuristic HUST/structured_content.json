@@ -1,0 +1,6025 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.17,
+            0.185,
+            0.821,
+            0.301
+          ],
+          "level": 2,
+          "content": "Trí Tuệ Nhân Tạo"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.26,
+            0.349,
+            0.732,
+            0.417
+          ],
+          "level": 2,
+          "content": "(Artificial Intelligence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.368,
+            0.586,
+            0.605,
+            0.633
+          ],
+          "content": "**Lê Thanh Hương**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.287,
+            0.75,
+            0.73,
+            0.844
+          ],
+          "content": "Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.051,
+            0.529,
+            0.135
+          ],
+          "level": 2,
+          "content": "Nội dung môn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.185,
+            0.533,
+            0.251
+          ],
+          "content": "Chương 1. Tổng quan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.261,
+            0.661,
+            0.323
+          ],
+          "content": "Chương 2. Tác tử thông minh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.331,
+            0.649,
+            0.395
+          ],
+          "content": "Chương 3. Giải quyết vấn đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.404,
+            0.525,
+            0.454
+          ],
+          "content": "3.1. Tìm kiếm cơ bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.462,
+            0.693,
+            0.516
+          ],
+          "content": "3.2. Tìm kiếm với tri thức bổ sung"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.524,
+            0.826,
+            0.577
+          ],
+          "content": "3.3. Tìm kiếm dựa trên thỏa mãn ràng buộc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.587,
+            0.688,
+            0.65
+          ],
+          "content": "Chương 4. Tri thức và suy diễn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.663,
+            0.501,
+            0.724
+          ],
+          "content": "Chương 5. Học máy"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.953,
+            0.963,
+            0.967,
+            0.986
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.053,
+            0.874,
+            0.135
+          ],
+          "level": 2,
+          "content": "Nhắc lại: Tìm kiếm theo cấu trúc cây"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.074,
+            0.239,
+            0.89,
+            0.548
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction TREE-SEARCH(problem, fringe) returns a solution, or failure\n    fringe ← INSERT(MAKE-NODE(INITIAL-STATE[problem]), fringe)\nloop do\n    if fringe is empty then return failure\n    node ← REMOVE-FRONT(fringe)\n    if GOAL-TEST[problem] applied to STATE(node) succeeds return node\n    fringe ← INSERTALL(EXPAND(node, problem), fringe)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.673,
+            0.915,
+            0.774
+          ],
+          "content": "Một chiến lược (phương pháp) tìm kiếm = Một cách xác định thứ tự xét các nút của cây"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.053,
+            0.712,
+            0.133
+          ],
+          "level": 2,
+          "content": "Tìm kiếm với tri thức bổ sung"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.207,
+            0.894,
+            0.352
+          ],
+          "content": "◼ Các chiến lược tìm kiếm cơ bản (uninformed search strategies) chỉ sử dụng các thông tin chứa trong định nghĩa của bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.363,
+            0.922,
+            0.454
+          ],
+          "content": "❑ Không phù hợp với nhiều bài toán thực tế (do đòi hỏi chi phí quá cao về thời gian và bộ nhớ)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.495,
+            0.933,
+            0.643
+          ],
+          "content": "◼ Các chiến lược tìm kiếm với tri thức bổ sung (informed search strategies) sử dụng các tri thức cụ thể của bài toán → Quá trình tìm kiếm hiệu quả hơn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.653,
+            0.8,
+            0.698
+          ],
+          "content": "❑ Các giải thuật tìm kiếm best-first (Greedy best-first, A\\*)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.706,
+            0.94,
+            0.795
+          ],
+          "content": "❑ Các giải thuật tìm kiếm cục bộ (Hill-climbing, Simulated annealing, Local beam, Genetic algorithms)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.803,
+            0.917,
+            0.851
+          ],
+          "content": "❑ Các giải thuật tìm kiếm đối kháng (MiniMax, Alpha-beta pruning)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.948,
+            0.943,
+            0.969
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.061,
+            0.418,
+            0.125
+          ],
+          "level": 2,
+          "content": "Best-first search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.202,
+            0.94,
+            0.301
+          ],
+          "content": "Ý tưởng: Sử dụng một hàm đánh giá f(n) cho mỗi nút của cây tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.308,
+            0.665,
+            0.353
+          ],
+          "content": "❑ Để đánh giá mức độ “phù hợp” của nút đó"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.358,
+            0.93,
+            0.439
+          ],
+          "content": "Trong quá trình tìm kiếm, ưu tiên xét các nút có mức độ phù hợp cao nhất"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.473,
+            0.344,
+            0.522
+          ],
+          "level": 2,
+          "content": "◼ Cài đặt giải thuật"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.525,
+            0.921,
+            0.613
+          ],
+          "content": "❑ Sắp thứ tự các nút trong cấu trúc fringe theo trật tự giảm dần về mức độ phù hợp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.643,
+            0.914,
+            0.741
+          ],
+          "content": "◼ Các trường hợp đặc biệt của giải thuật Best-first search ❑ Greedy best-first search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.749,
+            0.255,
+            0.788
+          ],
+          "content": "❑ A<sup>\\*</sup> search"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.059,
+            0.59,
+            0.131
+          ],
+          "level": 2,
+          "content": "Greedy best-first search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.21,
+            0.673,
+            0.263
+          ],
+          "content": "◼ Hàm đánh giá $f ( n )$ là hàm heuristic $h ( n )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.296,
+            0.935,
+            0.403
+          ],
+          "content": "◼ Hàm heuristic $h ( n )$ đánh giá chi phí để đi từ nút hiện tại n đến nút đích (mục tiêu)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.436,
+            0.905,
+            0.646
+          ],
+          "content": "◼ Ví dụ: Trong bài toán tìm đường đi từ Arad đến Bucharest, sử dụng: $h _ { S L D } ( \\boldsymbol { n } ) = \\boldsymbol { \\cup }$ ớc lượng khoảng cách đường thẳng (“chim bay”) từ thành phố hiện tại n đến Bucharest"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.682,
+            0.913,
+            0.793
+          ],
+          "content": "◼ Phương pháp tìm kiếm Greedy best-first search sẽ xét (phát triển) nút “có vẻ” gần với nút đích (mục tiêu) nhất"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.059,
+            0.842,
+            0.134
+          ],
+          "level": 2,
+          "content": "Greedy best-first search – Ví dụ (1)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.044,
+            0.233,
+            0.746,
+            0.802
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_image_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.769,
+            0.223,
+            0.945,
+            0.805
+          ],
+          "content": "<table><tr><td colspan=\"2\">Straight-line distance to Bucharest</td></tr><tr><td>Arad</td><td>366</td></tr><tr><td>Bucharest</td><td>0</td></tr><tr><td>Craiova</td><td>160</td></tr><tr><td>Dobreta</td><td>242</td></tr><tr><td>Eforie</td><td>161</td></tr><tr><td>Eagaras</td><td>176</td></tr><tr><td>Giurgiu</td><td>77</td></tr><tr><td>Hirsova</td><td>151</td></tr><tr><td>Iasi</td><td>226</td></tr><tr><td>Lugoj</td><td>244</td></tr><tr><td>Mehadia</td><td>241</td></tr><tr><td>Neamt</td><td>234</td></tr><tr><td>Oradea</td><td>380</td></tr><tr><td>Pitesti</td><td>10</td></tr><tr><td>Rimnicu Vilcea</td><td>193</td></tr><tr><td>Sibiu</td><td>253</td></tr><tr><td>Timisoara</td><td>329</td></tr><tr><td>Urziceni</td><td>80</td></tr><tr><td>Vaslui</td><td>199</td></tr><tr><td>Zerind</td><td>374</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_6_table_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.93,
+            0.947,
+            0.941,
+            0.968
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.842,
+            0.135
+          ],
+          "level": 2,
+          "content": "Greedy best-first search – Ví dụ (2)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.506,
+            0.272,
+            0.625,
+            0.339
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.93,
+            0.947,
+            0.942,
+            0.968
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.843,
+            0.136
+          ],
+          "level": 2,
+          "content": "Greedy best-first search – Ví dụ (3)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.233,
+            0.271,
+            0.945,
+            0.46
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.968
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.844,
+            0.137
+          ],
+          "level": 2,
+          "content": "Greedy best-first search – Ví dụ (4)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.27,
+            0.943,
+            0.577
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.844,
+            0.136
+          ],
+          "level": 2,
+          "content": "Greedy best-first search – Ví dụ (5)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.27,
+            0.943,
+            0.693
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.895,
+            0.129
+          ],
+          "level": 2,
+          "content": "Greedy best-first search – Các đặc điểm"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.21,
+            0.35,
+            0.258
+          ],
+          "level": 2,
+          "content": "◼ Tính hoàn chỉnh?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.267,
+            0.919,
+            0.359
+          ],
+          "content": "❑ Không – Vì có thể vướng (chết tắc) trong các vòng lặp kiểu như: Iasi → Neamt → Iasi → Neamt →"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.392,
+            0.477,
+            0.447
+          ],
+          "level": 2,
+          "content": "◼ Độ phức tạp về thời gian?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.457,
+            0.201,
+            0.502
+          ],
+          "content": "❑ $O ( b ^ { m } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.51,
+            0.749,
+            0.559
+          ],
+          "content": "❑ Một hàm heuristic tốt có thể mang lại cải thiện lớn"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.6,
+            0.455,
+            0.655
+          ],
+          "level": 2,
+          "content": "◼ Độ phức tạp về bộ nhớ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.665,
+            0.667,
+            0.713
+          ],
+          "content": "❑ O(b<sup>m</sup>) – Lưu giữ tất cả các nút trong bộ nhớ"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.753,
+            0.273,
+            0.805
+          ],
+          "level": 2,
+          "content": "◼ Tính tối ưu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.821,
+            0.21,
+            0.865
+          ],
+          "content": "❑ Không"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.059,
+            0.269,
+            0.125
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.218,
+            0.929,
+            0.328
+          ],
+          "content": "◼ Ý tưởng: Tránh việc xét (phát triển) các nhánh tìm kiếm đã xác định (cho đến thời điểm hiện tại) là có chi phí cao"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.373,
+            0.688,
+            0.425
+          ],
+          "content": "◼ Sử dụng hàm đánh giá $f ( n ) = g ( n ) + h ( n )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.455,
+            0.7,
+            0.504
+          ],
+          "content": "❑ g(n) = chi phí từ nút gốc cho đến nút hiện tại n"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.536,
+            0.732,
+            0.581
+          ],
+          "content": "❑ h(n) = chi phí ước lượng từ nút hiện tại n tới đích"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.611,
+            0.926,
+            0.699
+          ],
+          "content": "❑ f(n) = chi phí tổng thể ước lượng của đường đi qua nút hiện tại n đến đích"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.522,
+            0.135
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search – Ví dụ (1)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.515,
+            0.233,
+            0.632,
+            0.303
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.522,
+            0.135
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search – Ví dụ (2)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.249,
+            0.231,
+            0.962,
+            0.403
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_14_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.522,
+            0.135
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search – Ví dụ (3)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.09,
+            0.231,
+            0.962,
+            0.497
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.523,
+            0.135
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search – Ví dụ (4)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.09,
+            0.231,
+            0.962,
+            0.597
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.056,
+            0.522,
+            0.135
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search – Ví dụ (5)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.089,
+            0.231,
+            0.961,
+            0.595
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.056,
+            0.522,
+            0.135
+          ],
+          "level": 2,
+          "content": "A<sup>\\*</sup> search – Ví dụ (6)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.09,
+            0.231,
+            0.963,
+            0.689
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.019,
+            0.034,
+            0.785,
+            0.911
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_0.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.789,
+            0.027,
+            0.969,
+            0.901
+          ],
+          "content": "| n | h(n) |\n| --- | --- |\n| HN | 50 |\n| ST | 60 |\n| LC | 75 |\n| HB | 65 |\n| LS | 70 |\n| HP | 80 |\n| QN | 80 |\n| TB | 55 |\n| NĐ | 45 |\n| NB | 20 |\n| TH | 15 |\n| V | 0 |",
+          "captions": [
+            {
+              "bbox": [
+                0.421,
+                0.907,
+                0.972,
+                0.957
+              ],
+              "content": "h(n): khoảng cách đường chim bay HN → V"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_19_table_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.054,
+            0.602,
+            0.133
+          ],
+          "level": 2,
+          "content": "A\\* search: các đặc điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.208,
+            0.934,
+            0.421
+          ],
+          "content": "Nếu không gian các trạng thái là hữu hạn và có giải pháp để tránh việc xét (lặp) lại các trạng thái, thì giải thuật A\\* là hoàn chỉnh (tìm được lời giải) – nhưng không đảm bảo là tối ưu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.455,
+            0.935,
+            0.617
+          ],
+          "content": "Nếu không gian các trạng thái là hữu hạn và không có giải pháp để tránh việc xét (lặp) lại các trạng thái, thì giải thuật A\\* là không hoàn chỉnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.649,
+            0.931,
+            0.755
+          ],
+          "content": "Nếu không gian các trạng thái là vô hạn, thì giải thuật A\\* là không hoàn chỉnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.787,
+            0.417,
+            0.839
+          ],
+          "content": "◼ Khi nào thì $\\mathsf { A } ^ { \\star }$ tối ưu?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.754,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các ước lượng chấp nhận được"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.197,
+            0.938,
+            0.359
+          ],
+          "content": "Một ước lượng h(n) được xem là chấp nhận được nếu đối với mọi nút n: $0 \\leq h ( n ) \\leq h ^ { * } ( n )$ , trong đó $h ^ { * } ( n )$ là chi phí thật (thực tế) để đi từ nút n đến đích"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.369,
+            0.929,
+            0.573
+          ],
+          "content": "◼ Một ước lượng chấp nhận được không bao giờ đánh giá quá cao (overestimate) đối với chi phí để đi tới đích ❑ Thực chất, ước lượng chấp nhận được có xu hướng đánh giá “lạc quan”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.583,
+            0.891,
+            0.691
+          ],
+          "content": "◼ Ví dụ: Ước lượng $h _ { S L D } ( n )$ đánh giá thấp hơn khoảng cách đường đi thực tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.733,
+            0.854,
+            0.889
+          ],
+          "content": "**Định lý:** Nếu h(n) là đánh giá chấp nhận được, thì phương pháp tìm kiếm A<sup>\\*</sup> sử dụng giải thuật TREE-SEARCH là tối ưu"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.86,
+            0.134
+          ],
+          "level": 2,
+          "content": "Tính tối ưu của $\\mathbb { A } ^ { * }$ - Chứng minh (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.207,
+            0.928,
+            0.386
+          ],
+          "content": "Giả sử có một đích không tối ưu (suboptimal goal) $G _ { 2 }$ được sinh ra và lưu trong cấu trúc fringe. Gọi n là một nút chưa xét trong cấu trúc fringe sao cho n nằm trên một đường đi ngắn nhất đến một đích tối ưu (optimal goal) G"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.295,
+            0.377,
+            0.688,
+            0.622
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.661,
+            0.372,
+            0.708
+          ],
+          "content": "◼ Ta có: 1) $\\mathsf { f } ( \\mathsf { G } _ { 2 } ) = \\mathsf { g } ( \\mathsf { G } _ { 2 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.715,
+            0.369,
+            0.761
+          ],
+          "content": "◼ Ta có: 2) $g ( G _ { 2 } ) > g ( G )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.769,
+            0.352,
+            0.813
+          ],
+          "content": "◼ Ta có: 3) $\\mathsf{f}(\\mathsf{G}) = \\mathsf{g}(\\mathsf{G})$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.822,
+            0.516,
+            0.868
+          ],
+          "content": "◼ Từ $1 ) + 2 ) + 3 )$ suy ra: $4 ) \\mathsf { f } ( \\mathsf { G } _ { 2 } ) > \\mathsf { f } ( \\mathsf { G } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.555,
+            0.661,
+            0.714,
+            0.707
+          ],
+          "content": "vì $h ( \\mathbf { G } _ { 2 } ) = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.554,
+            0.713,
+            0.883,
+            0.761
+          ],
+          "content": "vì $\\mathsf { G } _ { 2 }$ là đích không tối ưu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.556,
+            0.768,
+            0.704,
+            0.814
+          ],
+          "content": "$h ( \\mathbf { G } ) = 0$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.053,
+            0.861,
+            0.136
+          ],
+          "level": 2,
+          "content": "Tính tối ưu của $\\mathbb { A } ^ { * }$ - Chứng minh (2)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.294,
+            0.375,
+            0.69,
+            0.619
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.631,
+            0.354,
+            0.675
+          ],
+          "content": "◼ Ta có: 5) $h ( n ) \\leq h ^ { \\prime } ( n )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.454,
+            0.629,
+            0.89,
+            0.677
+          ],
+          "content": "vì h là ước lượng chấp nhận được"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.683,
+            0.598,
+            0.73
+          ],
+          "content": "◼ Từ 5) suy ra: 6) $g ( n ) + h ( n ) \\leq g ( n ) + h ^ { \\prime } ( n )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.735,
+            0.833,
+            0.783
+          ],
+          "content": "◼ Ta có: $7 ) g ( n ) + h ^ { \\prime } ( n ) = f ( G )$ vì n nằm trên đường đi tới G"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.791,
+            0.461,
+            0.837
+          ],
+          "content": "◼ Từ 6)+7) suy ra: $8 ) f ( n ) \\leq f ( G )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.857,
+            0.976,
+            0.905
+          ],
+          "content": "◼ Từ $4 ) + 8 )$ suy ra: $\\mathsf { f } ( \\mathsf { G } _ { 2 } ) > \\mathsf { f } ( \\mathsf { n } )$ . Tức là, giải thuật $\\mathsf { A } ^ { \\star }$ không bao giờ xét $G _ { 2 }$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.833,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các ước lượng chấp nhận được (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.189,
+            0.467,
+            0.237
+          ],
+          "content": "Ví dụ đối với trò chơi ô chữ 8 số:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.288,
+            0.902,
+            0.374
+          ],
+          "content": "◼ $h _ { 1 } ( n ) = s \\hat { 0 }$ các ô chữ nằm ở sai vị trí (so với vị trí của ô chữ đấy ở trạng thái đích)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.376,
+            0.871,
+            0.466
+          ],
+          "content": "◼ $h _ { 2 } ( n ) =$ khoảng cách dịch chuyển $( \\leftarrow , \\rightarrow , \\uparrow , \\downarrow )$ ngắn nhất để dịch chuyển các ô chữ nằm sai vị trí về vị trí đúng"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.056,
+            0.543,
+            0.233,
+            0.598
+          ],
+          "content": "\\mathsf {h} _ {1} (\\mathsf {S}) = ?",
+          "image_source": "images/page_24_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.056,
+            0.636,
+            0.232,
+            0.692
+          ],
+          "content": "\\mathsf {h} _ {2} (\\mathsf {S}) = ?",
+          "image_source": "images/page_24_equation_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.433,
+            0.52,
+            0.635,
+            0.791
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.486,
+                0.809,
+                0.567,
+                0.834
+              ],
+              "content": "Start State"
+            }
+          ],
+          "image_source": "images/page_24_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.696,
+            0.52,
+            0.897,
+            0.79
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.758,
+                0.807,
+                0.835,
+                0.833
+              ],
+              "content": "Goal State"
+            }
+          ],
+          "image_source": "images/page_24_image_8.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.833,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các ước lượng chấp nhận được (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.189,
+            0.467,
+            0.237
+          ],
+          "content": "Ví dụ đối với trò chơi ô chữ 8 số:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.288,
+            0.902,
+            0.374
+          ],
+          "content": "◼ $h _ { 1 } ( n ) = s \\hat { 0 }$ các ô chữ nằm ở sai vị trí (so với vị trí của ô chữ đấy ở trạng thái đích)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.376,
+            0.871,
+            0.466
+          ],
+          "content": "◼ $h _ { 2 } ( n ) =$ khoảng cách dịch chuyển $( \\leftarrow , \\rightarrow , \\uparrow , \\downarrow )$ ngắn nhất để dịch chuyển các ô chữ nằm sai vị trí về vị trí đúng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.543,
+            0.234,
+            0.598
+          ],
+          "content": "◼ $\\mathsf { h } _ { 1 } ( \\mathsf { S } ) = 8$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.092,
+            0.637,
+            0.289,
+            0.69
+          ],
+          "content": "\\mathsf{h}_2(\\mathsf{S}) = 3 + 1+",
+          "image_source": "images/page_25_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.054,
+            0.696,
+            0.356,
+            0.745
+          ],
+          "content": "2 + 2 + 2 + 3 + 3 + 2 = 1 8",
+          "image_source": "images/page_25_equation_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.432,
+            0.52,
+            0.636,
+            0.791
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.486,
+                0.809,
+                0.567,
+                0.834
+              ],
+              "content": "Start State"
+            }
+          ],
+          "image_source": "images/page_25_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.695,
+            0.52,
+            0.897,
+            0.79
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.758,
+                0.807,
+                0.835,
+                0.833
+              ],
+              "content": "Goal State"
+            }
+          ],
+          "image_source": "images/page_25_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.141,
+            0.16,
+            0.857,
+            0.821
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.056,
+                0.045,
+                0.549,
+                0.129
+              ],
+              "content": "Trò chơi Tic-tac-toe"
+            },
+            {
+              "bbox": [
+                0.03,
+                0.849,
+                0.921,
+                0.9
+              ],
+              "content": "KGTT của tic-tac-toe được thu nhỏ nhờ tính đối xứng của các trạng thái"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_26_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.081,
+            0.058,
+            0.541,
+            0.145
+          ],
+          "level": 2,
+          "content": "Phép đo heuristic"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.048,
+            0.249,
+            0.291,
+            0.573
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.072,
+                0.636,
+                0.276,
+                0.689
+              ],
+              "content": "Chiếm 3 đường"
+            }
+          ],
+          "image_source": "images/page_27_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.378,
+            0.252,
+            0.623,
+            0.577
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.391,
+                0.636,
+                0.593,
+                0.689
+              ],
+              "content": "Chiếm 4 đường"
+            }
+          ],
+          "image_source": "images/page_27_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.713,
+            0.253,
+            0.952,
+            0.579
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.724,
+                0.636,
+                0.925,
+                0.689
+              ],
+              "content": "Chiếm 2 đường"
+            }
+          ],
+          "image_source": "images/page_27_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.771,
+            0.925,
+            0.901
+          ],
+          "content": "Heuristic “Số đường thắng nhiều nhất” áp dụng cho các nút con đầu tien trong tic-tac-toe."
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.04,
+            0.456,
+            0.111
+          ],
+          "level": 2,
+          "content": "Phép đo heuristic"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.222,
+            0.121,
+            0.777,
+            0.981
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.917,
+            0.942,
+            0.942,
+            0.969
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.455,
+            0.134
+          ],
+          "level": 2,
+          "content": "Ước lượng ưu thế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.187,
+            0.874,
+            0.266
+          ],
+          "content": "◼ Ước lượng $h _ { 2 }$ được gọi là ưu thế hơn / trội hơn (dominate) ước lượng $\\tilde { h } _ { 1 } \\tilde { n } \\hat { e } u _ { 1 } ^ { 2 }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.267,
+            0.658,
+            0.314
+          ],
+          "content": "❑ $h ^ { \\star } ( n ) \\geq h _ { 2 } ( n ) \\geq h _ { 1 } ( n )$ đối với tất cả các nút n"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.324,
+            0.87,
+            0.407
+          ],
+          "content": "◼ Nếu ước lượng $h _ { 2 } \\mathbf { w } \\mathbf { u }$ thế hơn ước lượng $h _ { 1 } ,$ , thì $h _ { 2 }$ tốt hơn (nên được sử dụng hơn) cho quá trình tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.417,
+            0.904,
+            0.497
+          ],
+          "content": "Trong ví dụ (ô chữ 8 số) ở trên: Chi phí tìm kiếm = Số lượng trung bình của các nút phải xét:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.503,
+            0.342,
+            0.543
+          ],
+          "content": "❑ Với độ sâu $d { = } 1 2$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.546,
+            0.436,
+            0.588
+          ],
+          "content": "◼ IDS (Tìm kiếm sâu dần):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.556,
+            0.548,
+            0.811,
+            0.589
+          ],
+          "content": "3.644.035 nút phải xét"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.593,
+            0.461,
+            0.633
+          ],
+          "content": "◼ $\\mathsf { A } ^ { \\star }$ (sử dụng ước lượng $h _ { 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.556,
+            0.592,
+            0.744,
+            0.632
+          ],
+          "content": "227 nút phải xét"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.636,
+            0.461,
+            0.677
+          ],
+          "content": "◼ $\\mathsf { A } ^ { \\star } ($ (sử dụng ước lượng $h _ { 2 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.557,
+            0.635,
+            0.729,
+            0.676
+          ],
+          "content": "73 nút phải xét"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.679,
+            0.341,
+            0.718
+          ],
+          "content": "❑ Với độ sâu $d { = } 2 4$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.72,
+            0.436,
+            0.761
+          ],
+          "content": "◼ IDS (Tìm kiếm sâu dần):"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.556,
+            0.72,
+            0.816,
+            0.761
+          ],
+          "content": "Quá nhiều nút phải xét"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.763,
+            0.458,
+            0.802
+          ],
+          "content": "◼ A<sup>\\*</sup>(sử dụng ước lượng $h _ { 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.556,
+            0.763,
+            0.778,
+            0.801
+          ],
+          "content": "39.135 nút phải xét"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.803,
+            0.458,
+            0.844
+          ],
+          "content": "◼ A<sup>\\*</sup>(sử dụng ước lượng $h _ { 2 } )$ :"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.558,
+            0.803,
+            0.764,
+            0.843
+          ],
+          "content": "1.641 nút phải xét"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.598,
+            0.135
+          ],
+          "level": 2,
+          "content": "Các ước lượng kiên định"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.199,
+            0.943,
+            0.28
+          ],
+          "content": "◼ Một ước lượng h được xem là kiên định (consistent), nếu với mọi nút n và với mọi nút tiếp theo $n ^ { \\prime }$ của n (được sinh ra bởi hành động a):"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.155,
+            0.28,
+            0.43,
+            0.325
+          ],
+          "content": "h (n) \\leq c (n, a, n ^ {\\prime}) + h (n ^ {\\prime})",
+          "image_source": "images/page_30_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.411,
+            0.538,
+            0.456
+          ],
+          "content": "Nếu ước lượng h là kiên định, ta có:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.083,
+            0.457,
+            0.453,
+            0.595
+          ],
+          "content": "{ \\begin{array}{r l} {f (n ^ {\\prime})} & {= g (n ^ {\\prime}) + h (n ^ {\\prime})} \\\\ & {= g (n) + c (n, a, n ^ {\\prime}) + h (n ^ {\\prime})} \\\\ & {\\geq g (n) + h (n) = f (n)} \\end{array} }",
+          "image_source": "images/page_30_equation_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.616,
+            0.295,
+            0.834,
+            0.604
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.633,
+            0.912,
+            0.724
+          ],
+          "content": "Nghĩa là: f(n) không giảm trong bất kỳ đường đi (tìm kiếm) nào đi qua n"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.757,
+            0.877,
+            0.841
+          ],
+          "content": "**Định lý:** Nếu $h ( n )$ là kiên định, thì phương pháp tìm kiếm $\\mathsf { A } ^ { \\star }$ sử dụng giải thuật GRAPH-SEARCH là tối ưu"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.053,
+            0.524,
+            0.135
+          ],
+          "level": 2,
+          "content": "Các đặc điểm của A\\*"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.211,
+            0.35,
+            0.257
+          ],
+          "level": 2,
+          "content": "◼ Tính hoàn chỉnh?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.269,
+            0.753,
+            0.317
+          ],
+          "content": "❑ Có (trừ khi có rất nhiều các nút có chi phí f ≤ f(G) )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.359,
+            0.478,
+            0.413
+          ],
+          "content": "◼ Độ phức tạp về thời gian?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.421,
+            0.926,
+            0.512
+          ],
+          "content": "❑ Bậc của hàm mũ – Số lượng các nút được xét là hàm mũ của độ dài đường đi của lời giải"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.555,
+            0.454,
+            0.608
+          ],
+          "level": 2,
+          "content": "◼ Độ phức tạp về bộ nhớ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.617,
+            0.565,
+            0.663
+          ],
+          "content": "❑ Lưu giữ tất cả các nút trong bộ nhớ"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.704,
+            0.273,
+            0.755
+          ],
+          "level": 2,
+          "content": "◼ Tính tối ưu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.766,
+            0.497,
+            0.814
+          ],
+          "content": "❑ Có (đối với điều kiện đặc biệt)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.059,
+            0.304,
+            0.126
+          ],
+          "level": 2,
+          "content": "A\\* vs. UCS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.219,
+            0.449,
+            0.351
+          ],
+          "content": "◼ Tìm kiếm với chi phí cực tiểu (UCS) phát triển theo mọi hướng"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.141,
+            0.387,
+            0.457,
+            0.718
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.513,
+            0.226,
+            0.936,
+            0.365
+          ],
+          "content": "◼ Tìm kiếm $\\mathsf { A } ^ { \\star }$ phát triển chủ yếu theo hướng tới đích, nhưng đảm bảo tính tối ưu"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.582,
+            0.429,
+            0.831,
+            0.558
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_4.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.732,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các giải thuật tìm kiếm cục bộ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.206,
+            0.913,
+            0.315
+          ],
+          "content": "◼ Trong nhiều bài toán tối ưu, các đặc điểm thường phức tạp và ta không thể tìm được lời giải tối ưu."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.324,
+            0.91,
+            0.41
+          ],
+          "content": "❑ Trạng thái đích = Lời giải của bài toán phải thoả mãn ràng buộc nào đó."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.42,
+            0.903,
+            0.502
+          ],
+          "content": "◼ Ví dụ: Bài toán n quân hậu (bố trí n quân hậu trên một bàn cờ kích thước nxn, sao cho các quân hậu không ăn nhau)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.508,
+            0.733,
+            0.556
+          ],
+          "content": "❑ Bài toán tối ưu có nhiều điểm cực trị địa phương."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.587,
+            0.916,
+            0.697
+          ],
+          "content": "◼ Trong những bài toán như thế, chúng ta có thể sử dụng các giải thuật tìm kiếm cục bộ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.727,
+            0.914,
+            0.891
+          ],
+          "content": "Tại mỗi thời điểm, chỉ lưu một trạng thái “hiện thời\" duy nhất. Mục tiêu: cố gắng “cải thiện” trạng thái (cấu hình) hiện thời này đối với một tiêu chí nào đó (định trước)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.056,
+            0.667,
+            0.133
+          ],
+          "level": 2,
+          "content": "Tìm kiếm leo đồi: minh họa"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.183,
+            0.922,
+            0.276
+          ],
+          "content": "◼ Nhược điểm: Tùy vào trạng thái đầu, giải thuật tìm kiếm leo đồi có thể “tắc” ở các điểm cực đại cục bộ (local maxima)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.283,
+            0.833,
+            0.326
+          ],
+          "content": "❑ Không tìm được lời giải tối ưu toàn cục (global optimal solution)"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.113,
+            0.355,
+            0.844,
+            0.897
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_34_chart_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "35"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.055,
+            0.654,
+            0.135
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán n quân hậu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.22,
+            0.923,
+            0.382
+          ],
+          "content": "Bố trí n (=4) quân hậu trên một bàn cờ có kích thước n ×n, sao cho không có 2 quân hậu nào trên cùng hàng, hoặc trên cùng cột, hoặc trên cùng đường chéo"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.094,
+            0.487,
+            0.905,
+            0.755
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "36"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.054,
+            0.672,
+            0.136
+          ],
+          "level": 2,
+          "content": "Tìm kiếm leo đồi: giải thuật"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.086,
+            0.286,
+            0.879,
+            0.699
+          ],
+          "sub_type": "code",
+          "content": "```javascript\nfunction HILL-CLIMBING(problem) returns a state that is a local maximum\n  inputs: problem, a problem\n  local variables: current, a node\n    neighbor, a node\n\n  current←MAKE-NODE(INITIAL-STATE[problem])\n  loop do\n    neighbor←a highest-valued successor of current\n    if VALUE[neighbor] ≤ VALUE[current] then return STATE[current]\n    current←neighbor\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "37"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.046,
+            0.053,
+            0.778,
+            0.13
+          ],
+          "level": 2,
+          "content": "Tìm kiếm leo đồi: bài toán ô chữ"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.059,
+            0.154,
+            0.917,
+            0.915
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.262,
+                0.919,
+                0.857,
+                0.975
+              ],
+              "content": "f(n) = -(Số lượng các ô chữ nằm sai vị trí)"
+            }
+          ],
+          "image_source": "images/page_37_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.945,
+            0.942,
+            0.97
+          ],
+          "content": "38"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.053,
+            0.885,
+            0.126
+          ],
+          "level": 2,
+          "content": "Tìm kiếm leo đồi: bài toán 8 quân hậu (1)"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.304,
+            0.193,
+            0.704,
+            0.72
+          ],
+          "content": "| 18 | 12 | 14 | 13 | 13 | 12 | 14 | 14 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| 14 | 16 | 13 | 15 | 12 | 14 | 12 | 16 |\n| 14 | 12 | 18 | 13 | 15 | 12 | 14 | 14 |\n| 15 | 14 | 14 |  | 13 | 16 | 13 | 16 |\n|  | 14 | 17 | 15 |  | 14 | 16 | 16 |\n| 17 |  | 16 | 18 | 15 |  | 15 |  |\n| 18 | 14 |  | 15 | 15 | 14 |  | 16 |\n| 14 | 14 | 13 | 17 | 12 | 14 | 12 | 18 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_38_table_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.754,
+            0.923,
+            0.833
+          ],
+          "content": "◼ Ước lượng h = tổng số các cặp quân hậu ăn nhau, hoặc là trực tiếp hoặc gián tiếp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.837,
+            0.542,
+            0.88
+          ],
+          "content": "◼ Trong trạng thái (bàn cờ) trên: $h = 1 7$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "39"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.052,
+            0.885,
+            0.127
+          ],
+          "content": "Tìm kiếm leo đồi: bài toán 8 quân hậu (2)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.301,
+            0.177,
+            0.707,
+            0.715
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_39_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.743,
+            0.907,
+            0.847
+          ],
+          "content": "Trạng thái bàn cờ trên là một giải pháp tối ưu cục bộ (a local minimum)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.855,
+            0.748,
+            0.904
+          ],
+          "content": "❑ Với ước lượng h =1 (vẫn còn 1 cặp hậu ăn nhau)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.059,
+            0.667,
+            0.133
+          ],
+          "level": 2,
+          "content": "Simulated annealing search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.21,
+            0.936,
+            0.307
+          ],
+          "content": "◼ Dựa trên quá trình tôi ủ (annealing process): Kim loại nguội đi và lạnh cứng lại thành cấu trúc kết tinh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.328,
+            0.865,
+            0.428
+          ],
+          "content": "◼ Phương pháp tìm kiếm Simulated Annealing có thể tránh được các điểm tối ưu cục bộ (local optima)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.448,
+            0.899,
+            0.647
+          ],
+          "content": "◼ Phương pháp tìm kiếm Simulated Annealing sử dụng chiến lược tìm kiếm ngẫu nhiên, trong đó chấp nhận các thay đổi làm tăng giá trị hàm mục tiêu (i.e., cần tối ưu) và cũng chấp nhận (có hạn chế) các thay đổi làm giảm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.667,
+            0.876,
+            0.823
+          ],
+          "content": "◼ Phương pháp tìm kiếm Simulated Annealing sử dụng một tham số điều khiển T (như trong các hệ thống nhiệt độ) ❑ Bắt đầu thì T nhận giá trị cao, và giảm dần về 0"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "41"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.057,
+            0.912,
+            0.135
+          ],
+          "level": 2,
+          "content": "Simulated annealing search: giải thuật"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.205,
+            0.909,
+            0.345
+          ],
+          "content": "◼ Ý tưởng: Thoát khỏi (vượt qua) các điểm tối ưu cục bộ bằng cách cho phép cả các dịch chuyển “tồi” từ trạng thái hiện thời, nhưng giảm dần tần xuất của các di chuyển tồi này"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.158,
+            0.365,
+            0.867,
+            0.897
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction SIMULATED-ANNEALING(problem, schedule) returns a solution state\n  inputs: problem, a problem\n      schedule, a mapping from time to \"temperature\"\n  local variables: current, a node\n      next, a node\n      T, a \"temperature\" controlling prob. of downward steps\n  current← MAKE-NODE(INITIAL-STATE[problem])\n  for t← 1 to ∞ do\n    T← schedule[t]\n    if T = 0 then return current\n      next← a randomly selected successor of current\n      ΔE← VALUE[next] - VALUE[current]\n    if ΔE > 0 then current ← next\n      else current ← next only with probability e^Δ E/T\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.053,
+            0.889,
+            0.127
+          ],
+          "level": 2,
+          "content": "Simulated annealing search: các đặc điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.227,
+            0.942,
+            0.498
+          ],
+          "content": "(Có thể chứng minh được) Nếu giá trị của tham số T (xác định mức độ giảm tần xuất đối với các di chuyển tồi) giảm chậm, thì phương pháp tìm kiếm Simulated Annealing sẽ tìm được lời giải tối ưu toàn cục với xác suất xấp xỉ 1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.541,
+            0.915,
+            0.705
+          ],
+          "content": "◼ Phương pháp tìm kiếm Simulated Annealing Search rất hay được sử dụng trong các lĩnh vực: thiết kế sơ đồ bảng mạch VLSI, lập lịch bay,"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "43"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.06,
+            0.472,
+            0.127
+          ],
+          "level": 2,
+          "content": "Local beam search"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.211,
+            0.943,
+            0.317
+          ],
+          "content": "Ở mỗi thời điểm (trong quá trình tìm kiếm), luôn lưu giữ k – thay vì chỉ 1 – trạng thái tốt nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.353,
+            0.808,
+            0.41
+          ],
+          "content": "◼ Bắt đầu giải thuật: Chọn k trạng thái ngẫu nhiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.443,
+            0.934,
+            0.551
+          ],
+          "content": "Ở mỗi bước tìm kiếm, sinh ra tất cả các trạng thái kế tiếp của k trạng thái này"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.586,
+            0.929,
+            0.787
+          ],
+          "content": "◼ Nếu một trong số các trạng thái là trạng thái đích, thì giải thuật kết thúc (thành công); nếu không, thì chọn k trạng thái tiếp theo tốt nhất (từ tập các trạng thái tiếp theo), và lặp lại bước trên"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "44"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.725,
+            0.135
+          ],
+          "level": 2,
+          "content": "Giải thuật di truyền: giới thiệu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.185,
+            0.946,
+            0.236
+          ],
+          "content": "◼ Dựa trên (bắt chước) quá trình tiến hóa tự nhiên trong sinh học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.245,
+            0.943,
+            0.393
+          ],
+          "content": "◼ Áp dụng phương pháp tìm kiếm ngẫu nhiên (stochastic search) để tìm được lời giải (vd: một hàm mục tiêu, một mô hình phân lớp, …) tối ưu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.403,
+            0.92,
+            0.552
+          ],
+          "content": "◼ Giải thuật di truyền (Genetic Algorithm – GA) có khả năng tìm được các lời giải tốt thậm chí ngay cả với các không gian tìm kiếm (lời giải) không liên tục rất phức tạp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.559,
+            0.909,
+            0.708
+          ],
+          "content": "◼ Mỗi khả năng của lời giải được biểu diễn bằng một chuỗi nhị phân (vd: 100101101) – được gọi là **nhiễm sắc thể (chromosome)**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.717,
+            0.808,
+            0.766
+          ],
+          "content": "• Việc biểu diễn này phụ thuộc vào từng bài toán cụ thể"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "45"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.647,
+            0.133
+          ],
+          "level": 2,
+          "content": "Giải thuật di truyền: mô tả"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.173,
+            0.652,
+            0.216
+          ],
+          "level": 2,
+          "content": "◼ Xây dựng (khởi tạo) quần thể (population) ban đầu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.221,
+            0.767,
+            0.263
+          ],
+          "content": "• Tạo nên một số các giả thiết (khả năng của lời giải) ban đầu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.269,
+            0.96,
+            0.351
+          ],
+          "content": "• Mỗi giả thiết khác các giả thiết khác (vd: khác nhau đối với các giá trị của một số tham số nào đó của bài toán)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.364,
+            0.27,
+            0.407
+          ],
+          "level": 2,
+          "content": "◼ Đánh giá quần thể"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.412,
+            0.938,
+            0.496
+          ],
+          "content": "• Đánh giá (cho điểm) mỗi giả thiết (vd: bằng cách kiểm tra độ chính xác của hệ thống trên một tập dữ liệu kiểm thử)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.502,
+            0.94,
+            0.584
+          ],
+          "content": "• Trong lĩnh vực sinh học, điểm đánh giá này của mỗi giả thiết được gọi là **độ phù hợp (fitness)** của giả thiết đó"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.59,
+            0.959,
+            0.673
+          ],
+          "content": "• Xếp hạng các giả thiết theo mức độ phù hợp của chúng, và chỉ giữ lại các giả thiết tốt nhất (gọi là **các giả thiết phù hợp nhất – survival of the fittest**)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.686,
+            0.593,
+            0.727
+          ],
+          "level": 2,
+          "content": "◼ Sản sinh ra thế hệ tiếp theo (next generation)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.733,
+            0.936,
+            0.815
+          ],
+          "content": "• Thay đổi ngẫu nhiên các giả thiết để sản sinh ra thế hệ tiếp theo (gọi là **các con cháu – offspring**)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.824,
+            0.946,
+            0.909
+          ],
+          "content": "◼ Lặp lại quá trình trên cho đến khi ở một thế hệ nào đó có giả thiết tốt nhất có độ phù hợp cao hơn giá trị phù hợp mong muốn (định trước)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "46"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.035,
+            0.065,
+            0.964,
+            0.889
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGA(Fitness, θ, n, r_co, r_mu)\n    Fitness: A function that produces the score (fitness) given a hypothesis\n    θ: The desired fitness value (i.e., a threshold specifying the termination condition)\n    n: The number of hypotheses in the population\n    r_co: The percentage of the population influenced by the crossover operator at each step\n    r_mu: The percentage of the population influenced by the mutation operator at each step\n\nInitialize the population: H ← Randomly generate n hypotheses\nEvaluate the initial population. For each h ∈ H: compute Fitness(h)\nwhile (max_{h ∈ H} Fitness(h) < θ) do\n    H_next ← ∅\n\n    Reproduction (Replication). Probabilistically select (1 - r_co).n hypotheses of H to add to H_next.\n    The probability of selecting hypothesis h_i from H is:\n        P(h_i) = Fitness(h_i) / ∑_{j=1}^n Fitness(h_j)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.341,
+            0.919,
+            0.46,
+            0.95
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "47"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "code",
+          "bbox": [
+            0.043,
+            0.052,
+            0.956,
+            0.867
+          ],
+          "sub_type": "code",
+          "content": "```txt\nGA(Fitness, θ, n, r_co, r_mu)\n...\nCrossover.\n    Probabilistically select (r_co.n/2) pairs of hypotheses from H, according to the probability computation P(h_i) given above.\n    For each pair (h_i, h_j), produce two offspring (i.e., children) by applying the crossover operator. Then, add all the offspring to H_next.\nMutation.\n    Select (r_mu.n) hypotheses of H_next, with uniform probability.\n    For each selected hypothesis, invert one randomly chosen bit (i.e., 0 to 1, or 1 to 0) in the hypothesis's representation.\nProducing the next generation: H ← H_next\nEvaluate the new population. For each h∈H: compute Fitness(h)\nend while\nreturn argmax_{h∈H}Fitness(h)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.342,
+            0.919,
+            0.46,
+            0.95
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "48"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.729,
+            0.137
+          ],
+          "level": 2,
+          "content": "Giải thuật di truyền: minh họa"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.489,
+            0.669,
+            0.559,
+            0.699
+          ],
+          "content": "parents"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.851,
+            0.31,
+            0.887
+          ],
+          "content": "[Duda et al., 2000]"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.6,
+            0.281,
+            0.719,
+            0.381
+          ],
+          "content": "survival of the fittest and reproduction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.677,
+            0.381,
+            0.803,
+            0.617
+          ],
+          "content": "10001001010001 11010110101000 00101100100100 11001010101010 00001110010100 11100010110100 11110101101001 11110100101011 11010100101000 01001110111011"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "49"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.528,
+            0.132
+          ],
+          "level": 2,
+          "content": "Các toán tử di truyền"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.049,
+            0.184,
+            0.945,
+            0.285
+          ],
+          "content": "◼ 3 toán tử di truyền được sử dụng để sinh ra các cá thể con cháu (offspring) trong thế hệ tiếp theo"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.291,
+            0.944,
+            0.372
+          ],
+          "content": "• Nhưng chỉ có 2 toán tử lai ghép (crossover) và đột biến (mutation) tạo nên sự thay đổi"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.391,
+            0.477,
+            0.439
+          ],
+          "level": 2,
+          "content": "◼ Tái sản xuất (Reproduction)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.446,
+            0.599,
+            0.489
+          ],
+          "content": "→ Một giả thiết được giữ lại (<u>không thay đổi</u>)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.497,
+            0.701,
+            0.546
+          ],
+          "level": 2,
+          "content": "◼ Lai ghép (Crossover) để sinh ra 2 cá thể mới"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.553,
+            0.594,
+            0.595
+          ],
+          "content": "→ Ghép (“phối hợp\") của hai cá thể cha mẹ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.599,
+            0.917,
+            0.643
+          ],
+          "content": "• Điểm lai ghép được chọn ngẫu nhiên (trên chiều dài của nhiễm sắc thể)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.646,
+            0.92,
+            0.731
+          ],
+          "content": "• Phần đầu tiên của nhiễm sắc thể h được ghép với phần sau của nhiễm sắc thể $\\mathrm { h } _ { \\mathbf { j } }$ , và ngược lại, để sinh ra 2 nhiễm sắc thể mới"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.739,
+            0.675,
+            0.789
+          ],
+          "level": 2,
+          "content": "◼ Đột biến (Mutation) để sinh ra 1 cá thể mới"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.795,
+            0.909,
+            0.839
+          ],
+          "content": "→Chọn ngẫu nhiên một bit của nhiễm sắc thể, và đổi giá trị (0→1 / 1→0)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.843,
+            0.908,
+            0.887
+          ],
+          "content": "• Chỉ tạo nên một thay đổi nhỏ và ngẫu nhiên đối với một cá thể cha mẹ!"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "50"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.053,
+            0.671,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các toán tử di truyền: ví dụ"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.059,
+            0.185,
+            0.885,
+            0.814
+          ],
+          "content": "|  | Cha mẹ - Thế hệ hiện tại |  | Con cháu- Thế hệ tiếp theo |\n| --- | --- | --- | --- |\n| Tái sản xuất: | 11101001000 |  | 11101001000 |\n| Lai ghép tại | 11101001000 | 11111000000 | 11101010101 |\n| 1 điểm: | 00001010101 | (crossover mask) | 00001001000 |\n| Lai ghép tại | 11101001000 | 00111110000 | 11001011000 |\n| 2 điểm: | 00001010101 | (crossover mask) | 00101000101 |\n| Đột biến: | 11101001000 |  | 11101011000 |",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.053,
+                0.861,
+                0.266,
+                0.9
+              ],
+              "content": "[Mitchell, 1997]"
+            }
+          ],
+          "image_source": "images/page_50_table_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.941,
+            0.97
+          ],
+          "content": "51"
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.565,
+            0.135
+          ],
+          "level": 2,
+          "content": "Toán tử lai ghép: ví dụ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.23,
+            0.902,
+            0.339
+          ],
+          "content": "Bài toán bố trí 8 quân hậu trên bàn cờ - Toán tử lai ghép (crossover)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.06,
+            0.377,
+            0.319,
+            0.718
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.373,
+            0.376,
+            0.635,
+            0.721
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.691,
+            0.377,
+            0.947,
+            0.719
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_51_image_4.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "52"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.501,
+            0.127
+          ],
+          "level": 2,
+          "content": "Tìm kiếm có đối thủ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.904,
+            0.367
+          ],
+          "content": "Các thủ tục tìm kiếm sâu dần (IDS) và tìm kiếm A\\* hữu dụng đối với các bài toán (tìm kiếm) liên quan đến một tác tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.411,
+            0.923,
+            0.579
+          ],
+          "content": "◼ Thủ tục tìm kiếm cho các bài toán liên quan đến 2 tác tử có mục tiêu đối nghịch nhau (xung đột với nhau)? ❑ Tìm kiếm có đối thủ (Adversarial search)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.617,
+            0.872,
+            0.729
+          ],
+          "content": "◼ Phương pháp tìm kiếm có đối thủ được áp dụng phổ biến trong các trò chơi (games)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "53"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.922,
+            0.132
+          ],
+          "level": 2,
+          "content": "Các vấn đề của tìm kiếm trong trò chơi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.197,
+            0.79,
+            0.25
+          ],
+          "content": "◼ Khó dự đoán trước được phản ứng của đối thủ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.26,
+            0.891,
+            0.351
+          ],
+          "content": "❑ Cần xác định (xét) một nước đi phù hợp đối với mỗi phản ứng (nước đi) có thể của đối thủ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.373,
+            0.715,
+            0.427
+          ],
+          "content": "◼ Giới hạn về thời gian (trò chơi có tính giờ)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.435,
+            0.936,
+            0.484
+          ],
+          "content": "❑ Thường khó (hoặc không thể) tìm được giải pháp tối ưu → Xấp xỉ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.503,
+            0.856,
+            0.665
+          ],
+          "content": "Tìm kiếm có đối thủ đòi hỏi tính hiệu quả (giữa chất lượng của nước đi và chi phí thời gian) Đây là một yêu cầu khó khăn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.684,
+            0.714,
+            0.74
+          ],
+          "content": "◼ Nguyên tắc trong nhiều trò chơi đối kháng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.75,
+            0.673,
+            0.795
+          ],
+          "content": "❑ Một người chơi thắng = Người chơi kia thua"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.804,
+            0.893,
+            0.896
+          ],
+          "content": "❑ Mức độ (tổng điểm) thắng của một người chơi = Mức độ (tổng điểm) thua của người chơi kia"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "54"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.438,
+            0.127
+          ],
+          "level": 2,
+          "content": "Trò chơi cờ ca-rô"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.92,
+            0.314
+          ],
+          "content": "◼ Trò chơi cờ ca-rô là một ví dụ phổ biến trong AI để minh họa về tìm kiếm có đối thủ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.327,
+            0.675,
+            0.371
+          ],
+          "content": "❑ Vd: [http://www.ourvirtualmall.com/tictac.htm](http://www.ourvirtualmall.com/tictac.htm)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.415,
+            0.847,
+            0.465
+          ],
+          "content": "◼ Là trò chơi đối kháng giữa 2 người (gọi là MAX và MIN)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.476,
+            0.599,
+            0.52
+          ],
+          "content": "❑ Thay phiên nhau đi các nước (moves)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.528,
+            0.919,
+            0.621
+          ],
+          "content": "❑ Kết thúc trò chơi: Người thắng được thưởng (điểm), người thua bị phạt (điểm)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "55"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.049,
+            0.876,
+            0.133
+          ],
+          "level": 2,
+          "content": "Biểu diễn bài toán trò chơi đối kháng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.197,
+            0.555,
+            0.25
+          ],
+          "content": "◼ Trò chơi bao gồm các thông tin"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.261,
+            0.916,
+            0.349
+          ],
+          "content": "❑ Trạng thái bắt đầu (Initial state): Trạng thái của trò chơi + Người chơi nào được đi nước đầu tiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.359,
+            0.93,
+            0.451
+          ],
+          "content": "❑ Hàm chuyển trạng thái (Sucessor function): Trả về thông tin gồm (nước đi, trạng thái)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.461,
+            0.741,
+            0.507
+          ],
+          "content": "◼ Tất cả các nước đi hợp lệ từ trạng thái hiện tại"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.516,
+            0.826,
+            0.563
+          ],
+          "content": "◼ Trạng thái mới (là trạng thái chuyển đến sau nước đi)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.571,
+            0.626,
+            0.617
+          ],
+          "content": "❑ Kiểm tra kết thúc trò chơi (Terminal test)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.628,
+            0.811,
+            0.675
+          ],
+          "content": "❑ Hàm tiện ích (Utility function) để đánh giá các trạng thái"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.694,
+            0.929,
+            0.803
+          ],
+          "level": 2,
+          "content": "◼ Trạng thái bắt đầu + Các nước đi hợp lệ = Cây biểu diễn trò chơi (Game tree)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "56"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.048,
+            0.741,
+            0.132
+          ],
+          "level": 2,
+          "content": "Cây biểu diễn trò chơi cờ ca-rô"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.136,
+            0.171,
+            0.888,
+            0.889
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "57"
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.527,
+            0.133
+          ],
+          "level": 2,
+          "content": "Các chiến lược tối ưu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.195,
+            0.925,
+            0.307
+          ],
+          "content": "◼ Một chiến lược tối ưu là một chuỗi các nước đi giúp đưa đến trạng thái đích mong muốn (vd: chiến thắng)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.325,
+            0.916,
+            0.434
+          ],
+          "content": "◼ Chiến lược của MAX bị ảnh hưởng (phụ thuộc) vào các nước đi của MIN – và ngược lại"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.453,
+            0.912,
+            0.661
+          ],
+          "content": "◼ MAX cần chọn một chiến lược giúp cực đại hóa giá trị hàm mục tiêu – với giả sử là MIN đi các nước đi tối ưu ❑ MIN cần chọn một chiến lược giúp cực tiểu hóa giá trị hàm mục tiêu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.683,
+            0.878,
+            0.791
+          ],
+          "content": "◼ Chiến lược này được xác định bằng việc xét giá trị MINIMAX đối với mỗi nút trong cây biểu diễn trò chơi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.8,
+            0.943,
+            0.893
+          ],
+          "content": "❑ Chiến lược tối ưu đối với các trò chơi có không gian trạng thái xác định (deterministic states)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "58"
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.058,
+            0.418,
+            0.133
+          ],
+          "level": 2,
+          "content": "Giá trị MINIMAX"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.209,
+            0.912,
+            0.317
+          ],
+          "content": "◼ MAX chọn nước đi ứng với giá trị MINIMAX cực đại (để đạt được giá trị cực đại của hàm mục tiêu)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.339,
+            0.891,
+            0.441
+          ],
+          "content": "◼ Ngược lại, MIN chọn nước đi ứng với giá trị MINIMAX cực tiểu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.476,
+            0.175,
+            0.513
+          ],
+          "content": "MAX"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.629,
+            0.166,
+            0.665
+          ],
+          "content": "MIN"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.194,
+            0.461,
+            0.854,
+            0.864
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_image_5.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "59"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.055,
+            0.499,
+            0.135
+          ],
+          "level": 2,
+          "content": "Giải thuật MINIMAX"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.116,
+            0.189,
+            0.874,
+            0.895
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction MINIMAX-DECISION(state) returns an action\n    v ← MAX-VALUE(state)\n    return the action in SUCCESSORS(state) with value v\n\nfunction MAX-VALUE(state) returns a utility value\n    if TERMINAL-TEST(state) then return UTILITY(state)\n    v ← −∞\n    for a, s in SUCCESSORS(state) do\n        v ← MAX(v, MIN-VALUE(s))\n    return v\n\nfunction MIN-VALUE(state) returns a utility value\n    if TERMINAL-TEST(state) then return UTILITY(state)\n    v ← ∞\n    for a, s in SUCCESSORS(state) do\n        v ← MIN(v, MAX-VALUE(s))\n    return v\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "60"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.053,
+            0.822,
+            0.135
+          ],
+          "level": 2,
+          "content": "Giải thuật MINIMAX: các đặc điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.334,
+            0.247
+          ],
+          "content": "◼ Tính hoàn chỉnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.258,
+            0.651,
+            0.307
+          ],
+          "content": "❑ Có (nếu cây biểu diễn trò chơi là hữu hạn)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.316,
+            0.257,
+            0.367
+          ],
+          "content": "◼ Tính tối ưu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.087,
+            0.378,
+            0.729,
+            0.427
+          ],
+          "content": "❑ Có (đối với một đối thủ luôn chọn nước đi tối ưu)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.437,
+            0.462,
+            0.492
+          ],
+          "content": "◼ Độ phức tạp về thời gian"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.501,
+            0.2,
+            0.547
+          ],
+          "content": "❑ O(b<sup>m</sup>)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.556,
+            0.437,
+            0.611
+          ],
+          "content": "◼ Độ phức tạp về bộ nhớ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.088,
+            0.618,
+            0.864,
+            0.669
+          ],
+          "content": "❑ O(bm) (khám phá theo chiến lược tìm kiếm theo chiều sâu)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.709,
+            0.943,
+            0.817
+          ],
+          "content": "◼ Đối với trò chơi cờ vua, hệ số phân nhánh b 35 và hệ số mức độ sâu của cây biểu diễn m100"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.825,
+            0.902,
+            0.875
+          ],
+          "content": "❑ Chi phí quá cao – Không thể tìm kiếm chính xác nước đi tối ưu"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "61"
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.054,
+            0.41,
+            0.127
+          ],
+          "level": 2,
+          "content": "Cắt tỉa tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.205,
+            0.922,
+            0.371
+          ],
+          "content": "◼ Vấn đề: Giải thuật tìm kiếm MINIMAX vấp phải vấn đề bùng nổ (mức hàm mũ) các khả năng nước đi cần phải xét → không phù hợp với nhiều bài toán trò chơi thực tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.399,
+            0.886,
+            0.51
+          ],
+          "content": "◼ Chúng ta có thể cắt tỉa (bỏ đi – không xét đến) một số nhánh tìm kiếm trong cây biểu diễn trò chơi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.543,
+            0.787,
+            0.597
+          ],
+          "content": "Phưong pháp ct tia α-β (Alpha-beta prunning)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.603,
+            0.935,
+            0.739
+          ],
+          "content": "❑ Ý tưởng: Nếu một nhánh tìm kiếm nào đó không thể cải thiện đối với giá trị (hàm tiện ích) mà chúng ta đã có, thì không cần xét đến nhánh tìm kiếm đó nữa!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.748,
+            0.924,
+            0.842
+          ],
+          "content": "❑ Việc cắt tỉa các nhánh tìm kiếm (“tồi”) không ảnh hưởng đến kết quả cuối cùng"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "62"
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.049,
+            0.551,
+            0.138
+          ],
+          "content": "Ct tia α-β − Ví d (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.281,
+            0.143,
+            0.326
+          ],
+          "content": "MAX"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.449,
+            0.134,
+            0.495
+          ],
+          "content": "MIN"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.163,
+            0.264,
+            0.596,
+            0.713
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_62_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "63"
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.051,
+            0.55,
+            0.137
+          ],
+          "level": 2,
+          "content": "Ct tia α-β − Ví d (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.282,
+            0.143,
+            0.325
+          ],
+          "content": "MAX"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.164,
+            0.265,
+            0.623,
+            0.713
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_63_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "64"
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.051,
+            0.55,
+            0.137
+          ],
+          "level": 2,
+          "content": "Ct tia α-β − Ví d (3)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.164,
+            0.265,
+            0.822,
+            0.713
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_64_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "65"
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.05,
+            0.551,
+            0.137
+          ],
+          "content": "Ct tia α-β − Ví d (4)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.281,
+            0.145,
+            0.324
+          ],
+          "content": "MAX"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.166,
+            0.265,
+            0.876,
+            0.711
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "66"
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.05,
+            0.551,
+            0.137
+          ],
+          "level": 2,
+          "content": "Ct tia α-β − Ví d (5)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.08,
+            0.256,
+            0.917,
+            0.706
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "67"
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.751,
+            0.137
+          ],
+          "level": 2,
+          "content": "Ti sao đưc gi là ct tia α-β?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.21,
+            0.459,
+            0.475
+          ],
+          "content": " là giá trị của nước đi tốt nhất đối với MAX (giá trị tối đa) tính đến hiện tại đối với nhánh tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.504,
+            0.457,
+            0.727
+          ],
+          "content": "◼ Nếu v là giá trị tồi hơn , MAX sẽ bỏ qua nước đi ứng với v ❑ Cắt tỉa nhánh ứng với v"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.76,
+            0.404,
+            0.866
+          ],
+          "content": "◼  được định nghĩa tương tự đối với MIN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.331,
+            0.596,
+            0.369
+          ],
+          "content": "MAX"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.447,
+            0.588,
+            0.483
+          ],
+          "content": "MIN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.54,
+            0.642,
+            0.595,
+            0.678
+          ],
+          "content": "MAX"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.541,
+            0.733,
+            0.588,
+            0.767
+          ],
+          "content": "MIN"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.643,
+            0.237,
+            0.921,
+            0.795
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_67_image_8.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "68"
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.053,
+            0.601,
+            0.137
+          ],
+          "level": 2,
+          "content": "Gii thut ct tia α-β (1)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.082,
+            0.192,
+            0.894,
+            0.897
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction ALPHA-BETA-SEARCH(state) returns an action\n  inputs: state, current state in game\n  v ← MAX-VALUE(state, -∞, +∞)\n  return the action in SUCCESSORS(state) with value v\n\nfunction MAX-VALUE(state, α, β) returns a utility value\n  inputs: state, current state in game\n    α, the value of the best alternative for MAX along the path to state\n    β, the value of the best alternative for MIN along the path to state\n  if TERMINAL-TEST(state) then return UTILITY(state)\n  v ← -∞\n  for a, s in SUCCESSORS(state) do\n    v ← MAX(v, MIN-VALUE(s, α, β))\n    if v ≥ β then return v\n      α ← MAX(α, v)\n  return v\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "69"
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.053,
+            0.601,
+            0.137
+          ],
+          "level": 2,
+          "content": "Gii thut ct tia α-β (2)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.096,
+            0.236,
+            0.899,
+            0.733
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction MIN-VALUE(state, α, β) returns a utility value\n    inputs: state, current state in game\n        α, the value of the best alternative for MAX along the path to state\n        β, the value of the best alternative for MIN along the path to state\n    if TERMINAL-TEST(state) then return UTILITY(state)\n    v ← +∞\n    for a, s in SUCCESSORS(state) do\n        v ← MIN(v, MAX-VALUE(s, α, β))\n        if v ≤ α then return v\n            β ← MIN(β, v)\n    return v\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "70"
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.054,
+            0.297,
+            0.133
+          ],
+          "level": 2,
+          "content": "Cåt tia α-β"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.208,
+            0.859,
+            0.375
+          ],
+          "content": "◼ Đối với các trò chơi có không gian trạng thái lớn, thì phương pháp cắt tỉa $\\alpha \\beta v \\tilde { \\hat { a } } n$ không phù hợp ❑ Không gian tìm kiếm (kết hợp cắt tỉa) vẫn lớn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.413,
+            0.921,
+            0.52
+          ],
+          "content": "◼ Có thể hạn chế không gian tìm kiếm bằng cách sử dụng các tri thức cụ thể của bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.531,
+            0.83,
+            0.579
+          ],
+          "content": "❑ Tri thức để cho phép đánh giá mỗi trạng thái của trò chơi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.587,
+            0.93,
+            0.68
+          ],
+          "content": "❑ Tri thức bổ sung (heuristic) này đóng vai trò tương tự như là hàm ước lượng h(n) trong giải thuật tìm kiếm $\\mathsf { A } ^ { \\star }$"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.946,
+            0.941,
+            0.969
+          ],
+          "content": "71"
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.048,
+            0.043,
+            0.851,
+            0.125
+          ],
+          "level": 2,
+          "content": "Một số trò chơi đối kháng (minimax)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.195,
+            0.147,
+            0.445,
+            0.514
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.262,
+                0.521,
+                0.39,
+                0.553
+              ],
+              "content": "a) Cδ Tung"
+            }
+          ],
+          "image_source": "images/page_71_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.584,
+            0.165,
+            0.836,
+            0.497
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.599,
+                0.517,
+                0.838,
+                0.552
+              ],
+              "content": "b) Cδ Vua (cδ Quc Té)"
+            }
+          ],
+          "image_source": "images/page_71_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.248,
+            0.636,
+            0.396,
+            0.836
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.267,
+                0.847,
+                0.387,
+                0.879
+              ],
+              "content": "c) Tictactoe"
+            }
+          ],
+          "image_source": "images/page_71_image_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.57,
+            0.578,
+            0.834,
+            0.928
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.602,
+                0.933,
+                0.816,
+                0.964
+              ],
+              "content": "d) Go-moku (cð caro)"
+            }
+          ],
+          "image_source": "images/page_71_image_7.jpg"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.12"
+    },
+    "document": {
+      "title": "Trí Tuệ Nhân Tạo",
+      "authors": [
+        "Khoat Than;Quang Nhat NGUYEN"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2021-02-28T12:58:50+07:00",
+      "modified_at": "2021-02-28T12:58:50+07:00",
+      "creator_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "producer_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "page_count": 72,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

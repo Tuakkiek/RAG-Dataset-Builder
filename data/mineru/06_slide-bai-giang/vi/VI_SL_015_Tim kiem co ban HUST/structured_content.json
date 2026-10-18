@@ -1,0 +1,6642 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.17,
+            0.185,
+            0.821,
+            0.301
+          ],
+          "level": 2,
+          "content": "Trí Tuệ Nhân Tạo"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.26,
+            0.349,
+            0.732,
+            0.417
+          ],
+          "level": 2,
+          "content": "(Artificial Intelligence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.368,
+            0.586,
+            0.605,
+            0.633
+          ],
+          "content": "**Lê Thanh Hương**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.287,
+            0.75,
+            0.73,
+            0.844
+          ],
+          "content": "Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.052,
+            0.529,
+            0.135
+          ],
+          "level": 2,
+          "content": "Nội dung môn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.185,
+            0.534,
+            0.251
+          ],
+          "content": "Chương 1. Tổng quan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.261,
+            0.661,
+            0.323
+          ],
+          "content": "Chương 2. Tác tử thông minh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.331,
+            0.649,
+            0.395
+          ],
+          "content": "Chương 3. Giải quyết vấn đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.404,
+            0.526,
+            0.454
+          ],
+          "content": "3.1. Tìm kiếm cơ bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.225,
+            0.461,
+            0.694,
+            0.516
+          ],
+          "content": "3.2. Tìm kiếm với tri thức bổ sung"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.224,
+            0.523,
+            0.826,
+            0.577
+          ],
+          "content": "3.3. Tìm kiếm dựa trên thỏa mãn ràng buộc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.586,
+            0.688,
+            0.65
+          ],
+          "content": "Chương 4. Tri thức và suy diễn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.663,
+            0.501,
+            0.725
+          ],
+          "content": "Chương 5. Học máy"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.953,
+            0.963,
+            0.967,
+            0.986
+          ],
+          "content": "2"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.819,
+            0.137
+          ],
+          "level": 2,
+          "content": "Giải quyết vấn đề bằng tìm kiếm"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.183,
+            0.531,
+            0.234
+          ],
+          "level": 2,
+          "content": "◼ Giải quyết vấn đề bằng tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.241,
+            0.92,
+            0.285
+          ],
+          "content": "❑ Tìm chuỗi các hành động cho phép đạt đến (các) trạng thái mong muốn"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.308,
+            0.312,
+            0.349
+          ],
+          "level": 2,
+          "content": "◼ Các bước chính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.361,
+            0.674,
+            0.402
+          ],
+          "content": "❑ Xác định **mục tiêu** cần đạt đến (goal formulation)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.142,
+            0.409,
+            0.577,
+            0.445
+          ],
+          "content": "◼ Là một tập hợp của các trạng thái (đích)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.451,
+            0.946,
+            0.522
+          ],
+          "content": "◼ Dựa trên: trạng thái hiện tại (của môi trường) và đánh giá hiệu quả hành động (của tác tử)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.531,
+            0.581,
+            0.57
+          ],
+          "content": "❑ Phát biểu **bài toán** (problem formulation)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.577,
+            0.851,
+            0.613
+          ],
+          "content": "◼ Với một mục tiêu, xác định các hành động và trạng thái cần xem xét"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.621,
+            0.533,
+            0.661
+          ],
+          "content": "❑ Quá trình **tìm kiếm** (search process)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.667,
+            0.54,
+            0.703
+          ],
+          "content": "◼ Xem xét các chuỗi hành động có thể"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.143,
+            0.709,
+            0.486,
+            0.747
+          ],
+          "content": "◼ Chọn chuỗi hành động tốt nhất"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.757,
+            0.348,
+            0.802
+          ],
+          "level": 2,
+          "content": "◼ Giải thuật tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.811,
+            0.55,
+            0.854
+          ],
+          "content": "❑ Đầu vào: một bài toán (cần giải quyết)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.86,
+            0.94,
+            0.903
+          ],
+          "content": "❑ Đầu ra: một giải pháp, dưới dạng một chuỗi các hành động cần thực hiện"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.69,
+            0.147
+          ],
+          "level": 2,
+          "content": "Tác tử giải quyết vấn đề"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.08,
+            0.245,
+            0.882,
+            0.819
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction SIMPLE-PROBLEM-SOLVING-AGENT(percept) returns an action\n    static: seq, an action sequence, initially empty\n        state, some description of the current world state\n        goal, a goal, initially null\n        problem, a problem formulation\n    state ← UPDATE-STATE(state, percept)\n    if seq is empty then do\n        goal ← FORMULATE-GOAL(state)\n        problem ← FORMULATE-PROBLEM(state, goal)\n        seq ← SEARCH(problem)\n    action ← FIRST(seq)\n    seq ← REST(seq)\n    return action\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.949,
+            0.943,
+            0.968
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.819,
+            0.137
+          ],
+          "level": 2,
+          "content": "Giải quyết vấn đề bằng tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.193,
+            0.933,
+            0.293
+          ],
+          "content": "◼ Một người du lịch đang trong chuyến đi du lịch ở Rumani ❑ Anh ta hiện thời đang ở Arad"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.298,
+            0.834,
+            0.343
+          ],
+          "content": "❑ Ngày mai, anh ta có chuyến bay khởi hành từ Bucharest"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.345,
+            0.883,
+            0.393
+          ],
+          "content": "❑ Bây giờ, anh ta cần di chuyển (lái xe) từ Arad đến Bucharest"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.419,
+            0.39,
+            0.471
+          ],
+          "level": 2,
+          "content": "◼ Phát biểu mục tiêu:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.476,
+            0.498,
+            0.523
+          ],
+          "content": "❑ Cần phải có mặt ở Bucharest"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.549,
+            0.379,
+            0.599
+          ],
+          "level": 2,
+          "content": "◼ Phát biểu bài toán:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.607,
+            0.601,
+            0.653
+          ],
+          "content": "❑ Các trạng thái: các thành phố (đi qua)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.655,
+            0.65,
+            0.703
+          ],
+          "content": "❑ Các hành động: lái xe giữa các thành phố"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.729,
+            0.39,
+            0.781
+          ],
+          "level": 2,
+          "content": "◼ Tìm kiếm giải pháp:"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.575,
+            0.407,
+            1.0,
+            0.769
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.785,
+            0.877,
+            0.869
+          ],
+          "content": "❑ Chuỗi các thành phố cần đi qua, ví dụ: Arad, Sibiu, Fagaras, Bucharest"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.054,
+            0.82,
+            0.139
+          ],
+          "level": 2,
+          "content": "Giải quyết vấn đề bằng tìm kiếm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.044,
+            0.166,
+            0.959,
+            0.9
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.928,
+            0.497,
+            0.96
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.504,
+            0.137
+          ],
+          "level": 2,
+          "content": "Các kiểu bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.193,
+            0.912,
+            0.279
+          ],
+          "content": "**Xác định, có thể quan sát hoàn toàn** → Bài toán trạng thái đơn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.287,
+            0.905,
+            0.335
+          ],
+          "content": "❑ Tác tử biết chính xác trạng thái tiếp theo mà nó sẽ chuyển qua"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.339,
+            0.691,
+            0.384
+          ],
+          "content": "❑ Giải pháp của bài toán: một chuỗi hành động"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.401,
+            0.789,
+            0.449
+          ],
+          "content": "◼ **Không quan sát được** → Bài toán thiếu cảm nhận"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.453,
+            0.777,
+            0.498
+          ],
+          "content": "❑ Tác tử có thể không biết là nó đang ở trạng thái nào"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.503,
+            0.691,
+            0.548
+          ],
+          "content": "❑ Giải pháp của bài toán: một chuỗi hành động"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.563,
+            0.908,
+            0.655
+          ],
+          "content": "**Không xác định** và/hoặc **có thể quan sát một phần** → Bài toán có sự kiện ngẫu nhiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.661,
+            0.915,
+            0.707
+          ],
+          "content": "❑ Các nhận thức cung cấp các thông tin mới về trạng thái hiện tại"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.711,
+            0.758,
+            0.755
+          ],
+          "content": "❑ Giải pháp của bài toán: một kế hoạch (chính sách)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.759,
+            0.789,
+            0.805
+          ],
+          "content": "❑ Thường kết hợp đan xen giữa: tìm kiếm và thực hiện"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.821,
+            0.893,
+            0.872
+          ],
+          "content": "**Không biết về không gian trạng thái** → Bài toán thăm dò"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.057,
+            0.825,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán máy hút bụi (1)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.229,
+            0.494,
+            0.331
+          ],
+          "level": 2,
+          "content": "◼ Nếu là bài toán trạng thái đơn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.344,
+            0.426,
+            0.39
+          ],
+          "content": "❑ Bắt đầu $\\dot { \\alpha }$ trạng thái #5."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.437,
+            0.261,
+            0.487
+          ],
+          "level": 2,
+          "content": "◼ Giải pháp?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.254,
+            0.718,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.382,
+            0.718,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.394,
+            0.556,
+            0.43
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.78,
+            0.268,
+            0.802,
+            0.303
+          ],
+          "content": "2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.568,
+            0.508,
+            0.718,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.255,
+            0.962,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.381,
+            0.962,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.647,
+            0.556,
+            0.683
+          ],
+          "content": "7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.521,
+            0.556,
+            0.556
+          ],
+          "content": "5"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.534,
+            0.634,
+            0.719,
+            0.734
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.393,
+            0.802,
+            0.43
+          ],
+          "content": "4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.521,
+            0.802,
+            0.556
+          ],
+          "content": "6"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.508,
+            0.962,
+            0.606
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.649,
+            0.802,
+            0.683
+          ],
+          "content": "8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.635,
+            0.961,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_7_image_18.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.057,
+            0.824,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán máy hút bụi (2)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.229,
+            0.494,
+            0.331
+          ],
+          "level": 2,
+          "content": "◼ Nếu là bài toán trạng thái đơn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.344,
+            0.426,
+            0.39
+          ],
+          "content": "❑ Bắt đầu ở trạng thái #5."
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.437,
+            0.261,
+            0.487
+          ],
+          "level": 2,
+          "content": "◼ Giải pháp?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.5,
+            0.383,
+            0.545
+          ],
+          "content": "❑ [Sang phải, Hút bụi]"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.255,
+            0.718,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_5.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.382,
+            0.718,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.394,
+            0.556,
+            0.43
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.521,
+            0.556,
+            0.556
+          ],
+          "content": "5"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.568,
+            0.508,
+            0.718,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.647,
+            0.556,
+            0.683
+          ],
+          "content": "7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.78,
+            0.268,
+            0.802,
+            0.303
+          ],
+          "content": "2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.534,
+            0.634,
+            0.719,
+            0.734
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_12.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.255,
+            0.962,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.393,
+            0.802,
+            0.43
+          ],
+          "content": "4"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.382,
+            0.961,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.521,
+            0.802,
+            0.556
+          ],
+          "content": "6"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.509,
+            0.962,
+            0.606
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.649,
+            0.802,
+            0.683
+          ],
+          "content": "8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.635,
+            0.961,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_8_image_19.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.968
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.057,
+            0.824,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán máy hút bụi (3)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.228,
+            0.496,
+            0.335
+          ],
+          "level": 2,
+          "content": "◼ Nếu là bài toán thiếu cảm nhận"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.343,
+            0.484,
+            0.434
+          ],
+          "content": "Bắt đầu (có thể) ở trạng thái {#1,#2,#3,#4,#5,#6,#7,#8}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.441,
+            0.493,
+            0.533
+          ],
+          "content": "❑ Luôn bắt đầu bằng di chuyển sang phải"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.58,
+            0.261,
+            0.629
+          ],
+          "level": 2,
+          "content": "◼ Giải pháp?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.255,
+            0.718,
+            0.353
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.78,
+            0.268,
+            0.802,
+            0.303
+          ],
+          "content": "2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.394,
+            0.556,
+            0.43
+          ],
+          "content": "3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.382,
+            0.718,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.509,
+            0.718,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.255,
+            0.961,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.534,
+            0.635,
+            0.719,
+            0.734
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.648,
+            0.556,
+            0.683
+          ],
+          "content": "7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.521,
+            0.556,
+            0.556
+          ],
+          "content": "5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.393,
+            0.802,
+            0.43
+          ],
+          "content": "4"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.381,
+            0.961,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.521,
+            0.802,
+            0.557
+          ],
+          "content": "6"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.508,
+            0.962,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.649,
+            0.802,
+            0.683
+          ],
+          "content": "8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.811,
+            0.635,
+            0.961,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_19.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.056,
+            0.825,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán máy hút bụi (4)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.228,
+            0.496,
+            0.335
+          ],
+          "level": 2,
+          "content": "◼ Nếu là bài toán thiếu cảm nhận"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.343,
+            0.483,
+            0.434
+          ],
+          "content": "Bắt đầu (có thể) ở trạng thái {#1,#2,#3,#4,#5,#6,#7,#8}"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.441,
+            0.493,
+            0.533
+          ],
+          "content": "❑ Luôn bắt đầu bằng di chuyển sang phải"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.58,
+            0.261,
+            0.629
+          ],
+          "level": 2,
+          "content": "◼ Giải pháp?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.642,
+            0.503,
+            0.73
+          ],
+          "content": "[Sang phải, Hút bụi, Sang trái, Hút bụi]"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.255,
+            0.718,
+            0.353
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.78,
+            0.268,
+            0.802,
+            0.303
+          ],
+          "content": "2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.394,
+            0.555,
+            0.43
+          ],
+          "content": "3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.255,
+            0.961,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.382,
+            0.717,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.393,
+            0.802,
+            0.43
+          ],
+          "content": "4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.521,
+            0.556,
+            0.556
+          ],
+          "content": "5"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.509,
+            0.718,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_13.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.382,
+            0.961,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_14.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.535,
+            0.635,
+            0.719,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.648,
+            0.555,
+            0.683
+          ],
+          "content": "7"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.782,
+            0.521,
+            0.802,
+            0.556
+          ],
+          "content": "6"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.509,
+            0.962,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.782,
+            0.649,
+            0.802,
+            0.683
+          ],
+          "content": "8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.635,
+            0.961,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_image_20.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.057,
+            0.824,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán máy hút bụi (5)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.23,
+            0.508,
+            0.335
+          ],
+          "level": 2,
+          "content": "◼ Nếu là bài toán có sự kiện ngẫu nhiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.345,
+            0.421,
+            0.389
+          ],
+          "content": "❑ Bắt đầu ở trạng thái #5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.399,
+            0.513,
+            0.487
+          ],
+          "content": "❑ Không xác định: Hút bụi có thể làm bẩn một cái thảm sạch!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.495,
+            0.491,
+            0.627
+          ],
+          "content": "❑ Có thể quan sát một phần: vị trí, mức độ bẩn ở vị trí hiện thời"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.678,
+            0.261,
+            0.727
+          ],
+          "level": 2,
+          "content": "◼ Giải pháp?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.255,
+            0.718,
+            0.353
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.394,
+            0.555,
+            0.431
+          ],
+          "content": "3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.78,
+            0.268,
+            0.802,
+            0.303
+          ],
+          "content": "2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.382,
+            0.717,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.509,
+            0.718,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_10.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.255,
+            0.961,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.648,
+            0.556,
+            0.682
+          ],
+          "content": "7"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.535,
+            0.635,
+            0.719,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.521,
+            0.556,
+            0.556
+          ],
+          "content": "5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.393,
+            0.802,
+            0.43
+          ],
+          "content": "4"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.382,
+            0.961,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.521,
+            0.802,
+            0.556
+          ],
+          "content": "6"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.509,
+            0.962,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_18.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.649,
+            0.802,
+            0.683
+          ],
+          "content": "8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.635,
+            0.961,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_11_image_20.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.057,
+            0.825,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: Bài toán máy hút bụi (6)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.23,
+            0.508,
+            0.335
+          ],
+          "level": 2,
+          "content": "◼ Nếu là bài toán có sự kiện ngẫu nhiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.345,
+            0.421,
+            0.389
+          ],
+          "content": "❑ Bắt đầu ở trạng thái #5"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.399,
+            0.513,
+            0.487
+          ],
+          "content": "❑ Không xác định: Hút bụi có thể làm bẩn một cái thảm sạch!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.495,
+            0.491,
+            0.627
+          ],
+          "content": "❑ Có thể quan sát một phần: vị trí, mức độ bẩn ở vị trí hiện thời"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.066,
+            0.678,
+            0.261,
+            0.727
+          ],
+          "level": 2,
+          "content": "◼ Giải pháp?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.1,
+            0.738,
+            0.478,
+            0.829
+          ],
+          "content": "❑ [Sang phải, **if** Bẩn **then** Hút bụi]"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.255,
+            0.718,
+            0.353
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_7.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.78,
+            0.268,
+            0.802,
+            0.303
+          ],
+          "content": "2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.255,
+            0.961,
+            0.352
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.394,
+            0.555,
+            0.431
+          ],
+          "content": "3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.382,
+            0.717,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_11.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.393,
+            0.802,
+            0.43
+          ],
+          "content": "4"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.813,
+            0.382,
+            0.961,
+            0.479
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_13.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.535,
+            0.521,
+            0.556,
+            0.556
+          ],
+          "content": "5"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.569,
+            0.509,
+            0.718,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_15.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.521,
+            0.802,
+            0.556
+          ],
+          "content": "6"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.535,
+            0.635,
+            0.719,
+            0.734
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_17.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.534,
+            0.648,
+            0.555,
+            0.682
+          ],
+          "content": "7"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.812,
+            0.509,
+            0.962,
+            0.607
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.781,
+            0.649,
+            0.802,
+            0.683
+          ],
+          "content": "8"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.811,
+            0.635,
+            0.961,
+            0.733
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_21.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.053,
+            0.835,
+            0.138
+          ],
+          "level": 2,
+          "content": "Phát biểu bài toán trạng thái đơn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.176,
+            0.601,
+            0.223
+          ],
+          "content": "Bài toán được định nghĩa bởi 4 thành phần:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.245,
+            0.284,
+            0.289
+          ],
+          "level": 2,
+          "content": "◼ Trạng thái đầu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.288,
+            0.507,
+            0.331
+          ],
+          "content": "❑ Ví dụ: “đang ở thành phố Arad“"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.355,
+            0.924,
+            0.473
+          ],
+          "content": "Các hành động – Xác định bởi hàm chuyển trạng thái: S(trạng\\_thái\\_hiện\\_thời) = tập các cặp &lt;hành_động, trạng_thái_tiếp_theo&gt; ❑ Ví dụ: S(Arad) = {&lt;Arad → Zerind, Zerind&gt;, … }"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.493,
+            0.442,
+            0.538
+          ],
+          "content": "◼ Kiểm tra mục tiêu, có thể là"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.539,
+            0.949,
+            0.581
+          ],
+          "content": "❑ Trực tiếp – ví dụ: Trạng thái hiện thời x = “Đang ở thành phố Bucharest\""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.581,
+            0.59,
+            0.622
+          ],
+          "content": "❑ Gián tiếp – ví dụ: HếtCờ(x), Sạch(x), …"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.646,
+            0.452,
+            0.689
+          ],
+          "content": "◼ Chi phí đường đi (giải pháp)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.687,
+            0.947,
+            0.73
+          ],
+          "content": "❑ Ví dụ: Tổng các khoảng cách, Số lượng các hành động phải thực hiện,…"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.731,
+            0.912,
+            0.804
+          ],
+          "content": "❑ c(x,a,y) ≥ 0 là chi phí bước (bộ phận) – chi phí cho việc áp dụng hành động a để chuyển từ trạng thái x sang trạng thái y"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.825,
+            0.93,
+            0.905
+          ],
+          "content": "Một giải pháp: Một chuỗi các hành động cho phép dẫn từ trạng thái đầu đến trạng thái đích"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.057,
+            0.78,
+            0.14
+          ],
+          "level": 2,
+          "content": "Xác định không gian trạng thái"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.181,
+            0.909,
+            0.321
+          ],
+          "content": "◼ Các bài toán thực tế thường được mô tả phức tạp → Không gian trạng thái cần được khái quát (abstracted) để phục vụ cho việc giải quyết bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.347,
+            0.817,
+            0.399
+          ],
+          "content": "◼ Trạng thái (khái quát) = Một tập các trạng thái thực tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.425,
+            0.912,
+            0.516
+          ],
+          "content": "Hành động (khái quát) = Một kết hợp phức tạp của các hành động thực tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.521,
+            0.933,
+            0.609
+          ],
+          "content": "❑ Ví dụ: Hành động \"Arad → Zerind\" biểu diễn một tập kết hợp các đường, đường vòng, chỗ nghỉ,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.633,
+            0.908,
+            0.771
+          ],
+          "content": "Để đảm bảo việc thực hiện (quá trình tìm kiếm), bất kỳ trạng thái thực tế nào cũng phải có thể đạt đến được từ trạng thái thực tế khác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.801,
+            0.912,
+            0.891
+          ],
+          "content": "◼ Giải pháp (khái quát) = Một tập các đường đi giải pháp trong thực tế"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.808,
+            0.141
+          ],
+          "level": 2,
+          "content": "Đồ thị không gian trạng thái (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.237,
+            0.132,
+            0.286
+          ],
+          "content": "**Bài**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.319,
+            0.149,
+            0.366
+          ],
+          "content": "**toán**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.399,
+            0.147,
+            0.452
+          ],
+          "content": "\\_"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.479,
+            0.133,
+            0.526
+          ],
+          "content": "**hút**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.194,
+            0.176,
+            0.948,
+            0.653
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.698,
+            0.29,
+            0.742
+          ],
+          "content": "◼ Các trạng thái?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.751,
+            0.305,
+            0.795
+          ],
+          "content": "◼ Các hành động?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.801,
+            0.333,
+            0.848
+          ],
+          "content": "◼ Kiểm tra mục tiêu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.857,
+            0.326,
+            0.903
+          ],
+          "content": "◼ Chi phí đường đi?"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.807,
+            0.141
+          ],
+          "level": 2,
+          "content": "Đồ thị không gian trạng thái (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.236,
+            0.133,
+            0.286
+          ],
+          "content": "**Bài**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.071,
+            0.319,
+            0.15,
+            0.367
+          ],
+          "content": "**toán**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.073,
+            0.477,
+            0.133,
+            0.527
+          ],
+          "content": "**hút**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.072,
+            0.558,
+            0.131,
+            0.611
+          ],
+          "content": "**bụi**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.195,
+            0.176,
+            0.948,
+            0.653
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.695,
+            0.729,
+            0.743
+          ],
+          "content": "◼ Các trạng thái? Chỗ bẩn và vị trí máy hút bụi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.749,
+            0.894,
+            0.797
+          ],
+          "content": "Các hành động? Sang trái, sang phải, hút bụi, không làm gì"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.801,
+            0.333,
+            0.849
+          ],
+          "content": "◼ Kiểm tra mục tiêu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.364,
+            0.801,
+            0.747,
+            0.85
+          ],
+          "content": "Không còn chỗ (vị trí) nào bẩn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.062,
+            0.855,
+            0.85,
+            0.905
+          ],
+          "content": "Chi phí đường đi? 1 (mỗi hành động), 0 (không làm gì cả)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.927,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.048,
+            0.693,
+            0.135
+          ],
+          "level": 2,
+          "content": "Biểu diễn bằng cây và đồ thị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.163,
+            0.236,
+            0.207
+          ],
+          "content": "B là cha của C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.03,
+            0.209,
+            0.236,
+            0.251
+          ],
+          "content": "C là con của B"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.251,
+            0.268,
+            0.296
+          ],
+          "content": "A là tổ tiên của C"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.03,
+            0.298,
+            0.304,
+            0.341
+          ],
+          "content": "C là con cháu của A"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.396,
+            0.211,
+            0.453,
+            0.251
+          ],
+          "content": "Tree"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.837,
+            0.177,
+            0.888,
+            0.216
+          ],
+          "content": "-root"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.244,
+            0.351,
+            0.331,
+            0.429
+          ],
+          "content": "terminal (leaf)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.245,
+            0.171,
+            0.997,
+            0.481
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.185,
+            0.508,
+            0.348,
+            0.582
+          ],
+          "content": "Directed graph (one-way street)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.177,
+            0.501,
+            0.508,
+            0.883
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_10.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.569,
+            0.509,
+            0.741,
+            0.582
+          ],
+          "content": "Undirected graph (two-way streets)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.557,
+            0.501,
+            0.888,
+            0.878
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_12.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.96
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.053,
+            0.77,
+            0.133
+          ],
+          "level": 2,
+          "content": "Đồ thị tìm kiếm → Cây tìm kiếm"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.05,
+            0.171,
+            0.94,
+            0.563
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.595,
+            0.885,
+            0.703
+          ],
+          "content": "Các bài toán tìm kiếm trên đồ thị có thể được chuyển thành các bài toán tìm kiếm trên cây"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.71,
+            0.918,
+            0.803
+          ],
+          "content": "❑ Thay thế mỗi liên kết (cạnh) vô hướng bằng 2 liên kết (cạnh) có hướng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.809,
+            0.921,
+            0.902
+          ],
+          "content": "❑ Loại bỏ các vòng lặp tồn tại trong đồ thị (để tránh không duyệt 2 lần đối với một nút trong bất kỳ đường đi nào)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.054,
+            0.871,
+            0.125
+          ],
+          "level": 2,
+          "content": "Các giải thuật tìm kiếm theo cấu trúc cây"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.205,
+            0.212,
+            0.257
+          ],
+          "level": 2,
+          "content": "◼ Ý tưởng:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.265,
+            0.572,
+            0.387
+          ],
+          "content": "Khám phá (xét) không gian trạng thái bằng cách sinh ra các trạng thái kế tiếp của các trạng thái đã khám phá (đã xét)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.392,
+            0.575,
+            0.475
+          ],
+          "content": "Còn gọi là phương pháp khai triển (phát triển) các trạng thái"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.601,
+            0.157,
+            0.943,
+            0.523
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.553,
+            0.865,
+            0.685
+          ],
+          "content": "function TREE-SEARCH( problem, strategy) returns a solution, or failure initialize the search tree using the initial state of problem loop do"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.122,
+            0.69,
+            0.914,
+            0.871
+          ],
+          "content": "if there are no candidates for expansion then return failure choose a leaf node for expansion according to strategy if the node contains a goal state then return the corresponding solution else expand the node and add the resulting nodes to the search tree"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.048,
+            0.827,
+            0.132
+          ],
+          "level": 2,
+          "content": "Ví dụ biểu diễn theo cấu trúc cây (1)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.039,
+            0.236,
+            0.964,
+            0.557
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.052,
+            0.048,
+            0.827,
+            0.132
+          ],
+          "level": 2,
+          "content": "Ví dụ biểu diễn theo cấu trúc cây (2)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.038,
+            0.239,
+            0.963,
+            0.558
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_21_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.048,
+            0.827,
+            0.132
+          ],
+          "level": 2,
+          "content": "Ví dụ biểu diễn theo cấu trúc cây (3)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.04,
+            0.238,
+            0.962,
+            0.555
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.849,
+            0.134
+          ],
+          "level": 2,
+          "content": "Ví dụ trò chơi cờ ca-rô (Tic-Tac-Toe)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.145,
+            0.192,
+            0.72,
+            0.88
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.055,
+            0.92,
+            0.134
+          ],
+          "level": 2,
+          "content": "Tìm kiếm theo cấu trúc cây - Giải thuật"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.12,
+            0.209,
+            0.853,
+            0.478
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction TREE-SEARCH(problem, fringe) returns a solution, or failure\n    fringe ← INSERT(MAKE-NODE(INITIAL-STATE[problem]), fringe)\nloop do\n    if fringe is empty then return failure\n        node ← REMOVE-FRONT(fringe)\n    if GOAL-TEST[problem](STATE[node]) then return SOLUTION(node)\n        fringe ← INSERTALL(EXPAND(node, problem), fringe)\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.121,
+            0.511,
+            0.827,
+            0.853
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction EXPAND(node, problem) returns a set of nodes\n    successors ← the empty set\n    for each action, result in SUCCESSOR-FN[problem](STATE[node]) do\n        s ← a new NODE\n        PARENT-NODE[s] ← node; ACTION[s] ← action; STATE[s] ← result\n        PATH-COST[s] ← PATH-COST[node] + STEP-COST(node, action, s)\n        DEPTH[s] ← DEPTH[node] + 1\n        add s to successors\n    return successors\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.049,
+            0.643,
+            0.134
+          ],
+          "level": 2,
+          "content": "Biểu diễn cây tìm kiếm (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.188,
+            0.89,
+            0.265
+          ],
+          "content": "Một trạng thái là một biểu diễn của một hình trạng (configuration) thực tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.267,
+            0.893,
+            0.346
+          ],
+          "content": "◼ Một nút (của cây) là một phần cấu thành nên cấu trúc dữ liệu của một cây tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.349,
+            0.927,
+            0.421
+          ],
+          "content": "❑ Một nút chứa các thuộc tính: trạng thái, nút cha, nút con, hành động, độ sâu, chi phí đường đi g(x)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.214,
+            0.423,
+            0.731,
+            0.729
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.742,
+            0.517,
+            0.782
+          ],
+          "content": "◼ Hàm Expand tạo nên các nút mới,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.786,
+            0.609,
+            0.824
+          ],
+          "content": "Gán giá trị cho các thuộc tính (của nút mới)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.825,
+            0.915,
+            0.895
+          ],
+          "content": "❑ Sử dụng hàm Successor-Fn để tạo nên các trạng thái tương ứng với các nút mới đó"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.048,
+            0.798,
+            0.154
+          ],
+          "level": 2,
+          "content": "Biểu diễn cây tìm kiếm (2)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.219,
+            0.235,
+            0.731,
+            0.822
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_26_image_1.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.588,
+            0.133
+          ],
+          "level": 2,
+          "content": "Các chiến lược tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.19,
+            0.905,
+            0.294
+          ],
+          "content": "◼ Một chiến lược tìm kiếm được xác định bằng việc chọn trình tự phát triển (khai triển) các nút"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.309,
+            0.942,
+            0.362
+          ],
+          "content": "Các chiến lược tìm kiếm được đánh giá theo các tiêu chí:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.367,
+            0.933,
+            0.451
+          ],
+          "content": "❑ Tính hoàn chỉnh: Có đảm bảo tìm được một lời giải (nếu thực sự tồn tại một lời giải)?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.456,
+            0.835,
+            0.501
+          ],
+          "content": "❑ Độ phức tạp về thời gian: Số lượng các nút được sinh ra"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.505,
+            0.914,
+            0.588
+          ],
+          "content": "❑ Độ phức tạp về bộ nhớ: Số lượng tối đa các nút được lưu trong bộ nhớ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.593,
+            0.91,
+            0.641
+          ],
+          "content": "❑ Tính tối ưu: Có đảm bảo tìm được lời giải có chi phí thấp nhất?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.657,
+            0.911,
+            0.709
+          ],
+          "content": "Độ phức tạp về thời gian và bộ nhớ được đánh giá bởi:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.712,
+            0.695,
+            0.757
+          ],
+          "content": "❑ b: Hệ số phân nhánh tối đa của cây tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.761,
+            0.658,
+            0.807
+          ],
+          "content": "❑ d: Độ sâu của lời giải có chi phí thấp nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.811,
+            0.938,
+            0.891
+          ],
+          "content": "❑ m: Độ sâu tối đa của không gian trạng thái (độ sâu của cây) – có thể là ∞"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.055,
+            0.753,
+            0.133
+          ],
+          "level": 2,
+          "content": "Các chiến lược tìm kiếm cơ bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.219,
+            0.938,
+            0.379
+          ],
+          "content": "Các chiến lược tìm kiếm cơ bản (uninformed search strategies) **chỉ sử dụng các thông tin chứa trong định nghĩa của bài toán**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.411,
+            0.827,
+            0.467
+          ],
+          "content": "❑ Tìm kiếm theo chiều rộng (Breadth-first search)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.498,
+            0.885,
+            0.554
+          ],
+          "content": "❑ Tìm kiếm với chi phí cực tiểu (Uniform-cost search)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.584,
+            0.786,
+            0.64
+          ],
+          "content": "❑ Tìm kiếm theo chiều sâu (Depth-first search)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.673,
+            0.842,
+            0.727
+          ],
+          "content": "❑ Tìm kiếm giới hạn độ sâu (Depth-limited search)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.757,
+            0.819,
+            0.815
+          ],
+          "content": "❑ Tìm kiếm sâu dần (Iterative deepening search)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.498,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.056,
+            0.77,
+            0.133
+          ],
+          "level": 2,
+          "content": "Tìm kiếm theo chiều rộng – BFS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.197,
+            0.899,
+            0.295
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.319,
+            0.391,
+            0.365
+          ],
+          "level": 2,
+          "content": "◼ Cài đặt giải thuật BFS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.373,
+            0.915,
+            0.465
+          ],
+          "content": "❑ fringe là một cấu trúc kiểu hàng đợi FIFO (các nút mới được bổ sung vào cuối của fringe)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.477,
+            0.792,
+            0.527
+          ],
+          "level": 2,
+          "content": "◼ Các ký hiệu được sử dụng trong giải thuật BFS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.535,
+            0.903,
+            0.615
+          ],
+          "content": "fringe: Cấu trúc kiểu hàng đợi (queue) lưu giữ các nút (trạng thái) **sẽ** được duyệt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.623,
+            0.912,
+            0.703
+          ],
+          "content": "❑ closed: Cấu trúc kiểu hàng đợi (queue) lưu giữ các nút (trạng thái) **đã** được duyệt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.711,
+            0.786,
+            0.753
+          ],
+          "content": "❑ G=(N,A): Cây biểu diễn không gian trạng thái của bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.759,
+            0.683,
+            0.801
+          ],
+          "content": "❑ $n _ { o } ;$ Trạng thái đầu của bài toán (nút gốc của cây)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.809,
+            0.617,
+            0.847
+          ],
+          "content": "ĐICH: Tập các trạng thái đích của bài toán"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.856,
+            0.858,
+            0.898
+          ],
+          "content": "❑ (n): Tập các trạng thái (nút) con của trạng thái (nút) đang xét n"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.059,
+            0.054,
+            0.42,
+            0.135
+          ],
+          "level": 2,
+          "content": "BFS – Giải thuật"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.051,
+            0.198,
+            0.942,
+            0.853
+          ],
+          "sub_type": "code",
+          "content": "```txt\nBFS (N, A, n₀, ĐICH)\n{\n    fringe ← n₀;\n    closed ← ∅;\n    while (fringe ≠ ∅) do\n    {    n ← GET_FIRST(fringe);          // lấy phần tử đầu tiên của fringe\n        closed ← closed ⊕ n;\n        if (n ∈ ĐICH) then return SOLUTION(n);\n        if (Γ(n) ≠ ∅) then fringe ← fringe ⊕ Γ(n);\n    }\n    return (“No solution”);\n}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.398,
+            0.135
+          ],
+          "level": 2,
+          "content": "BFS – Ví dụ (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.217,
+            0.899,
+            0.319
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.262,
+            0.371,
+            0.737,
+            0.788
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.397,
+            0.135
+          ],
+          "level": 2,
+          "content": "BFS – Ví dụ (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.195,
+            0.899,
+            0.297
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.259,
+            0.371,
+            0.738,
+            0.785
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.397,
+            0.135
+          ],
+          "level": 2,
+          "content": "BFS – Ví dụ (3)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.195,
+            0.899,
+            0.297
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.26,
+            0.361,
+            0.736,
+            0.781
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_33_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.398,
+            0.135
+          ],
+          "level": 2,
+          "content": "BFS – Ví dụ (4)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.195,
+            0.899,
+            0.297
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều rộng – Các nút được xét theo thứ tự độ sâu tăng dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.223,
+            0.372,
+            0.738,
+            0.783
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_34_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "35"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.05,
+            0.935,
+            0.155
+          ],
+          "content": "Bài tập 1: Vẽ bảng minh họa quá trình duyệt của thuật toán BFS cho cây tìm kiếm dưới đây, đỉnh đầu x1, đích x12"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.057,
+            0.181,
+            0.944,
+            0.641
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_image_1.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.098,
+            0.716,
+            0.916,
+            0.856
+          ],
+          "content": "| n | (n) | Fringe | Closed |\n| --- | --- | --- | --- |\n|  |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_table_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.382,
+            0.917,
+            0.523,
+            0.949
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "36"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.046,
+            0.193,
+            0.999,
+            0.845
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.049,
+                0.035,
+                0.929,
+                0.195
+              ],
+              "content": "Bài tập 2: Vẽ bảng minh họa quá trình tìm kiếm lời giải trên KGTT của bài toán Tháp Hà nội sử dụng BFS, đỉnh xuất phát 1, đích 9."
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_36_image_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.498,
+            0.96
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "37"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.053,
+            0.499,
+            0.133
+          ],
+          "level": 2,
+          "content": "BFS – Các đặc điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.205,
+            0.33,
+            0.248
+          ],
+          "content": "◼ Tính hoàn chỉnh?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.256,
+            0.436,
+            0.307
+          ],
+          "content": "❑ Có (nếu b là hữu hạn)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.322,
+            0.446,
+            0.372
+          ],
+          "content": "◼ Độ phức tạp về thời gian?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.377,
+            0.512,
+            0.425
+          ],
+          "content": "❑ $1 + b + b ^ { 2 } + b ^ { 3 } + \\cdots + b ^ { d } = O ( b ^ { d + 1 } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.442,
+            0.424,
+            0.491
+          ],
+          "content": "◼ Độ phức tạp về bộ nhớ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.497,
+            0.528,
+            0.591
+          ],
+          "content": "❑ O(b<sup>d+1</sup>) – Lưu tất cả các nút trong bộ nhớ)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.606,
+            0.257,
+            0.652
+          ],
+          "content": "◼ Tính tối ưu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.659,
+            0.502,
+            0.753
+          ],
+          "content": "❑ Có (nếu chi phí =1 cho mỗi bước)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.541,
+            0.251,
+            0.86,
+            0.716
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_37_image_9.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.872,
+            0.252,
+            0.952,
+            0.295
+          ],
+          "content": "1 node"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.871,
+            0.31,
+            0.963,
+            0.354
+          ],
+          "content": "b nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.871,
+            0.376,
+            0.971,
+            0.422
+          ],
+          "content": "b² nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.87,
+            0.479,
+            0.969,
+            0.524
+          ],
+          "content": "b⁵ nodes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.872,
+            0.65,
+            0.976,
+            0.693
+          ],
+          "content": "bmnodes"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "38"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.048,
+            0.053,
+            0.832,
+            0.135
+          ],
+          "level": 2,
+          "content": "Tìm kiếm với chi phí cực tiểu (UCS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.224,
+            0.897,
+            0.376
+          ],
+          "content": "Phát triển các nút chưa xét có chi phí thấp nhất – Các nút được xét theo thứ tự chi phí (từ nút gốc đến nút đang xét) tăng dần"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.406,
+            0.215,
+            0.453
+          ],
+          "content": "◼ Cài đặt:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.457,
+            0.909,
+            0.547
+          ],
+          "content": "❑ fringe là một cấu trúc hàng đợi, trong đó các phần tử được sắp xếp theo chi phí đường đi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.571,
+            0.905,
+            0.72
+          ],
+          "content": "Trở thành phương pháp tìm kiếm theo chiều rộng, nếu các chi phí ở mỗi bước (mỗi cạnh của cây tìm kiếm) là như nhau"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "39"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.052,
+            0.403,
+            0.137
+          ],
+          "level": 2,
+          "content": "UCS: Giải thuật"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.051,
+            0.197,
+            0.945,
+            0.889
+          ],
+          "sub_type": "code",
+          "content": "```txt\nUCS (N, A, n₀, ĐICH, c)\n{\n    fringe ← n₀;\n    closed ← ∅;\n    while (fringe ≠ ∅) do\n    {    n ← GET_LOWEST_COST(fringe);      // lấy phần tử có chi phí\n                                // đường đi c(n) nhỏ nhất\n        closed ← closed ⊕ n;\n        if (n ∈ ĐICH) then return SOLUTION(n);\n        if (Γ(n) ≠ ∅) then fringe ← fringe ⊕ Γ(n);\n    }\n    return (\"No solution\");\n}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.927,
+            0.497,
+            0.96
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.021,
+            0.033,
+            0.908,
+            0.967
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_40_image_0.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.445,
+            0.834,
+            0.965,
+            0.897
+          ],
+          "content": "Tìm đường đi ngắn nhất từ HN đến V"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.917,
+            0.943,
+            0.942,
+            0.969
+          ],
+          "content": "41"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.052,
+            0.482,
+            0.134
+          ],
+          "level": 2,
+          "content": "UCS: Các đặc điểm"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.205,
+            0.35,
+            0.252
+          ],
+          "level": 2,
+          "content": "◼ Tính hoàn chỉnh?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.259,
+            0.575,
+            0.305
+          ],
+          "content": "❑ Có (nếu chi phí ở mỗi bước $\\geq \\varepsilon > 0 )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.333,
+            0.478,
+            0.385
+          ],
+          "level": 2,
+          "content": "◼ Độ phức tạp về thời gian?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.389,
+            0.927,
+            0.477
+          ],
+          "content": "❑ Phụ thuộc vào tổng số các nút có chi phí ≤ chi phí của lời giải tối ưu: $O ( b ^ { \\lceil c \\gamma _ { \\varepsilon } \\rceil } )$ , trong đó C\\*là chi phí của lời giải tối ưu"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.503,
+            0.454,
+            0.555
+          ],
+          "level": 2,
+          "content": "◼ Độ phức tạp về bộ nhớ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.559,
+            0.926,
+            0.646
+          ],
+          "content": "❑ Phụ thuộc vào tổng số các nút có chi phí ≤ chi phí của lời giải tối ưu: $O ( b ^ { \\lceil c \\gamma _ { \\varepsilon } \\rceil } )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.673,
+            0.273,
+            0.722
+          ],
+          "level": 2,
+          "content": "◼ Tính tối ưu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.729,
+            0.903,
+            0.779
+          ],
+          "content": "❑ Có (nếu các nút được xét theo thứ tự tăng dần về chi phí g(n))"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.744,
+            0.133
+          ],
+          "level": 2,
+          "content": "Tìm kiếm theo chiều sâu (DFS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.218,
+            0.87,
+            0.328
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.373,
+            0.206,
+            0.422
+          ],
+          "content": "◼ Cài đặt:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.443,
+            0.924,
+            0.537
+          ],
+          "content": "❑ fringe là một cấu trúc kiểu ngăn xếp LIFO (Các nút mới được bổ sung vào đầu của fringe)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "43"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.059,
+            0.054,
+            0.399,
+            0.135
+          ],
+          "level": 2,
+          "content": "DFS: Giải thuật"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.051,
+            0.198,
+            0.942,
+            0.853
+          ],
+          "sub_type": "code",
+          "content": "```txt\nDFS (N, A, n₀, ĐICH)\n{\n    fringe ← n₀;\n    closed ← ∅;\n    while (fringe ≠ ∅) do\n    {    n ← GET_FIRST(fringe);          // lấy phần tử đầu tiên của fringe\n        closed ← closed ⊕ n;\n        if (n ∈ ĐICH) then return SOLUTION(n);\n        if (Γ(n) ≠ ∅) then fringe ← Γ(n) ⊕ fringe;\n    }\n    return (“No solution”);\n}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "44"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.377,
+            0.135
+          ],
+          "level": 2,
+          "content": "DFS: Ví dụ (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.936,
+            0.308
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.216,
+            0.438,
+            0.783,
+            0.888
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_44_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "45"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.376,
+            0.135
+          ],
+          "level": 2,
+          "content": "DFS: Ví dụ (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.936,
+            0.308
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.218,
+            0.439,
+            0.784,
+            0.887
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_45_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "46"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.376,
+            0.134
+          ],
+          "level": 2,
+          "content": "DFS: Ví dụ (3)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.936,
+            0.308
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.217,
+            0.439,
+            0.785,
+            0.881
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "47"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.376,
+            0.135
+          ],
+          "level": 2,
+          "content": "DFS: Ví dụ (4)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.936,
+            0.307
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.215,
+            0.44,
+            0.783,
+            0.873
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_47_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "48"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.376,
+            0.134
+          ],
+          "level": 2,
+          "content": "DFS: Ví dụ (5)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.936,
+            0.308
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.22,
+            0.439,
+            0.784,
+            0.887
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.928,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "49"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.057,
+            0.376,
+            0.135
+          ],
+          "level": 2,
+          "content": "DFS: Ví dụ (6)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.207,
+            0.936,
+            0.308
+          ],
+          "content": "◼ Phát triển các nút chưa xét theo chiều sâu – Các nút được xét theo thứ tự độ sâu giảm dần"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.216,
+            0.439,
+            0.786,
+            0.889
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.357,
+                0.928,
+                0.497,
+                0.959
+              ],
+              "content": "Trí tuệ nhân tạo"
+            }
+          ],
+          "image_source": "images/page_49_image_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "50"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.053,
+            0.479,
+            0.134
+          ],
+          "level": 2,
+          "content": "DFS: Các đặc điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.199,
+            0.337,
+            0.242
+          ],
+          "content": "◼ Tính hoàn chỉnh?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.255,
+            0.835,
+            0.301
+          ],
+          "content": "❑ Không, chỉ hoàn chỉnh với không gian trạng thái hữu hạn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.309,
+            0.455,
+            0.357
+          ],
+          "content": "◼ Độ phức tạp về thời gian?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.364,
+            0.685,
+            0.411
+          ],
+          "content": "❑ $O ( b ^ { m } )$ : rất lớn, nếu m lớn hơn nhiều so với d"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.42,
+            0.432,
+            0.469
+          ],
+          "content": "◼ Độ phức tạp về bộ nhớ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.477,
+            0.517,
+            0.525
+          ],
+          "content": "❑ O(bm) - độ phức tạp tuyến tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.533,
+            0.266,
+            0.578
+          ],
+          "content": "◼ Tính tối ưu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.593,
+            0.218,
+            0.636
+          ],
+          "content": "❑ Không"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.527,
+            0.459,
+            0.943,
+            0.877
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_9.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.941,
+            0.969
+          ],
+          "content": "51"
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.76,
+            0.136
+          ],
+          "level": 2,
+          "content": "Tìm kiếm giới hạn độ sâu (DLS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.185,
+            0.91,
+            0.285
+          ],
+          "content": "= Phương pháp tìm kiếm theo chiều sâu (DFS) + Sử dụng giới hạn về độ sâu l trong quá trình tìm kiếm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.155,
+            0.296,
+            0.686,
+            0.344
+          ],
+          "content": "→ các nút ở độ sâu l không có nút con"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.079,
+            0.383,
+            0.881,
+            0.862
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction DEPTH-LIMITED-SEARCH(problem, limit) returns soln/fail/cutoff\n    RECURSIVE-DLS(MAKE-NODE(INITIAL-STATE[problem]), problem, limit)\nfunction RECURSIVE-DLS(node, problem, limit) returns soln/fail/cutoff\n    cutoff-occurred? ← false\n    if GOAL-TEST[problem](STATE[node]) then return SOLUTION(node)\n    else if DEPTH[node] = limit then return cutoff\n    else for each successor in EXPAND(node, problem) do\n        result ← RECURSIVE-DLS(successor, problem, limit)\n        if result = cutoff then cutoff-occurred? ← true\n        else if result ≠ failure then return result\n    if cutoff-occurred? then return cutoff else return failure\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "52"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.055,
+            0.588,
+            0.133
+          ],
+          "level": 2,
+          "content": "Tìm kiếm sâu dần (IDS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.206,
+            0.924,
+            0.363
+          ],
+          "content": "◼ Vấn đề với giải thuật tìm kiếm với giới hạn độ sâu (DLS) ❑ Nếu tất cả các lời giải (các nút đích) nằm ở độ sâu lớn hơn giới hạn độ sâu l, thì giải thuật DLS thất bại (không tìm được lời giải)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.391,
+            0.499,
+            0.444
+          ],
+          "level": 2,
+          "content": "◼ Giải thuật tìm kiếm sâu dần"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.453,
+            0.937,
+            0.539
+          ],
+          "content": "❑ Áp dụng giải thuật DFS đối với các đường đi (trong cây) có độ dài <=1"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.55,
+            0.923,
+            0.641
+          ],
+          "content": "❑ Nếu thất bại (không tìm được lời giải), tiếp tục áp dụng giải thuật DFS đối với các đường đi có độ dài <=2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.649,
+            0.923,
+            0.739
+          ],
+          "content": "❑ Nếu thất bại (không tìm được lời giải), tiếp tục áp dụng giải thuật DFS đối với các đường đi có độ dài <=3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.747,
+            0.883,
+            0.84
+          ],
+          "content": "❑ …(tiếp tục như trên, cho đến khi: 1) tìm được lời giải, hoặc 2) toàn bộ cây đã được xét mà không tìm được lời giải)"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "53"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.055,
+            0.469,
+            0.135
+          ],
+          "level": 2,
+          "content": "IDS: Giải thuật (1)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.04,
+            0.312,
+            0.935,
+            0.633
+          ],
+          "sub_type": "code",
+          "content": "```txt\nfunction ITERATIVE-DEEPENING-SEARCH(problem) returns a solution, or failure\n    inputs: problem, a problem\n    for depth ← 0 to ∞ do\n        result ← DEPTH-LIMITED-SEARCH(problem, depth)\n        if result ≠ cutoff then return result\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "54"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.368,
+            0.135
+          ],
+          "level": 2,
+          "content": "IDS: Ví dụ (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.197,
+            0.304,
+            0.237
+          ],
+          "content": "Giới hạn độ sâu l = 0"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.081,
+            0.283,
+            0.454,
+            0.329
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.946,
+            0.942,
+            0.969
+          ],
+          "content": "55"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.057,
+            0.368,
+            0.135
+          ],
+          "level": 2,
+          "content": "IDS: Ví dụ (2)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.197,
+            0.302,
+            0.237
+          ],
+          "content": "Giới hạn độ sâu l = 1"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.082,
+            0.277,
+            0.887,
+            0.361
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_55_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "56"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.058,
+            0.367,
+            0.135
+          ],
+          "level": 2,
+          "content": "IDS: Ví dụ (3)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.197,
+            0.304,
+            0.237
+          ],
+          "content": "Giới hạn độ sâu l = 2"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.082,
+            0.273,
+            0.901,
+            0.539
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "57"
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.058,
+            0.367,
+            0.134
+          ],
+          "level": 2,
+          "content": "IDS: Ví dụ (4)"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.065,
+            0.198,
+            0.304,
+            0.237
+          ],
+          "level": 2,
+          "content": "Giới hạn độ sâu l = 3"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.083,
+            0.271,
+            0.911,
+            0.775
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_57_image_2.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "58"
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.055,
+            0.469,
+            0.137
+          ],
+          "level": 2,
+          "content": "IDS: Giải thuật (2)"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.051,
+            0.176,
+            0.947,
+            0.899
+          ],
+          "sub_type": "code",
+          "content": "```txt\nIDS (N, A, n₀, ĐICH, I) // I: giới hạn độ sâu\n{\n    fringe ← n₀;      closed ← ∅;      depth ← I;\n    while (fringe ≠ ∅) do\n    { n ← GET_FIRST(fringe);   // lấy phần tử đầu tiên của fringe\n        closed ← closed ⊕ n;\n        if (n ∈ ĐICH) then return SOLUTION(n);\n        if (Γ(n) ≠ ∅) then\n        { case d(n) do          // d(n): độ sâu của nút n\n            [0..(depth-1)]: fringe ← Γ(n) ⊕ fringe;\n            depth:      fringe ← fringe ⊕ Γ(n);\n            (depth+1):  { depth ← depth + I;\n                if (l=1) then fringe ← fringe ⊕ Γ(n)\n                    else fringe ← Γ(n) ⊕ fringe;\n            }\n        }\n    }\n    return (\"No solution\");\n}\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "59"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.07,
+            0.035,
+            0.953,
+            0.921
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_0.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.918,
+            0.943,
+            0.942,
+            0.969
+          ],
+          "content": "60"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.061,
+            0.323,
+            0.124
+          ],
+          "level": 2,
+          "content": "DLS vs. IDS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.198,
+            0.942,
+            0.33
+          ],
+          "content": "Với độ sâu d và hệ số phân nhánh b, thì số lượng các nút được sinh ra trong giải thuật tìm kiếm giới hạn độ sâu là:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.205,
+            0.338,
+            0.796,
+            0.392
+          ],
+          "content": "N _ {D L S} = b ^ {0} + b ^ {1} + b ^ {2} + \\ldots + b ^ {d - 2} + b ^ {d - 1} + b ^ {d}",
+          "image_source": "images/page_60_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.423,
+            0.912,
+            0.514
+          ],
+          "content": "Số lượng các nút được sinh ra trong giải thuật tìm kiếm sâu dần là:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.067,
+            0.52,
+            0.93,
+            0.575
+          ],
+          "content": "N _ {\\text {IDS}} = (d + 1). b ^ {0} + d. b ^ {1} + (d - 1). b ^ {2} + \\ldots + 3. b ^ {d - 2} + 2. b ^ {d - 1} + 1. b ^ {d}",
+          "image_source": "images/page_60_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.609,
+            0.431,
+            0.655
+          ],
+          "content": "◼ Ví dụ với b = 10, d = 5:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.661,
+            0.856,
+            0.705
+          ],
+          "content": "❑ N<sub>DLS</sub> = 1 + 10 + 100 + 1,000 + 10,000 + 100,000 = 111,111"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.706,
+            0.857,
+            0.749
+          ],
+          "content": "❑ N<sub>IDS</sub> = 6 + 50 + 400 + 3,000 + 20,000 + 100,000 = 123,456"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.751,
+            0.717,
+            0.793
+          ],
+          "content": "❑ Lãng phí = (123,456 - 111,111)/111,111 = 11%"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.941,
+            0.969
+          ],
+          "content": "61"
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.053,
+            0.472,
+            0.135
+          ],
+          "level": 2,
+          "content": "IDS: Các đặc điểm"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.221,
+            0.358,
+            0.27
+          ],
+          "content": "◼ Tính hoàn chỉnh?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.347,
+            0.486,
+            0.401
+          ],
+          "content": "◼ Độ phức tạp về thời gian?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.091,
+            0.412,
+            0.765,
+            0.465
+          ],
+          "content": "(d + 1) b ^ {0} + d b ^ {1} + (d - 1) b ^ {2} + \\dots + b ^ {d} = O (b ^ {d + 1})",
+          "image_source": "images/page_61_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.475,
+            0.463,
+            0.529
+          ],
+          "content": "◼ Độ phức tạp về bộ nhớ?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.542,
+            0.224,
+            0.593
+          ],
+          "content": "❑ $O ( b d )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.602,
+            0.281,
+            0.653
+          ],
+          "content": "◼ Tính tối ưu?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.665,
+            0.91,
+            0.773
+          ],
+          "content": "❑ Có, nếu chi phí cho mỗi bước (mỗi cạnh của cây tìm kiếm) = 1"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "62"
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.054,
+            0.924,
+            0.127
+          ],
+          "level": 2,
+          "content": "So sánh giữa các giải thuật tìm kiếm cơ bản"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.05,
+            0.275,
+            0.936,
+            0.607
+          ],
+          "content": "| Criterion | Breadth-First | Uniform-Cost | Depth-First | Depth-Limited | Iterative Deepening |\n| --- | --- | --- | --- | --- | --- |\n| Complete? | Yes | Yes | No | No | Yes |\n| Time | O(b<sup>d+1</sup>) | 𝑂(𝑏 𝐶<sup>∗</sup>/𝜖 ) | O(b<sup>m</sup>) | O(b<sup>l</sup>) | O(b<sup>d+1</sup>) |\n| Space | O(b<sup>d+1</sup>) | 𝑂(𝑏 𝐶<sup>∗</sup>/𝜖 ) | O(bm) | O(bl) | O(bd) |\n| Optimal? | Yes (some cases) | Yes (some cases) | No | No | Yes (some cases) |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_62_table_1.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.358,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "63"
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.049,
+            0.051,
+            0.239,
+            0.121
+          ],
+          "level": 2,
+          "content": "Tổng kết"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.196,
+            0.942,
+            0.392
+          ],
+          "content": "◼ Việc phát biểu bài toán thường yêu cầu việc khái quát hóa các chi tiết của bài toán thực tế, để có thể định nghĩa không gian trạng thái sao cho việc xét (khám phá) các trạng thái trong quá trình tìm kiếm được thuận tiện"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.401,
+            0.596,
+            0.449
+          ],
+          "content": "◼ Có nhiều chiến lược tìm kiếm cơ bản"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.457,
+            0.491,
+            0.499
+          ],
+          "content": "❑ Tìm kiếm theo chiều rộng (BFS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.506,
+            0.484,
+            0.547
+          ],
+          "content": "❑ Tìm kiếm theo chiều sâu (DFS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.553,
+            0.533,
+            0.596
+          ],
+          "content": "❑ Tìm kiếm với chi phí cực tiểu (UCS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.603,
+            0.491,
+            0.644
+          ],
+          "content": "❑ Tìm kiếm giới hạn độ sâu (DLS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.65,
+            0.402,
+            0.691
+          ],
+          "content": "❑ Tìm kiếm sâu dần (IDS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.7,
+            0.602,
+            0.749
+          ],
+          "content": "◼ Phương pháp tìm kiếm sâu dần (IDS)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.757,
+            0.59,
+            0.799
+          ],
+          "content": "❑ Chi phí về bộ nhớ ở mức hàm tuyến tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.805,
+            0.933,
+            0.886
+          ],
+          "content": "❑ Chi phí về thời gian chỉ nhiều hơn một chút so với các phương pháp tìm kiếm cơ bản khác"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.357,
+            0.929,
+            0.497,
+            0.959
+          ],
+          "content": "Trí tuệ nhân tạo"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "64"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.12"
+    },
+    "document": {
+      "title": "Trí Tuệ Nhân Tạo",
+      "authors": [
+        "Khoat Than;Quang Nhat NGUYEN"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2021-02-28T12:58:31+07:00",
+      "modified_at": "2021-02-28T12:58:31+07:00",
+      "creator_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "producer_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "page_count": 64,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

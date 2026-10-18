@@ -1,0 +1,4945 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.17,
+            0.185,
+            0.82,
+            0.3
+          ],
+          "level": 1,
+          "content": "Trí Tuệ Nhân Tạo"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.261,
+            0.349,
+            0.731,
+            0.416
+          ],
+          "level": 2,
+          "content": "(Artificial Intelligence)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.369,
+            0.587,
+            0.604,
+            0.633
+          ],
+          "content": "**Lê Thanh Hương**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.287,
+            0.75,
+            0.73,
+            0.843
+          ],
+          "content": "Viện Công nghệ thông tin và Truyền thông Trường Đại Học Bách Khoa Hà Nội"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.948,
+            0.942,
+            0.968
+          ],
+          "content": "1"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.268,
+            0.044,
+            0.736,
+            0.123
+          ],
+          "level": 2,
+          "content": "Nội dung môn học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.146,
+            0.203,
+            0.522,
+            0.259
+          ],
+          "content": "▪ Chương 1. Tổng quan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.146,
+            0.27,
+            0.631,
+            0.322
+          ],
+          "content": "▪ Chương 2. Tác tử thông minh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.146,
+            0.331,
+            0.623,
+            0.387
+          ],
+          "content": "▪ Chương 3. Giải quyết vấn đề"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.146,
+            0.396,
+            0.652,
+            0.449
+          ],
+          "content": "▪ Chương 4. Tri thức và suy diễn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.458,
+            0.617,
+            0.512
+          ],
+          "content": "▪ Chương 5. Biểu diễn tri thức"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.147,
+            0.524,
+            0.496,
+            0.576
+          ],
+          "content": "▪ Chương 6. Học máy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.59,
+            0.506,
+            0.638
+          ],
+          "content": "▪ Giới thiệu về học máy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.644,
+            0.447,
+            0.695
+          ],
+          "content": "▪ K láng giềng gần"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.703,
+            0.514,
+            0.749
+          ],
+          "content": "▪ Phân lớp Naïve Bayes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.197,
+            0.757,
+            0.473,
+            0.805
+          ],
+          "content": "▪ Học cây quyết định"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.198,
+            0.816,
+            0.389,
+            0.861
+          ],
+          "content": "Mạng nơron"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.945,
+            0.952,
+            0.974
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.055,
+            0.596,
+            0.143
+          ],
+          "level": 2,
+          "content": "Học cây quyết định"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.217,
+            0.94,
+            0.309
+          ],
+          "content": "Bài toán: quyết định có đợi 1 bàn ở quán ăn không, dựa trên các thông tin sau:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.316,
+            0.886,
+            0.365
+          ],
+          "content": "1. Lựa chọn khác: có quán ăn nào khác gần đó không?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.103,
+            0.369,
+            0.934,
+            0.419
+          ],
+          "content": "2. Quán rượu: có khu vực phục vụ đồ uống gần đó không?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.424,
+            0.729,
+            0.472
+          ],
+          "content": "3. Fri/Sat: hôm nay là thứ sáu hay thứ bảy?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.479,
+            0.54,
+            0.524
+          ],
+          "content": "4. Đói: chúng ta đã đói chưa?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.531,
+            0.924,
+            0.623
+          ],
+          "content": "5. Khách hàng: số khách trong quán (không có, vài người, đầy)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.633,
+            0.578,
+            0.682
+          ],
+          "content": "Giá cả: khoảng giá (\\$,\\$\\$,\\$\\$\\$)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.689,
+            0.603,
+            0.735
+          ],
+          "content": "7. Mưa: ngoài trời có mưa không?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.741,
+            0.684,
+            0.789
+          ],
+          "content": "8. Đặt chỗ: chúng ta đã đặt trước chưa?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.795,
+            0.848,
+            0.844
+          ],
+          "content": "9. Loại: loại quán ăn (Pháp, Ý, Thái, quán ăn nhanh)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.106,
+            0.85,
+            0.694,
+            0.897
+          ],
+          "content": "10. Thời gian đợi: 0-10, 10-30, 30-60, >60"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "3"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.06,
+            0.064,
+            0.868,
+            0.151
+          ],
+          "level": 2,
+          "content": "Phép biểu diễn dựa trên thuộc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.165,
+            0.87,
+            0.267
+          ],
+          "content": "**tính** ◼ Các mẫu được miêu tả dưới dạng các giá trị thuộc tính (logic, rời rạc, liên tục)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.275,
+            0.586,
+            0.325
+          ],
+          "content": "◼ Ví dụ, tình huống khi đợi 1 bàn ăn"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.133,
+            0.337,
+            0.851,
+            0.83
+          ],
+          "content": "<table><tr><td rowspan=\"2\">Example</td><td colspan=\"10\">Attributes</td><td rowspan=\"2\">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td> $X_1$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td> $\\$ \\$\\$$ </td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td> $X_2$ </td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>\\$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td> $X_3$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>\\$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td> $X_4$ </td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>\\$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td> $X_5$ </td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td> $\\$ \\$\\$$ </td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_6$ </td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td>\\$</td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td> $X_7$ </td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>\\$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td> $X_8$ </td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>\\$</td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td> $X_9$ </td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>\\$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td> $X_{10}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td> $\\$ \\$\\$$ </td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td> $X_{11}$ </td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>\\$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td> $X_{12}$ </td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>\\$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_3_table_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.861,
+            0.92,
+            0.912
+          ],
+          "content": "Các loại (lớp) của mẫu là khẳng định (T) hoặc phủ định (F)"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.948,
+            0.943,
+            0.968
+          ],
+          "content": "4"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "table",
+          "bbox": [
+            0.0,
+            0.047,
+            0.99,
+            0.809
+          ],
+          "content": "<table><tr><td rowspan=\"2\"></td><td colspan=\"10\">Attributes</td><td rowspan=\"2\">Target Wait</td></tr><tr><td>Alt</td><td>Bar</td><td>Fri</td><td>Hun</td><td>Pat</td><td>Price</td><td>Rain</td><td>Res</td><td>Type</td><td>Est</td></tr><tr><td></td><td>T</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>$$$</td><td>F</td><td>T</td><td>French</td><td>0-10</td><td>T</td></tr><tr><td></td><td>T</td><td>F</td><td>F</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>30-60</td><td>F</td></tr><tr><td></td><td>F</td><td>T</td><td>F</td><td>F</td><td>Some</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>0-10</td><td>T</td></tr><tr><td></td><td>T</td><td>F</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>10-30</td><td>T</td></tr><tr><td></td><td>T</td><td>F</td><td>T</td><td>F</td><td>Full</td><td>$$$</td><td>F</td><td>T</td><td>French</td><td>&gt;60</td><td>F</td></tr><tr><td></td><td>F</td><td>T</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Italian</td><td>0-10</td><td>T</td></tr><tr><td></td><td>F</td><td>T</td><td>F</td><td>F</td><td>None</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>0-10</td><td>F</td></tr><tr><td></td><td>F</td><td>F</td><td>F</td><td>T</td><td>Some</td><td>$$</td><td>T</td><td>T</td><td>Thai</td><td>0-10</td><td>T</td></tr><tr><td></td><td>F</td><td>T</td><td>T</td><td>F</td><td>Full</td><td>$</td><td>T</td><td>F</td><td>Burger</td><td>&gt;60</td><td>F</td></tr><tr><td></td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>$$$</td><td>F</td><td>T</td><td>Italian</td><td>10-30</td><td>F</td></tr><tr><td></td><td>F</td><td>F</td><td>F</td><td>F</td><td>None</td><td>$</td><td>F</td><td>F</td><td>Thai</td><td>0-10</td><td>F</td></tr><tr><td></td><td>T</td><td>T</td><td>T</td><td>T</td><td>Full</td><td>$</td><td>F</td><td>F</td><td>Burger</td><td>30-60</td><td>T</td></tr></table>",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.08,
+                0.836,
+                0.948,
+                0.898
+              ],
+              "content": "Patrons, WaitEstimates, Alternative, Hungry, Rain"
+            }
+          ],
+          "image_source": "images/page_4_table_0.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.946,
+            0.943,
+            0.969
+          ],
+          "content": "5"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.055,
+            0.484,
+            0.142
+          ],
+          "level": 2,
+          "content": "Cây quyết định"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.181,
+            0.577,
+            0.235
+          ],
+          "content": "… là cách biểu diễn các giả thiết."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.175,
+            0.263,
+            0.9,
+            0.881
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_5_image_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "6"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.083,
+            0.066,
+            0.623,
+            0.156
+          ],
+          "level": 2,
+          "content": "Không gian giả thiết"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.047,
+            0.316,
+            0.953,
+            0.371
+          ],
+          "content": "<u>Khi có n thuộc tính Boolean, số lượng các cây quyết định là?</u>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.047,
+            0.371,
+            0.388,
+            0.422
+          ],
+          "content": "= số các hàm Boolean"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.423,
+            0.937,
+            0.525
+          ],
+          "content": "$= s \\hat { \\delta }$ các giá trị khác nhau trong bảng ví dụ mẫu với $2 ^ { n }$ hàng $= 2 ^ { 2 ^ { n } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.047,
+            0.532,
+            0.582,
+            0.629
+          ],
+          "content": "Ví dụ, với 6 thuộc tính Boolean, có 18,446,744,073,709,551,616 cây"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "7"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.069,
+            0.472,
+            0.148
+          ],
+          "level": 2,
+          "content": "Thuật toán ID3"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.173,
+            0.603,
+            0.226
+          ],
+          "content": "Mục đích: tìm cây thoả mãn tập mẫu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.23,
+            0.939,
+            0.331
+          ],
+          "content": "Ý tưởng: (lặp) chọn thuộc tính quan trọng nhất làm gốc của cây/cây con"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.339,
+            0.643,
+            0.387
+          ],
+          "content": "ID3(Examples, Target\\_attribute, Attributes)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.392,
+            0.479,
+            0.439
+          ],
+          "content": "/\\* Examples: các mẫu luyện"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.445,
+            0.688,
+            0.494
+          ],
+          "content": "Target\\_attribute: thuộc tính cần đoán giá trị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.498,
+            0.922,
+            0.592
+          ],
+          "content": "Attributes: các thuộc tính có thể được kiểm tra qua phép học cây quyết định. \\*/"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.606,
+            0.476,
+            0.656
+          ],
+          "content": "◼ Tạo 1 nút gốc Root cho cây"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.67,
+            0.866,
+            0.719
+          ],
+          "content": "◼ If  Examples +, trả về cây chỉ có 1 nút Root, với nhãn +"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.733,
+            0.861,
+            0.783
+          ],
+          "content": "◼ If  Examples -, trả về cây chỉ có 1 nút Root, với nhãn –"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.797,
+            0.958,
+            0.893
+          ],
+          "content": "If Attributes rỗng, trả về cây chỉ có 1 nút Root, với nhãn = giá trị thường xuất hiện nhất của Target\\_attribute trong Examples"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "8"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.056,
+            0.472,
+            0.135
+          ],
+          "level": 2,
+          "content": "Thuật toán ID3"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.03,
+            0.155,
+            0.305,
+            0.199
+          ],
+          "level": 2,
+          "content": "◼ Otherwise Begin:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.205,
+            0.905,
+            0.295
+          ],
+          "content": "❑ $A \\leftarrow$ thuộc tính trong Attributes cho phép phân loại tốt nhất Examples"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.302,
+            0.638,
+            0.351
+          ],
+          "content": "❑ Thuộc tính quyết định của nút gốc $\\leftarrow \\mathsf { A }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.356,
+            0.549,
+            0.405
+          ],
+          "content": "❑ Với các giá trị $v _ { i }$ có thể có của A,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.409,
+            0.936,
+            0.461
+          ],
+          "content": "◼ Thêm 1 nhánh mới dưới gốc, ứng với phép kiểm tra $A = v _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.465,
+            0.963,
+            0.557
+          ],
+          "content": "◼ Đặt Examples $v = t \\hat { a } p$ con của Examples với giá trị thuộc tính $\\mathsf { A } = \\mathsf { v } _ { \\mathrm { i } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.561,
+            0.392,
+            0.612
+          ],
+          "content": "◼ If $E x a m p l e s _ { v i } \\tilde { \\mathsf { r o n g } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.617,
+            0.924,
+            0.751
+          ],
+          "content": "❑ Then, dưới nhánh mới này, thêm 1 lá với nhãn = giá trị thường xuất hiện nhất của Target\\_attribute trong Examples"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.14,
+            0.759,
+            0.946,
+            0.851
+          ],
+          "content": "❑ Else, dưới nhánh mới này thêm cây con ID3(Examples<sub>vi</sub>, Target\\_attribute, Attributes - $\\{ \\mathbb { A } \\} ) )$"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.029,
+            0.857,
+            0.128,
+            0.899
+          ],
+          "level": 2,
+          "content": "◼ End"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.029,
+            0.913,
+            0.241,
+            0.953
+          ],
+          "level": 2,
+          "content": "◼ Return Root"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.929,
+            0.947,
+            0.942,
+            0.968
+          ],
+          "content": "9"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.061,
+            0.676,
+            0.145
+          ],
+          "level": 2,
+          "content": "Thuộc tính nào tốt nhất?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.022,
+            0.281,
+            0.399,
+            0.61
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.556,
+            0.28,
+            0.936,
+            0.611
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_9_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.102,
+            0.716,
+            0.877,
+            0.849
+          ],
+          "content": "Sử dụng lượng thông tin đạt được Information Gain  xác định thông qua độ đo Entropy"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "10"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.045,
+            0.05,
+            0.718,
+            0.143
+          ],
+          "level": 2,
+          "content": "Entropy của một tập mẫu"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.021,
+            0.171,
+            0.455,
+            0.628
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_10_chart_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.442,
+            0.225,
+            0.962,
+            0.427
+          ],
+          "content": "•S là một tập mẫu của tập luyện $^ { \\bullet } P _ { + }$ là tỷ lệ các mẫu dương trong S •p- là tỷ lệ các mẫu âm trong S"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.665,
+            0.869,
+            0.828
+          ],
+          "content": "•Entropy đo độ nhiễu của $\\mathbf { S } = \\mathbf { s } { \\hat { \\mathbf { 0 } } }$ các bit cần thiết để mã hoá lớp + hoặc - của các thành viên ngẫu nhiên của S"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.094,
+            0.845,
+            0.625,
+            0.905
+          ],
+          "content": "•Entropy(S) = - p+\\*log<sub>2</sub>p+ - p-\\*log<sub>2</sub>p-"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.97
+          ],
+          "content": "11"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.084,
+            0.064,
+            0.298,
+            0.143
+          ],
+          "level": 2,
+          "content": "Entropy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.229,
+            0.607,
+            0.286
+          ],
+          "content": "Entropy $H ( X )$ của biến ngẫu nhiên X:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.111,
+            0.291,
+            0.735,
+            0.439
+          ],
+          "content": "H (X) = - \\sum_ {i = 1} ^ {n} P (X = i) \\log_ {2} P (X = i)",
+          "image_source": "images/page_11_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.052,
+            0.453,
+            0.907,
+            0.569
+          ],
+          "content": "Ví dụ, với S gồm 9 mẫu dương và 5 mẫu âm, kí hiệu S([9+,5-])."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.054,
+            0.635,
+            0.68,
+            0.841
+          ],
+          "content": "\\begin{array}{r l} & {\\mathrm{Entropy} ([ 9 +, 5 - ])} \\\\ & {= - (9 / 1 4) \\log_ {2} (9 / 1 4) - (5 / 1 4) \\log_ {2} (5 / 1 4)} \\\\ & {= 0. 9 4 0} \\end{array}",
+          "image_source": "images/page_11_equation_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "12"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.073,
+            0.073,
+            0.522,
+            0.143
+          ],
+          "level": 2,
+          "content": "Information Gain"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.237,
+            0.847,
+            0.291
+          ],
+          "content": "Gain(S, A) = độ giảm entropy do việc phân loại trong A"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.08,
+            0.311,
+            0.967,
+            0.427
+          ],
+          "content": "G a i n (S, A) = E n t r o p y (S) - \\sum_ {v \\in V a l u e s (A)} \\frac {| S v |}{| S |} E n t r o p y (S v)",
+          "image_source": "images/page_12_equation_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.037,
+            0.49,
+            0.427,
+            0.811
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.592,
+            0.489,
+            0.981,
+            0.813
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_12_image_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "13"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.06,
+            0.5,
+            0.144
+          ],
+          "level": 2,
+          "content": "Ví dụ: tập luyện"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.014,
+            0.161,
+            0.691,
+            0.966
+          ],
+          "content": "| Day | Outlook | Temperature | Humidity | Wind | PlayTennis |\n| --- | --- | --- | --- | --- | --- |\n| D1 | Sunny | Hot | High | Weak | No |\n| D2 | Sunny | Hot | High | Strong | No |\n| D3 | Overcast | Hot | High | Weak | Yes |\n| D4 | Rain | Mild | High | Weak | Yes |\n| D5 | Rain | Cool | Normal | Weak | Yes |\n| D6 | Rain | Cool | Normal | Strong | No |\n| D7 | Overcast | Cool | Normal | Strong | Yes |\n| D8 | Sunny | Mild | High | Weak | No |\n| D9 | Sunny | Cool | Normal | Weak | Yes |\n| D10 | Rain | Mild | Normal | Weak | Yes |\n| D11 | Sunny | Mild | Normal | Strong | Yes |\n| D12 | Overcast | Mild | High | Strong | Yes |\n| D13 | Overcast | Hot | Normal | Weak | Yes |\n| D14 | Rain | Mild | High | Strong | No |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_13_table_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.707,
+            0.293,
+            0.846,
+            0.343
+          ],
+          "content": "\\mathsf {S} = [ 9 +, 5 - ]",
+          "image_source": "images/page_13_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.707,
+            0.392,
+            0.911,
+            0.439
+          ],
+          "content": "= \\{\\text {High, Normal} \\}:",
+          "image_source": "images/page_13_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.708,
+            0.438,
+            0.873,
+            0.491
+          ],
+          "content": "S _ {\\text {high}} = [ 3 +, 4 - ];",
+          "image_source": "images/page_13_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.708,
+            0.497,
+            0.888,
+            0.552
+          ],
+          "content": "S _ {\\text {normal}} = [ 6 +, 1 - ]",
+          "image_source": "images/page_13_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.707,
+            0.558,
+            0.989,
+            0.612
+          ],
+          "content": "\\text {Wind} = \\{\\text {Weak}, \\text {Strong} \\}:",
+          "image_source": "images/page_13_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.707,
+            0.621,
+            0.897,
+            0.676
+          ],
+          "content": "S _ {\\text {weak}} = [ 6 +, 2 - ];",
+          "image_source": "images/page_13_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.707,
+            0.685,
+            0.897,
+            0.74
+          ],
+          "content": "S _ {\\text {strong}} = [ 3 +, 3 - ]",
+          "image_source": "images/page_13_equation_8.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.944,
+            0.969
+          ],
+          "content": "14"
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.889,
+            0.135
+          ],
+          "level": 2,
+          "content": "Thuộc tính nào phân loại tốt nhất?"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.061,
+            0.15,
+            0.965,
+            0.92
+          ],
+          "content": "\\begin{array}{l} \\text {Gain(S,Wind)} = \\text {Entropy(S)} - \\sum_ {v \\in \\text {Values (A)}} \\frac {|Sv|}{|S|} \\text {Entropy(Sv)} \\\\ = \\text {Entropy(S)} - (8 / 14) \\text {Entropy(SWeak)} - (6 / 14) \\text {Entropy(SStrong)} \\\\ = 0.940 - (8 / 14) * 0.811 - (6 / 14) * 1.00 = 0.048 \\\\ \\text {Gain(S,Humidity)} = 0.940 - (7 / 14) * 0.985 - (7 / 14) * 0.592 = 0.151 \\\\ \\text {Gain(S,Outlook)} = 0.246; \\text {Gain(S,Humidity)} = 0.151 \\\\ \\text {Gain(S,Wind)} = 0.048; \\text {Gain(S,Temperature)} = 0.029 \\end{array}",
+          "image_source": "images/page_14_equation_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "15"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.007,
+            0.0,
+            0.968,
+            0.603
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_15_image_0.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.048,
+            0.652,
+            0.937,
+            0.905
+          ],
+          "content": "\\begin{array}{l} \\text {Gain(S_{Sunny}, Temperature)} \\\\ = . 9 7 0 - (2 / 5) ^ {*} 0. 0 - (2 / 5) ^ {*} 1. 0 - (1 / 5) ^ {*} 0. 0 = . 5 7 0 \\\\ \\text {Gain(S_{Sunny}, Wind)} \\\\ = 0. 9 7 0 - (2 / 5) ^ {*} 1. 0 - (3 / 5) ^ {*} 0. 9 1 8 = 0. 0 1 9 \\end{array}",
+          "image_source": "images/page_15_equation_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.922,
+            0.947,
+            0.943,
+            0.969
+          ],
+          "content": "16"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.067,
+            0.924,
+            0.154
+          ],
+          "level": 2,
+          "content": "Cây quyết định sử dụng khi nào?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.203,
+            0.937,
+            0.317
+          ],
+          "content": "Các bài toán với các đặc tính sau thích hợp với học cây quyết định:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.325,
+            0.893,
+            0.383
+          ],
+          "content": "• Các mẫu mô tả được bởi các cặp thuộc tính-giá trị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.39,
+            0.505,
+            0.443
+          ],
+          "content": "• Hàm đích có giá trị rời rạc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.45,
+            0.52,
+            0.507
+          ],
+          "content": "• Cần có các giả thiết rời rạc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.513,
+            0.623,
+            0.571
+          ],
+          "content": "• Các dữ liệu luyện có thể có nhiễu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.589,
+            0.762,
+            0.649
+          ],
+          "content": "• Dữ liệu luyện có thể thiếu giá trị thuộc tính"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.037,
+            0.66,
+            0.154,
+            0.717
+          ],
+          "level": 2,
+          "content": "Ví dụ:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.722,
+            0.332,
+            0.781
+          ],
+          "content": "• Chẩn đoán y tế"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.788,
+            0.634,
+            0.847
+          ],
+          "content": "• Phân tích các nguy cơ về tín dụng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.855,
+            0.484,
+            0.909
+          ],
+          "content": "• Mô hình hoá việc lập lịch"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.921,
+            0.947,
+            0.942,
+            0.969
+          ],
+          "content": "17"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.11,
+            0.077,
+            0.684,
+            0.154
+          ],
+          "level": 2,
+          "content": "Mạng nơron nhân tạo"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.201,
+            0.883,
+            0.311
+          ],
+          "content": "nghiên cứu và mô phỏng các tiến trình xử lý song song và phân tán khổng lồ diễn ra trong bộ não con người"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.296,
+            0.361,
+            0.738,
+            0.581
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.697,
+            0.289,
+            0.749
+          ],
+          "content": "**Các vấn đề:**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.753,
+            0.654,
+            0.806
+          ],
+          "content": "• Tốc độ bộ não nhận dạng hình ảnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.807,
+            0.638,
+            0.859
+          ],
+          "content": "• Rất nhiều nơron trong một bộ não"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.859,
+            0.614,
+            0.913
+          ],
+          "content": "• Tốc độ một nơron truyền dữ liệu"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.917,
+            0.942,
+            0.943,
+            0.969
+          ],
+          "content": "18"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.064,
+            0.223,
+            0.146
+          ],
+          "level": 2,
+          "content": "Ví dụ"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.062,
+            0.221,
+            0.181,
+            0.276
+          ],
+          "level": 2,
+          "content": "Lái xe"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.11,
+            0.297,
+            0.898,
+            0.424
+          ],
+          "content": "Luyện bộ phận điền khiển xe lái xe chính xác trên nhiều địa hình khác nhau"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.054,
+            0.433,
+            0.942,
+            0.917
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.917,
+            0.941,
+            0.943,
+            0.969
+          ],
+          "content": "19"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.069,
+            0.055,
+            0.664,
+            0.147
+          ],
+          "level": 2,
+          "content": "Biểu diễn mạng nơron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.347,
+            0.206,
+            0.409
+          ],
+          "content": "Tầng ra"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.452,
+            0.206,
+            0.516
+          ],
+          "content": "Tầng ẩn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.561,
+            0.206,
+            0.621
+          ],
+          "content": "Tầng vào"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.227,
+            0.278,
+            0.293,
+            0.328
+          ],
+          "content": "Trái"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.451,
+            0.28,
+            0.532,
+            0.327
+          ],
+          "content": "Giữa"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.216,
+            0.276,
+            0.771,
+            0.615
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_19_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.689,
+            0.277,
+            0.765,
+            0.329
+          ],
+          "content": "Phải"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.915,
+            0.942,
+            0.942,
+            0.969
+          ],
+          "content": "20"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.06,
+            0.374,
+            0.141
+          ],
+          "level": 2,
+          "content": "Định nghĩa"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.238,
+            0.931,
+            0.38
+          ],
+          "content": "Là một hệ thống gồm rất nhiều phần tử xử lý đơn giản hoạt động song song."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.06,
+            0.412,
+            0.581,
+            0.475
+          ],
+          "content": "◼ Tính năng: phụ thuộc vào"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.484,
+            0.424,
+            0.545
+          ],
+          "content": "❑ cấu trúc hệ thống"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.553,
+            0.676,
+            0.615
+          ],
+          "content": "❑ mức độ liên kết giữa các phần tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.095,
+            0.625,
+            0.741,
+            0.685
+          ],
+          "content": "❑ quá trình xử lý bên trong các phần tử"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.707,
+            0.942,
+            0.835
+          ],
+          "content": "◼ Có thể học từ số liệu và tổng quát hoá từ các số liệu đó."
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.916,
+            0.949
+          ],
+          "content": "21"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.058,
+            0.06,
+            0.881,
+            0.143
+          ],
+          "level": 2,
+          "content": "Khi nào sử dụng mạng nơron?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.245,
+            0.913,
+            0.361
+          ],
+          "content": "Mạng nơron thích hợp với những bài toán có đặc điểm sau:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.374,
+            0.935,
+            0.484
+          ],
+          "content": "Các mẫu luyện được thể hiện bởi nhiều cặp giá trị-thuộc tính (ví dụ, điểm ảnh)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.492,
+            0.513,
+            0.546
+          ],
+          "content": "◼ Các mẫu luyện có thể có lỗi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.556,
+            0.632,
+            0.612
+          ],
+          "content": "◼ Chấp nhận thời gian huấn luyện dài"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.621,
+            0.765,
+            0.675
+          ],
+          "content": "Cần đánh giá nhanh hàm mục tiêu được học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.684,
+            0.88,
+            0.793
+          ],
+          "content": "◼ Không cần hiểu giả thiết cuối cùng vì NN được coi là hộp đen"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.948
+          ],
+          "content": "22"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.081,
+            0.048,
+            0.382,
+            0.119
+          ],
+          "level": 2,
+          "content": "Perceptron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.709,
+            0.123,
+            0.8,
+            0.163
+          ],
+          "content": "nguöng"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.079,
+            0.121,
+            0.916,
+            0.437
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.012,
+            0.459,
+            0.74,
+            0.519
+          ],
+          "content": "$\\mathbf { o } ( x _ { 1 } , \\ldots , x _ { n } ) = \\mathbf { f }$ 1 nếu $\\mathsf{W}_{0}+\\mathsf{W}_{1}\\mathsf{X}_{1}+\\mathsf{W}_{2}\\mathsf{X}_{2}+\\ldots\\ldots+\\mathsf{W}_{\\mathsf{n}}\\mathsf{X}_{\\mathsf{n}}>0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.202,
+            0.515,
+            0.652,
+            0.568
+          ],
+          "content": "-1 trong trường hợp ngược lại"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.569,
+            0.113,
+            0.614
+          ],
+          "content": "hay:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.097,
+            0.611,
+            0.377,
+            0.665
+          ],
+          "content": "\\mathsf {o} (\\vec {x}) = \\mathsf {s g n} (\\vec {w}. \\vec {x})",
+          "image_source": "images/page_22_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.046,
+            0.666,
+            0.17,
+            0.713
+          ],
+          "content": "trong đó"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.071,
+            0.71,
+            0.462,
+            0.812
+          ],
+          "content": "\\operatorname{sgn} (y) = \\left\\{ \\begin{array}{l} 1 \\text {neéu y > 0} \\\\ - 1 \\text {neéu ngược lại} \\end{array} \\right.",
+          "image_source": "images/page_22_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.045,
+            0.829,
+            0.778,
+            0.933
+          ],
+          "content": "**Nhiệm vụ học**: tìm các giá trị của w <s><strong>Không gian giả thiết</strong></s>~~: không gian các vectơ trọng số~~"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.918,
+            0.947
+          ],
+          "content": "23"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.059,
+            0.735,
+            0.143
+          ],
+          "level": 2,
+          "content": "Khả năng của Perceptron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.227,
+            0.903,
+            0.338
+          ],
+          "content": "Mỗi perceptron tạo ra 1 mặt phân cách siêu phẳng trên không gian đầu vào n chiều"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.609,
+            0.395,
+            0.917,
+            0.446
+          ],
+          "content": "Mặt phân cách (WX = 0)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.048,
+            0.395,
+            0.921,
+            0.894
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.918,
+            0.948
+          ],
+          "content": "24"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.061,
+            0.067,
+            0.742,
+            0.149
+          ],
+          "level": 2,
+          "content": "Khả năng của Perceptron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.051,
+            0.207,
+            0.729,
+            0.261
+          ],
+          "content": "– có thể học các hàm $\\pi , \\lambda , V$ , NAND, NOR"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.053,
+            0.271,
+            0.927,
+            0.381
+          ],
+          "content": "không biểu diễn được các hàm không phân tách được bằng đường tuyến tính, vd XOR"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.129,
+            0.397,
+            0.738,
+            0.666
+          ],
+          "content": "\\begin{array}{c c c} & 1 & 0 \\\\ & 0 & 1 \\end{array} \\quad (x _ {1} \\lor x _ {2}) \\land (\\neg x _ {1} \\lor \\neg x _ {2})",
+          "image_source": "images/page_24_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.104,
+            0.721,
+            0.869,
+            0.835
+          ],
+          "content": "➢ Mọi hàm logic đều có thể biểu diễn bằng 1 mạng perceptron có ít nhất 2 tầng"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.918,
+            0.948
+          ],
+          "content": "25"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.062,
+            0.051,
+            0.92,
+            0.142
+          ],
+          "level": 2,
+          "content": "Mạng nơron biểu diễn hàm XOR"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.355,
+            0.283,
+            0.515,
+            0.33
+          ],
+          "content": "\\mathsf {V} _ {1} = \\mathsf {X} _ {1} \\vee \\mathsf {X} _ {2}",
+          "image_source": "images/page_25_equation_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.196,
+            0.344,
+            0.859,
+            0.611
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.168,
+            0.645,
+            0.672,
+            0.851
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_25_image_3.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.918,
+            0.948
+          ],
+          "content": "26"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.063,
+            0.057,
+            0.684,
+            0.149
+          ],
+          "level": 2,
+          "content": "Học các trọng số mạng"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.302,
+            0.385,
+            0.359
+          ],
+          "level": 2,
+          "content": "◼ Luật perceptron:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.371,
+            0.376,
+            0.426
+          ],
+          "content": "dùng khi tập luyện"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.089,
+            0.431,
+            0.75,
+            0.491
+          ],
+          "content": "❑ phân tách được bằng 1 đường tuyến tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.503,
+            0.242,
+            0.557
+          ],
+          "content": "❑ đủ nhỏ"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.617,
+            0.283,
+            0.674
+          ],
+          "level": 2,
+          "content": "◼ Luật delta:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.126,
+            0.689,
+            0.876,
+            0.75
+          ],
+          "content": "dùng khi tập luyện không phân thể tách tuyến tính"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.92,
+            0.918,
+            0.948
+          ],
+          "content": "27"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.065,
+            0.049,
+            0.805,
+            0.139
+          ],
+          "level": 2,
+          "content": "Luật huấn luyện Perceptron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.252,
+            0.845,
+            0.309
+          ],
+          "content": "◼ Khởi tạo một vector có các trọng số ngẫu nhiên"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.316,
+            0.975,
+            0.427
+          ],
+          "content": "Lặp lại hàm perceptron cho mỗi mẫu luyện đến khi hàm perceptron phân loại đúng tất cả các mẫu luyện:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.111,
+            0.429,
+            0.958,
+            0.523
+          ],
+          "content": "◼ Các trọng số được sửa đổi tại mỗi bước dựa vào luật huấn luyện perceptron:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.458,
+            0.534,
+            0.715,
+            0.585
+          ],
+          "content": "w _ {i} \\longleftarrow w _ {i} + \\Delta w _ {i}",
+          "image_source": "images/page_27_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.585,
+            0.273,
+            0.632
+          ],
+          "content": "trong đó"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.44,
+            0.641,
+            0.809,
+            0.693
+          ],
+          "content": "\\Delta w _ {i} \\longleftarrow \\Delta w _ {i} + \\eta (t - o) x _ {i}",
+          "image_source": "images/page_27_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.692,
+            0.203,
+            0.735
+          ],
+          "content": "với"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.148,
+            0.742,
+            0.484,
+            0.793
+          ],
+          "content": "❑ t = c( ) là hàm đích"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.149,
+            0.798,
+            0.495,
+            0.845
+          ],
+          "content": "❑ o là đầu ra perceptron"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.149,
+            0.848,
+            0.606,
+            0.903
+          ],
+          "content": "❑  = tốc độ học, là hằng số nhỏ"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.332,
+            0.931,
+            0.361,
+            0.957
+          ],
+          "content": "28"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.075,
+            0.052,
+            0.271,
+            0.137
+          ],
+          "content": "**Ví dụ...**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.15,
+            0.612,
+            0.214
+          ],
+          "content": "Biểu diễn $g(x1,x2)=\\overline{A}\\overline{N}D(x1,x2)$"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.025,
+            0.249,
+            0.652,
+            0.629
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_image_2.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.674,
+            0.225,
+            0.89,
+            0.565
+          ],
+          "content": "| x1 | x2 | g |\n| --- | --- | --- |\n| 0 | 0 | 0 |\n| 0 | 1 | 0 |\n| 1 | 0 | 0 |\n| 1 | 1 | 1 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_28_table_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.506,
+            0.61,
+            0.829,
+            0.661
+          ],
+          "content": "\\mathrm{w0+1.w1+1.w2>0}",
+          "image_source": "images/page_28_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.668,
+            0.468,
+            0.815
+          ],
+          "content": "o(x) = 1 nếu > 0 0 nếu ngược lại"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.507,
+            0.665,
+            0.837,
+            0.715
+          ],
+          "content": "\\mathrm{w0+1.w1+0.w2< 0}",
+          "image_source": "images/page_28_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.507,
+            0.718,
+            0.837,
+            0.767
+          ],
+          "content": "\\mathrm{w0+0.w1+1.w2< 0}",
+          "image_source": "images/page_28_equation_7.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.508,
+            0.77,
+            0.837,
+            0.821
+          ],
+          "content": "\\mathrm{w0+0.w1+0.w2< 0}",
+          "image_source": "images/page_28_equation_8.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.508,
+            0.824,
+            0.969,
+            0.874
+          ],
+          "content": "\\Leftrightarrow \\mathrm{w0} = - 0. 8; \\mathrm{w1} = 0. 5; \\mathrm{w2} = 0. 5",
+          "image_source": "images/page_28_equation_9.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.332,
+            0.931,
+            0.361,
+            0.958
+          ],
+          "content": "29"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.072,
+            0.315,
+            0.153
+          ],
+          "level": 2,
+          "content": "Ví dụ 1..."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.038,
+            0.176,
+            0.981,
+            0.313
+          ],
+          "content": "\\vec {w}. \\vec {x} = \\sum_ {i = 0} ^ {2} w _ {i} * x _ {i} \\quad w _ {i} \\longleftarrow w _ {i} + \\Delta w _ {i} \\quad \\Delta w _ {i} \\longleftarrow \\Delta w _ {i} + \\eta (t - o) x _ {i}",
+          "image_source": "images/page_29_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.327,
+            0.7,
+            0.373
+          ],
+          "content": "Khởi tạo các giá trị đầu: $\\Delta \\mathsf { w } 0 = 0 \\text {, } \\Delta \\mathsf { w } 1 = 0 \\text {, } \\Delta \\mathsf { w } 2 = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.383,
+            0.535,
+            0.427
+          ],
+          "content": "w0 = -1.5, w1 = -0.5, w2 = 0.5,  = 0.1"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.034,
+            0.463,
+            0.781,
+            0.51
+          ],
+          "content": "\\Sigma = x 0. w 0 + x 1. w 1 + x 2. w 2 = 1. w 0 + 0. w 1 + 0. w 2 = w 0 = - 1. 5",
+          "image_source": "images/page_29_equation_4.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.034,
+            0.521,
+            0.944,
+            0.855
+          ],
+          "content": "| x0 | x1 | x2 | t |  | o | w0 | w1 | w2 | w0 w1 | w2 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0 | 0 | -1.5 | 0 | 0 | 0 | 0 | -1.5 -0.5 | 0.5 |\n| 1 | 0 | 1 | 0 | -1 | 0 | 0 | 0 | 0 | -1.5 -0.5 | 0.5 |\n| 1 | 1 | 0 | 0 | -2 | 0 | 0 | 0 | 0 | -1.5 -0.5 | 0.5 |\n| 1 | 1 | 1 | 1 | -1.5 | 0 | 0.1 | 0.1 | 0.1 |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_29_table_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.918,
+            0.947
+          ],
+          "content": "30"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.077,
+            0.071,
+            0.315,
+            0.153
+          ],
+          "level": 2,
+          "content": "Ví dụ 1..."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.038,
+            0.176,
+            0.982,
+            0.313
+          ],
+          "content": "\\vec {w}. \\vec {x} = \\sum_ {i = 0} ^ {2} w _ {i} * x _ {i} \\quad w _ {i} \\longleftarrow w _ {i} + \\Delta w _ {i} \\quad \\Delta w _ {i} \\longleftarrow \\Delta w _ {i} + \\eta (t - o) x _ {i}",
+          "image_source": "images/page_30_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.059,
+            0.327,
+            0.701,
+            0.374
+          ],
+          "content": "Khởi tạo các giá trị đầu: $\\Delta \\mathsf { w } 0 = 0 \\text {, } \\Delta \\mathsf { w } 1 = 0 \\text {, } \\Delta \\mathsf { w } 2 = 0$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.059,
+            0.383,
+            0.535,
+            0.427
+          ],
+          "content": "\\mathrm{w} 0 = - 1. 5, \\mathrm{w} 1 = - 0. 5, \\mathrm{w} 2 = 0. 5, \\eta = 0. 1",
+          "image_source": "images/page_30_equation_3.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.076,
+            0.447,
+            0.692,
+            0.495
+          ],
+          "content": "\\Delta w 0 = \\Delta w 0 + \\eta^ {*} (t - o) ^ {*} x 0 = 0 + 0. 1 ^ {*} (0 - 0) ^ {*} 1 = 0",
+          "image_source": "images/page_30_equation_4.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.005,
+            0.513,
+            0.709,
+            0.562
+          ],
+          "content": "w 0 = w 0 + \\Delta w 0 = - 1. 5 + 0 = - 1. 5, w 1 = - 0. 5, w 2 = 0. 5",
+          "image_source": "images/page_30_equation_5.jpg"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.034,
+            0.562,
+            0.943,
+            0.855
+          ],
+          "content": "| x0 | x1 | x2 | t |  | o | w0 | w1 | w2 | w0 | w1 | w2 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0 | 0 | -1.5 | 0 | 0 | 0 | 0 | -1.5 | -0.5 | 0.5 |\n| 1 | 0 | 1 | 0 | -1 | 0 | 0 | 0 | 0 | -1.5 | -0.5 | 0.5 |\n| 1 | 1 | 0 | 0 | -2 | 0 | 0 | 0 | 0 | -1.5 | -0.5 | 0.5 |\n| 1 | 1 | 1 | 1 | -1.5 | 0 | 0.1 | 0.1 | 0.1 |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_30_table_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.916,
+            0.948
+          ],
+          "content": "31"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.078,
+            0.071,
+            0.316,
+            0.153
+          ],
+          "level": 2,
+          "content": "Ví dụ 1..."
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.079,
+            0.185,
+            0.327,
+            0.323
+          ],
+          "content": "\\vec {w}. \\vec {x} = \\sum_ {i = 0} ^ {2} w _ {i} * x _ {i}",
+          "image_source": "images/page_31_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.072,
+            0.334,
+            0.735,
+            0.393
+          ],
+          "content": "w _ {i} \\longleftarrow w _ {i} + \\Delta w _ {i} \\quad \\Delta w _ {i} \\longleftarrow \\Delta w _ {i} + \\eta (t - o) x _ {i}",
+          "image_source": "images/page_31_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.422,
+            0.724,
+            0.469
+          ],
+          "content": "Khởi tạo các giá trị đầu: $\\Delta \\mathsf { w } 0 = 0 \\text {, } \\Delta \\mathsf { w } 1 = 0 \\text {, } \\Delta \\mathsf { w } 2 = 0$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.082,
+            0.478,
+            0.558,
+            0.522
+          ],
+          "content": "w0 = -1.5, w1 = -0.5, w2 = 0.5,  = 0.1"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.031,
+            0.563,
+            0.951,
+            0.859
+          ],
+          "content": "| x0 | x1 | x2 | t |  | o | w0 | w1 | w2 | w0 | w1 | w2 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 1 | 0 | 0 | 0 | -1.5 | 0 | 0 | 0 | 0 |  |  |  |\n| 1 | 0 | 1 | 0 | -1 | 0 | 0 | 0 | 0 |  |  |  |\n| 1 | 1 | 0 | 0 | -2 | 0 | 0 | 0 | 0 |  |  |  |\n| 1 | 1 | 1 | 1 | -1.5 | 0 | 0.1 | 0.1 | 0.1 |  |  |  |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_31_table_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.004,
+            0.887,
+            0.637,
+            0.932
+          ],
+          "content": "\\Delta w 0 = \\Delta w 0 + \\eta^ {*} (t - o) ^ {*} x 0 = 0 + 0. 1 ^ {*} (1 - 0) ^ {*} 1 = 0. 1",
+          "image_source": "images/page_31_equation_6.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.003,
+            0.933,
+            0.731,
+            0.978
+          ],
+          "content": "\\mathrm{w0} = \\mathrm{w0} + \\Delta \\mathrm{w0} = - 1. 5 + 0. 1 = - 1. 4, \\mathrm{w1} = - 0. 4, \\mathrm{w2} = 0. 6",
+          "image_source": "images/page_31_equation_7.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.889,
+            0.919,
+            0.918,
+            0.949
+          ],
+          "content": "32"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.059,
+            0.246,
+            0.143
+          ],
+          "level": 2,
+          "content": "Ví dụ 2"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.018,
+            0.397,
+            0.298,
+            0.517
+          ],
+          "content": "\\begin{array}{l} \\mathrm{w=[0.25 - 0.1 0.5]} \\\\ \\mathrm {x_ {2} = 0.2 x_ {1} - 0.5} \\end{array}",
+          "image_source": "images/page_32_equation_1.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.329,
+            0.616,
+            0.606,
+            0.899
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_chart_2.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.638,
+            0.233,
+            0.915,
+            0.569
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_chart_3.jpg"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.64,
+            0.615,
+            0.915,
+            0.899
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_chart_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.918,
+            0.948
+          ],
+          "content": "33"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.061,
+            0.771,
+            0.142
+          ],
+          "level": 2,
+          "content": "Luật học Gradient Descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.273,
+            0.915,
+            0.407
+          ],
+          "content": "◼ Giả sử một nơ ron có đầu ra tuyến tính và liên tục"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.429,
+            0.583,
+            0.481
+          ],
+          "content": "❑ $0 = W_{0} + W_{1}X_{1} + \\ldots + W_{n}X_{n}$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.491,
+            0.892,
+            0.621
+          ],
+          "content": "◼ Nhiệm vụ học là xác định tập trọng số để tối thiểu hàm lỗi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.654,
+            0.634,
+            0.722
+          ],
+          "content": "❑ $\\mathbb{E}[\\mathsf{w}_1,\\ldots,\\mathsf{w}_n]=\\gamma_2\\sum_{\\mathsf{d}\\in\\mathsf{D}}(\\mathsf{t}_{\\mathsf{d}}-\\mathsf{o}_{\\mathsf{d}})^2$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.133,
+            0.73,
+            0.42,
+            0.791
+          ],
+          "content": "D là tập mẫu học"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.918,
+            0.948
+          ],
+          "content": "34"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.063,
+            0.516,
+            0.131
+          ],
+          "level": 2,
+          "content": "Gradient descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.209,
+            0.663,
+            0.251
+          ],
+          "content": "◼ **Gradient của E (ký hiệu là****E) là một vectơ**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.253,
+            0.453,
+            0.296
+          ],
+          "content": "❑ Có hướng chỉ đi lên (dốc)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.297,
+            0.531,
+            0.34
+          ],
+          "content": "❑ Có độ dài tỷ lệ thuận với độ dốc"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.341,
+            0.958,
+            0.431
+          ],
+          "content": "Gradient  E xác định hướng gây ra việc **tăng nhanh nhất (steepest increase) đối với giá trị lỗi E**"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.305,
+            0.448,
+            0.634,
+            0.549
+          ],
+          "content": "\\nabla E (w) = \\left(\\frac {\\partial E}{\\partial w _ {1}}, \\frac {\\partial E}{\\partial w _ {2}}, \\dots , \\frac {\\partial E}{\\partial w _ {N}}\\right)",
+          "image_source": "images/page_34_equation_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.545,
+            0.832,
+            0.592
+          ],
+          "content": "trong đó N là tổng số các trọng số (các liên kết) trong mạng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.599,
+            0.946,
+            0.69
+          ],
+          "content": "Vì vậy, hướng gây ra việc **giảm nhanh nhất (steepest decrease) là** giá trị phủ định của gradient của E"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.141,
+            0.729,
+            0.839,
+            0.779
+          ],
+          "content": "\\Delta w = - \\eta . \\nabla E (w); \\quad \\Delta w _ {i} = - \\eta . \\nabla E (w _ {i}), \\forall i = 1.. N",
+          "image_source": "images/page_34_equation_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.803,
+            0.916,
+            0.895
+          ],
+          "content": "Yêu cầu: Các hàm tác động được sử dụng trong mạng phải là các hàm liên tục đối với các trọng số và có đạo hàm liên tục"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.948
+          ],
+          "content": "35"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.061,
+            0.77,
+            0.142
+          ],
+          "level": 2,
+          "content": "Luật học Gradient Descent"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.02,
+            0.265,
+            0.467,
+            0.373
+          ],
+          "content": "\\begin{array}{c} \\mathsf {D} = \\{\\langle (1, 1), 1 \\rangle , \\langle (- 1, - 1), 1 \\rangle , \\\\ \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\end{array}",
+          "image_source": "images/page_35_equation_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.005,
+            0.389,
+            0.149,
+            0.436
+          ],
+          "content": "Gradient:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.005,
+            0.439,
+            0.451,
+            0.893
+          ],
+          "content": "\\begin{array}{l} \\nabla E [ w ] = [ \\partial E / \\partial w _ {0}, \\dots \\partial E / \\partial w _ {n} ] \\\\ \\Delta w = - \\eta \\nabla E [ w ] \\\\ \\Delta w _ {i} = - \\eta \\partial E / \\partial w _ {i} \\\\ = - \\eta \\partial / \\partial w _ {i} 1 / 2 \\Sigma_ {d} (t _ {d} - o _ {d}) ^ {2} \\\\ = - \\eta \\partial / \\partial w _ {i} 1 / 2 \\Sigma_ {d} (t _ {d} - \\Sigma_ {i} w _ {i} x _ {i}) ^ {2} \\\\ = - \\eta \\Sigma_ {d} (t _ {d} - o _ {d}) (- x _ {i}) \\end{array}",
+          "image_source": "images/page_35_equation_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.42,
+            0.268,
+            0.997,
+            0.972
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_35_image_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.919,
+            0.918,
+            0.949
+          ],
+          "content": "36"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.061,
+            0.77,
+            0.142
+          ],
+          "level": 2,
+          "content": "Luật học Gradient Descent"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.005,
+            0.236,
+            0.455,
+            0.289
+          ],
+          "level": 2,
+          "content": "Gradient-Descent(tập mẫu, )"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.294,
+            0.949,
+            0.397
+          ],
+          "content": "Mỗi mẫu là một bộ $d = < ( x _ { 1 } , \\ldots x _ { n } ) , t > v o i ( x _ { 1 } , \\ldots , x _ { n } )$ là véc tơ đầu vào và t là giá trị đích,  là hệ số học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.006,
+            0.402,
+            0.409,
+            0.455
+          ],
+          "content": "◼ Khởi tạo ngẫu nghiên wi"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.006,
+            0.46,
+            0.565,
+            0.515
+          ],
+          "content": "◼ Lặp cho tới khi gặp điều kiện dừng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.519,
+            0.385,
+            0.573
+          ],
+          "content": "❑ Khởi tạo $\\Delta W _ { \\mathrm { i } }$ bằng 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.575,
+            0.553,
+            0.631
+          ],
+          "content": "❑ Với mỗi mẫu d trong tập mẫu D"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.636,
+            0.78,
+            0.686
+          ],
+          "content": "◼ Đưa $( x _ { 1 } , \\ldots , x _ { n } )$ vào mạng để tính toán giá trị đầu ra o"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.69,
+            0.364,
+            0.739
+          ],
+          "content": "◼ Với mỗi trọng số w<sub>i</sub>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.117,
+            0.747,
+            0.395,
+            0.799
+          ],
+          "content": "❑ $\\Delta W _ { i } = - \\eta \\partial E _ { d } / \\partial W _ { i }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.802,
+            0.363,
+            0.851
+          ],
+          "content": "◼ Với mỗi trọng số w<sub>i</sub>"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.118,
+            0.859,
+            0.283,
+            0.903
+          ],
+          "content": "❑ $\\mathsf{W}_{\\mathrm{j}} = \\mathsf{W}_{\\mathrm{j}} + \\Delta \\mathsf{W}_{\\mathrm{j}}$"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.947
+          ],
+          "content": "37"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.062,
+            0.77,
+            0.142
+          ],
+          "level": 2,
+          "content": "Luật học Gradient Descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.256,
+            0.625,
+            0.324
+          ],
+          "content": "◼ Chế độ 1: cập nhật một lần"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.124,
+            0.343,
+            0.425,
+            0.408
+          ],
+          "content": "\\mathsf{w} = \\mathsf{w} - \\eta \\nabla E_{D}[\\mathsf{w}]",
+          "image_source": "images/page_37_equation_2.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.119,
+            0.419,
+            0.473,
+            0.489
+          ],
+          "content": "E _ {D} [ w ] = 1 / 2 \\Sigma_ {d} (t _ {d} - o _ {d}) ^ {2}",
+          "image_source": "images/page_37_equation_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.563,
+            0.747,
+            0.631
+          ],
+          "content": "◼ Chế độ 2 : cập nhật với từng mẫu"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.125,
+            0.65,
+            0.421,
+            0.715
+          ],
+          "content": "\\mathsf{w} = \\mathsf{w} - \\eta \\nabla E_{\\mathrm{d}}[\\mathsf{w}]",
+          "image_source": "images/page_37_equation_5.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.128,
+            0.726,
+            0.449,
+            0.795
+          ],
+          "content": "E _ {d} [ w ] = 1 / 2 (t _ {d} - o _ {d}) ^ {2}",
+          "image_source": "images/page_37_equation_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.947
+          ],
+          "content": "38"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.053,
+            0.055,
+            0.816,
+            0.189
+          ],
+          "level": 2,
+          "content": "So sánh luật học của Perceptron và Gradient Descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.252,
+            0.721,
+            0.312
+          ],
+          "content": "Perceptron đảm bảo thành công nếu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.313,
+            0.622,
+            0.374
+          ],
+          "content": "◼ Tập mẫu khả tách tuyến tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.081,
+            0.376,
+            0.511,
+            0.439
+          ],
+          "content": "◼ Hằng số học $\\eta$ đủ nhỏ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.5,
+            0.666,
+            0.561
+          ],
+          "content": "Huấn luyện với Gradient Descent"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.563,
+            0.668,
+            0.621
+          ],
+          "content": "◼ Đảm bảo hội tụ với lỗi nhỏ nhất"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.623,
+            0.458,
+            0.685
+          ],
+          "content": "◼ Hằng số học  nhỏ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.686,
+            0.64,
+            0.746
+          ],
+          "content": "◼ Có thể sử dụng mẫu có nhiễu"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.08,
+            0.75,
+            0.941,
+            0.813
+          ],
+          "content": "◼ Dữ liệu học thậm chí không khả tách tuyến tính"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.948
+          ],
+          "content": "39"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.053,
+            0.669,
+            0.143
+          ],
+          "level": 2,
+          "content": "Mạng nơ ron nhiều lớp"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.514,
+            0.285,
+            0.618,
+            0.343
+          ],
+          "content": "Lớp ra"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.157,
+            0.278,
+            0.731,
+            0.809
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.621,
+                0.525,
+                0.732,
+                0.588
+              ],
+              "content": "Lớp ẩn"
+            },
+            {
+              "bbox": [
+                0.597,
+                0.734,
+                0.721,
+                0.791
+              ],
+              "content": "Lớp vào"
+            }
+          ],
+          "image_source": "images/page_39_image_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.916,
+            0.942,
+            0.942,
+            0.969
+          ],
+          "content": "40"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.057,
+            0.417,
+            0.143
+          ],
+          "level": 2,
+          "content": "Hàm Sigmoid"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.296,
+            0.339,
+            0.58,
+            0.415
+          ],
+          "content": "\\mathrm{W} _ {0} \\quad \\text {net} = \\sum_ {\\mathrm{i} = 0} ^ {\\mathrm{n}} \\mathrm{w} _ {\\mathrm{i}} \\mathrm{x} _ {\\mathrm{i}}",
+          "image_source": "images/page_40_equation_1.jpg"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.645,
+            0.341,
+            0.945,
+            0.398
+          ],
+          "content": "o = \\sigma (\\text {net}) = 1 / (1 + e ^ {- \\text {net}})",
+          "image_source": "images/page_40_equation_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.285,
+            0.541,
+            0.784,
+            0.599
+          ],
+          "content": "(x) gọi là hàm sigmoid: $1 / ( 1 + e ^ { - x } )$"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.284,
+            0.607,
+            0.637,
+            0.667
+          ],
+          "content": "\\mathrm{d}\\sigma (\\mathsf{x}) / \\mathrm{dx} = \\sigma (\\mathsf{x}) (1 - \\sigma (\\mathsf{x}))",
+          "image_source": "images/page_40_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.271,
+            0.674,
+            0.814,
+            0.732
+          ],
+          "content": "Sử dụng luật học Gradient Descent:"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.272,
+            0.74,
+            0.686,
+            0.802
+          ],
+          "content": "\\cdot \\partial E / \\partial w _ {i} = - \\sum_ {d} (t _ {d} - o _ {d}) o _ {d} (1 - o _ {d})",
+          "image_source": "images/page_40_equation_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.27,
+            0.8,
+            0.858,
+            0.908
+          ],
+          "content": "• Mạng nhiều lớp thường sử dụng hàm Sigmoid làm hàm truyền"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.915,
+            0.947
+          ],
+          "content": "41"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.054,
+            0.055,
+            0.885,
+            0.217
+          ],
+          "level": 2,
+          "content": "Giải thuật lan truyền ngược sai số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.231,
+            0.719,
+            0.284
+          ],
+          "content": "◼ Khởi tạo $w _ { i }$ với các giá trị ngẫu nhiên nhỏ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.295,
+            0.614,
+            0.348
+          ],
+          "content": "◼ Lặp cho tới khi đạt điều kiện dừng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.101,
+            0.357,
+            0.705,
+            0.413
+          ],
+          "content": "❑ Với mỗi mẫu huấn luyện $< ( x _ { 1 } , \\ldots x _ { n } ) , t >$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.421,
+            0.841,
+            0.473
+          ],
+          "content": "◼ Đưa $( x _ { 1 } , \\ldots , x _ { n } )$ vào mạng để tính toán giá trị ra $\\mathbf { o } _ { \\mathsf { k } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.478,
+            0.409,
+            0.526
+          ],
+          "content": "◼ Với mỗi đầu ra k"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.543,
+            0.459,
+            0.596
+          ],
+          "content": "❑ $\\delta _ { k } = o _ { k } ( 1 - o _ { k } ) ( t _ { k } - o _ { k } )$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.137,
+            0.601,
+            0.408,
+            0.649
+          ],
+          "content": "◼ Với mỗi nút ẩn h"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.678,
+            0.524,
+            0.739
+          ],
+          "content": "❑ $\\delta _ { h } = o _ { h } ( 1 - o _ { h } ) \\sum _ { k } w _ { h , k } \\delta _ { k }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.138,
+            0.744,
+            0.453,
+            0.801
+          ],
+          "content": "◼ Với mỗi trọng số $\\mathsf { W } _ { \\mathsf { i } , \\mathsf { j } }$"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.176,
+            0.81,
+            0.469,
+            0.868
+          ],
+          "content": "❑ $\\mathsf { W _ { i , j } } { = } \\mathsf { W _ { i , j } } { + } \\Delta \\mathsf { W _ { i , j } }$ với"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.211,
+            0.876,
+            0.389,
+            0.931
+          ],
+          "content": "\\Delta \\mathrm{w} _ {\\mathrm{i}, \\mathrm{j}} = \\eta \\delta_ {\\mathrm{j}} \\mathrm{x} _ {\\mathrm{i}}",
+          "image_source": "images/page_41_equation_11.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.576,
+            0.481,
+            0.943,
+            0.895
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_41_image_12.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.891,
+            0.921,
+            0.917,
+            0.947
+          ],
+          "content": "42"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.05,
+            0.877,
+            0.135
+          ],
+          "level": 2,
+          "content": "Giải thuật lan truyền ngược sai số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.255,
+            0.897,
+            0.377
+          ],
+          "content": "◼ Sử dụng Gradient Descent trên toàn bộ các trọng số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.096,
+            0.39,
+            0.608,
+            0.451
+          ],
+          "content": "◼ Chỉ tìm được tối ưu cục bộ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.465,
+            0.739,
+            0.533
+          ],
+          "content": "◼ Thường bổ sung hệ số quán tính :"
+        },
+        {
+          "type": "equation",
+          "bbox": [
+            0.207,
+            0.548,
+            0.7,
+            0.613
+          ],
+          "content": "\\Delta \\mathrm{w}_{\\mathrm{i},\\mathrm{j}}(\\mathrm{n}) = \\eta \\delta_{\\mathrm{j}}\\mathrm{x}_{\\mathrm{i}} + \\alpha \\Delta \\mathrm{w}_{\\mathrm{i},\\mathrm{j}}(\\mathrm{n - 1})",
+          "image_source": "images/page_42_equation_4.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.617,
+            0.947,
+            0.747
+          ],
+          "content": "Tối ưu được hàm lỗi trên tập mẫu nhưng chưa chắc trên dữ liệu thực tế ( hiệu ứng overfitting)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.759,
+            0.794,
+            0.82
+          ],
+          "content": "◼ Thời gian học lâu ( 1000-10000 vòng)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.097,
+            0.833,
+            0.565,
+            0.893
+          ],
+          "content": "◼ Sử dụng mô hình nhanh"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.918,
+            0.947
+          ],
+          "content": "43"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.118,
+            0.049,
+            0.748,
+            0.128
+          ],
+          "level": 2,
+          "content": "8-3-8 mã hoá và giải mã"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.205,
+            0.439,
+            0.36,
+            0.494
+          ],
+          "content": "8 đầu vào"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.406,
+            0.22,
+            0.565,
+            0.503
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_43_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.616,
+            0.451,
+            0.745,
+            0.505
+          ],
+          "content": "8 đầu ra"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.164,
+            0.501,
+            0.394,
+            0.543
+          ],
+          "content": "A target function:"
+        },
+        {
+          "type": "table",
+          "bbox": [
+            0.333,
+            0.521,
+            0.95,
+            0.925
+          ],
+          "content": "| Input | Output | Giá trị nút ẩn |\n| --- | --- | --- |\n| 100000000 → | 100000000 | .89 .04 .08 |\n| 01000000 → | 01000000 | .01 .11 .88 |\n| 00100000 → | 00100000 | .01 .97 .27 |\n| 00010000 → | 00010000 | .99 .97 .71 |\n| 00001000 → | 00001000 | .03 .05 .02 |\n| 00000100 → | 00000100 | .22 .99 .99 |\n| 00000010 → | 00000010 | .80 .01 .98 |\n| 00000001 → | 00000001 | .60 .94 .01 |",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_43_table_5.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.916,
+            0.942,
+            0.942,
+            0.969
+          ],
+          "content": "44"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.055,
+            0.051,
+            0.707,
+            0.142
+          ],
+          "level": 2,
+          "content": "Thống kê lỗi cho các nút ra"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.052,
+            0.247,
+            0.924,
+            0.853
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.259,
+                0.216,
+                0.718,
+                0.254
+              ],
+              "content": "Sum of squared errors for each output unit"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_44_chart_2.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.916,
+            0.942,
+            0.942,
+            0.969
+          ],
+          "content": "45"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.052,
+            0.042,
+            0.935,
+            0.175
+          ],
+          "level": 2,
+          "content": "Sự hội tụ của giải thuật lan truyền ngược sai số"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.246,
+            0.686,
+            0.301
+          ],
+          "content": "◼ Có thể không phải cực trị toàn cục"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.305,
+            0.633,
+            0.359
+          ],
+          "content": "◼ Cải thiện bằng hệ số quán tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.363,
+            0.87,
+            0.42
+          ],
+          "content": "◼ Kết hợp với một giải thuật tối ưu toàn cục khác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.128,
+            0.537,
+            0.371,
+            0.594
+          ],
+          "content": "Điều kiện hội tụ"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.597,
+            0.525,
+            0.653
+          ],
+          "content": "◼ Khởi tạo trọng số gần 0"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.129,
+            0.656,
+            0.909,
+            0.713
+          ],
+          "content": "◼ Mạng khởi tạo gần như mang tính chất tuyến tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.13,
+            0.714,
+            0.933,
+            0.82
+          ],
+          "content": "◼ Tính chất phi tuyến của mạng sẽ dần dần xuất hiện trong quá trình học"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.918,
+            0.948
+          ],
+          "content": "46"
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.082,
+            0.053,
+            0.841,
+            0.232
+          ],
+          "level": 2,
+          "content": "Ứng dụng của mạng nơron - Nhận dạng mặt"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.142,
+            0.273,
+            0.446,
+            0.545
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.553,
+            0.273,
+            0.85,
+            0.54
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.141,
+            0.605,
+            0.446,
+            0.879
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_3.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.554,
+            0.605,
+            0.858,
+            0.877
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_46_image_4.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.947
+          ],
+          "content": "47"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.037,
+            0.841,
+            0.21
+          ],
+          "level": 2,
+          "content": "Ứng dụng của mạng nơron - Nhận dạng mặt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.239,
+            0.847,
+            0.375
+          ],
+          "content": "◼ Có nhiều hàm đích có thể học trong việc nhận dạng ảnh:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.389,
+            0.381,
+            0.445
+          ],
+          "content": "❑ xác định người"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.455,
+            0.667,
+            0.516
+          ],
+          "content": "❑ hướng quay (trái, phải, thẳng, ...)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.529,
+            0.27,
+            0.583
+          ],
+          "content": "❑ giới tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.597,
+            0.501,
+            0.654
+          ],
+          "content": "❑ có đeo kính hay không"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.947
+          ],
+          "content": "48"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.08,
+            0.037,
+            0.841,
+            0.209
+          ],
+          "level": 1,
+          "content": "Ứng dụng của mạng nơron - Nhận dạng mặt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.244,
+            0.912,
+            0.337
+          ],
+          "content": "Nhiệm vụ học: phân loại các hình ảnh camera về mặt người với nhiều góc độ khác nhau"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.344,
+            0.311,
+            0.388
+          ],
+          "content": "◼ CSDL hình ảnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.396,
+            0.936,
+            0.485
+          ],
+          "content": "◼ Các hình ảnh với 624 grayscale: 20 người, mỗi người khoảng 32 ảnh"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.492,
+            0.799,
+            0.544
+          ],
+          "content": "◼ Nhiều cách biểu cảm (vui, buồn, giận, bình thường)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.549,
+            0.802,
+            0.598
+          ],
+          "content": "◼ Các hướng khác nhau (trái, phải, thẳng, hướng lên)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.603,
+            0.399,
+            0.651
+          ],
+          "content": "◼ Độ phân giải 120x128"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.711,
+            0.546,
+            0.759
+          ],
+          "content": "◼ Học hướng quay của mặt người:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.762,
+            0.916,
+            0.855
+          ],
+          "content": "❑ không cần các lựa chọn tối ưu, phương pháp này cho kết quả tốt"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.862,
+            0.86,
+            0.953
+          ],
+          "content": "❑ sau khi luyện trên 260 hình ảnh, việc phân loại đạt độ chính xác trên tập thử là 90%"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.92,
+            0.917,
+            0.947
+          ],
+          "content": "49"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.056,
+            0.061,
+            0.413,
+            0.143
+          ],
+          "level": 2,
+          "content": "Các lựa chọn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.241,
+            0.742,
+            0.295
+          ],
+          "content": "1. Mã hoá đầu vào: hình ảnh hay các đặc tính"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.303,
+            0.915,
+            0.408
+          ],
+          "content": "2. Mã hoá đầu ra: số lượng đầu ra, các hàm đích cho đầu ra"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.419,
+            0.855,
+            0.531
+          ],
+          "content": "3. Cấu trúc mạng: số lượng nút mạng và liên kết giữa chúng"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.054,
+            0.539,
+            0.509,
+            0.594
+          ],
+          "content": "4. Các tham số thuật toán học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.602,
+            0.305,
+            0.658
+          ],
+          "content": "❑ Tốc độ học"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.671,
+            0.396,
+            0.723
+          ],
+          "content": "❑ giá trị momentum"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.948
+          ],
+          "content": "50"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.109,
+            0.055,
+            0.529,
+            0.132
+          ],
+          "level": 2,
+          "content": "Mã hoá đầu vào"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.209,
+            0.42,
+            0.263
+          ],
+          "content": "◼ Thiết kế các lựa chọn"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.275,
+            0.902,
+            0.421
+          ],
+          "content": "Tiền xử lý hình ảnh để rút ra các hướng, các vùng có mật độ giống nhau, hoặc các đặc tính hình ảnh cục bộ khác"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.433,
+            0.895,
+            0.537
+          ],
+          "content": "◼ Khó khăn: số cạnh có thể thay đổi, trong khi NN có số lượng cố định các đầu vào"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.549,
+            0.898,
+            0.648
+          ],
+          "content": "Các hình đã mã hoá là 1 tập cố định các giá trị mật độ 30x32 điểm ảnh (tóm tắt về độ phân giải của ảnh ban"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.643,
+            0.377,
+            0.696
+          ],
+          "content": "đầu), từ 0 đến 255"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.458,
+            0.649,
+            0.723,
+            0.935
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_6.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.915,
+            0.948
+          ],
+          "content": "51"
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.062,
+            0.064,
+            0.441,
+            0.145
+          ],
+          "level": 2,
+          "content": "Mã hoá đầu ra"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.235,
+            0.896,
+            0.357
+          ],
+          "content": "◼ Mỗi đầu ra: 4 giá trị xác định hướng mà người nhìn (trái, phải, thẳng, hướng lên)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.378,
+            0.929,
+            0.504
+          ],
+          "content": "◼ Mỗi đơn vị: phân loại sử dụng 1 đầu ra, gán 0.2, 0.4, 0.6 và 0.8 cho 4 giá trị"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.528,
+            0.631,
+            0.588
+          ],
+          "content": "◼ Chọn 1 trong n đầu ra mã hoá:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.593,
+            0.91,
+            0.698
+          ],
+          "content": "❑ cung cấp nhiều mức độ tự do để biểu diễn hàm đích (n lần số trọng số ở tầng ra)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.091,
+            0.701,
+            0.917,
+            0.805
+          ],
+          "content": "❑ độ khác nhau giữa giá trị cao nhất và nhì dùng để đo độ tin cậy"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.948
+          ],
+          "content": "52"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.108,
+            0.062,
+            0.5,
+            0.152
+          ],
+          "level": 2,
+          "content": "Cấu trúc mạng"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.168,
+            0.203,
+            0.811,
+            0.822
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.347,
+                0.837,
+                0.652,
+                0.895
+              ],
+              "content": "mạng 960 x 3 x 4"
+            }
+          ],
+          "image_source": "images/page_52_image_1.jpg"
+        },
+        {
+          "type": "page_number",
+          "bbox": [
+            0.89,
+            0.921,
+            0.917,
+            0.948
+          ],
+          "content": "53"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.12"
+    },
+    "document": {
+      "title": "Trí Tuệ Nhân Tạo",
+      "authors": [
+        "Khoat Than;Quang Nhat NGUYEN"
+      ],
+      "languages": [
+        "en-US"
+      ],
+      "created_at": "2021-02-21T21:50:00+07:00",
+      "modified_at": "2021-02-21T21:50:00+07:00",
+      "creator_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "producer_application": "Microsoft® PowerPoint® for Microsoft 365",
+      "page_count": 53,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 720.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}
