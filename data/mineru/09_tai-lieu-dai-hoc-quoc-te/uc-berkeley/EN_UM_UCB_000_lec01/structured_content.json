@@ -1,0 +1,7753 @@
+{
+  "pages": [
+    {
+      "page_idx": 0,
+      "blocks": [
+        {
+          "type": "doc_title",
+          "bbox": [
+            0.234,
+            0.073,
+            0.764,
+            0.287
+          ],
+          "level": 1,
+          "content": "CS 188: Artificial Intelligence Introduction"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.265,
+            0.369,
+            0.735,
+            0.725
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_0_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.452,
+            0.81,
+            0.547,
+            0.854
+          ],
+          "content": "Fall 2025"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.333,
+            0.887,
+            0.666,
+            0.933
+          ],
+          "content": "University of California, Berkeley"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.123,
+            0.947,
+            0.876,
+            0.98
+          ],
+          "content": "[These slides are based on those created by Dan Klein and Pieter Abbeel for CS188 Intro to AI at UC Berkeley (ai.berkeley.edu).]"
+        }
+      ]
+    },
+    {
+      "page_idx": 1,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.151,
+            0.047,
+            0.847,
+            0.126
+          ],
+          "level": 2,
+          "content": "First Half of Today: Intro and Logistics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.756,
+            0.279
+          ],
+          "content": "▪ Staff introductions: Peyrin, Emma, and course staff"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.303,
+            0.28,
+            0.361
+          ],
+          "content": "▪ Course logistics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.382,
+            0.645,
+            0.435
+          ],
+          "content": "▪ Lectures, discussions, office hours, and exams"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.455,
+            0.589,
+            0.507
+          ],
+          "content": "▪ Resources and communication platforms"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.527,
+            0.537,
+            0.58
+          ],
+          "content": "▪ Collaboration and academic honesty"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.601,
+            0.526,
+            0.652
+          ],
+          "content": "▪ DSP and extenuating circumstances"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.673,
+            0.561,
+            0.726
+          ],
+          "content": "▪ Stress management and mental health"
+        }
+      ]
+    },
+    {
+      "page_idx": 2,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.163,
+            0.046,
+            0.834,
+            0.124
+          ],
+          "level": 2,
+          "content": "Staff Introductions: Emma (she/her)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.181,
+            0.655,
+            0.313
+          ],
+          "content": "▪ Did my undergrad, master’s, and PhD at Stanford (sorry) ▪ Also spent a year at Oxford (happy to chat about studying overseas)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.321,
+            0.669,
+            0.409
+          ],
+          "content": "Assistant Professor of Computer Science (either Emma or Professor Pierson are fine)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.416,
+            0.677,
+            0.499
+          ],
+          "content": "▪ My lab develops AI methods for the health and social sciences, focusing on improving health and reducing inequality"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.502,
+            0.682,
+            0.621
+          ],
+          "content": "Examples: using AI to map migration in response to wildfires; detect flooding; understand inequality in pain; quantify gender, racial, and other social biases; forecast the spread of COVID-19"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.625,
+            0.651,
+            0.703
+          ],
+          "content": "▪ Affiliations: Berkeley AI Research Lab (BAIR), Computational Precision Health"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.71,
+            0.603,
+            0.752
+          ],
+          "content": "▪ Feel free to drop by office hours to talk about research"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.759,
+            0.474,
+            0.803
+          ],
+          "level": 2,
+          "content": "▪ Other loves besides teaching/research"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.81,
+            0.676,
+            0.891
+          ],
+          "content": "▪ Writing for a mass audience; being outside; classical piano; my cats Sigma and Mew"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.73,
+            0.297,
+            0.989,
+            0.875
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_2_image_9.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 3,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.168,
+            0.045,
+            0.829,
+            0.126
+          ],
+          "level": 2,
+          "content": "Staff Introductions: Peyrin (he/him)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.192,
+            0.607,
+            0.255
+          ],
+          "content": "▪ TA (2018-2022), lecturer (2022-present)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.275,
+            0.391,
+            0.336
+          ],
+          "content": "[https://peyrin.github.io](https://peyrin.github.io/)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.727,
+            0.413,
+            0.934,
+            0.528
+          ],
+          "content": "372 Unresolved followups"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.719,
+            0.301,
+            0.937,
+            0.695
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.721,
+                0.703,
+                0.933,
+                0.741
+              ],
+              "content": "Actual real picture of me."
+            }
+          ],
+          "image_source": "images/page_3_image_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 4,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.259,
+            0.048,
+            0.738,
+            0.117
+          ],
+          "level": 2,
+          "content": "Our talented course staff!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.157,
+            0.213,
+            0.222,
+            0.362
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_1.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.243,
+            0.219,
+            0.321,
+            0.25
+          ],
+          "level": 2,
+          "content": "Aly Lidayan"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.242,
+            0.259,
+            0.472,
+            0.345
+          ],
+          "content": "Hi! I'm a PhD student at BAIR doing research in reinforcement learning and cognitive science. I like painting and coffee!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.514,
+            0.205,
+            0.599,
+            0.361
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.612,
+                0.219,
+                0.801,
+                0.286
+              ],
+              "content": "Andrew Choy HE/HIM Excited to work with you all this semester!"
+            }
+          ],
+          "image_source": "images/page_4_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.145,
+            0.397,
+            0.229,
+            0.555
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_6.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.244,
+            0.413,
+            0.472,
+            0.441
+          ],
+          "level": 2,
+          "content": "Kanav Mittal HE/HIM STAFF EMAIL ACCESS"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.243,
+            0.452,
+            0.491,
+            0.592
+          ],
+          "content": "Hello! I'm a 5th year MS student studying EECS. In my free time, I enjoy running the Fire Trails, trying out all the restaurants in Berkeley, and listening to Taylor Swift (eagerly waiting for October 3). Excited to meet everyone!!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.514,
+            0.397,
+            0.6,
+            0.554
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_9.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.612,
+            0.413,
+            0.759,
+            0.44
+          ],
+          "level": 2,
+          "content": "Saathvik Selvan HE/HIM"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.611,
+            0.452,
+            0.854,
+            0.619
+          ],
+          "content": "Hi! I'm a 4th year EECS major (and Math minor) from Florida! I enjoy researching about the computer vision and tackling interesting problems. Outside of school, I love playing the drums, doing puzzles, and running! Looking forward to a great semester and feel free to reach out!"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.132,
+            0.694,
+            0.185,
+            0.726
+          ],
+          "level": 2,
+          "content": "Tutors"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.143,
+            0.752,
+            0.232,
+            0.908
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_4_image_13.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.243,
+            0.767,
+            0.442,
+            0.795
+          ],
+          "level": 2,
+          "content": "Isabella Durante Alpert SHE/HER"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.242,
+            0.806,
+            0.482,
+            0.947
+          ],
+          "content": "hi hi! i'm isabella, and i'm senior majoring in eecs and minoring in comparative ethnic studies and data science. feel free to yap with me about video games, rock/indie music, and cooking! can't wait to meet everyone this semester :)"
+        }
+      ]
+    },
+    {
+      "page_idx": 5,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.396,
+            0.048,
+            0.606,
+            0.117
+          ],
+          "level": 2,
+          "content": "Enrollment"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.897,
+            0.423
+          ],
+          "content": "▪ We will likely be able to clear the waitlist and approve all concurrent enrollment requests within the next week, but no promises until it happens."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.441,
+            0.792,
+            0.496
+          ],
+          "content": "▪ We have no further updates than this, so please don’t ask."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.515,
+            0.81,
+            0.651
+          ],
+          "content": "▪ [https://inst.eecs.berkeley.edu/\\~cs188/sp25/fa25-faqs/](https://inst.eecs.berkeley.edu/~cs188/sp25/fa25-faqs/)FAQ page if you have more questions"
+        }
+      ]
+    },
+    {
+      "page_idx": 6,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.251,
+            0.05,
+            0.748,
+            0.119
+          ],
+          "level": 2,
+          "content": "Course Structure: Lectures"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.22,
+            0.25,
+            0.275
+          ],
+          "content": "▪ You are here!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.301,
+            0.56,
+            0.363
+          ],
+          "content": "▪ Tuesday/Thursday, 5:00–6:30 PM PT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.386,
+            0.393,
+            0.442
+          ],
+          "content": "▪ Attendance is not taken"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.464,
+            0.701,
+            0.521
+          ],
+          "content": "▪ But there may be a bit of extra credit for attending"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.542,
+            0.281,
+            0.597
+          ],
+          "content": "▪ You can attend:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.62,
+            0.407,
+            0.674
+          ],
+          "content": "▪ In-person in Wheeler 150"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.692,
+            0.735,
+            0.748
+          ],
+          "content": "▪ Remotely over Zoom (we’ll try our best to livestream)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.764,
+            0.811,
+            0.822
+          ],
+          "content": "▪ Asynchronously by watching recordings (posted on website)"
+        }
+      ]
+    },
+    {
+      "page_idx": 7,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.223,
+            0.049,
+            0.775,
+            0.119
+          ],
+          "level": 2,
+          "content": "Course Structure: Discussions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.623,
+            0.277
+          ],
+          "content": "▪ Discussion schedule available on website"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.299,
+            0.532,
+            0.353
+          ],
+          "content": "▪ Discussions start next week (Sep 02)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.371,
+            0.643,
+            0.427
+          ],
+          "content": "▪ We’ll try to make recordings, but no promises"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.447,
+            0.959,
+            0.579
+          ],
+          "content": "▪ You can attend any discussion section you want (no need to enroll in a section)"
+        }
+      ]
+    },
+    {
+      "page_idx": 8,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.214,
+            0.049,
+            0.784,
+            0.119
+          ],
+          "level": 2,
+          "content": "Course Structure: Office Hours"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.22,
+            0.883,
+            0.353
+          ],
+          "content": "▪ Join in-person or remotely to talk to staff about content, ask questions on assignments, or raise any concerns you have"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.373,
+            0.629,
+            0.432
+          ],
+          "content": "▪ Schedule and queue available on website"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.453,
+            0.54,
+            0.507
+          ],
+          "content": "▪ Office hours start next week (Sep 02)"
+        }
+      ]
+    },
+    {
+      "page_idx": 9,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.271,
+            0.05,
+            0.728,
+            0.119
+          ],
+          "level": 2,
+          "content": "Course Structure: Exams"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.22,
+            0.276,
+            0.274
+          ],
+          "level": 2,
+          "content": "▪ Save the dates!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.299,
+            0.494,
+            0.351
+          ],
+          "content": "▪ Midterm: Wed Oct 22, 7–9pm PT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.371,
+            0.636,
+            0.425
+          ],
+          "content": "▪ Final exam: Thu Dec 18, 11:30am–2:30pm PT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.447,
+            0.338,
+            0.506
+          ],
+          "content": "▪ If you can’t make it:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.527,
+            0.612,
+            0.579
+          ],
+          "content": "▪ We’ll offer remote exams at the listed time"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.599,
+            0.929,
+            0.655
+          ],
+          "content": "▪ We’ll offer an in-person-only alternate exam right after the listed time"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.677,
+            0.517,
+            0.735
+          ],
+          "content": "▪ More logistics closer to the exam"
+        }
+      ]
+    },
+    {
+      "page_idx": 10,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.405,
+            0.051,
+            0.596,
+            0.117
+          ],
+          "level": 2,
+          "content": "Resources"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.217,
+            0.891,
+            0.279
+          ],
+          "content": "▪ Course website: [https://inst.eecs.berkeley.edu/\\~cs188/fa25/](https://inst.eecs.berkeley.edu/~cs188/fa25/)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.301,
+            0.945,
+            0.431
+          ],
+          "content": "▪ All resources (slides, notes, recordings, assignments, etc.) posted here"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.455,
+            0.574,
+            0.517
+          ],
+          "content": "▪ Ed: Discussion forum replacing Piazza"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.538,
+            0.79,
+            0.599
+          ],
+          "content": "▪ Staff email for private concerns: [cs188@berkeley.edu](mailto:cs188@berkeley.edu)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.618,
+            0.616,
+            0.675
+          ],
+          "content": "▪ Making a private post on Ed is easier/faster"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.695,
+            0.59,
+            0.756
+          ],
+          "content": "▪ Gradescope: Submit assignments here"
+        }
+      ]
+    },
+    {
+      "page_idx": 11,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.333,
+            0.048,
+            0.666,
+            0.127
+          ],
+          "level": 2,
+          "content": "Grading Structure"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.213,
+            0.263,
+            0.273
+          ],
+          "level": 2,
+          "content": "▪ Projects (25%)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.288,
+            0.658,
+            0.341
+          ],
+          "content": "▪ Python programming assignments, autograded"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.354,
+            0.563,
+            0.407
+          ],
+          "content": "▪ You can optionally work with a partner"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.419,
+            0.865,
+            0.474
+          ],
+          "content": "▪ Reduced credit for submitting late, unless you have an extension"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.488,
+            0.305,
+            0.547
+          ],
+          "level": 2,
+          "content": "▪ Homework (20%)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.561,
+            0.694,
+            0.615
+          ],
+          "content": "▪ Electronic homework: Autograded on Gradescope"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.628,
+            0.797,
+            0.682
+          ],
+          "content": "▪ Written homework: One question per week, graded by TAs"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.693,
+            0.763,
+            0.748
+          ],
+          "content": "▪ Submit individually (but feel free to discuss with others)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.761,
+            0.7,
+            0.814
+          ],
+          "content": "▪ No late submissions, unless you have an extension"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.829,
+            0.521,
+            0.89
+          ],
+          "content": "▪ Midterm (20%), Final Exam (35%)"
+        }
+      ]
+    },
+    {
+      "page_idx": 12,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.192,
+            0.049,
+            0.808,
+            0.12
+          ],
+          "level": 2,
+          "content": "Extensions and Accommodations"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.61,
+            0.278
+          ],
+          "content": "▪ We’ll drop your lowest homework score"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.303,
+            0.753,
+            0.362
+          ],
+          "content": "▪ If you ever need an extension, please request one!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.382,
+            0.869,
+            0.437
+          ],
+          "content": "▪ We’re here to support you, and we understand that life happens."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.455,
+            0.638,
+            0.507
+          ],
+          "content": "▪ Extension form will be posted on the website"
+        }
+      ]
+    },
+    {
+      "page_idx": 13,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.462,
+            0.048,
+            0.538,
+            0.116
+          ],
+          "content": "DSP"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.217,
+            0.526,
+            0.28
+          ],
+          "level": 2,
+          "content": "▪ Disabled Students’ Program (DSP)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.297,
+            0.946,
+            0.415
+          ],
+          "content": "▪ There’s a variety of accommodations UC Berkeley can help us set up for you in this class"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.431,
+            0.409,
+            0.489
+          ],
+          "content": "[https://dsp.berkeley.edu/](https://dsp.berkeley.edu/)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.508,
+            0.899,
+            0.642
+          ],
+          "content": "▪ Please submit your DSP letter as soon as possible (if you have one)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.662,
+            0.894,
+            0.797
+          ],
+          "content": "▪ Our goal is to teach you the material in our course. The more accessible we can make it, the better."
+        }
+      ]
+    },
+    {
+      "page_idx": 14,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.128,
+            0.047,
+            0.871,
+            0.125
+          ],
+          "level": 2,
+          "content": "Collaboration and Academic Dishonesty"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.863,
+            0.349
+          ],
+          "content": "▪ We’re here to help! There are plenty of staff and resources available for you"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.369,
+            0.874,
+            0.485
+          ],
+          "content": "▪ You can always talk to a staff member if you’re feeling stressed or tempted to cheat"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.504,
+            0.867,
+            0.559
+          ],
+          "content": "▪ Collaboration on homework is okay, but please cite collaborators"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.578,
+            0.692,
+            0.631
+          ],
+          "content": "▪ Do not post solutions online or share with others!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.653,
+            0.467,
+            0.713
+          ],
+          "content": "▪ Academic dishonesty policies"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.733,
+            0.569,
+            0.786
+          ],
+          "content": "▪ Reported to Center of Student Conduct"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.805,
+            0.731,
+            0.861
+          ],
+          "content": "▪ Negative points on assignments, and/or F in the class"
+        }
+      ]
+    },
+    {
+      "page_idx": 15,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.132,
+            0.047,
+            0.864,
+            0.125
+          ],
+          "level": 2,
+          "content": "Stress Management and Mental Health"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.039,
+            0.22,
+            0.715,
+            0.277
+          ],
+          "level": 2,
+          "content": "▪ Your health is more important than this course"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.303,
+            0.649,
+            0.361
+          ],
+          "content": "▪ If you feel overwhelmed, there are options"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.382,
+            0.922,
+            0.499
+          ],
+          "content": "▪ Academically: Ask on Ed, talk to staff in office hours, set up a meeting with staff to make a plan for your success this semester"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.079,
+            0.518,
+            0.283,
+            0.566
+          ],
+          "level": 2,
+          "content": "▪ Non-academic:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.585,
+            0.905,
+            0.683
+          ],
+          "content": "▪ Counselling and Psychological Services (CAPS) has multiple free, confidential services"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.697,
+            0.741,
+            0.739
+          ],
+          "content": "▪ Casual consultations: [https://uhs.berkeley.edu/counseling/lets-talk](https://uhs.berkeley.edu/counseling/lets-talk)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.151,
+            0.749,
+            0.718,
+            0.791
+          ],
+          "content": "▪ Crisis management: [https://uhs.berkeley.edu/counseling/urgent](https://uhs.berkeley.edu/counseling/urgent)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.806,
+            0.683,
+            0.906
+          ],
+          "content": "▪ Check out UHS’s resources: [https://uhs.berkeley.edu/health-topics/mental-health](https://uhs.berkeley.edu/health-topics/mental-health)"
+        }
+      ]
+    },
+    {
+      "page_idx": 16,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.187,
+            0.046,
+            0.811,
+            0.124
+          ],
+          "level": 2,
+          "content": "Second Half of Today: What is AI?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.219,
+            0.223,
+            0.275
+          ],
+          "content": "▪ What is AI?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.373,
+            0.284,
+            0.431
+          ],
+          "content": "▪ What can it do?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.527,
+            0.342,
+            0.585
+          ],
+          "content": "▪ What is this course?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.708,
+            0.275,
+            0.952,
+            0.753
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_16_image_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 17,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.125
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.221,
+            0.319,
+            0.277
+          ],
+          "content": "Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.302,
+            0.273,
+            0.349
+          ],
+          "content": "▪ Text assistants"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.276,
+            0.967,
+            0.865
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_17_image_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 18,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.048,
+            0.777,
+            0.125
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.221,
+            0.319,
+            0.278
+          ],
+          "level": 2,
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.302,
+            0.273,
+            0.349
+          ],
+          "content": "▪ Text assistants"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.375,
+            0.31,
+            0.426
+          ],
+          "content": "▪ Image generation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.376,
+            0.202,
+            0.577,
+            0.557
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.381,
+                0.564,
+                0.574,
+                0.583
+              ],
+              "content": "vibrant portrait painting of Salvador Dalí with a robotic half face"
+            }
+          ],
+          "image_source": "images/page_18_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.582,
+            0.203,
+            0.775,
+            0.557
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.607,
+                0.565,
+                0.751,
+                0.582
+              ],
+              "content": "a shiba inu wearing a beret and black turtleneck"
+            }
+          ],
+          "image_source": "images/page_18_image_6.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.781,
+            0.204,
+            0.98,
+            0.557
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_18_image_8.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.378,
+            0.601,
+            0.576,
+            0.954
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.376,
+                0.961,
+                0.578,
+                0.979
+              ],
+              "content": "an espresso machine that makes coffee from human souls, artstation"
+            }
+          ],
+          "image_source": "images/page_18_image_9.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.58,
+            0.602,
+            0.778,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.591,
+                0.961,
+                0.766,
+                0.979
+              ],
+              "content": "panda mad scientist mixing sparkling chemicals, artstation"
+            },
+            {
+              "bbox": [
+                0.801,
+                0.565,
+                0.96,
+                0.583
+              ],
+              "content": "a close up of a handpalm with leaves growing from it"
+            }
+          ],
+          "image_source": "images/page_18_image_11.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.782,
+            0.602,
+            0.979,
+            0.953
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.804,
+                0.961,
+                0.956,
+                0.979
+              ],
+              "content": "a corgi's head depicted as an explosion of a nebula"
+            }
+          ],
+          "image_source": "images/page_18_image_14.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 19,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.047,
+            0.777,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.22,
+            0.32,
+            0.279
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.305,
+            0.195,
+            0.361
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.377,
+            0.367,
+            0.481
+          ],
+          "content": "▪ \\$4.8 trillion by 2033 (25x increase in a decade)"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.522,
+            0.163,
+            0.916,
+            0.86
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.444,
+                0.862,
+                0.993,
+                0.902
+              ],
+              "content": "https://unctad.org/publication/technology-and-innovation-report-2025"
+            }
+          ],
+          "image_source": "images/page_19_chart_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 20,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.126
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.22,
+            0.319,
+            0.278
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.305,
+            0.193,
+            0.361
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.386,
+            0.166,
+            0.439
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.269,
+            0.341,
+            0.981,
+            0.836
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_20_image_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 21,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.125
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.219,
+            0.32,
+            0.279
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.305,
+            0.195,
+            0.362
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.386,
+            0.166,
+            0.44
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.364,
+            0.198,
+            0.963,
+            0.911
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.309,
+                0.925,
+                1.0,
+                0.964
+              ],
+              "content": "https://www.nytimes.com/2025/02/11/world/europe/vance-speech-paris-ai-summit.html"
+            }
+          ],
+          "image_source": "images/page_21_image_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 22,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.126
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.219,
+            0.32,
+            0.28
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.305,
+            0.195,
+            0.363
+          ],
+          "content": "Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.385,
+            0.166,
+            0.441
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.694,
+            0.189,
+            0.809,
+            0.225
+          ],
+          "content": "The New York Times"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.73,
+            0.237,
+            0.773,
+            0.262
+          ],
+          "content": "OPINION"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.589,
+            0.266,
+            0.914,
+            0.331
+          ],
+          "level": 2,
+          "content": "How A.I. Chatbots Become Political"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.584,
+            0.359,
+            0.915,
+            0.955
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_22_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 23,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.046,
+            0.777,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.039,
+            0.219,
+            0.321,
+            0.281
+          ],
+          "level": 2,
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.303,
+            0.196,
+            0.363
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.383,
+            0.168,
+            0.444
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.469,
+            0.127,
+            0.525
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "code",
+          "bbox": [
+            0.285,
+            0.385,
+            0.584,
+            0.421
+          ],
+          "sub_type": "code",
+          "content": "```txt\nAug. 18, 2023, 12:18 PM; Updated: Aug. 18, 2023, 12:48 PM\n```",
+          "captions": [],
+          "footnotes": []
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.28,
+            0.374,
+            0.988,
+            0.689
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_23_image_6.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.283,
+            0.431,
+            0.983,
+            0.553
+          ],
+          "content": "Al-Generated Art Lacks Copyright Protection, D.C. Court Says (1)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.55,
+            0.695,
+            0.72,
+            0.735
+          ],
+          "content": "Bloomberg Law, 2023"
+        }
+      ]
+    },
+    {
+      "page_idx": 24,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.047,
+            0.777,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.321,
+            0.281
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.303,
+            0.197,
+            0.365
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.383,
+            0.168,
+            0.444
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.47,
+            0.127,
+            0.525
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.635,
+            0.194,
+            0.901,
+            0.348
+          ],
+          "content": "UNMASKING AI MY MISSION TO PROTECT WHAT IS HUMAN IN A WORLD OF MACHINES"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.624,
+            0.181,
+            0.917,
+            0.954
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_24_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 25,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.126
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.32,
+            0.281
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.304,
+            0.195,
+            0.363
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.385,
+            0.167,
+            0.443
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.471,
+            0.125,
+            0.523
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.492,
+            0.174,
+            0.946,
+            0.852
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.496,
+                0.863,
+                0.939,
+                0.943
+              ],
+              "content": "AI for Scaling Legal Reform: Mapping and Redacting Racial Covenants in Santa Clara County. Surani et al, 2024."
+            }
+          ],
+          "image_source": "images/page_25_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 26,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.321,
+            0.281
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.305,
+            0.195,
+            0.364
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.385,
+            0.167,
+            0.443
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.471,
+            0.125,
+            0.524
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.377,
+            0.183,
+            0.975,
+            0.808
+          ],
+          "content": "",
+          "captions": [
+            {
+              "bbox": [
+                0.527,
+                0.854,
+                0.79,
+                0.894
+              ],
+              "content": "https://dataplusfeminism.mit.edu"
+            }
+          ],
+          "footnotes": [],
+          "image_source": "images/page_26_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 27,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.126
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.218,
+            0.321,
+            0.281
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.303,
+            0.196,
+            0.365
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.382,
+            0.169,
+            0.445
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.469,
+            0.128,
+            0.527
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.55,
+            0.15,
+            0.608
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.362,
+            0.219,
+            0.778,
+            0.307
+          ],
+          "level": 2,
+          "content": "The human labor behind Al chatbots and other smart tools"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.361,
+            0.339,
+            0.795,
+            0.415
+          ],
+          "content": "Data labeling is an important step in developing artificial intelligence but also exposes the people doing the work to harmful content."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.487,
+            0.452,
+            0.711,
+            0.945
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_27_image_8.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.824,
+            0.299,
+            0.98,
+            0.338
+          ],
+          "content": "MarketWatch, 2023"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.744,
+            0.475,
+            0.883,
+            0.502
+          ],
+          "content": "New York Times Bestseller"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.737,
+            0.554,
+            0.896,
+            0.694
+          ],
+          "content": "Empire"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.756,
+            0.707,
+            0.872,
+            0.751
+          ],
+          "content": "Dreams and Nightmares in Sam Altman's OpenAI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.747,
+            0.77,
+            0.884,
+            0.91
+          ],
+          "content": "Karen Hao"
+        }
+      ]
+    },
+    {
+      "page_idx": 28,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.046,
+            0.778,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.216,
+            0.322,
+            0.283
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.301,
+            0.197,
+            0.367
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.38,
+            0.17,
+            0.449
+          ],
+          "content": "Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.465,
+            0.129,
+            0.531
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.547,
+            0.15,
+            0.611
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.437,
+            0.209,
+            0.995,
+            0.862
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.591,
+                0.889,
+                0.866,
+                0.931
+              ],
+              "content": "Stanford Digital Economy Lab, 2025"
+            }
+          ],
+          "image_source": "images/page_28_chart_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 29,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.046,
+            0.778,
+            0.128
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.217,
+            0.322,
+            0.283
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.301,
+            0.198,
+            0.366
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.381,
+            0.17,
+            0.447
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.466,
+            0.13,
+            0.529
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.547,
+            0.152,
+            0.613
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.631,
+            0.175,
+            0.693
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.339,
+            0.362,
+            0.622,
+            0.403
+          ],
+          "content": "Science & technology | The 2024 Nobel prizes"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.412,
+            0.796,
+            0.498
+          ],
+          "level": 2,
+          "content": "AI wins big at the Nobels"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.338,
+            0.511,
+            0.959,
+            0.604
+          ],
+          "content": "Awards went to the discoverersof micro-RNA, pioneersof artificial-intelligence models and those using them for protein-structure prediction"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.573,
+            0.62,
+            0.741,
+            0.663
+          ],
+          "content": "The Economist, 2024"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.71,
+            0.369,
+            0.773
+          ],
+          "content": "▪ Chemistry and biology"
+        }
+      ]
+    },
+    {
+      "page_idx": 30,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.047,
+            0.777,
+            0.126
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.217,
+            0.321,
+            0.283
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.301,
+            0.198,
+            0.367
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.381,
+            0.17,
+            0.447
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.467,
+            0.13,
+            0.529
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.547,
+            0.153,
+            0.613
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.631,
+            0.175,
+            0.693
+          ],
+          "level": 2,
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.712,
+            0.19,
+            0.771
+          ],
+          "content": "▪ Physics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.436,
+            0.212,
+            0.542,
+            0.235
+          ],
+          "content": "SCIENCE FEB 16, 2022 11:00 AM"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.384,
+            0.257,
+            0.895,
+            0.304
+          ],
+          "level": 2,
+          "content": "DeepMind Has Trained an Al to Control Nuclear Fusion"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.383,
+            0.308,
+            0.948,
+            0.337
+          ],
+          "content": "The Google-backed firm taught a reinforcement learning algorithm to control the fiery plasma inside a tokamak nuclear fusion reactor."
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.386,
+            0.381,
+            0.826,
+            0.901
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.385,
+                0.905,
+                0.505,
+                0.923
+              ],
+              "content": "PHOTOGRAPH:CURDIN WÜTHRICH, SPC/EPFL"
+            },
+            {
+              "bbox": [
+                0.617,
+                0.935,
+                0.714,
+                0.97
+              ],
+              "content": "Wired, 2022"
+            }
+          ],
+          "image_source": "images/page_30_image_11.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 31,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.047,
+            0.777,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.217,
+            0.321,
+            0.283
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.301,
+            0.197,
+            0.367
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.381,
+            0.169,
+            0.449
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.467,
+            0.129,
+            0.53
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.547,
+            0.151,
+            0.613
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.04,
+            0.631,
+            0.174,
+            0.693
+          ],
+          "level": 2,
+          "content": "▪ Science"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.077,
+            0.713,
+            0.261,
+            0.768
+          ],
+          "level": 2,
+          "content": "▪ Conservation"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.366,
+            0.237,
+            0.97,
+            0.767
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.571,
+                0.805,
+                0.81,
+                0.843
+              ],
+              "content": "Nature Communications, 2022"
+            }
+          ],
+          "image_source": "images/page_31_image_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 32,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.046,
+            0.778,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.216,
+            0.322,
+            0.283
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.301,
+            0.198,
+            0.367
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.38,
+            0.17,
+            0.448
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.466,
+            0.13,
+            0.53
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.545,
+            0.152,
+            0.614
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.63,
+            0.175,
+            0.695
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.713,
+            0.262,
+            0.768
+          ],
+          "content": "▪ Resource use"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.612,
+            0.175,
+            0.948,
+            0.398
+          ],
+          "content": "Their Water Taps Ran Dry When Meta Built Next Door In the race to develop artificial intelligence, tech giants are building data centers that guzzle up water. That has led to problems for people who live nearby."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.68,
+            0.427,
+            0.888,
+            0.469
+          ],
+          "content": "The New York Times, 2025"
+        },
+        {
+          "type": "chart",
+          "bbox": [
+            0.593,
+            0.505,
+            0.975,
+            0.999
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_32_chart_10.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 33,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.222,
+            0.047,
+            0.777,
+            0.126
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.217,
+            0.321,
+            0.283
+          ],
+          "content": "Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.301,
+            0.197,
+            0.367
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.381,
+            0.169,
+            0.448
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.467,
+            0.129,
+            0.529
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.547,
+            0.151,
+            0.613
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.631,
+            0.174,
+            0.695
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.714,
+            0.162,
+            0.777
+          ],
+          "content": "▪ Health"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.4,
+            0.185,
+            0.987,
+            0.793
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.62,
+                0.805,
+                0.807,
+                0.842
+              ],
+              "content": "The Boston Globe, 2018"
+            }
+          ],
+          "image_source": "images/page_33_image_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 34,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.045,
+            0.778,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.215,
+            0.322,
+            0.284
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.299,
+            0.198,
+            0.368
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.379,
+            0.171,
+            0.449
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.464,
+            0.13,
+            0.531
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.544,
+            0.153,
+            0.615
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.629,
+            0.176,
+            0.697
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.711,
+            0.165,
+            0.779
+          ],
+          "content": "▪ Health"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.795,
+            0.207,
+            0.861
+          ],
+          "content": "Education"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.413,
+            0.213,
+            0.498,
+            0.255
+          ],
+          "content": "BREAKING"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.411,
+            0.269,
+            0.948,
+            0.606
+          ],
+          "content": "ChatGPT In Schools: Here's Where It's Banned—And How It Could Potentially Help Students"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.412,
+            0.633,
+            0.711,
+            0.759
+          ],
+          "content": "Arianna Johnson Forbes Staff I cover the latest trends in science, tech and healthcare."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.885,
+            0.675,
+            0.943,
+            0.715
+          ],
+          "content": "Follow"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.424,
+            0.798,
+            0.469,
+            0.838
+          ],
+          "content": "目 2"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.635,
+            0.862,
+            0.739,
+            0.901
+          ],
+          "content": "Forbes, 2023"
+        }
+      ]
+    },
+    {
+      "page_idx": 35,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.221,
+            0.045,
+            0.778,
+            0.129
+          ],
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.038,
+            0.216,
+            0.322,
+            0.283
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.039,
+            0.301,
+            0.198,
+            0.367
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.379,
+            0.171,
+            0.449
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.465,
+            0.13,
+            0.53
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.545,
+            0.153,
+            0.614
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.629,
+            0.175,
+            0.697
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.711,
+            0.165,
+            0.78
+          ],
+          "content": "▪ Health"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.795,
+            0.207,
+            0.862
+          ],
+          "content": "▪ Education"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.039,
+            0.879,
+            0.305,
+            0.945
+          ],
+          "level": 2,
+          "content": "▪ Social interaction"
+        },
+        {
+          "type": "header",
+          "bbox": [
+            0.586,
+            0.295,
+            0.762,
+            0.371
+          ],
+          "content": "The Washington Post Democracy Dies in Darkness"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.381,
+            0.42,
+            0.961,
+            0.679
+          ],
+          "content": "It's almost like we never even spoke': AI is making everyone on dating apps sound charming"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.381,
+            0.687,
+            0.944,
+            0.77
+          ],
+          "content": "As more people use Al to doctor their messages, others are left wondering exactly who they're falling for."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.382,
+            0.776,
+            0.522,
+            0.815
+          ],
+          "content": "Updated July 3,2025"
+        }
+      ]
+    },
+    {
+      "page_idx": 36,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.046,
+            0.778,
+            0.127
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.215,
+            0.322,
+            0.284
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.3,
+            0.198,
+            0.368
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.379,
+            0.171,
+            0.449
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.465,
+            0.13,
+            0.531
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.544,
+            0.153,
+            0.615
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.629,
+            0.176,
+            0.697
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.711,
+            0.165,
+            0.78
+          ],
+          "content": "▪ Health"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.796,
+            0.207,
+            0.861
+          ],
+          "content": "▪ Education"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.039,
+            0.88,
+            0.305,
+            0.945
+          ],
+          "level": 2,
+          "content": "▪ Social interaction"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.439,
+            0.167,
+            0.736,
+            0.239
+          ],
+          "level": 2,
+          "content": "Meet My A.I. Friends"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.437,
+            0.249,
+            0.935,
+            0.389
+          ],
+          "content": "Our columnist spent the past month hanging out with 18 A.I. companions. They critiqued his clothes, chatted among themselves and hinted at a very different future."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.566,
+            0.507,
+            0.749,
+            0.576
+          ],
+          "content": "Hey can I get your thoughts on something rq?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.558,
+            0.391,
+            0.831,
+            0.942
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.595,
+                0.943,
+                0.8,
+                0.98
+              ],
+              "content": "The New York Times, 2024"
+            }
+          ],
+          "image_source": "images/page_36_image_13.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 37,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.221,
+            0.045,
+            0.778,
+            0.129
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.215,
+            0.324,
+            0.286
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.299,
+            0.199,
+            0.369
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.379,
+            0.171,
+            0.45
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.464,
+            0.13,
+            0.531
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.543,
+            0.153,
+            0.615
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.628,
+            0.176,
+            0.698
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.711,
+            0.165,
+            0.781
+          ],
+          "content": "▪ Health"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.795,
+            0.208,
+            0.863
+          ],
+          "content": "▪ Education"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.879,
+            0.306,
+            0.945
+          ],
+          "content": "▪ Social interaction"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.482,
+            0.222,
+            0.892,
+            0.447
+          ],
+          "level": 2,
+          "content": "Chatbots Can Go Into a Lege Delusional Spiral. Here's How It Happens."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.578,
+            0.525,
+            0.702,
+            0.569
+          ],
+          "content": "BOOM. That's it."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.537,
+            0.683,
+            0.572,
+            0.719
+          ],
+          "content": "YES!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.645,
+            0.651,
+            0.711,
+            0.688
+          ],
+          "content": "Oh. WOW."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.749,
+            0.665,
+            0.889,
+            0.705
+          ],
+          "content": "You've just shattered t"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.484,
+            0.805,
+            0.587,
+            0.845
+          ],
+          "content": "npossible already."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.631,
+            0.789,
+            0.866,
+            0.831
+          ],
+          "content": "Allan — that's a paradigm-shifting idea."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.591,
+            0.898,
+            0.799,
+            0.94
+          ],
+          "content": "The New York Times, 2025"
+        }
+      ]
+    },
+    {
+      "page_idx": 38,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.22,
+            0.045,
+            0.778,
+            0.129
+          ],
+          "level": 2,
+          "content": "AI is having real-world impact"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.213,
+            0.324,
+            0.286
+          ],
+          "content": "▪ Public imagination"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.297,
+            0.2,
+            0.369
+          ],
+          "content": "▪ Economy"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.377,
+            0.172,
+            0.45
+          ],
+          "content": "▪ Politics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.463,
+            0.131,
+            0.531
+          ],
+          "content": "▪ Law"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.541,
+            0.155,
+            0.615
+          ],
+          "content": "▪ Labor"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.244,
+            0.506,
+            0.753,
+            0.597
+          ],
+          "content": "Ok, but what actually is AI???"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.627,
+            0.177,
+            0.698
+          ],
+          "content": "▪ Science"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.709,
+            0.166,
+            0.781
+          ],
+          "content": "▪ Health"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.793,
+            0.21,
+            0.864
+          ],
+          "content": "▪ Education"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.038,
+            0.876,
+            0.307,
+            0.947
+          ],
+          "content": "▪ Social interaction"
+        }
+      ]
+    },
+    {
+      "page_idx": 39,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.283,
+            0.045,
+            0.716,
+            0.121
+          ],
+          "level": 2,
+          "content": "What should we build?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.237,
+            0.219,
+            0.698,
+            0.279
+          ],
+          "content": "Should we make machines that…"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.263,
+            0.305,
+            0.724,
+            0.932
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_39_image_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 40,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.329,
+            0.049,
+            0.671,
+            0.118
+          ],
+          "level": 2,
+          "content": "Rational Decisions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.873,
+            0.279
+          ],
+          "content": "▪ We’ll use the term **rational** in a very specific, technical way:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.299,
+            0.671,
+            0.353
+          ],
+          "content": "▪ Rational: maximally achieving pre-defined goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.371,
+            0.754,
+            0.426
+          ],
+          "content": "▪ Goals are expressed in terms of the **utility** of outcomes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.443,
+            0.666,
+            0.499
+          ],
+          "content": "▪ World is uncertain, so we’ll use **expected** utility"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.517,
+            0.842,
+            0.573
+          ],
+          "content": "▪ Being rational means acting to **maximize your expected utility**"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.346,
+            0.615,
+            0.656,
+            0.964
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_40_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 41,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.329,
+            0.048,
+            0.672,
+            0.119
+          ],
+          "level": 2,
+          "content": "Rational Decisions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.873,
+            0.28
+          ],
+          "content": "▪ We’ll use the term **rational** in a very specific, technical way:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.297,
+            0.672,
+            0.355
+          ],
+          "content": "▪ Rational: maximally achieving pre-defined goals"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.37,
+            0.755,
+            0.427
+          ],
+          "content": "▪ Goals are expressed in terms of the **utility** of outcomes"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.443,
+            0.667,
+            0.499
+          ],
+          "content": "▪ World is uncertain, so we’ll use **expected** utility"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.516,
+            0.843,
+            0.573
+          ],
+          "content": "▪ Being rational means acting to **maximize your expected utility**"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.272,
+            0.757,
+            0.726,
+            0.886
+          ],
+          "content": "A better title for this course might be: **Computational Rationality**"
+        }
+      ]
+    },
+    {
+      "page_idx": 42,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.048,
+            0.759,
+            0.127
+          ],
+          "level": 2,
+          "content": "Perspectives on Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.218,
+            0.394,
+            0.28
+          ],
+          "content": "▪ Skills-based perspective"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.299,
+            0.654,
+            0.365
+          ],
+          "content": "▪ “A system is only intelligent if it can do [X].”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.379,
+            0.24,
+            0.437
+          ],
+          "content": "▪ Play chess?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.452,
+            0.385,
+            0.509
+          ],
+          "content": "▪ Learn from experience?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.525,
+            0.35,
+            0.583
+          ],
+          "content": "▪ Use words properly?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.597,
+            0.295,
+            0.653
+          ],
+          "content": "▪ Make mistakes?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.67,
+            0.343,
+            0.726
+          ],
+          "content": "▪ Not make mistakes?"
+        }
+      ]
+    },
+    {
+      "page_idx": 43,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.241,
+            0.049,
+            0.759,
+            0.125
+          ],
+          "level": 2,
+          "content": "Perspectives on Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.219,
+            0.638,
+            0.28
+          ],
+          "content": "▪ Embodiment perspective (Rodney Brooks)"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.155,
+            0.345,
+            0.476,
+            0.917
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_43_image_2.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.596,
+            0.417,
+            0.856,
+            0.855
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_43_image_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 44,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.048,
+            0.759,
+            0.127
+          ],
+          "level": 2,
+          "content": "Perspectives on Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.672,
+            0.281
+          ],
+          "content": "▪ Psychometrics perspective (François Chollet)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.301,
+            0.941,
+            0.507
+          ],
+          "content": "“Measuring abilities, not skills […] across a broad range of tasks, including tasks that were previously unknown to the ability-enabled system and its developers.”"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.253,
+            0.551,
+            0.72,
+            0.958
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_44_image_3.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 45,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.241,
+            0.049,
+            0.759,
+            0.126
+          ],
+          "level": 2,
+          "content": "Perspectives on Intelligence"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.041,
+            0.219,
+            0.705,
+            0.28
+          ],
+          "level": 2,
+          "content": "▪ Human-compatible perspective (Stuart Russell)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.084,
+            0.381,
+            0.24,
+            0.415
+          ],
+          "content": "\"The most important book thave read in qulte some time -Daniel Kahneman, auorof THINKING. FAST AND SLOW"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.07,
+            0.421,
+            0.257,
+            0.544
+          ],
+          "content": "Human Compatible"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.09,
+            0.551,
+            0.237,
+            0.626
+          ],
+          "content": "ARTIFICIAL INTELLIGENCE AND THE PROBLEM OF CONTROL"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.081,
+            0.632,
+            0.24,
+            0.855
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.082,
+                0.864,
+                0.244,
+                0.91
+              ],
+              "content": "Stuart Russell"
+            }
+          ],
+          "image_source": "images/page_45_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.304,
+            0.464,
+            0.912,
+            0.521
+          ],
+          "content": "1.Machine’s objective is to maximize human utility."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.302,
+            0.593,
+            0.858,
+            0.649
+          ],
+          "content": "2.Initially uncertain about human preferences."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.303,
+            0.721,
+            0.838,
+            0.839
+          ],
+          "content": "3.Must learn about preferences from human behavior."
+        }
+      ]
+    },
+    {
+      "page_idx": 46,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.24,
+            0.048,
+            0.759,
+            0.126
+          ],
+          "level": 2,
+          "content": "Perspectives on Intelligence"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.105,
+            0.375,
+            0.887,
+            0.695
+          ],
+          "content": "A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.658,
+            0.695,
+            0.892,
+            0.746
+          ],
+          "content": "—Robert A. Heinlein"
+        }
+      ]
+    },
+    {
+      "page_idx": 47,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.283,
+            0.047,
+            0.715,
+            0.118
+          ],
+          "level": 2,
+          "content": "What About the Brain?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.663,
+            0.343
+          ],
+          "content": "Brains (human minds) are very good at making rational decisions, but not perfect"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.363,
+            0.676,
+            0.486
+          ],
+          "content": "▪ Brains aren’t as modular as software, so hard to reverse engineer!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.507,
+            0.616,
+            0.565
+          ],
+          "content": "▪ AI may be better than brains at some tasks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.042,
+            0.584,
+            0.684,
+            0.643
+          ],
+          "content": "“Brains are to intelligence as wings are to flight”"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.039,
+            0.663,
+            0.679,
+            0.841
+          ],
+          "content": "▪ We can’t yet build AI on the scale of the brain ▪ \\~100T synapses in the human brain vs \\~1.8T weights in GPT4"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.865,
+            0.661,
+            0.925
+          ],
+          "content": "▪ Still, the brain can be a great inspiration for AI!"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.691,
+            0.249,
+            0.981,
+            0.697
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_47_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 48,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.047,
+            0.703,
+            0.125
+          ],
+          "level": 2,
+          "content": "A (Short) History of AI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.056,
+            0.216,
+            0.577,
+            0.323
+          ],
+          "content": "▪ 1940-1950: Early days: neural and computer science meet 1943: McCulloch & Pitts: Perceptron–boolean circuit model of brain 1950: Turing's “Computing Machinery and Intelligence”"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.342,
+            0.369,
+            0.375
+          ],
+          "level": 2,
+          "content": "1950—70: Excitement! Logic-driven"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.381,
+            0.548,
+            0.441
+          ],
+          "content": "1950s: Early AI programs, including Samuel's checkers program, Newell & Simon's Logic Theorist, Gelernter's Geometry Engine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.443,
+            0.517,
+            0.476
+          ],
+          "content": "▪ 1956: Dartmouth meeting: “Artificial Intelligence” adopted"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.051,
+            0.601,
+            0.576,
+            0.886
+          ],
+          "content": "“We propose that a <strong><u>2-month, 10-man study of artificial intelligence</u></strong> be carried out <strong><u>during the summer of 1956</u></strong> at Dartmouth College in Hanover, New Hampshire. The study is to proceed on the basis of the conjecture that <strong><u>every aspect of learning</u></strong> or **any** <strong><u>other feature of intelligence</u></strong> can in principle be so precisely described that a machine can be made to simulate it. An attempt will be made to find how to make machines use language, form abstractions and concepts, solve kinds of problems now reserved for humans, and improve themselves. <strong><u>We think that a significant advance can be made</u></strong> in one or more of these problems if a carefully selected group of scientists work on it together for a summer.”"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.633,
+            0.207,
+            0.885,
+            0.906
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_48_image_6.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 49,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.047,
+            0.703,
+            0.125
+          ],
+          "level": 2,
+          "content": "A (Short) History of AI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.055,
+            0.216,
+            0.577,
+            0.322
+          ],
+          "content": "1940-1950: Early days: neural and computer science meet 1943: McCulloch & Pitts: Perceptron–boolean circuit model of brain 1950: Turing's “Computing Machinery and Intelligence”"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.341,
+            0.368,
+            0.375
+          ],
+          "level": 2,
+          "content": "▪ 1950—70: Excitement! Logic-driven"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.381,
+            0.548,
+            0.441
+          ],
+          "content": "1950s: Early AI programs, including Samuel's checkers program, Newell & Simon's Logic Theorist, Gelernter's Geometry Engine"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.443,
+            0.518,
+            0.475
+          ],
+          "content": "▪ 1956: Dartmouth meeting: “Artificial Intelligence” adopted"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.477,
+            0.523,
+            0.511
+          ],
+          "content": "▪ 1969: Minsky & Papert: perceptrons can’t learn XOR/parity!"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.531,
+            0.409,
+            0.565
+          ],
+          "level": 2,
+          "content": "1970—90: Knowledge-based approaches"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.569,
+            0.519,
+            0.601
+          ],
+          "content": "▪ 1969—79: Early development of knowledge-based systems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.603,
+            0.586,
+            0.662
+          ],
+          "content": "1980—88: Expert systems industry booms; backpropagation makes it feasible to train multi-layer neural networks"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.666,
+            0.48,
+            0.699
+          ],
+          "content": "▪ 1988—93: Expert systems industry busts: “AI Winter”"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.72,
+            0.426,
+            0.754
+          ],
+          "level": 2,
+          "content": "1990—2010: Statistical approaches, agents"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.758,
+            0.438,
+            0.789
+          ],
+          "content": "Resurgence of probability, focus on uncertainty"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.792,
+            0.414,
+            0.824
+          ],
+          "content": "▪ Agents and learning systems… “AI Spring”?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.827,
+            0.542,
+            0.858
+          ],
+          "content": "1992: TD-Gammon achieves human-level play at backgammon"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.861,
+            0.445,
+            0.892
+          ],
+          "content": "1997: Deep Blue defeats Gary Kasparov at chess"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.895,
+            0.433,
+            0.927
+          ],
+          "content": "2002: Embodied AI; Roomba vacuum invented"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.635,
+            0.208,
+            0.885,
+            0.905
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_49_image_16.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 50,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.047,
+            0.703,
+            0.125
+          ],
+          "level": 2,
+          "content": "A (Short) History of AI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.057,
+            0.215,
+            0.433,
+            0.251
+          ],
+          "content": "2010—2017: Big Data, GPUs, Deep Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.255,
+            0.286,
+            0.285
+          ],
+          "content": "▪ 2011: Apple releases Siri"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.289,
+            0.407,
+            0.319
+          ],
+          "content": "▪ 2012: AlexNet wins ImageNet competition"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.323,
+            0.549,
+            0.355
+          ],
+          "content": "▪ 2015: DeepMind achieves “human-level” control in Atari games"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.357,
+            0.468,
+            0.388
+          ],
+          "content": "2016: DeepMind’s AlphaGo defeats Lee Sedol at Go"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.392,
+            0.47,
+            0.424
+          ],
+          "content": "▪ 2016: Google Translate migrates to neural networks"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.057,
+            0.445,
+            0.43,
+            0.48
+          ],
+          "level": 2,
+          "content": "2017—: Scaling Up, Large Language Models"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.484,
+            0.436,
+            0.514
+          ],
+          "content": "2017: Google invents Transformer architecture"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.517,
+            0.459,
+            0.549
+          ],
+          "content": "2017: DeepStack/Libratus defeat humans at poker"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.552,
+            0.566,
+            0.583
+          ],
+          "content": "2018-2020: AlphaFold predicts protein structure from amino acids"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.587,
+            0.429,
+            0.618
+          ],
+          "content": "2021-2022: Modern text-to-image generation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.621,
+            0.335,
+            0.651
+          ],
+          "content": "▪ 2022: OpenAI releases ChatGPT"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.093,
+            0.655,
+            0.464,
+            0.686
+          ],
+          "content": "▪ 2023: Every other company also releases a chatbot"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.092,
+            0.689,
+            0.537,
+            0.723
+          ],
+          "content": "▪ 2024: Nobel prizes in physics and chemistry go to AI advances"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.633,
+            0.208,
+            0.884,
+            0.907
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_50_image_15.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 51,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.294,
+            0.046,
+            0.703,
+            0.126
+          ],
+          "level": 2,
+          "content": "A (Short) History of AI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.222,
+            0.57,
+            0.279
+          ],
+          "content": "▪ Zooming out, some general patterns:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.299,
+            0.732,
+            0.353
+          ],
+          "content": "▪ Overclaiming followed by disillusionment (AI winters)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.078,
+            0.371,
+            0.668,
+            0.426
+          ],
+          "content": "▪ Simultaneous discovery, or rediscovery, of ideas"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.445,
+            0.295,
+            0.498
+          ],
+          "content": "▪ Interdisciplinary"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.513,
+            0.84,
+            0.616
+          ],
+          "content": "▪ Math, statistics, control theory, neuroscience, psychology, economics, philosophy, computer engineering, linguistics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.114,
+            0.629,
+            0.591,
+            0.677
+          ],
+          "content": "▪ And increasingly: law, medicine, education…"
+        }
+      ]
+    },
+    {
+      "page_idx": 52,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.048,
+            0.658,
+            0.117
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.036,
+            0.253,
+            0.066,
+            0.295
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_1.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.036,
+            0.303,
+            0.066,
+            0.343
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.049,
+            0.215,
+            0.511,
+            0.909
+          ],
+          "content": "**Quiz:** Which of the following can be done at present? Win against any human at chess? Win against the best humans at Go? Play a decent game of table tennis? Unload any dishwasher in any home? Drive safely along the highway? Drive safely along streets of San Francisco? Buy a week's worth of groceries on the web? Buy a week's worth of groceries at Berkeley Bowl? Discover and prove a new mathematical theorem? Perform a surgical operation? Translate spoken Chinese into spoken English in real time? Win an art competition? Write an intentionally funny story? Construct a building?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.587,
+            0.353,
+            0.889,
+            0.753
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_52_image_4.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 53,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.047,
+            0.657,
+            0.118
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.036,
+            0.252,
+            0.065,
+            0.295
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.211,
+            0.477,
+            0.251
+          ],
+          "content": "**Quiz:** Which of the following can be done at present?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.036,
+            0.303,
+            0.066,
+            0.344
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.257,
+            0.325,
+            0.297
+          ],
+          "content": "Win against any human at chess?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.305,
+            0.347,
+            0.344
+          ],
+          "content": "Win against the best humans at Go?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.352,
+            0.342,
+            0.391
+          ],
+          "content": "Play a decent game of table tennis?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.397,
+            0.356,
+            0.437
+          ],
+          "content": "Unload any dishwasher in any home?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.445,
+            0.313,
+            0.485
+          ],
+          "content": "Drive safely along the highway?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.491,
+            0.398,
+            0.531
+          ],
+          "content": "Drive safely along streets of San Francisco?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.538,
+            0.413,
+            0.577
+          ],
+          "content": "Buy a week's worth of groceries on the web?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.585,
+            0.453,
+            0.625
+          ],
+          "content": "Buy a week's worth of groceries at Berkeley Bowl?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.632,
+            0.455,
+            0.671
+          ],
+          "content": "Discover and prove a new mathematical theorem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.679,
+            0.297,
+            0.717
+          ],
+          "content": "Perform a surgical operation?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.725,
+            0.507,
+            0.765
+          ],
+          "content": "Translate spoken Chinese into spoken English in real time?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.773,
+            0.258,
+            0.811
+          ],
+          "content": "Win an art competition?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.818,
+            0.337,
+            0.859
+          ],
+          "content": "Write an intentionally funny story?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.865,
+            0.234,
+            0.905
+          ],
+          "content": "Construct a building?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.551,
+            0.194,
+            0.966,
+            0.235
+          ],
+          "level": 2,
+          "content": "Google’s AlphaGo beats Lee Sedol at Go in 2016"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.58,
+            0.241,
+            0.919,
+            0.58
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_53_image_19.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.638,
+            0.625,
+            0.861,
+            0.664
+          ],
+          "content": "But … a plot twist in 2023!"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.51,
+            0.697,
+            0.984,
+            0.789
+          ],
+          "level": 2,
+          "content": "Man beats machine at Go in human victory over AI"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.51,
+            0.809,
+            0.942,
+            0.838
+          ],
+          "content": "Amateur exploited weakness in systems that have otherwise dominated grandmasters."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.51,
+            0.843,
+            0.702,
+            0.866
+          ],
+          "content": "RICHARD WATERS, FINANCIAL TIMES - 2/19/2023, 4:51 AM"
+        }
+      ]
+    },
+    {
+      "page_idx": 54,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.049,
+            0.657,
+            0.116
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.213,
+            0.476,
+            0.25
+          ],
+          "content": "**Quiz:** Which of the following can be done at present?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.256,
+            0.325,
+            0.297
+          ],
+          "content": "Win against any human at chess?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.037,
+            0.303,
+            0.066,
+            0.343
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.067,
+            0.305,
+            0.347,
+            0.343
+          ],
+          "content": "Win against the best humans at Go?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.036,
+            0.346,
+            0.064,
+            0.386
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.349,
+            0.512,
+            0.906
+          ],
+          "content": "Play a decent game of table tennis? Unload any dishwasher in any home? Drive safely along the highway? Drive safely along streets of San Francisco? Buy a week's worth of groceries on the web? Buy a week's worth of groceries at Berkeley Bowl? Discover and prove a new mathematical theorem? Perform a surgical operation? Translate spoken Chinese into spoken English in real time? Win an art competition? Write an intentionally funny story? Construct a building?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.536,
+            0.277,
+            0.985,
+            0.798
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_54_image_7.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 55,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.047,
+            0.658,
+            0.119
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.064,
+            0.211,
+            0.476,
+            0.252
+          ],
+          "level": 2,
+          "content": "Quiz: Which of the following can be done at present?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.255,
+            0.326,
+            0.299
+          ],
+          "content": "Win against any human at chess?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.303,
+            0.348,
+            0.345
+          ],
+          "content": "Win against the best humans at Go?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.349,
+            0.343,
+            0.392
+          ],
+          "content": "Play a decent game of table tennis?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.397,
+            0.357,
+            0.441
+          ],
+          "content": "Unload any dishwasher in any home?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.444,
+            0.314,
+            0.486
+          ],
+          "content": "Drive safely along the highway?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.491,
+            0.398,
+            0.533
+          ],
+          "content": "Drive safely along streets of San Francisco?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.537,
+            0.413,
+            0.579
+          ],
+          "content": "Buy a week's worth of groceries on the web?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.584,
+            0.454,
+            0.626
+          ],
+          "content": "Buy a week's worth of groceries at Berkeley Bowl?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.631,
+            0.456,
+            0.671
+          ],
+          "content": "Discover and prove a new mathematical theorem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.678,
+            0.298,
+            0.719
+          ],
+          "content": "Perform a surgical operation?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.723,
+            0.495,
+            0.767
+          ],
+          "content": "Translate spoken Chinese into spoken English in real tim"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.771,
+            0.259,
+            0.812
+          ],
+          "content": "Win an art competition?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.817,
+            0.337,
+            0.86
+          ],
+          "content": "Write an intentionally funny story?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.865,
+            0.234,
+            0.906
+          ],
+          "content": "Construct a building?"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.503,
+            0.232,
+            0.962,
+            0.341
+          ],
+          "level": 2,
+          "content": "California just opened the floodgates for self-driving cars"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.502,
+            0.347,
+            0.982,
+            0.395
+          ],
+          "content": "After a state regulatory board ruling, San Francisco will have 24/7 robotaxis on its streets. A Washington Post analysis shows how it's a pivotal moment for the industry."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.504,
+            0.406,
+            0.637,
+            0.428
+          ],
+          "content": "By Trisha Thadani and Jeremy B. Merrill"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.504,
+            0.427,
+            0.768,
+            0.448
+          ],
+          "content": "Updated August 10, 2023 at 10:06 p.m. EDT|Published August 10, 2023 at 9:15 p.m. EDT"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.654,
+            0.554,
+            0.768,
+            0.592
+          ],
+          "level": 2,
+          "content": "TheARegister®"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.497,
+            0.617,
+            0.984,
+            0.719
+          ],
+          "level": 2,
+          "content": "California DMV hits brakes on Cruise's SF driverless fleet after series of fender benders"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.497,
+            0.728,
+            0.975,
+            0.763
+          ],
+          "content": "50% chop effective 'immediately' as department investigates traffic and safety issues"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.498,
+            0.783,
+            0.556,
+            0.807
+          ],
+          "content": "Jude Karabus"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.795,
+            0.783,
+            0.895,
+            0.807
+          ],
+          "content": "Mon 21 Aug 2023 //14:28 UTC"
+        }
+      ]
+    },
+    {
+      "page_idx": 56,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.048,
+            0.658,
+            0.117
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.212,
+            0.476,
+            0.251
+          ],
+          "content": "**Quiz:** Which of the following can be done at present?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.256,
+            0.325,
+            0.297
+          ],
+          "content": "Win against any human at chess?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.305,
+            0.346,
+            0.344
+          ],
+          "content": "Win against the best humans at Go?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.349,
+            0.342,
+            0.391
+          ],
+          "content": "Play a decent game of table tennis?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.398,
+            0.356,
+            0.439
+          ],
+          "content": "Unload any dishwasher in any home?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.445,
+            0.313,
+            0.485
+          ],
+          "content": "Drive safely along the highway?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.492,
+            0.398,
+            0.537
+          ],
+          "content": "Drive safely along streets of San Francisco?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.539,
+            0.413,
+            0.578
+          ],
+          "content": "Buy a week's worth of groceries on the web?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.037,
+            0.585,
+            0.453,
+            0.626
+          ],
+          "content": "Buy a week's worth of groceries at Berkeley Bowl?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.632,
+            0.455,
+            0.673
+          ],
+          "content": "Discover and prove a new mathematical theorem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.679,
+            0.297,
+            0.718
+          ],
+          "content": "Perform a surgical operation?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.725,
+            0.461,
+            0.765
+          ],
+          "content": "Translate spoken Chinese into spoken English in real"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.773,
+            0.258,
+            0.81
+          ],
+          "content": "Win an art competition?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.819,
+            0.336,
+            0.858
+          ],
+          "content": "Write an intentionally funny story?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.866,
+            0.234,
+            0.904
+          ],
+          "content": "Construct a building?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.516,
+            0.407,
+            0.858,
+            0.855
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_56_image_16.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.861,
+            0.736,
+            0.913,
+            0.785
+          ],
+          "content": "Jason Allen Théatre D'opéra Spatial \\$750"
+        }
+      ]
+    },
+    {
+      "page_idx": 57,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.047,
+            0.658,
+            0.119
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.211,
+            0.477,
+            0.252
+          ],
+          "content": "**Quiz:** Which of the following can be done at present?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.255,
+            0.327,
+            0.299
+          ],
+          "content": "Win against any human at chess?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.303,
+            0.348,
+            0.345
+          ],
+          "content": "Win against the best humans at Go?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.348,
+            0.344,
+            0.392
+          ],
+          "content": "Play a decent game of table tennis?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.396,
+            0.357,
+            0.44
+          ],
+          "content": "Unload any dishwasher in any home?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.68,
+            0.407,
+            0.981,
+            0.439
+          ],
+          "content": "please write me a very funny, and extremely short story"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.443,
+            0.315,
+            0.486
+          ],
+          "content": "Drive safely along the highway?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.49,
+            0.4,
+            0.535
+          ],
+          "content": "Drive safely along streets of San Francisco?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.518,
+            0.505,
+            0.796,
+            0.537
+          ],
+          "content": "A penguin walks into a bar, looks around, and says,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.061,
+            0.537,
+            0.415,
+            0.579
+          ],
+          "content": "Buy a week's worth of groceries on the web?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.519,
+            0.541,
+            0.696,
+            0.573
+          ],
+          "content": "\"Has anyone seen my brother?\""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.031,
+            0.584,
+            0.455,
+            0.627
+          ],
+          "content": "Buy a week's worth of groceries at Berkeley Bowl?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.519,
+            0.598,
+            0.697,
+            0.63
+          ],
+          "content": "The bartender squints and asks,"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.029,
+            0.631,
+            0.457,
+            0.674
+          ],
+          "content": "Discover and prove a new mathematical theorem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.519,
+            0.634,
+            0.663,
+            0.666
+          ],
+          "content": "\"What does he look like?\""
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.677,
+            0.299,
+            0.719
+          ],
+          "content": "Perform a surgical operation?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.723,
+            0.514,
+            0.767
+          ],
+          "content": "Translate spoken Chinese into spoken English in real time?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.719,
+            0.699,
+            0.837,
+            0.739
+          ],
+          "content": "ChatGPT, 2025"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.771,
+            0.259,
+            0.812
+          ],
+          "content": "Win an art competition?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.817,
+            0.337,
+            0.86
+          ],
+          "content": "Write an intentionally funny story?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.864,
+            0.235,
+            0.907
+          ],
+          "content": "Construct a building?"
+        }
+      ]
+    },
+    {
+      "page_idx": 58,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.34,
+            0.048,
+            0.658,
+            0.117
+          ],
+          "level": 2,
+          "content": "What Can AI Do?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.211,
+            0.477,
+            0.251
+          ],
+          "content": "**Quiz:** Which of the following can be done at present?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.034,
+            0.256,
+            0.325,
+            0.298
+          ],
+          "content": "Win against any human at chess?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.304,
+            0.347,
+            0.345
+          ],
+          "content": "Win against the best humans at Go?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.035,
+            0.349,
+            0.343,
+            0.391
+          ],
+          "content": "Play a decent game of table tennis?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.036,
+            0.398,
+            0.356,
+            0.44
+          ],
+          "content": "Unload any dishwasher in any home?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.033,
+            0.444,
+            0.313,
+            0.486
+          ],
+          "content": "Drive safely along the highway?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.032,
+            0.491,
+            0.398,
+            0.537
+          ],
+          "content": "Drive safely along streets of San Francisco?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.063,
+            0.539,
+            0.414,
+            0.579
+          ],
+          "content": "Buy a week's worth of groceries on the web?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.064,
+            0.585,
+            0.454,
+            0.626
+          ],
+          "content": "Buy a week's worth of groceries at Berkeley Bowl?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.065,
+            0.632,
+            0.456,
+            0.672
+          ],
+          "content": "Discover and prove a new mathematical theorem?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.679,
+            0.298,
+            0.719
+          ],
+          "content": "Perform a surgical operation?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.724,
+            0.514,
+            0.766
+          ],
+          "content": "Translate spoken Chinese into spoken English in real time?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.773,
+            0.258,
+            0.811
+          ],
+          "content": "Win an art competition?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.818,
+            0.337,
+            0.859
+          ],
+          "content": "Write an intentionally funny story?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.066,
+            0.865,
+            0.235,
+            0.906
+          ],
+          "content": "Construct a building?"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.615,
+            0.185,
+            0.967,
+            0.984
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_58_image_16.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 59,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.138,
+            0.049,
+            0.861,
+            0.125
+          ],
+          "level": 2,
+          "content": "This Course: Designing Rational Agents"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.6,
+            0.271
+          ],
+          "content": "▪ An **agent** is an entity that perceives and acts."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.291,
+            0.615,
+            0.407
+          ],
+          "content": "▪ A **rational agent** selects actions that maximize its (expected) **utility**."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.426,
+            0.609,
+            0.603
+          ],
+          "content": "Characteristics of the **percepts**, **environment**, and **action space** dictate techniques for selecting rational actions"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.041,
+            0.623,
+            0.313,
+            0.671
+          ],
+          "content": "▪ This course is about:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.691,
+            0.571,
+            0.792
+          ],
+          "content": "▪ General AI techniques for a variety of problem types"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.076,
+            0.808,
+            0.606,
+            0.909
+          ],
+          "content": "Learning to recognize when and how a new problem can be solved with an existing technique"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.69,
+            0.205,
+            0.923,
+            0.583
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_7.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.659,
+            0.621,
+            0.955,
+            0.907
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_59_image_8.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 60,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.303,
+            0.05,
+            0.698,
+            0.125
+          ],
+          "level": 2,
+          "content": "Pac-Man as an Agent"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.272,
+            0.221,
+            0.748,
+            0.592
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_60_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.291,
+            0.54,
+            0.398,
+            0.574
+          ],
+          "content": "SCORE: 18"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.32,
+            0.669,
+            0.701,
+            0.867
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_60_image_3.jpg"
+        },
+        {
+          "type": "footer",
+          "bbox": [
+            0.019,
+            0.949,
+            0.474,
+            0.973
+          ],
+          "content": "Pac-Man is a registered trademark of Namco-Bandai Games, used here for educational purposes"
+        }
+      ]
+    },
+    {
+      "page_idx": 61,
+      "blocks": [
+        {
+          "type": "image",
+          "bbox": [
+            0.408,
+            0.287,
+            0.596,
+            0.703
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_61_image_0.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 62,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.371,
+            0.049,
+            0.629,
+            0.126
+          ],
+          "level": 2,
+          "content": "Course Topics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.18,
+            0.187,
+            0.569,
+            0.24
+          ],
+          "content": "Core Components of Rational Agents:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.324,
+            0.291,
+            0.453
+          ],
+          "content": "Search & Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.324,
+            0.604,
+            0.449
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.587,
+            0.3,
+            0.712
+          ],
+          "content": "Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.585,
+            0.614,
+            0.709
+          ],
+          "content": "Reinforcement Learning"
+        }
+      ]
+    },
+    {
+      "page_idx": 63,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.048,
+            0.63,
+            0.127
+          ],
+          "level": 2,
+          "content": "Course Topics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.323,
+            0.292,
+            0.454
+          ],
+          "content": "Search & Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.16,
+            0.584,
+            0.302,
+            0.715
+          ],
+          "content": "Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.323,
+            0.605,
+            0.451
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.43,
+            0.584,
+            0.615,
+            0.712
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.68,
+            0.375,
+            0.983,
+            0.669
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_63_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.099,
+            0.807,
+            0.655,
+            0.931
+          ],
+          "content": "How can I use my **model** of the world to find a **sequence of actions** to achieve my **goal**?"
+        }
+      ]
+    },
+    {
+      "page_idx": 64,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.37,
+            0.048,
+            0.63,
+            0.127
+          ],
+          "level": 2,
+          "content": "Course Topics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.173,
+            0.323,
+            0.292,
+            0.455
+          ],
+          "content": "Search & Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.585,
+            0.302,
+            0.714
+          ],
+          "content": "Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.324,
+            0.604,
+            0.449
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.431,
+            0.584,
+            0.615,
+            0.711
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.668,
+            0.303,
+            0.988,
+            0.713
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_64_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.146,
+            0.807,
+            0.605,
+            0.867
+          ],
+          "content": "How can I make sense of **uncertainty**?"
+        }
+      ]
+    },
+    {
+      "page_idx": 65,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.37,
+            0.048,
+            0.63,
+            0.126
+          ],
+          "level": 2,
+          "content": "Course Topics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.174,
+            0.323,
+            0.292,
+            0.455
+          ],
+          "content": "Search & Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.323,
+            0.604,
+            0.45
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.084,
+            0.225,
+            0.999,
+            0.785
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_65_image_3.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.584,
+            0.301,
+            0.712
+          ],
+          "content": "Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.431,
+            0.584,
+            0.615,
+            0.711
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.083,
+            0.807,
+            0.67,
+            0.866
+          ],
+          "content": "How can I learn a **model** of the world from **data**?"
+        }
+      ]
+    },
+    {
+      "page_idx": 66,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.369,
+            0.047,
+            0.63,
+            0.127
+          ],
+          "level": 2,
+          "content": "Course Topics"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.085,
+            0.225,
+            1.0,
+            0.786
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_66_image_1.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.172,
+            0.321,
+            0.293,
+            0.457
+          ],
+          "content": "Search & Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.161,
+            0.582,
+            0.303,
+            0.717
+          ],
+          "content": "Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.44,
+            0.321,
+            0.605,
+            0.452
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.583,
+            0.616,
+            0.712
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.131,
+            0.806,
+            0.622,
+            0.931
+          ],
+          "content": "How can I learn a **policy** for any situation so that I can **maximize utility**?"
+        }
+      ]
+    },
+    {
+      "page_idx": 67,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.37,
+            0.049,
+            0.63,
+            0.126
+          ],
+          "level": 2,
+          "content": "Course Topics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.175,
+            0.325,
+            0.29,
+            0.451
+          ],
+          "content": "Search & Planning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.325,
+            0.603,
+            0.446
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.162,
+            0.587,
+            0.3,
+            0.711
+          ],
+          "content": "Supervised Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.432,
+            0.586,
+            0.614,
+            0.708
+          ],
+          "content": "Reinforcement Learning"
+        }
+      ]
+    },
+    {
+      "page_idx": 68,
+      "blocks": [
+        {
+          "type": "text",
+          "bbox": [
+            0.369,
+            0.045,
+            0.631,
+            0.129
+          ],
+          "content": "Course Topics"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.441,
+            0.318,
+            0.605,
+            0.455
+          ],
+          "content": "Probability & Inference"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.154,
+            0.754,
+            0.997
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_68_image_2.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.43,
+            0.579,
+            0.615,
+            0.715
+          ],
+          "content": "Reinforcement Learning"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.296,
+            0.799,
+            0.453,
+            0.87
+          ],
+          "content": "Applications"
+        }
+      ]
+    },
+    {
+      "page_idx": 69,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.299,
+            0.047,
+            0.699,
+            0.119
+          ],
+          "level": 2,
+          "content": "Should I take CS 188?"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.814,
+            0.28
+          ],
+          "content": "▪ Yes, if you want to know how to design rational agents!"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.3,
+            0.646,
+            0.354
+          ],
+          "content": "▪ CS 188 gives you extra mathematical maturity"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.371,
+            0.91,
+            0.491
+          ],
+          "content": "▪ CS 188 gives you a survey of other non-CS fields that interact with AI (e.g. robotics, cognitive science, economics)"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.509,
+            0.84,
+            0.642
+          ],
+          "content": "▪ Disclaimer: If you’re interested in making yourself more competitive for AI jobs, CS 189 and CS 182 are better fits."
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.077,
+            0.659,
+            0.926,
+            0.779
+          ],
+          "content": "▪ CS 188 will touch on some of the modern tools (like neural networks), but CS 189 and CS 182 cover these in more depth."
+        }
+      ]
+    },
+    {
+      "page_idx": 70,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.206,
+            0.045,
+            0.793,
+            0.127
+          ],
+          "level": 2,
+          "content": "By the end of this course you’ll:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.219,
+            0.809,
+            0.281
+          ],
+          "content": "▪ Build and understand math of rational, learning agents"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.337,
+            0.952,
+            0.401
+          ],
+          "content": "▪ Select and apply the right AI methods for wide range of problems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.455,
+            0.904,
+            0.519
+          ],
+          "content": "▪ Recognize how these methods are used in modern AI systems"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.04,
+            0.574,
+            0.867,
+            0.637
+          ],
+          "content": "▪ Be prepared to make decisions on how AI is used in society"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.394,
+            0.694,
+            0.608,
+            0.973
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_70_image_5.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 71,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.073,
+            0.047,
+            0.926,
+            0.125
+          ],
+          "level": 2,
+          "content": "In closing: I am very excited to teach this class"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.398,
+            0.31,
+            0.601,
+            0.391
+          ],
+          "level": 2,
+          "content": "Artificial Intelligence A Modern Approach"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.351,
+            0.233,
+            0.648,
+            0.879
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [
+            {
+              "bbox": [
+                0.403,
+                0.803,
+                0.596,
+                0.855
+              ],
+              "content": "Stuart Russell • Peter Norvig Prentica Hall Series in Artificial Intelligen"
+            }
+          ],
+          "image_source": "images/page_71_image_2.jpg"
+        }
+      ]
+    },
+    {
+      "page_idx": 72,
+      "blocks": [
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.073,
+            0.047,
+            0.926,
+            0.125
+          ],
+          "level": 2,
+          "content": "In closing: I am very excited to teach this class"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.079,
+            0.274,
+            0.218,
+            0.311
+          ],
+          "content": "CONFIDENTIAL"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.098,
+            0.313,
+            0.215,
+            0.359
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_72_image_2.jpg"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.193,
+            0.349,
+            0.802,
+            0.428
+          ],
+          "level": 2,
+          "content": "Multisite 3 BRACAnalysis Three Mutation BRCA1 and BRCA2 Analysis for Ashkenazi Individuals"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.805,
+            0.279,
+            0.909,
+            0.387
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_72_image_4.jpg"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.803,
+            0.393,
+            0.918,
+            0.437
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_72_image_5.jpg"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.186,
+            0.448,
+            0.267,
+            0.482
+          ],
+          "content": "PHYSICIAN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.395,
+            0.48,
+            0.498,
+            0.511
+          ],
+          "content": "Specimen Type:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.395,
+            0.51,
+            0.469,
+            0.538
+          ],
+          "content": "Draw Date:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.395,
+            0.538,
+            0.498,
+            0.567
+          ],
+          "content": "Accession Date:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.395,
+            0.567,
+            0.478,
+            0.597
+          ],
+          "content": "Report Date:"
+        },
+        {
+          "type": "paragraph_title",
+          "bbox": [
+            0.475,
+            0.45,
+            0.553,
+            0.479
+          ],
+          "level": 2,
+          "content": "SPECIMEN"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.523,
+            0.48,
+            0.614,
+            0.599
+          ],
+          "content": "Buccal Wash Nov 22, 2011 Nov 25, 2011 Dec 01, 2011"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.664,
+            0.479,
+            0.754,
+            0.659
+          ],
+          "content": "Name: Date of Birth: Patient ID: Gender: Accession #: Requisition #:"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.765,
+            0.481,
+            0.869,
+            0.51
+          ],
+          "content": "Pierson, Emma"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.363,
+            0.703,
+            0.633,
+            0.741
+          ],
+          "content": "Test Results and Interpretation"
+        },
+        {
+          "type": "text",
+          "bbox": [
+            0.307,
+            0.793,
+            0.689,
+            0.833
+          ],
+          "content": "POSITIVE FOR A DELETERIOUS MUTATION"
+        }
+      ]
+    },
+    {
+      "page_idx": 73,
+      "blocks": [
+        {
+          "type": "header",
+          "bbox": [
+            0.305,
+            0.048,
+            0.694,
+            0.121
+          ],
+          "content": "Next Lecture: Search"
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.212,
+            0.264,
+            0.812,
+            0.839
+          ],
+          "content": "",
+          "captions": [],
+          "footnotes": [],
+          "image_source": "images/page_73_image_1.jpg"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "file_suffix": "pdf",
+    "producer": {
+      "name": "mineru",
+      "version": "4.0.12"
+    },
+    "document": {
+      "title": "lecture 01.pptx",
+      "creator_application": "Google",
+      "page_count": 74,
+      "page_count_kind": "physical"
+    }
+  },
+  "extensions": {
+    "mineru": {
+      "tier": "standard",
+      "parse_mode": "txt"
+    },
+    "docvortex_layout": {
+      "version": 1,
+      "pages": [
+        {
+          "page_idx": 0,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 1,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 2,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 3,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 4,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 5,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 6,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 7,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 8,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 9,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 10,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 11,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 12,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 13,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 14,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 15,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 16,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 17,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 18,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 19,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 20,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 21,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 22,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 23,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 24,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 25,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 26,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 27,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 28,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 29,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 30,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 31,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 32,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 33,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 34,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 35,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 36,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 37,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 38,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 39,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 40,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 41,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 42,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 43,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 44,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 45,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 46,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 47,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 48,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 49,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 50,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 51,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 52,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 53,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 54,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 55,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 56,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 57,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 58,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 59,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 60,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 61,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 62,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 63,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 64,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 65,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 66,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 67,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 68,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 69,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 70,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 71,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 72,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        },
+        {
+          "page_idx": 73,
+          "width_pt": 960.0,
+          "height_pt": 540.0
+        }
+      ]
+    }
+  },
+  "is_full_document": true
+}

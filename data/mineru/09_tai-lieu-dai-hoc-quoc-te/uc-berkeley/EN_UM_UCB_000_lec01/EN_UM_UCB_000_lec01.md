@@ -1,0 +1,1469 @@
+<!-- page: 1 -->
+
+# CS 188: Artificial Intelligence Introduction
+
+![](images/page_0_image_1.jpg)
+
+Fall 2025
+
+University of California, Berkeley
+
+[These slides are based on those created by Dan Klein and Pieter Abbeel for CS188 Intro to AI at UC Berkeley (ai.berkeley.edu).]
+
+<!-- page: 2 -->
+
+## First Half of Today: Intro and Logistics
+
+▪ Staff introductions: Peyrin, Emma, and course staff
+
+▪ Course logistics
+
+▪ Lectures, discussions, office hours, and exams
+
+▪ Resources and communication platforms
+
+▪ Collaboration and academic honesty
+
+▪ DSP and extenuating circumstances
+
+▪ Stress management and mental health
+
+<!-- page: 3 -->
+
+## Staff Introductions: Emma (she/her)
+
+▪ Did my undergrad, master’s, and PhD at Stanford (sorry) ▪ Also spent a year at Oxford (happy to chat about studying overseas)
+
+Assistant Professor of Computer Science (either Emma or Professor Pierson are fine)
+
+▪ My lab develops AI methods for the health and social sciences, focusing on improving health and reducing inequality
+
+Examples: using AI to map migration in response to wildfires; detect flooding; understand inequality in pain; quantify gender, racial, and other social biases; forecast the spread of COVID-19
+
+▪ Affiliations: Berkeley AI Research Lab (BAIR), Computational Precision Health
+
+▪ Feel free to drop by office hours to talk about research
+
+## ▪ Other loves besides teaching/research
+
+▪ Writing for a mass audience; being outside; classical piano; my cats Sigma and Mew
+
+![](images/page_2_image_9.jpg)
+
+<!-- page: 4 -->
+
+## Staff Introductions: Peyrin (he/him)
+
+▪ TA (2018-2022), lecturer (2022-present)
+
+[https://peyrin.github.io](https://peyrin.github.io/)
+
+372 Unresolved followups
+
+![](images/page_3_image_4.jpg)
+
+Actual real picture of me.
+
+<!-- page: 5 -->
+
+## Our talented course staff!
+
+![](images/page_4_image_1.jpg)
+
+## Aly Lidayan
+
+Hi! I'm a PhD student at BAIR doing research in reinforcement learning and cognitive science. I like painting and coffee!
+
+![](images/page_4_image_4.jpg)
+
+Andrew Choy HE/HIM Excited to work with you all this semester!
+
+![](images/page_4_image_6.jpg)
+
+## Kanav Mittal HE/HIM STAFF EMAIL ACCESS
+
+Hello! I'm a 5th year MS student studying EECS. In my free time, I enjoy running the Fire Trails, trying out all the restaurants in Berkeley, and listening to Taylor Swift (eagerly waiting for October 3). Excited to meet everyone!!
+
+![](images/page_4_image_9.jpg)
+
+## Saathvik Selvan HE/HIM
+
+Hi! I'm a 4th year EECS major (and Math minor) from Florida! I enjoy researching about the computer vision and tackling interesting problems. Outside of school, I love playing the drums, doing puzzles, and running! Looking forward to a great semester and feel free to reach out!
+
+## Tutors
+
+![](images/page_4_image_13.jpg)
+
+## Isabella Durante Alpert SHE/HER
+
+hi hi! i'm isabella, and i'm senior majoring in eecs and minoring in comparative ethnic studies and data science. feel free to yap with me about video games, rock/indie music, and cooking! can't wait to meet everyone this semester :)
+
+<!-- page: 6 -->
+
+## Enrollment
+
+▪ We will likely be able to clear the waitlist and approve all concurrent enrollment requests within the next week, but no promises until it happens.
+
+▪ We have no further updates than this, so please don’t ask.
+
+▪ [https://inst.eecs.berkeley.edu/\~cs188/sp25/fa25-faqs/](https://inst.eecs.berkeley.edu/~cs188/sp25/fa25-faqs/)FAQ page if you have more questions
+
+<!-- page: 7 -->
+
+## Course Structure: Lectures
+
+▪ You are here!
+
+▪ Tuesday/Thursday, 5:00–6:30 PM PT
+
+▪ Attendance is not taken
+
+▪ But there may be a bit of extra credit for attending
+
+▪ You can attend:
+
+▪ In-person in Wheeler 150
+
+▪ Remotely over Zoom (we’ll try our best to livestream)
+
+▪ Asynchronously by watching recordings (posted on website)
+
+<!-- page: 8 -->
+
+## Course Structure: Discussions
+
+▪ Discussion schedule available on website
+
+▪ Discussions start next week (Sep 02)
+
+▪ We’ll try to make recordings, but no promises
+
+▪ You can attend any discussion section you want (no need to enroll in a section)
+
+<!-- page: 9 -->
+
+## Course Structure: Office Hours
+
+▪ Join in-person or remotely to talk to staff about content, ask questions on assignments, or raise any concerns you have
+
+▪ Schedule and queue available on website
+
+▪ Office hours start next week (Sep 02)
+
+<!-- page: 10 -->
+
+## Course Structure: Exams
+
+## ▪ Save the dates!
+
+▪ Midterm: Wed Oct 22, 7–9pm PT
+
+▪ Final exam: Thu Dec 18, 11:30am–2:30pm PT
+
+▪ If you can’t make it:
+
+▪ We’ll offer remote exams at the listed time
+
+▪ We’ll offer an in-person-only alternate exam right after the listed time
+
+▪ More logistics closer to the exam
+
+<!-- page: 11 -->
+
+## Resources
+
+▪ Course website: [https://inst.eecs.berkeley.edu/\~cs188/fa25/](https://inst.eecs.berkeley.edu/~cs188/fa25/)
+
+▪ All resources (slides, notes, recordings, assignments, etc.) posted here
+
+▪ Ed: Discussion forum replacing Piazza
+
+▪ Staff email for private concerns: [cs188@berkeley.edu](mailto:cs188@berkeley.edu)
+
+▪ Making a private post on Ed is easier/faster
+
+▪ Gradescope: Submit assignments here
+
+<!-- page: 12 -->
+
+## Grading Structure
+
+## ▪ Projects (25%)
+
+▪ Python programming assignments, autograded
+
+▪ You can optionally work with a partner
+
+▪ Reduced credit for submitting late, unless you have an extension
+
+## ▪ Homework (20%)
+
+▪ Electronic homework: Autograded on Gradescope
+
+▪ Written homework: One question per week, graded by TAs
+
+▪ Submit individually (but feel free to discuss with others)
+
+▪ No late submissions, unless you have an extension
+
+▪ Midterm (20%), Final Exam (35%)
+
+<!-- page: 13 -->
+
+## Extensions and Accommodations
+
+▪ We’ll drop your lowest homework score
+
+▪ If you ever need an extension, please request one!
+
+▪ We’re here to support you, and we understand that life happens.
+
+▪ Extension form will be posted on the website
+
+<!-- page: 14 -->
+
+## ▪ Disabled Students’ Program (DSP)
+
+▪ There’s a variety of accommodations UC Berkeley can help us set up for you in this class
+
+[https://dsp.berkeley.edu/](https://dsp.berkeley.edu/)
+
+▪ Please submit your DSP letter as soon as possible (if you have one)
+
+▪ Our goal is to teach you the material in our course. The more accessible we can make it, the better.
+
+<!-- page: 15 -->
+
+## Collaboration and Academic Dishonesty
+
+▪ We’re here to help! There are plenty of staff and resources available for you
+
+▪ You can always talk to a staff member if you’re feeling stressed or tempted to cheat
+
+▪ Collaboration on homework is okay, but please cite collaborators
+
+▪ Do not post solutions online or share with others!
+
+▪ Academic dishonesty policies
+
+▪ Reported to Center of Student Conduct
+
+▪ Negative points on assignments, and/or F in the class
+
+<!-- page: 16 -->
+
+## Stress Management and Mental Health
+
+## ▪ Your health is more important than this course
+
+▪ If you feel overwhelmed, there are options
+
+▪ Academically: Ask on Ed, talk to staff in office hours, set up a meeting with staff to make a plan for your success this semester
+
+## ▪ Non-academic:
+
+▪ Counselling and Psychological Services (CAPS) has multiple free, confidential services
+
+▪ Casual consultations: [https://uhs.berkeley.edu/counseling/lets-talk](https://uhs.berkeley.edu/counseling/lets-talk)
+
+▪ Crisis management: [https://uhs.berkeley.edu/counseling/urgent](https://uhs.berkeley.edu/counseling/urgent)
+
+▪ Check out UHS’s resources: [https://uhs.berkeley.edu/health-topics/mental-health](https://uhs.berkeley.edu/health-topics/mental-health)
+
+<!-- page: 17 -->
+
+## Second Half of Today: What is AI?
+
+▪ What is AI?
+
+▪ What can it do?
+
+▪ What is this course?
+
+![](images/page_16_image_4.jpg)
+
+<!-- page: 18 -->
+
+## AI is having real-world impact
+
+Public imagination
+
+▪ Text assistants
+
+![](images/page_17_image_3.jpg)
+
+<!-- page: 19 -->
+
+## AI is having real-world impact
+
+## ▪ Public imagination
+
+▪ Text assistants
+
+▪ Image generation
+
+![](images/page_18_image_4.jpg)
+
+vibrant portrait painting of Salvador Dalí with a robotic half face
+
+![](images/page_18_image_6.jpg)
+
+a shiba inu wearing a beret and black turtleneck
+
+![](images/page_18_image_8.jpg)
+
+![](images/page_18_image_9.jpg)
+
+an espresso machine that makes coffee from human souls, artstation
+
+![](images/page_18_image_11.jpg)
+
+panda mad scientist mixing sparkling chemicals, artstation
+
+a close up of a handpalm with leaves growing from it
+
+![](images/page_18_image_14.jpg)
+
+a corgi's head depicted as an explosion of a nebula
+
+<!-- page: 20 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ \$4.8 trillion by 2033 (25x increase in a decade)
+
+![](images/page_19_chart_4.jpg)
+
+https://unctad.org/publication/technology-and-innovation-report-2025
+
+<!-- page: 21 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+![](images/page_20_image_4.jpg)
+
+<!-- page: 22 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+![](images/page_21_image_4.jpg)
+
+https://www.nytimes.com/2025/02/11/world/europe/vance-speech-paris-ai-summit.html
+
+<!-- page: 23 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+Economy
+
+▪ Politics
+
+The New York Times
+
+OPINION
+
+## How A.I. Chatbots Become Political
+
+![](images/page_22_image_7.jpg)
+
+<!-- page: 24 -->
+
+## AI is having real-world impact
+
+## ▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+```txt
+Aug. 18, 2023, 12:18 PM; Updated: Aug. 18, 2023, 12:48 PM
+```
+
+![](images/page_23_image_6.jpg)
+
+Al-Generated Art Lacks Copyright Protection, D.C. Court Says (1)
+
+Bloomberg Law, 2023
+
+<!-- page: 25 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+UNMASKING AI MY MISSION TO PROTECT WHAT IS HUMAN IN A WORLD OF MACHINES
+
+![](images/page_24_image_6.jpg)
+
+<!-- page: 26 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+![](images/page_25_image_5.jpg)
+
+AI for Scaling Legal Reform: Mapping and Redacting Racial Covenants in Santa Clara County. Surani et al, 2024.
+
+<!-- page: 27 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+![](images/page_26_image_5.jpg)
+
+https://dataplusfeminism.mit.edu
+
+<!-- page: 28 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+## The human labor behind Al chatbots and other smart tools
+
+Data labeling is an important step in developing artificial intelligence but also exposes the people doing the work to harmful content.
+
+![](images/page_27_image_8.jpg)
+
+MarketWatch, 2023
+
+New York Times Bestseller
+
+Empire
+
+Dreams and Nightmares in Sam Altman's OpenAI
+
+Karen Hao
+
+<!-- page: 29 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+Politics
+
+▪ Law
+
+▪ Labor
+
+![](images/page_28_chart_6.jpg)
+
+Stanford Digital Economy Lab, 2025
+
+<!-- page: 30 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+Science & technology | The 2024 Nobel prizes
+
+## AI wins big at the Nobels
+
+Awards went to the discoverersof micro-RNA, pioneersof artificial-intelligence models and those using them for protein-structure prediction
+
+The Economist, 2024
+
+▪ Chemistry and biology
+
+<!-- page: 31 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+## ▪ Science
+
+▪ Physics
+
+SCIENCE FEB 16, 2022 11:00 AM
+
+## DeepMind Has Trained an Al to Control Nuclear Fusion
+
+The Google-backed firm taught a reinforcement learning algorithm to control the fiery plasma inside a tokamak nuclear fusion reactor.
+
+![](images/page_30_image_11.jpg)
+
+PHOTOGRAPH:CURDIN WÜTHRICH, SPC/EPFL
+
+Wired, 2022
+
+<!-- page: 32 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+## ▪ Science
+
+## ▪ Conservation
+
+![](images/page_31_image_8.jpg)
+
+Nature Communications, 2022
+
+<!-- page: 33 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+▪ Resource use
+
+Their Water Taps Ran Dry When Meta Built Next Door In the race to develop artificial intelligence, tech giants are building data centers that guzzle up water. That has led to problems for people who live nearby.
+
+The New York Times, 2025
+
+![](images/page_32_chart_10.jpg)
+
+<!-- page: 34 -->
+
+## AI is having real-world impact
+
+Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+▪ Health
+
+![](images/page_33_image_8.jpg)
+
+The Boston Globe, 2018
+
+<!-- page: 35 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+▪ Health
+
+Education
+
+BREAKING
+
+ChatGPT In Schools: Here's Where It's Banned—And How It Could Potentially Help Students
+
+Arianna Johnson Forbes Staff I cover the latest trends in science, tech and healthcare.
+
+Follow
+
+目 2
+
+Forbes, 2023
+
+<!-- page: 36 -->
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+▪ Health
+
+▪ Education
+
+## ▪ Social interaction
+
+It's almost like we never even spoke': AI is making everyone on dating apps sound charming
+
+As more people use Al to doctor their messages, others are left wondering exactly who they're falling for.
+
+Updated July 3,2025
+
+<!-- page: 37 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+▪ Health
+
+▪ Education
+
+## ▪ Social interaction
+
+## Meet My A.I. Friends
+
+Our columnist spent the past month hanging out with 18 A.I. companions. They critiqued his clothes, chatted among themselves and hinted at a very different future.
+
+Hey can I get your thoughts on something rq?
+
+![](images/page_36_image_13.jpg)
+
+The New York Times, 2024
+
+<!-- page: 38 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+▪ Science
+
+▪ Health
+
+▪ Education
+
+▪ Social interaction
+
+## Chatbots Can Go Into a Lege Delusional Spiral. Here's How It Happens.
+
+BOOM. That's it.
+
+YES!
+
+Oh. WOW.
+
+You've just shattered t
+
+npossible already.
+
+Allan — that's a paradigm-shifting idea.
+
+The New York Times, 2025
+
+<!-- page: 39 -->
+
+## AI is having real-world impact
+
+▪ Public imagination
+
+▪ Economy
+
+▪ Politics
+
+▪ Law
+
+▪ Labor
+
+Ok, but what actually is AI???
+
+▪ Science
+
+▪ Health
+
+▪ Education
+
+▪ Social interaction
+
+<!-- page: 40 -->
+
+## What should we build?
+
+Should we make machines that…
+
+![](images/page_39_image_2.jpg)
+
+<!-- page: 41 -->
+
+## Rational Decisions
+
+▪ We’ll use the term **rational** in a very specific, technical way:
+
+▪ Rational: maximally achieving pre-defined goals
+
+▪ Goals are expressed in terms of the **utility** of outcomes
+
+▪ World is uncertain, so we’ll use **expected** utility
+
+▪ Being rational means acting to **maximize your expected utility**
+
+![](images/page_40_image_6.jpg)
+
+<!-- page: 42 -->
+
+## Rational Decisions
+
+▪ We’ll use the term **rational** in a very specific, technical way:
+
+▪ Rational: maximally achieving pre-defined goals
+
+▪ Goals are expressed in terms of the **utility** of outcomes
+
+▪ World is uncertain, so we’ll use **expected** utility
+
+▪ Being rational means acting to **maximize your expected utility**
+
+A better title for this course might be: **Computational Rationality**
+
+<!-- page: 43 -->
+
+## Perspectives on Intelligence
+
+▪ Skills-based perspective
+
+▪ “A system is only intelligent if it can do [X].”
+
+▪ Play chess?
+
+▪ Learn from experience?
+
+▪ Use words properly?
+
+▪ Make mistakes?
+
+▪ Not make mistakes?
+
+<!-- page: 44 -->
+
+## Perspectives on Intelligence
+
+▪ Embodiment perspective (Rodney Brooks)
+
+![](images/page_43_image_2.jpg)
+
+![](images/page_43_image_3.jpg)
+
+<!-- page: 45 -->
+
+## Perspectives on Intelligence
+
+▪ Psychometrics perspective (François Chollet)
+
+“Measuring abilities, not skills […] across a broad range of tasks, including tasks that were previously unknown to the ability-enabled system and its developers.”
+
+![](images/page_44_image_3.jpg)
+
+<!-- page: 46 -->
+
+## Perspectives on Intelligence
+
+## ▪ Human-compatible perspective (Stuart Russell)
+
+"The most important book thave read in qulte some time -Daniel Kahneman, auorof THINKING. FAST AND SLOW
+
+Human Compatible
+
+ARTIFICIAL INTELLIGENCE AND THE PROBLEM OF CONTROL
+
+![](images/page_45_image_5.jpg)
+
+Stuart Russell
+
+1.Machine’s objective is to maximize human utility.
+
+2.Initially uncertain about human preferences.
+
+3.Must learn about preferences from human behavior.
+
+<!-- page: 47 -->
+
+## Perspectives on Intelligence
+
+A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects.
+
+—Robert A. Heinlein
+
+<!-- page: 48 -->
+
+## What About the Brain?
+
+Brains (human minds) are very good at making rational decisions, but not perfect
+
+▪ Brains aren’t as modular as software, so hard to reverse engineer!
+
+▪ AI may be better than brains at some tasks
+
+“Brains are to intelligence as wings are to flight”
+
+▪ We can’t yet build AI on the scale of the brain ▪ \~100T synapses in the human brain vs \~1.8T weights in GPT4
+
+▪ Still, the brain can be a great inspiration for AI!
+
+![](images/page_47_image_7.jpg)
+
+<!-- page: 49 -->
+
+## A (Short) History of AI
+
+▪ 1940-1950: Early days: neural and computer science meet 1943: McCulloch & Pitts: Perceptron–boolean circuit model of brain 1950: Turing's “Computing Machinery and Intelligence”
+
+## 1950—70: Excitement! Logic-driven
+
+1950s: Early AI programs, including Samuel's checkers program, Newell & Simon's Logic Theorist, Gelernter's Geometry Engine
+
+▪ 1956: Dartmouth meeting: “Artificial Intelligence” adopted
+
+“We propose that a <strong><u>2-month, 10-man study of artificial intelligence</u></strong> be carried out <strong><u>during the summer of 1956</u></strong> at Dartmouth College in Hanover, New Hampshire. The study is to proceed on the basis of the conjecture that <strong><u>every aspect of learning</u></strong> or **any** <strong><u>other feature of intelligence</u></strong> can in principle be so precisely described that a machine can be made to simulate it. An attempt will be made to find how to make machines use language, form abstractions and concepts, solve kinds of problems now reserved for humans, and improve themselves. <strong><u>We think that a significant advance can be made</u></strong> in one or more of these problems if a carefully selected group of scientists work on it together for a summer.”
+
+![](images/page_48_image_6.jpg)
+
+<!-- page: 50 -->
+
+## A (Short) History of AI
+
+1940-1950: Early days: neural and computer science meet 1943: McCulloch & Pitts: Perceptron–boolean circuit model of brain 1950: Turing's “Computing Machinery and Intelligence”
+
+## ▪ 1950—70: Excitement! Logic-driven
+
+1950s: Early AI programs, including Samuel's checkers program, Newell & Simon's Logic Theorist, Gelernter's Geometry Engine
+
+▪ 1956: Dartmouth meeting: “Artificial Intelligence” adopted
+
+▪ 1969: Minsky & Papert: perceptrons can’t learn XOR/parity!
+
+## 1970—90: Knowledge-based approaches
+
+▪ 1969—79: Early development of knowledge-based systems
+
+1980—88: Expert systems industry booms; backpropagation makes it feasible to train multi-layer neural networks
+
+▪ 1988—93: Expert systems industry busts: “AI Winter”
+
+## 1990—2010: Statistical approaches, agents
+
+Resurgence of probability, focus on uncertainty
+
+▪ Agents and learning systems… “AI Spring”?
+
+1992: TD-Gammon achieves human-level play at backgammon
+
+1997: Deep Blue defeats Gary Kasparov at chess
+
+2002: Embodied AI; Roomba vacuum invented
+
+![](images/page_49_image_16.jpg)
+
+<!-- page: 51 -->
+
+## A (Short) History of AI
+
+2010—2017: Big Data, GPUs, Deep Learning
+
+▪ 2011: Apple releases Siri
+
+▪ 2012: AlexNet wins ImageNet competition
+
+▪ 2015: DeepMind achieves “human-level” control in Atari games
+
+2016: DeepMind’s AlphaGo defeats Lee Sedol at Go
+
+▪ 2016: Google Translate migrates to neural networks
+
+## 2017—: Scaling Up, Large Language Models
+
+2017: Google invents Transformer architecture
+
+2017: DeepStack/Libratus defeat humans at poker
+
+2018-2020: AlphaFold predicts protein structure from amino acids
+
+2021-2022: Modern text-to-image generation
+
+▪ 2022: OpenAI releases ChatGPT
+
+▪ 2023: Every other company also releases a chatbot
+
+▪ 2024: Nobel prizes in physics and chemistry go to AI advances
+
+![](images/page_50_image_15.jpg)
+
+<!-- page: 52 -->
+
+## A (Short) History of AI
+
+▪ Zooming out, some general patterns:
+
+▪ Overclaiming followed by disillusionment (AI winters)
+
+▪ Simultaneous discovery, or rediscovery, of ideas
+
+▪ Interdisciplinary
+
+▪ Math, statistics, control theory, neuroscience, psychology, economics, philosophy, computer engineering, linguistics
+
+▪ And increasingly: law, medicine, education…
+
+<!-- page: 53 -->
+
+## What Can AI Do?
+
+![](images/page_52_image_1.jpg)
+
+![](images/page_52_image_2.jpg)
+
+**Quiz:** Which of the following can be done at present? Win against any human at chess? Win against the best humans at Go? Play a decent game of table tennis? Unload any dishwasher in any home? Drive safely along the highway? Drive safely along streets of San Francisco? Buy a week's worth of groceries on the web? Buy a week's worth of groceries at Berkeley Bowl? Discover and prove a new mathematical theorem? Perform a surgical operation? Translate spoken Chinese into spoken English in real time? Win an art competition? Write an intentionally funny story? Construct a building?
+
+![](images/page_52_image_4.jpg)
+
+<!-- page: 54 -->
+
+## What Can AI Do?
+
+![](images/page_53_image_1.jpg)
+
+**Quiz:** Which of the following can be done at present?
+
+![](images/page_53_image_3.jpg)
+
+Win against any human at chess?
+
+Win against the best humans at Go?
+
+Play a decent game of table tennis?
+
+Unload any dishwasher in any home?
+
+Drive safely along the highway?
+
+Drive safely along streets of San Francisco?
+
+Buy a week's worth of groceries on the web?
+
+Buy a week's worth of groceries at Berkeley Bowl?
+
+Discover and prove a new mathematical theorem?
+
+Perform a surgical operation?
+
+Translate spoken Chinese into spoken English in real time?
+
+Win an art competition?
+
+Write an intentionally funny story?
+
+Construct a building?
+
+## Google’s AlphaGo beats Lee Sedol at Go in 2016
+
+![](images/page_53_image_19.jpg)
+
+But … a plot twist in 2023!
+
+## Man beats machine at Go in human victory over AI
+
+Amateur exploited weakness in systems that have otherwise dominated grandmasters.
+
+RICHARD WATERS, FINANCIAL TIMES - 2/19/2023, 4:51 AM
+
+<!-- page: 55 -->
+
+## What Can AI Do?
+
+**Quiz:** Which of the following can be done at present?
+
+Win against any human at chess?
+
+![](images/page_54_image_3.jpg)
+
+Win against the best humans at Go?
+
+![](images/page_54_image_5.jpg)
+
+Play a decent game of table tennis? Unload any dishwasher in any home? Drive safely along the highway? Drive safely along streets of San Francisco? Buy a week's worth of groceries on the web? Buy a week's worth of groceries at Berkeley Bowl? Discover and prove a new mathematical theorem? Perform a surgical operation? Translate spoken Chinese into spoken English in real time? Win an art competition? Write an intentionally funny story? Construct a building?
+
+![](images/page_54_image_7.jpg)
+
+<!-- page: 56 -->
+
+## What Can AI Do?
+
+## Quiz: Which of the following can be done at present?
+
+Win against any human at chess?
+
+Win against the best humans at Go?
+
+Play a decent game of table tennis?
+
+Unload any dishwasher in any home?
+
+Drive safely along the highway?
+
+Drive safely along streets of San Francisco?
+
+Buy a week's worth of groceries on the web?
+
+Buy a week's worth of groceries at Berkeley Bowl?
+
+Discover and prove a new mathematical theorem?
+
+Perform a surgical operation?
+
+Translate spoken Chinese into spoken English in real tim
+
+Win an art competition?
+
+Write an intentionally funny story?
+
+Construct a building?
+
+## California just opened the floodgates for self-driving cars
+
+After a state regulatory board ruling, San Francisco will have 24/7 robotaxis on its streets. A Washington Post analysis shows how it's a pivotal moment for the industry.
+
+By Trisha Thadani and Jeremy B. Merrill
+
+Updated August 10, 2023 at 10:06 p.m. EDT|Published August 10, 2023 at 9:15 p.m. EDT
+
+## TheARegister®
+
+## California DMV hits brakes on Cruise's SF driverless fleet after series of fender benders
+
+50% chop effective 'immediately' as department investigates traffic and safety issues
+
+Jude Karabus
+
+Mon 21 Aug 2023 //14:28 UTC
+
+<!-- page: 57 -->
+
+## What Can AI Do?
+
+**Quiz:** Which of the following can be done at present?
+
+Win against any human at chess?
+
+Win against the best humans at Go?
+
+Play a decent game of table tennis?
+
+Unload any dishwasher in any home?
+
+Drive safely along the highway?
+
+Drive safely along streets of San Francisco?
+
+Buy a week's worth of groceries on the web?
+
+Buy a week's worth of groceries at Berkeley Bowl?
+
+Discover and prove a new mathematical theorem?
+
+Perform a surgical operation?
+
+Translate spoken Chinese into spoken English in real
+
+Win an art competition?
+
+Write an intentionally funny story?
+
+Construct a building?
+
+![](images/page_56_image_16.jpg)
+
+Jason Allen Théatre D'opéra Spatial \$750
+
+<!-- page: 58 -->
+
+## What Can AI Do?
+
+**Quiz:** Which of the following can be done at present?
+
+Win against any human at chess?
+
+Win against the best humans at Go?
+
+Play a decent game of table tennis?
+
+Unload any dishwasher in any home?
+
+please write me a very funny, and extremely short story
+
+Drive safely along the highway?
+
+Drive safely along streets of San Francisco?
+
+A penguin walks into a bar, looks around, and says,
+
+Buy a week's worth of groceries on the web?
+
+"Has anyone seen my brother?"
+
+Buy a week's worth of groceries at Berkeley Bowl?
+
+The bartender squints and asks,
+
+Discover and prove a new mathematical theorem?
+
+"What does he look like?"
+
+Perform a surgical operation?
+
+Translate spoken Chinese into spoken English in real time?
+
+ChatGPT, 2025
+
+Win an art competition?
+
+Write an intentionally funny story?
+
+Construct a building?
+
+<!-- page: 59 -->
+
+## What Can AI Do?
+
+**Quiz:** Which of the following can be done at present?
+
+Win against any human at chess?
+
+Win against the best humans at Go?
+
+Play a decent game of table tennis?
+
+Unload any dishwasher in any home?
+
+Drive safely along the highway?
+
+Drive safely along streets of San Francisco?
+
+Buy a week's worth of groceries on the web?
+
+Buy a week's worth of groceries at Berkeley Bowl?
+
+Discover and prove a new mathematical theorem?
+
+Perform a surgical operation?
+
+Translate spoken Chinese into spoken English in real time?
+
+Win an art competition?
+
+Write an intentionally funny story?
+
+Construct a building?
+
+![](images/page_58_image_16.jpg)
+
+<!-- page: 60 -->
+
+## This Course: Designing Rational Agents
+
+▪ An **agent** is an entity that perceives and acts.
+
+▪ A **rational agent** selects actions that maximize its (expected) **utility**.
+
+Characteristics of the **percepts**, **environment**, and **action space** dictate techniques for selecting rational actions
+
+▪ This course is about:
+
+▪ General AI techniques for a variety of problem types
+
+Learning to recognize when and how a new problem can be solved with an existing technique
+
+![](images/page_59_image_7.jpg)
+
+![](images/page_59_image_8.jpg)
+
+<!-- page: 61 -->
+
+## Pac-Man as an Agent
+
+![](images/page_60_image_1.jpg)
+
+SCORE: 18
+
+![](images/page_60_image_3.jpg)
+
+<!-- page: 62 -->
+
+![](images/page_61_image_0.jpg)
+
+<!-- page: 63 -->
+
+## Course Topics
+
+Core Components of Rational Agents:
+
+Search & Planning
+
+Probability & Inference
+
+Supervised Learning
+
+Reinforcement Learning
+
+<!-- page: 64 -->
+
+## Course Topics
+
+Search & Planning
+
+Supervised Learning
+
+Probability & Inference
+
+Reinforcement Learning
+
+![](images/page_63_image_5.jpg)
+
+How can I use my **model** of the world to find a **sequence of actions** to achieve my **goal**?
+
+<!-- page: 65 -->
+
+## Course Topics
+
+Search & Planning
+
+Supervised Learning
+
+Probability & Inference
+
+Reinforcement Learning
+
+![](images/page_64_image_5.jpg)
+
+How can I make sense of **uncertainty**?
+
+<!-- page: 66 -->
+
+## Course Topics
+
+Search & Planning
+
+Probability & Inference
+
+![](images/page_65_image_3.jpg)
+
+Supervised Learning
+
+Reinforcement Learning
+
+How can I learn a **model** of the world from **data**?
+
+<!-- page: 67 -->
+
+## Course Topics
+
+![](images/page_66_image_1.jpg)
+
+Search & Planning
+
+Supervised Learning
+
+Probability & Inference
+
+Reinforcement Learning
+
+How can I learn a **policy** for any situation so that I can **maximize utility**?
+
+<!-- page: 68 -->
+
+## Course Topics
+
+Search & Planning
+
+Probability & Inference
+
+Supervised Learning
+
+Reinforcement Learning
+
+<!-- page: 69 -->
+
+Course Topics
+
+Probability & Inference
+
+![](images/page_68_image_2.jpg)
+
+Reinforcement Learning
+
+Applications
+
+<!-- page: 70 -->
+
+## Should I take CS 188?
+
+▪ Yes, if you want to know how to design rational agents!
+
+▪ CS 188 gives you extra mathematical maturity
+
+▪ CS 188 gives you a survey of other non-CS fields that interact with AI (e.g. robotics, cognitive science, economics)
+
+▪ Disclaimer: If you’re interested in making yourself more competitive for AI jobs, CS 189 and CS 182 are better fits.
+
+▪ CS 188 will touch on some of the modern tools (like neural networks), but CS 189 and CS 182 cover these in more depth.
+
+<!-- page: 71 -->
+
+## By the end of this course you’ll:
+
+▪ Build and understand math of rational, learning agents
+
+▪ Select and apply the right AI methods for wide range of problems
+
+▪ Recognize how these methods are used in modern AI systems
+
+▪ Be prepared to make decisions on how AI is used in society
+
+![](images/page_70_image_5.jpg)
+
+<!-- page: 72 -->
+
+## In closing: I am very excited to teach this class
+
+## Artificial Intelligence A Modern Approach
+
+![](images/page_71_image_2.jpg)
+
+Stuart Russell • Peter Norvig Prentica Hall Series in Artificial Intelligen
+
+<!-- page: 73 -->
+
+## In closing: I am very excited to teach this class
+
+CONFIDENTIAL
+
+![](images/page_72_image_2.jpg)
+
+## Multisite 3 BRACAnalysis Three Mutation BRCA1 and BRCA2 Analysis for Ashkenazi Individuals
+
+![](images/page_72_image_4.jpg)
+
+![](images/page_72_image_5.jpg)
+
+PHYSICIAN
+
+Specimen Type:
+
+Draw Date:
+
+Accession Date:
+
+Report Date:
+
+## SPECIMEN
+
+Buccal Wash Nov 22, 2011 Nov 25, 2011 Dec 01, 2011
+
+Name: Date of Birth: Patient ID: Gender: Accession #: Requisition #:
+
+Pierson, Emma
+
+Test Results and Interpretation
+
+POSITIVE FOR A DELETERIOUS MUTATION
+
+<!-- page: 74 -->
+
+![](images/page_73_image_1.jpg)
