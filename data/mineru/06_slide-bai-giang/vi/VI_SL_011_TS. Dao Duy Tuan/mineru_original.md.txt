@@ -1,0 +1,3469 @@
+## TRÍ TUỆ NHÂN TẠO
+
+**TS. Đào Duy Tuấn**
+
+## Tham khảo:
+
+Giáo trình Trí tuệ Nhân tạo, TS. Nguyễn Văn Hiệu, khoa CNTT, Trường Đại **học Bách Khoa – Đại học Đà Nẵng**
+
+Giáo trình Trí tuệ Nhân tạo, TS. Hoàng Lê Uyên Thục, khoa ĐTVT, Trường **Đại học Bách Khoa – Đại học Đà Nẵng**
+
+## Nội dung
+
+**1. Introduction to Artificial Intelligence, history of AI, course logistics**
+
+**2. Intelligent agents, uninformed search**
+
+**3. Heuristic search,** $A ^ { * }$ **algorithm**
+
+**4. Adversarial search, games**
+
+**5. Adversarial search, games (continue)**
+
+## 6. Mid-term
+
+**7. Machine Learning: Basic concepts, linear models, perceptron, K nearest neighbors**
+
+**8. Machine Learning: Basic concepts, linear models, perceptron, K nearest neighbors (continue)**
+
+**9. Machine Learning: advanced models, neural networks, SVMs, decision trees and unsupervised learning**
+
+**10. Machine Learning: advanced models, neural networks, SVMs, decision trees and unsupervised learning (continue)**
+
+**11. Final-exam**
+
+## Chương 1: Giới thiệu
+
+## Nội dung
+
+**• Khái niệm về trí tuệ nhân tạo(AI)**
+
+**• Ứng dụng của trí tuệ nhân tạo**
+
+**• Nền tảng của trí tuệ nhân tạo**
+
+**• Lịch sử phát triển trí tuệ nhân tạo**
+
+## Khái niệm về trí tuệ nhân tạo (AI)
+
+Trí tuệ: Khả năng học hỏi và giải quyết vấn đề
+
+**&lt;Từ điển Webster&gt;**
+
+Trí tuệ nhân tạo là trí tuệ được thể hiện bằng máy móc hoặc phần **mềm, trái ngược với trí tuệ tự nhiên**
+
+**&lt;Wikipedia&gt;**
+
+Ngành Khoa học và kỹ thuật làm cho máy móc thông minh
+
+**&lt;McCarthy&gt;**
+
+Nghiên cứu và thiết kế các tác nhân thông minh, trong đó mỗi tác nhân **thông minh là một hệ thống nhận thức được môi trường của nó và thực hiện các hành động nhằm tối đa hóa cơ hội thành công.**
+
+**&lt;Sách của Russell &amp; Norvig &gt;**
+
+## Khái niệm về trí tuệ nhân tạo(AI)
+
+Trên thế giới có nhiều khái niệm khác nhau $\mathrm { v } \hat { \mathsf { e } }$ **trí tuệ nhân tạo. Hiện nay vẫn chưa thống nhất** $\mathrm { v } \hat { \mathsf { e } }$ **khái niệm trí tuệ nhân tạo.**
+
+Tuy vậy, có hai trường phái khái niệm về trí tuệ nhân tạo
+
+**o Strong AI: Tạo ra thiết bị và chương trình máy tính thông minh hơn người**
+
+**o Weak AI: Tạo ra thiết bị và chương trình máy tính có thể mô phỏng hành vi thông minh của con người**
+
+## Khái niệm về trí tuệ nhân tạo
+
+**● Hiện nay tồn tại 4 quan niệm về trí tuệ nhân tạo**
+
+**o Trí tuệ nhân tạo suy nghĩ như người**
+
+**o Trí tuệ nhân tạo hành động như người**
+
+**o Trí tuệ nhân tạo hành động có lý trí**
+
+**o Trí tuệ nhân tạo suy nghĩ có lý trí**
+
+Bài giảng sẽ tập trung theo quan niệm hành động như người
+
+**o Học máy**
+
+**o Xử lý ngôn ngữ tự nhiên**
+
+**o Xử lý ảnh**
+
+**o Robotics**
+
+## Trí tuệ nhân tạo suy nghĩ như người
+
+**● Cách tiếp cận cuối thế kỷ 19, đầu thế kỷ 20 về tâm lý học nhận thức.**
+
+**● Nghiên cứu xem trí tuệ của con người là gì?**
+
+Nghiên cứu các chức năng thể hiện trí tuệ như: xử lý ngôn ngữ, nghĩ, **học và lập luận được thực hiện như thế nào?**
+
+Yêu cầu của trường phái này: chương trình máy tính không chỉ giải **đúng bài toán, mà còn đúng từng bước giải của con người.**
+
+**● Hai cách tiếp cận:**
+
+**○** <strong><u>Trên xuống</u></strong>**: Tâm lý học nhân thức ->Symbolism (Simon & Newell, 1961).**
+
+<strong><u>Dưới lên</u></strong>**: Neural and Brain Science (Mcculloch, Pitt 1950s) Artificial Neural Networks.**
+
+## Có 4 quan điểm về AI
+
+| Suy nghĩnhư người | Suy nghĩcó lý trí |
+| --- | --- |
+| Hành động như người | Hành động có lý trí |
+
+**Tài liệu tập trung vào nhóm quan điểm “hành động có lý trí”.**
+
+## Trí tuệ nhân tạo hành động như người
+
+**● Turing (1950) "Computing machinery and intelligence":**
+
+**● “Máy tính có thể nghĩ?" -> “Máy tính có thể hành động thông minh?"**
+
+Turing Test: Một hệ thống vượt qua bài kiểm tra, nếu nó có thể đánh lừa **được người kiểm tra.**
+
+![](images/page_9_image_4.jpg)
+
+**● Ưu điểm của Turing Test**
+
+**○ Khái niệm khách quan về trí tuệ**
+
+**○ Tránh đi những thảo luận về quá trình bên trong và ý thức**
+
+**○ Loại trừ định kiến thiên vị của người thẩm vấn**
+
+## Trí tuệ nhân tạo hành động như người
+
+**● Phản đối Turing Test: Trói buộc sự thông minh máy tính theo kiểu con người, trong khi con người có:**
+
+**○ Bộ nhớ giới hạn**
+
+**○ Có khuynh hướng nhầm lẫn**
+
+**● Tuy nhiên Turing Test đã tạo cơ sở cho nhiều đánh giá về chương trình trí tuệ nhân tạo hiện đại**
+
+![](images/page_10_image_5.jpg)
+
+![](images/page_10_image_6.jpg)
+
+## Trí tuệ nhân tạo suy nghĩ có lý trí
+
+**● Suy nghĩ đúng với logic**
+
+Bắt đầu từ thời Hylạp cổ đại (Rule of Arguments) cho đến G. Boole **(Mathematical Model of Thoughts), cho đến Hilbert (Logics) xây dựng các hình thức của logic khác nhau: ký hiệu và quy tắc**
+
+**● Các vấn đề:**
+
+**○ Không phải tất cả tri thức đều có thể biểu diễn bằng ký hiệu logic.**
+
+**○ Mục đích của suy nghĩ là gì?**
+
+## Trí tuệ nhân tạo hành động có lý trí
+
+**● Doing the right thing (not “Doing the thing right”).**
+
+Hành động được coi là thông minh nếu giúp cho tác nhân (agent) thực **hiện hành động tăng cơ hội đạt được đích đặt ra trong môi trường mà nó tồn tại**
+
+**● Như vậy: Lợi điểm của định nghĩa:**
+
+**○ Thông minh không nhất thiết phải là con người hay giống người!!**
+
+**○ Hành vi thông minh không nhất thiết phải thực hiện thông qua suy nghĩ, lý luận.**
+
+## Định nghĩa về trí tuệ nhân tạo
+
+**Trí tuệ nhân tạo là khoa học nghiên cứu các hành vi thông minh nhằm giải quyết các vấn đề được đặt ra đối với các chương trình máy tính!!!**
+
+![](images/page_13_image_2.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+## ChatGPT O
+
+## Ứng dụng của trí tuệ nhân tạo
+
+**● Nhận diện giọng nói (Speech recognition)**
+
+○ **Trợ lý ảo: Siri (Apple), Echo,Alexa(Amazon), Google Now(Microsoft).**
+
+○ **Hỗ trợ công việc như: gửi email, đặt lịch hẹn, tìm nhà hàng, cho bạn biết thời tiết, ….vv.**
+
+**○ Sử dụng mạng học sâu để xử lý nhận dạng giọng nói và hiểu ngôn ngữ tự nhiên.**
+
+## Ứng dụng của trí tuệ nhân tạo
+
+## ● Dịch máy (Machine translation)
+
+**○ Ngày nay, Dịch máy thống kê phát triển rộng với số lượng của kho văn bản dịch có sẵn.**
+
+**○ Dịch máy đang ngày càng cải tiến và đã có những tiến bộ đáng kể.**
+
+**○ Sequence to Sequence**
+
+≡ Google Dich
+
+![](images/page_16_image_6.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+**● Người máy (Robots)**
+
+**○ Trên thế giới có nhiều người máy tuyệt vời như NAO, ASIMO, Sophia,...vvv**
+
+**○ Danh sách 10 người máy tuyệt vời trên thế giới**
+
+<strong><u>https://www.youtube.com/watch?v=u3vdgJVyKeg</u></strong>
+
+![](images/page_17_image_5.jpg)
+
+# Ứng dụng của trí tuệ nhân tạo
+
+**Hệ thống gợi ý(Recommender system)**
+
+**○ Amazon, NetFlix**
+
+![](images/page_18_image_3.jpg)
+
+These items are dispatched from and sold by different sellers. Show details This item: Delidigi Wall Mount ABS Echo Dot Bracket Holder Shelf [Built-in Cable Management] for Dot 3rd... £8.99 Echo Dot (3rd Gen) - Smart speaker with Alexa - Charcoal Fabric £49.99
+
+![](images/page_18_image_5.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+**● Hệ thống tìm kiếm (Search engines)**
+
+**○ Google, Yandex**
+
+## Google
+
+Hinh ành
+
+Tin túpc
+
+Thêm
+
+Cài đăt Công c
+
+Khong 5.510.000.000 kt quà (0,43 giây)
+
+Quàng cáo· www.udemy.com/
+
+Artificial Intelligence A-Z™: Learn How To Build An Al | Udemy
+
+Learn Data Science Online At Your Own Pace. Start Today and Become an Expert in Days. Join Over 40 Million People Learning Online with Udemy. 30-Day Money-Back Guarantee! View Our Courses. Lifetime Access. Download Our Mobile App. Expert Instructions.
+
+Trending New Courses
+
+Teach the World Online
+
+Find Out What is New In Your Field
+
+Share Your Knowledge, Make Money
+
+Start Learning a New Skill Today
+
+Reach Students Across The Globe
+
+Quáng cáo· executive-education-online.mit.edu/MIT-Sloan/Online-Course +1617-997-4979
+
+MIT Sloan Online AI Course | Earn Your Certificate Online
+
+Learn How To Transform Your Organization with Al. Apply to MIT's Online Course Today. Become a Leader in Artificial Intelligence Business Strategy, Online at MIT. Apply Now! Manage AI. 6 Week Program. MIT Certificate. Personalized Support.
+
+## Ứng dụng của trí tuệ nhân tạo
+
+● **Phát hiện khuôn mặt (Face detection)**
+
+○ **Viola-Jones method.**
+
+![](images/page_20_image_3.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+**● Nhận dạng khuôn mặt (Face recognition)**
+
+![](images/page_21_image_2.jpg)
+
+FACE RECOGNITION
+
+![](images/page_21_image_4.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+**● Cờ vua (Chess)**
+
+**○ 1997, IBM Deep Blue đã thắng kiện tướng cờ vua Kasparov**
+
+**○ Thuật toán tìm kiếm**
+
+![](images/page_22_image_4.jpg)
+
+![](images/page_22_image_5.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+Trò chơi trên truyền hình trên kênh Jeopardy
+
+**○ 2011, IBM Watson đã thắng cả** <strong><u>Brad Rutter</u></strong> **và Ken** <strong><u>Jennings</u></strong>
+
+**○ Hiểu ngôn ngữ tự nhiên và kỹ thuật trích thông tin**
+
+![](images/page_23_image_4.jpg)
+
+## Ứng dụng của trí tuệ nhân tạo
+
+## ● Cờ vây
+
+**○ 2016, Google AlphaGo đã thắng kiện tướng cờ vây Lee Sedol**
+
+**○ Sử dụng kỹ thuật học sâu, kỹ thuật học tăng cường và kỹ thuật tìm kiếm**
+
+![](images/page_24_image_4.jpg)
+
+![](images/page_24_image_5.jpg)
+
+## Trí tuệ nhân tạo trong lĩnh vực y tế
+
+![](images/page_25_image_1.jpg)
+
+## Trí tuệ nhân tạo trong lĩnh vực y tế
+
+Health services management
+
+Clinical decisionmaking
+
+![](images/page_26_image_3.jpg)
+
+Al for Healthcare
+
+Predictive medicine
+
+Patient data
+
+## Artificial Intelligence in the Movies
+
+![](images/page_27_image_1.jpg)
+
+![](images/page_27_image_2.jpg)
+
+![](images/page_27_image_3.jpg)
+
+![](images/page_27_image_4.jpg)
+
+![](images/page_27_image_5.jpg)
+
+![](images/page_27_image_6.jpg)
+
+## Why the interest in AI?
+
+![](images/page_28_image_1.jpg)
+
+![](images/page_28_image_2.jpg)
+
+Science
+
+![](images/page_28_image_4.jpg)
+
+Appliances
+
+Google YAHOO!
+
+**Search engines**
+
+![](images/page_28_image_8.jpg)
+
+**Medicine/ Diagnosis**
+
+**What else?**
+
+![](images/page_29_image_0.jpg)
+
+## A.L.I.C.E. AI Foundation
+
+New: Find a Bot in the A. I. Foundation Bot Directory!
+
+Begin your journey here: Chat with a bot!
+
+![](images/page_29_image_4.jpg)
+
+A. L. I. C. E.
+
+DAVE E.S.L. bot
+
+DAVE E. S. L. Bot
+
+C.L.A.U.D.I.O Personality Test
+
+Take the C. L. A. U. D. I. O. Personality Test
+
+Learn how to become a Botmaster:
+
+Create your own A. I. chat robot...
+
+GET [VIHOSTAVATARS
+
+Host your bot
+
+A.L.I.C.E Silver Edition
+
+Join the A. I. Foundation
+
+Download Free AIML Software
+
+![](images/page_29_image_17.jpg)
+
+Get Documentation about AIML and ALICE software
+
+Launch your career in Artificial Intelligence:
+
+Make Money with your bot.
+
+Read the Testimonials
+
+Take the TAO of AIML Seminar
+
+![](images/page_29_image_23.jpg)
+
+Read Be Your Own Botmaster by Dr. Richard S. Wallace
+
+# ALICEBOT
+
+![](images/page_30_image_2.jpg)
+
+The AIML Superbot is a blank template that helps you create a custom chat bot from scratch. If you want to create a bot with its own proprietary, unique personality, the Superbot helps you by providing a rich set of patterns that allow you to "fill in the blanks" with your own bot responses.
+
+![](images/page_30_image_4.jpg)
+
+Building a bot from scratch can still be a daunting task for those new to AIML and chat bot creation. That is why we are now offering 2 hours of free consulting time with your Superbot purchase. You will be able to talk directly by phone or Skype with Dr. Richard S. Wallace or another AIML expert and receive support and help with your bot project.
+
+![](images/page_30_image_6.jpg)
+
+## Dr. Richard Wallace drwallace
+
+Virtual DJ Denise is the First Artificial Intelligent Radio Host http://t.co/A7sSNHh8 days ago· reply· retweet - favorite
+
+Use your consultation time to get specific answers to all your questions about bot content creation and help with your project, including help linking the bot to speech recognition systems, avatars, speech synthesis and other third-party applications.
+
+A.L.I.C.E. Silver Edition CLAUDIO Personality Test DAVE E.S.L. Bot
+
+Robot teaches English as Second Language http://t.co/6MpwQip10 days ago· reply· retweet· favorite
+
+This offer expires on October 1, 2011.
+
+Superbot Offer - Free Consulting http://t.co/NEC9ceT44 days ago· reply·retweet· favorite
+
+Pandorabots
+
+Emma the Cybrarian: http://t.co/elWJMZr57 days ago - reply - retweet - favorite
+
+Riot Software
+
+ALICE, Dick Cavett, R.L. Stine and me on the WFMU radio show 7 Second Delay
+
+Dragon Medical Practice Sale | Dragon Medical Practice | Free shipp Passion for Design? Turn Your Passion into a Profession at The Art Top 10 HRIS Software 2011 Top 10 Human Resource Software Vend Microsoft® Office 365 Access Email, Documents & Calendars Anytir < >
+
+Wikipedia
+
+http://t.co/YyPhFOB
+
+Agentland
+
+85 days aqo· reply · retweet· favorite
+
+## Nền tảng cơ sở của trí tuệ nhân tạo
+
+**● Trí tuệ nhân tạo kế thừa các ý tưởng, quan điểm và các kỹ thuật từ các ngành học khác nhau**
+
+**○ Triết học**
+
+**○Toán học**
+
+**○Kinh tế học**
+
+**○Khoa học thành kinh**
+
+**○Tâm lý học**
+
+**○Kỹ thuật máy tính**
+
+**○Điều khiển học**
+
+**○Ngôn ngữ học**
+
+![](images/page_31_image_10.jpg)
+
+## Nền tảng cơ sở của trí tuệ nhân tạo
+
+## ● Triết học (Philosophy)
+
+**○ Xây dựng logic và kỹ thuật suy luận**
+
+**○ Xây dựng hệ thống hoạt động như một tập luật**
+
+**○ Xác định cơ sở của việc học, ngôn ngữ và hành động**
+
+## ● Toán học (Mathematics)
+
+**○ Xây dựng Lôgic**
+
+**○ Xây dựng thuật toán, quy trình tính toán**
+
+**○ Xác suất thống kê**
+
+## ● Kinh tế học (Economics)
+
+**○ Ra quyết định**
+
+**○ Lý thuyết trò chơi**
+
+**○ Chuỗi markov**
+
+## Nền tảng cơ sở của trí tuệ nhân tạo
+
+**● Khoa học thành kinh (Neuroscience)**
+
+**○Nghiên cứu chức năng của Não**
+
+**○Phân biệt sự giống và khác giữa Não và Máy tính**
+
+## ● Tâm lý học (Psychology)
+
+**○Làm thế nào để suy nghĩ và hành động**
+
+**○Xem bộ não là cố máy xử lý thông tin**
+
+**○Làm thế nào để máy tính có thể học ngôn ngữ, ghi nhớ, suy nghĩ**
+
+**● Kỹ thuật máy tính(Computer engineering)**
+
+**○Xây dựng cỗ máy mạnh để thông minh thêm(DeepBlue)**
+
+**○Minh hoạ ô tô tự lái**
+
+## Nền tảng cơ sở của trí tuệ nhân tạo
+
+## ● Điều khiển học (cybernetics)
+
+**○Thiết kế tối ưu tác tử nhận phản hồi từ môi trường**
+
+**○Thiết kế hệ thống điều khiển tối ưu mục tiêu theo thời gian**
+
+## ● Ngôn ngữ học (Linguistics)
+
+**○Xây dựng mối quan hệ giữa “ngôn ngữ” và “suy nghĩ”**
+
+**○Kết hợp giữa ngôn ngữ + trí tuệ nhân tạo = xử lý ngôn ngữ tự nhiên**
+
+## Lịch sử của trí tuệ nhân tạo
+
+![](images/page_35_chart_1.jpg)
+
+## Lịch sử của trí tuệ nhân tạo
+
+## ● 1940-1950: giai đoạn tiền AI
+
+**○ McCulloch & Pitts: Mạch Boolean để mô hình não bộ**
+
+Máy tính toán Turing và Trí thông minh <strong><u>http://www.turingarchive.org/viewer/?id=463&title</u></strong>**=1**
+
+## ● 1950-1970: Giai đoạn tham vọng
+
+**o Hội nghị AI-Summer, @Dartmouth, Mỹ - 1956**
+
+**o Tham vọng máy tính hiểu được con người**
+
+**o Phương thức giao tiếp giữa người và máy tính**
+
+**o Phương thức biểu diễn tri thức như mạng ngữ nghĩa, đồ thị khái niệm**
+
+## Lịch sử của trí tuệ nhân tạo
+
+1970-1990: Giai đoạn dựa vào tri thức (Knowledge based AI)
+
+**○ Hệ chuyên gia, AI trở thành một ngành công nghiệp**
+
+**○ Hội nghị AI-Winter**
+
+**● 1990 đến nay: phương pháp tiếp cận khoa học**
+
+**○ Mạng lưới thần kinh**
+
+**○ Trí tuệ nhân tạo trở thành ngành khoa học, sử dụng xác suất để mô phỏng tính không chắc chắn**
+
+**○ Hội nghị AI - Spring, 2013**
+
+**○ Sự xuất hiện các bộ dữ liệu rất lớn(Big Data): Dữ liệu sẽ thúc đẩy những khám phá trong tương lai**
+
+## Trí tuệ nhân tạo trong lĩnh vực y tế
+
+![](images/page_38_image_1.jpg)
+
+## Trí tuệ nhân tạo trong lĩnh vực y tế
+
+Health services management
+
+Clinical decisionmaking
+
+![](images/page_39_image_3.jpg)
+
+Al for Healthcare
+
+Predictive medicine
+
+Patient data
+
+## A model of knowledge-based systems development
+
+![](images/page_40_image_1.jpg)
+
+Representation
+
+## Artificial Intelligence Machine Learning & Deep Learning
+
+Machine learning begins to flourish.
+
+![](images/page_41_image_2.jpg)
+
+DEEP LEARNING Deep learning breakthroughs drive Al boom.
+
+00015 1001010-100100 110: 0111 .0110 00101 01011 10101 010 110101 01 01011 01010
+
+## Artificial Intelligence Machine Learning & Deep Learning
+
+![](images/page_42_image_1.jpg)
+
+## Artificial Intelligence Machine Learning & Deep Learning
+
+![](images/page_43_image_1.jpg)
+
+## Machine Learning
+
+![](images/page_44_image_1.jpg)
+
+## Machine Learning (ML) / Deep Learning (DL)
+
+![](images/page_45_image_1.jpg)
+
+## AI for Text Analytics
+
+![](images/page_46_image_1.jpg)
+
+## The Transformers Timeline
+
+![](images/page_47_chart_1.jpg)
+
+## Computer Vision: Object Detection
+
+![](images/page_48_image_1.jpg)
+
+(a) Object Classification
+
+![](images/page_48_image_3.jpg)
+
+![](images/page_48_image_4.jpg)
+
+(b) Generic Object Detection (Bounding Box)
+
+(c) Semantic Segmentation
+
+![](images/page_48_image_7.jpg)
+
+(d) Object Instance Segmetation
+
+## Text-and-Video Dialog Generation Models with Hierarchical Attention
+
+3D ResNeXt (action prediction)
+
+![](images/page_49_image_2.jpg)
+
+Summary + Question \_Text Encoder
+
+## FinBrain: when Finance meets AI 2.0 (Zheng et al., 2019)
+
+Wealth management
+
+Products and services
+
+Robo-Advisor
+
+Risk management
+
+Financial identity authentication
+
+Intelligent marketing
+
+Business security
+
+Smart customer service
+
+Blockchain
+
+Financial product recommendation
+
+Intelligent credit
+
+Al customer service
+
+Risk assessment
+
+Intelligent agent
+
+Blockchain
+
+Financial Intelligence
+
+Algorithms and models
+
+Graph algorithm
+
+Machine learning
+
+Combinatorial optimization
+
+Deep learning
+
+Rule engine
+
+Reinforcement learning
+
+Risk monitoring
+
+Transfer learning
+
+![](images/page_50_image_26.jpg)
+
+Face recognition
+
+Knowledge graph
+
+Speech recognition
+
+Financial big data
+
+Media websites, forums
+
+Business platform (electricity supplier, payment, financiaí management
+
+Government agencies (social security, civil affairs, public security, industry and commerce, taxation, court ..)
+
+Financial institutions (bank, insurance ..)
+
+## Technology-driven Financial Industry Development
+
+| Development stage | Driving technology | Main landscape | Inclusive finance | Relationship between technology and finance |
+| --- | --- | --- | --- | --- |
+| Fintech 1.0 (financial IT) | Computer | Credit card, ATM, and CRMS | Low | Technology as a tool |
+| Fintech 2.0 (Internet finance) | Mobile Internet | Marketplace lending, third-party payment, crowdfunding, and Internet insurance | Medium | Technology-driven change |
+| Fintech 3.0 (financial intelligence) | AI, Big Data, Cloud Computing, Blockchain | Intelligent finance | High | Deep fusion |
+
+## HondaHumanoidRobot
+
+![](images/page_52_image_1.jpg)
+
+Walk
+
+![](images/page_52_image_3.jpg)
+
+Turn
+
+![](images/page_52_image_5.jpg)
+
+Stairs
+
+## DomesticRobots
+
+![](images/page_53_image_1.jpg)
+
+Domestic Robot Accessories
+
+![](images/page_53_image_3.jpg)
+
+Domestic Robot Replacement Parts
+
+![](images/page_53_image_5.jpg)
+
+Robot Vacuums
+
+![](images/page_53_image_7.jpg)
+
+Robot Floor Cleaners
+
+![](images/page_53_image_9.jpg)
+
+Robot Pool Cleaners
+
+![](images/page_53_image_11.jpg)
+
+Robotic Lawn Mowers | Lawnbott Robot Mower
+
+![](images/page_53_image_13.jpg)
+
+Robot Pet Care
+
+![](images/page_53_image_15.jpg)
+
+Robotic Window Cleaners
+
+![](images/page_53_image_17.jpg)
+
+Sweeping Robots
+
+![](images/page_53_image_19.jpg)
+
+RobotShop Packages
+
+![](images/page_53_image_21.jpg)
+
+Robots for Sports
+
+![](images/page_53_image_23.jpg)
+
+Surveillance and Companion Robots
+
+## Military robots
+
+![](images/page_54_image_1.jpg)
+
+## www.aibo.com
+
+![](images/page_55_image_1.jpg)
+
+Purchase AIBO® Products
+
+Software Resources
+
+AIBO® News & Events
+
+Support
+
+## AIBO®Entertainment Robot
+
+Official U.S. Resources and Online Destinations
+
+![](images/page_55_image_8.jpg)
+
+Yes, I would like to receive information about AIBO®enter email address
+
+Submit
+
+![](images/page_55_image_11.jpg)
+
+![](images/page_55_image_12.jpg)
+
+October 22, 2003
+
+ERS-7 Pre-orders have begun! FREE SHIPPING!
+
+Only 10 days left for the \$200 rebate on select ERS-210A models
+
+ERS-7 Product Tour at sonystyle.com
+
+ERS-7 Press Release click here
+
+AIBODAYS! Celebrate AIBO and see special demonstrations!
+
+AIBO EYES 1.1 patch now available
+
+Check out our AIBO EYES Cartoon (Manga)
+
+![](images/page_55_image_21.jpg)
+
+![](images/page_56_image_0.jpg)
+
+## Important announcement
+
+Following the Sony Corporation FY05 3Q announcement, the production of AlBO Entertainment Robots has been discontinued as of end March 2006. As for the sales activity, we will discontinue the sales of AlBO once all remaining stock runs out.
+
+![](images/page_57_image_0.jpg)
+
+![](images/page_57_image_1.jpg)
+
+www.robocup.org
+
+![](images/page_57_image_3.jpg)
+
+## General intelligence of a frog?
+
+![](images/page_58_image_1.jpg)
+
+## World robot population
+
+The number of robots worldwide continued to grow rapidly and is now on course to reach 100 million by 2020.
+
+World robot population, 2000-2011
+
+![](images/page_59_chart_3.jpg)
+
+Source: International Federation of Robotics
+
+## World robot population
+
+TOP 10 COUNTRIES BY ROBOT DENSITY (Industrial robots per 10 000 manufacturing workers)
+
+![](images/page_60_chart_2.jpg)
+
+## Yêu cầu về khóa học
+
+**●Mức độ khoá học: sinh viên**
+
+**●Điều kiện bắt buộc: có kiến thức về lập trình và hiểu xác suất.**
+
+**●Đánh giá:**
+
+**○ Điểm danh + bài tập ngắn (10 %)**
+
+**○ Thi giữa kỳ / bài tập lớn(30 %)**
+
+**○ Thi cuối kỳ (60 %)**
+
+## Nội dung học tập
+
+**● Giới thiệu về trí tuệ nhân tạo**
+
+**● Tìm kiếm cơ bản**
+
+**● Tìm kiếm nâng cao**
+
+**● Học máy**
+
+**● Ứng dụng của trí tuệ nhân tạo**
+
+## Dự án về trí tuệ nhân tạo
+
+**● Apple machine learning journal**
+
+**https://machinelearning.apple.com/**
+
+**● Google Brains (Deep learning)**
+
+**https://ai.google/research/teams/brain/**
+
+**● Facebook AI research (FAIR)**
+
+<strong><u>https://ai.facebook.com/research/</u></strong>
+
+● <strong><u>\`https://aws.amazon.com/ai/</u></strong>
+
+## Papers with Code State-of-the-Art (SOTA)
+
+![](images/page_64_image_1.jpg)
+
+![](images/page_64_image_2.jpg)
+
+Browse State-of-the-Art
+
+Follow
+
+![](images/page_64_image_5.jpg)
+
+Discuss
+
+Trends
+
+About
+
+Log In/Register
+
+## Browse State-of-the-Art
+
+Follow onTwitter for updates
+
+## Computer Vision
+
+![](images/page_64_image_13.jpg)
+
+667 papers with code
+
+![](images/page_64_image_15.jpg)
+
+![](images/page_64_image_16.jpg)
+
+467 papers with code
+
+![](images/page_64_image_18.jpg)
+
+231 papers with code
+
+![](images/page_64_image_20.jpg)
+
+See all 707 tasks
+
+## Natural Language Processing
+
+![](images/page_64_image_23.jpg)
+
+Machine Translation
+
+![](images/page_64_image_25.jpg)
+
+Language Modelling
+
+![](images/page_64_image_27.jpg)
+
+Question Answering
+
+![](images/page_64_image_29.jpg)
+
+Sentiment Analysis
+
+![](images/page_64_image_31.jpg)
+
+Text Generation
+
+<strong><u>https://paperswithcode.com/sota</u></strong>
+
+## Python in Google Colab
+
+```python
+# Future Value
+pv = 100
+r = 0.1
+n = 7
+fv = pv * ((1 + (r)) ** n)
+print(round(fv, 2))
+
+[11] amount = 100
+interest = 10 #10% = 0.01 * 10
+years = 7
+future_value = amount * ((1 + (0.01 * interest)) ** years)
+print(round(future_value, 2))
+
+[12] # Python Function def
+def getfv(pv, r, n):
+    fv = pv * ((1 + (r)) ** n)
+    return fv
+fv = getfv(100, 0.1, 7).
+print(round(fv, 2))
+
+[13] # Python if else
+score = 80
+if score >=60 :
+    print("Pass")
+else:
+    print("Fail").
+```
+
+## TRÍ TUỆ NHÂN TẠO
+
+**Chương 2: Không gian trạng thái và tìm kiếm mù**
+
+## Chương 2: Không gian trạng thái và tìm kiếm mù
+
+## Nội dung
+
+**● Giải quyết vấn đề**
+
+**● Không gian trạng thái**
+
+**● Tìm kiếm trên không gian trạng thái**
+
+**● Tìm kiếm theo chiều rộng**
+
+**● Tìm kiếm theo chiều sâu**
+
+**● Tìm kiếm chiều sâu có giới hạn**
+
+**● Bài tập**
+
+**● Tìm kiếm đều giá**
+
+## Giải quyết vấn đề
+
+**• Phát biểu chính xác bài toán:**
+
+**o Hiện trạng ban đầu;**
+
+**o Kết quả mong muốn,...**
+
+**• Phân tích bài toán.**
+
+Thu thập và biểu diễn dữ liệu, tri thức cần thiết để giải **bài toán.**
+
+**• Ra quyết định chọn kỹ thuật/ giải quyết thích hợp.**
+
+## Tại sao phải tìm kiếm?
+
+**• Tìm kiếm cái gì?**
+
+Biểu diễn và tìm kiếm là kỹ thuật phổ biến giải các bài toán **trong lĩnh vực AI**
+
+**• Các vấn đề khó khăn trong tìm kiếm với các bài toán AI**
+
+**o Đặc tả vấn đề phức tạp**
+
+**o Không gian tìm kiếm lớn**
+
+**o Đặc tính đối trượng tìm kiếm thay đổi**
+
+**o Đáp ứng thời gian thực**
+
+**o Meta knowledge và kết quả “tối ưu”**
+
+**• Khó khăn về kỹ thuật**
+
+## Lĩnh vực AI và các mối liên quan
+
+<strong><u>Search</u></strong>
+
+<strong><u>Logic</u></strong>
+
+**Knowledge** <strong><u>Representation</u></strong>
+
+![](images/page_70_image_4.jpg)
+
+**Machine** <strong><u>Learning</u></strong>
+
+<strong><u>Planning</u></strong>
+
+<strong><u>NLP</u></strong>
+
+<strong><u>Vision</u></strong>
+
+<strong><u>Robotics</u></strong>
+
+**Expert** <strong><u>Systems</u></strong>
+
+## Lý thuyết đồ thị - Review
+
+**Đồ thị: là một cấu trúc bao gồm:**
+
+**Tập các nút N1,** $\mathrm { N 2 , \ldots N n , }$ **.. Không hạn chế**
+
+**Tập các cung nối các cặp nút, có thể có nhiều cung trên một cặp nút**
+
+![](images/page_71_image_4.jpg)
+
+**Nút: {A,B,C,D,E}**
+
+Cung: $\{ ( \mathrm { a } \mathrm { , } \mathrm { d } ) , ( \mathrm { a } \mathrm { , } \mathrm { b } ) , ( \mathrm { a } \mathrm { , } \mathrm { c } ) , ( \mathrm { b } \mathrm { , } \mathrm { c } ) , ( \mathrm { c } \mathrm { , } \mathrm { d } ) , ( \mathrm { c } \mathrm { , } \mathrm { e } ) , ( \mathrm { d } \mathrm { , } \mathrm { e } ) \}$
+
+![](images/page_72_image_0.jpg)
+
+Graph Representation of Undirected graph to Adjacency List
+
+## Đặc tính đồ thị
+
+Đồ thị có hướng: là đồ thị với các cung có định hướng, nghĩa là **cặp nút có quan hệ thứ tự trước sau theo từng cung. Cung (Ni,Nj) có hướng từ Ni đến Nj, Khi đó Ni là nút cha và Nj là nút con.**
+
+**• Nút lá: là nút không có nút con.**
+
+Path: là chuổi có thứ tự các nút mà 2 nút kế tiếp nhau tồn tại **một cung.**
+
+Đồ thị có gốc: Trên đồ thị tồn tại nút X sao cho tất cả các path **đều đi qua nút đó. X là gốc - Root**
+
+**• Vòng : là một path đi qua nút nhiều hơn một lần**
+
+**• Cây: là graph mà không có path vòng**
+
+**• Hai nút nối nhau :nếu có một path đi qua 2 nút đó**
+
+## Không gian trạng thái
+
+**● Tập tất cả trạng thái có thể có và tập toán tử của bài toán**
+
+**● Tồn tại nhiều cách để biểu diễn bài toán**
+
+**● Đồ thị để biểu diễn bài toán:- đồ thị không gian trạng thái**
+
+Bài toán 7 cây cầu ở Konigsberg của Euler
+
+**● Đồ thị không gian trạng thái để phân tích cấu trúc và độ phức tạp của bài toán.**
+
+## Không gian trạng thái
+
+**● Đồ thị không gian trạng thái là một bộ ký hiệu [V, E, S, G] trong đó:**
+
+○ **V - tập đỉnh/tập tất cả các trạng thái;**
+
+○ **E - tập cạnh/ tập cung/ tập toán tử;**
+
+○ **S - trạng thái đầu;**
+
+○ **G- trạng thái đích.**
+
+**● Đặc tính của trạng thái đích G:**
+
+**○ Đặc tính có thể đo lường được trong quá trình tìm kiếm.**
+
+**○ Ví dụ: Tic-tac- toe, chess,...**
+
+**○ Đặc tính của đường đi được hình thành trong quá trình tìm kiếm.**
+
+**Ví dụ : travelling salesman problem, transportation problem,...**
+
+**● Lời giải (solution path) là một con đường đi từ trạng thái S đến trạng thái G.**
+
+## Không gian trạng thái
+
+**• Ví dụ một phần không gian trạng thái của trò chơi Tic-tactoe**
+
+Đ th có hưóng không lp li (directed acyclic graph - DAG)
+
+![](images/page_76_image_3.jpg)
+
+## Không gian trạng thái
+
+## ● Ví dụ trò chơi 8 ô chữ
+
+trạng thái đầu
+
+| 1 | 2 | 3 |
+| --- | --- | --- |
+| 8 |  | 4 |
+| 7 | 6 | 5 |
+
+trạng thái đích
+
+|  | 2 | 8 |
+| --- | --- | --- |
+| 3 | 5 | 7 |
+| 6 | 2 | 1 |
+
+**Cách biểu diễn trạng thái của trò chơi này như thế nào ?**
+
+## Không gian trạng thái
+
+Không gian trng thái ca bài toán 8 ô s sinh ra bng phép “di chuyn ô trông"
+
+![](images/page_78_image_2.jpg)
+
+## Không gian trạng thái
+
+Không gian trng thái ca bài toán 8 ô s sinh ra bng phép "di chuyn ô trông"
+
+![](images/page_79_image_2.jpg)
+
+## Không gian trạng thái
+
+**● Cần biểu diễn không gian trạng thái cho bài toán người giao hàng như thế nào?**
+
+![](images/page_80_image_2.jpg)
+
+## Không gian trạng thái
+
+**● Cần biểu diễn không gian trạng thái cho bài toán người giao hàng như thế nào?**
+
+![](images/page_81_image_2.jpg)
+
+## Không gian trạng thái
+
+![](images/page_82_image_1.jpg)
+
+Mi cung đưc đánh du bng tng giá ca con đưòng tù nút bt đu đn nút hin tąi.
+
+## Không gian trạng thái
+
+**● Yếu tố chính để xác định không gian trạng thái:**
+
+**● Trạng thái;**
+
+**● Hành động(toán tử);**
+
+**● Kiểm tra trạng thái thỏa đích;**
+
+**● Chi phí mỗi bước chuyển trạng thái.**
+
+## Tìm kiếm trên không gian trạng thái
+
+**● Chiến lược tìm kiếm: lựa chọn thứ tự xét các trạng thái.**
+
+**● Đánh giá chiến lược :**
+
+**○ đủ: liệu có tìm được lời giải (nếu có).**
+
+**○ độ phức tạp thời gian: số lượng trạng thái phải xét.**
+
+**○ độ phức tạp lưu trữ: tổng dung lượng bộ nhớ phải lưu trữ (các trạng thái trong quá trình tìm kiếm).**
+
+**○ tối ưu: có lời giải tối ưu.**
+
+**● Độ phực tạp thời gian và lưu trữ có thể được đo bằng:**
+
+**○ b: độ phân nhánh của cấu trúc cây.**
+
+**○ d: độ sâu của lời giải ngắn nhất.**
+
+**○ m: độ sâu tối đa của không gian trạng thái (có thể vô hạn).**
+
+## Tìm kiếm trên không gian trạng thái
+
+## ● Chiến lược tìm kiếm mù
+
+**o Tìm kiếm theo chiều rộng.**
+
+**o Tìm kiếm đều giá (uniform-cost search).**
+
+**o Tìm kiếm theo chiều sâu.**
+
+**o Tìm kiếm theo chiều sâu có giới hạn.**
+
+## Tìm kiếm lối ra mê cung?
+
+![](images/page_86_image_1.jpg)
+
+## Tìm kiếm theo chiều rộng
+
+**● Tìm kiếm theo từng tầng ( từ trên xuống)**
+
+**● Phát triển trạng thái gần với trạng thái hiện tại.**
+
+**● Tập trạng thái được chia thành 3 khu vực:**
+
+**o Khu vực đã phát triển (explored): tập trạng thái đã xét**
+
+**o Khu vực chờ phát triển (frontier): tập trạng thái đang chờ xét**
+
+**o Khu vực chưa phát triển (unexplored): tập trạng thái chưa xét**
+
+## Tìm kiếm theo chiều rộng
+
+**● Minh hoạ sự phát triển các đỉnh theo thuật toán tìm kiếm theo chiều rộng**
+
+![](images/page_88_image_2.jpg)
+
+$$
+\mathrm{A} \dashrightarrow \mathrm{B} \dashrightarrow \mathrm{C} \dashrightarrow \mathrm{D} \dashrightarrow \mathrm{E} \dashrightarrow \mathrm{F} \dashrightarrow \mathrm{G} \dashrightarrow \mathrm{H} \dashrightarrow \mathrm{I} \dashrightarrow \mathrm{J} \dashrightarrow \mathrm{K} \dashrightarrow \mathrm{L} \dashrightarrow \mathrm{M} \dashrightarrow \mathrm{N} \dashrightarrow 0
+$$
+
+## Tìm kiếm theo chiều rộng
+
+**● Minh hoạ sự phát triển các đỉnh theo thuật toán tìm kiếm theo chiều rộng**
+
+![](images/page_89_image_2.jpg)
+
+$$
+\mathrm{A} \dashrightarrow \mathrm{B} \dashrightarrow \mathrm{C} \dashrightarrow \mathrm{D} \dashrightarrow \mathrm{E} \dashrightarrow \mathrm{F} \dashrightarrow \mathrm{G} \dashrightarrow \mathrm{H} \dashrightarrow \mathrm{I} \dashrightarrow \mathrm{J} \dashrightarrow \mathrm{K} \dashrightarrow \mathrm{L} \dashrightarrow \mathrm{M} \dashrightarrow \mathrm{N} \dashrightarrow 0
+$$
+
+## Tìm kiếm theo chiều rộng
+
+Thuật toán tìm kiếm theo chiều rộng được mô tả bởi thủ tục:
+
+```python
+function BREADTH-FIRST-SEARCH(initialState, goalTest)
+    returns SUCCESS or FAILURE:
+
+    frontier = Queue.new(initialState)
+    explored = Set.new()
+
+    while not frontier.isEmpty():
+        state = frontier.dequeue()
+        explored.add(state)
+
+        if goalTest(state):
+            return SUCCESS(state)
+
+        for neighbor in state.neighbors():
+            if neighbor not in frontier ∪ explored:
+                frontier.enqueue(neighbor))
+
+    return FAILURE
+```
+
+## Tìm kiếm theo chiều rộng
+
+**Bài tập[5 phút]. Viết danh sách các biến đổi trạng thái trong hàng đợi frontier ?**
+
+$$
+\text {frontier} = \{\underline{\mathsf{A}}\}
+$$
+
+$$
+\text {frontier} = \{\underline{\mathsf{B}}, \mathsf{C}\}
+$$
+
+$$
+\text {frontier} = \{\underline{\mathsf{C}}, \mathsf{D}, \mathsf{E}\}
+$$
+
+$$
+\text {frontier} = \{\underline {{\mathsf {D}}}, \mathsf {E}, \mathsf {F}, \mathsf {G} \}
+$$
+
+$$
+\text {frontier} = \{\underline {{E}}, F, G, H,
+$$
+
+$$
+\left. \right.\left. \right.\left. \right.\left. \right.\left. \right.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\left.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right.\right\rbrace \text {frontier} = \dots\right) _ {\text {frontier}}
+$$
+
+![](images/page_91_image_8.jpg)
+
+function BREADTH-FIRST-SEARCH(initialState, goalTest) returns SUCCESs or FAILURE :
+
+frontier= Queue.new(initialState) explored = Set.new()
+
+while not frontier.isEmpty(): state = frontier.dequeue() explored.add(state)
+
+if goalTest(state): returnSucCEss(state)
+
+for neighborin state.neighbors(): if neighbor notinfrontier explored: frontier.enqueue(neighbor)
+
+return FAILURE
+
+## Demo 1(10 phút)
+
+```python
+if __name__ == '__main__':
+    graph = {
+        'A' : ['B','C'],
+        'B' : ['D','E'],
+        'C' : ['F','G'],
+        'D' : ['H','I'],
+        'E' : ['J','K'],
+        'F' : ['L','M'],
+        'G' : ['N','O'],
+        'H' : [],
+        'I' : [],
+        'J' : [],
+        'K' : [],
+        'L' : [],
+        'M' : [],
+        'N' : [],
+        'O' : []
+    }
+    result = BFS('A','O')
+    if result:
+        s = 'explored: '
+            for i in result:
+                s += i + ' '
+                    print(s)
+    else:
+        print("404 Not Found!")
+```
+
+![](images/page_92_image_2.jpg)
+
+```python
+def BFS(initialState, goal):
+    frontier = [initialState]
+    explored = []
+    while frontier:
+        state = frontier.pop(0)
+        explored.append(state)
+        if goal == state:
+            return explored
+        for neighbor in graph[state]:
+            if neighbor not in (explored and frontier):
+                frontier.append(neighbor)
+    return False
+```
+
+## Demo 2(10 phút)
+
+```python
+if __name__ == '__main__':
+    tree = Tree()
+    tree.create_node('A', 'A') #root
+    tree.create_node('B', 'B', 'A')
+    tree.create_node('C', 'C', 'A')
+    tree.create_node('D', 'D', 'B')
+    tree.create_node('E', 'E', 'B')
+    tree.create_node('F', 'F', 'C')
+    tree.create_node('G', 'G', 'C')
+    tree.create_node('H', 'H', 'D')
+    tree.create_node('I', 'I', 'D')
+    tree.create_node('J', 'J', 'E')
+    tree.create_node('K', 'K', 'E')
+    tree.create_node('L', 'L', 'F')
+    tree.create_node('M', 'M', 'F')
+    tree.create_node('N', 'N', 'G')
+    tree.create_node('O', 'O', 'G')
+    result = BFS(tree.get_node("A"), 'O')
+
+    if result:
+        s = 'explored: '
+        for i in result:
+            s += i.tag + ' '
+            print(s)
+    else:
+        print("404 Not Found!")
+```
+
+![](images/page_93_image_2.jpg)
+
+```python
+from treelib import Tree, Node
+def BFS(initialState: Node, goal):
+    frontier = [initialState]
+    explored = []
+    while frontier:
+        state = frontier.pop(0)
+        explored.append(state)
+        if goal == state.tag:
+            return explored
+        for neighbor in tree.children(state.identifier):
+            if neighbor not in (explored and frontier):
+                frontier.append(neighbor)
+    return False
+```
+
+**Cho biết kết quả duyệt đồ thị theo thuật toán BFS**
+
+![](images/page_94_image_1.jpg)
+
+![](images/page_95_image_0.jpg)
+
+BFS: 1 8 5 2 6 4 3 9 10 7
+
+## Tìm kiếm theo chiều rộng
+
+Trạng thái nào phát sinh trước sẽ được duyệt trước, nên frontier phải **cấu trúc dữ liệu FIFO.**
+
+**● Đánh giá thuật toán theo chiều rộng**
+
+**○ Tính đủ ?**
+
+**■ có ( nếu b hữu hạn)**
+
+**○ Độ phức tạp thời gian ?:**
+
+**■ 1 + 1.b + b.b + … + b^(d-1). b = 0(b^d)**
+
+**○ Độ phức tạp về lưu trữ ?:**
+
+$0 ( \mathbf { b } ^ { \wedge } \mathbf { d } )$
+
+**○ Tính tối ưu ?:**
+
+**■ có(nếu chi phí cho mỗi bước chuyển là 1 đơn vị ).**
+
+**● Độ phức tạp về thời gian và không gian theo cấp số nhanh.**
+
+## Tìm kiếm theo chiều rộng
+
+Tìm kiếm theo chiều rộng tệ đến mức nào ?
+
+## Tìm kiếm theo chiều rộng
+
+## ● Thực nghiệm
+
+| Depth | Nodes | Time | Memory |
+| --- | --- | --- | --- |
+| 2 | 110 | .11 milliseconds | 107 kilobytes |
+| 4 | 11,110 | 11 milliseconds | 10.6 megabytes |
+| 6 | $10^6$ | 1.1 seconds | 1 gigabyte |
+| 8 | $10^8$ | 2 minutes | 103 gigabytes |
+| 10 | $10^{10}$ | 3 hours | 10 terabytes |
+| 12 | $10^{12}$ | 13 days | 1 petabyte |
+| 14 | $10^{14}$ | 3.5 years | 99 petabytes |
+| 16 | $10^{16}$ | 350 years | 10 exabytes |
+
+**b = 10, 1 giây kiểm tra được 1 triệu nodes, lưu 1 node mất 1.000byte**
+
+$\mathbf { b } = 1 0$ **, 1 giây kiểm tra được 1 triệu nodes, lưu 1 node mất 1.000byte**
+
+Độ phức tạp thời gian và không gian(bộ nhớ) là bất lợi của thuật **toán**
+
+## Bài tập
+
+Hãy xây dựng thứ tự khám phá và đường đi của các đỉnh sử **dụng tìm kiếm theo chiều rộng.**
+
+![](images/page_99_image_2.jpg)
+
+## Tìm kiếm theo chiều sâu
+
+**● Phát triển các trạng thái ở sâu so với trạng thái hiện tại**
+
+**● Tập trạng thái được chia thành 3 khu vực:**
+
+**o Khu vực đã phát triển (explored): trạng thái đã xét;**
+
+**o Khu vực chờ phát triển (frontier): trạng thái đang chờ xét;**
+
+**o Khu vực chưa phát triển (unexplored): trạng thái chưa xét.**
+
+## Tìm kiếm theo chiều sâu
+
+Minh hoạ việc phát triển các đỉnh theo thuật toán tìm kiếm theo chiều sâu
+
+preorder và postorder inorder
+
+![](images/page_101_image_3.jpg)
+
+## Tìm kiếm theo chiều sâu
+
+## Thuật toán tìm kiếm theo chiều sâu được mô tả bởi thủ tục
+
+```python
+function DEPTH-FIRST-SEARCH(initialState, goalTest)
+    returns SUCCESS or FAILURE:
+
+    frontier = Stack.new(initialState)
+    explored = Set.new()
+
+    while not frontier.isEmpty():
+        state = frontier.pop()
+        explored.add(state)
+
+        if goalTest(state):
+            return SUCCESS(state)
+
+        for neighbor in state.neighbors():
+            if neighbor not in frontier ∪ explored:
+                frontier.push(neighbor)
+
+    return FAILURE
+```
+
+## Tìm kiếm theo chiều sâu
+
+**● Hãy làm rõ quá trình biến đổi của danh sách frontier ?**
+
+$$
+\text {Frontier} = \{\underline{\mathsf{A}}\}
+$$
+
+$$
+\text {Frontier} = \{\mathrm{B}, \underline{\mathrm{C}},\}
+$$
+
+```txt
+Frontier = {B, F, G}
+```
+
+```txt
+Frontier = {B, F, N, O}
+```
+
+```txt
+Frontier = {B, F, N}
+```
+
+```lua
+Frontier = {B, F}
+```
+
+$$
+\text {Frontier} = \{\mathrm{B}, \mathrm{L}, \underline {{\mathrm{M}}} \}
+$$
+
+$$
+\text {Frontier} = \{\dots \}
+$$
+
+![](images/page_103_image_10.jpg)
+
+function DEPTH-FIRST-SEARCH(initialState, goalTest) returns SUCCESS or FAILURE :
+
+```coffeescript
+frontier = Stack.new(initialState)
+explored = Set.new()
+```
+
+```python
+while not frontier.isEmpty():
+    state = frontier.pop()
+    explored.add(state)
+```
+
+if goalTest(state): return SuccEss(state)
+
+for neighbor in state.neighbors(): if neighbor notin frontier Uexplored: frontier.push(neighbor)
+
+returnFAILURE
+
+## Demo 3(10 phút)
+
+```python
+if __name__ == '__main__':
+    nodeA = Node("A")
+    nodeB = Node("B")
+    nodeC = Node("C")
+    nodeD = Node("D")
+    nodeE = Node("E")
+    nodeF = Node("F")
+    nodeG = Node("G")
+    nodeH = Node("H")
+    nodeI = Node("I")
+    nodeJ = Node("J")
+    nodeK = Node("K")
+    nodeL = Node("L")
+    nodeM = Node("M")
+    nodeN = Node("N")
+    nodeO = Node("O")
+    nodeA.addChild([nodeB, nodeC])
+    nodeB.addChild([nodeD,nodeE])
+    nodeC.addChild([nodeF,nodeG])
+    nodeD.addChild([nodeH, nodeI])
+    nodeE.addChild([nodeJ,nodeK])
+    nodeF.addChild([nodeL,nodeM])
+    nodeG.addChild([nodeN,nodeO])
+    result = DFS(nodeA, 'H')
+    if result:
+        s = 'explored: '
+        for i in result:
+            s += i.name + " "
+            print(s);
+    else:
+        print('404 Not Found!')
+```
+
+![](images/page_104_image_2.jpg)
+
+```python
+class Node:
+    def __init__(sefl, name):
+        sefl.name = name
+        sefl.children = []
+    def addChild(self, list):
+        for c in list:
+            self.children.append(c)
+def DFS(initialState, goal):
+    frontier = [initialState]
+    explored = []
+    while frontier:
+        state = frontier.pop()
+        explored.append(state)
+        if goal == state.name:
+            return explored
+        for child in state.children:
+            if child not in (explored and frontier):
+                frontier.append(child)
+    return False
+```
+
+## Demo 4(5 phút)
+
+```python
+if __name__ == '__main__':
+    graph = {
+        'A' : ['B','C'],
+        'B' : ['D','E'],
+        'C' : ['F','G'],
+        'D' : ['H','I'],
+        'E' : ['J','K'],
+        'F' : ['L','M'],
+        'G' : ['N','O'],
+        'H' : [],
+        'I' : [],
+        'J' : [],
+        'K' : [],
+        'L' : [],
+        'M' : [],
+        'N' : [],
+        'O' : []
+    }
+    result = DFS('A','H')
+    if result:
+        s = 'explored: '
+        for i in result:
+            s += i + ' '
+            print(s)
+    else:
+        print("404 Not Found!")
+```
+
+![](images/page_105_image_2.jpg)
+
+```python
+def DFS(initialState, goal):
+    frontier = [initialState]
+    explored = []
+    while frontier:
+        state = frontier.pop(len(frontier)-1)
+        explored.append(state)
+        if goal == state:
+            return explored
+        for neighbor in graph[state]:
+            if neighbor not in (explored and frontier):
+                frontier.append(neighbor)
+    return False
+```
+
+## Tìm kiếm theo chiều sâu
+
+**• Nhận xét về thuật toán**
+
+**o Đối với BFS luôn tìm được nghiệm (nếu bài toán có nghiệm)**
+
+**o Đối với DFS chỉ tìm được nghiệm (nếu không gian hữu hạn), vì nếu không gian tìm kiếm vô hạn, thì thuật toán tìm kiếm theo chiều sâu chọn nhánh để đi, nếu đi đúng nhánh vô hạn mà nghiệm không nằm trên nhánh đó.**
+
+## Tìm kiếm theo chiều sâu
+
+**● Đánh giá thuật toán theo chiều rộng**
+
+**○ Tính đủ ?**
+
+**■ không (nếu không gian tìm kiếm vô hạn hoặc lặp)**
+
+**■ đủ ( nếu khử lặp và không gian tìm kiếm hữu hạn)**
+
+**○ Độ phức tạp thời gian ?:**
+
+**■ 0(b^m)**
+
+**■ Nếu hàm đánh giá tốt thì, thời gian thực tế giảm đáng kể**
+
+**○ Độ phức tạp không gian gian?:**
+
+**■ 0(b.m): độ phức tạp tuyến tính**
+
+**○ Tính tối ưu ?:**
+
+**■ không**
+
+## Tìm kiếm theo chiều sâu
+
+**● Quay trở lại với bảng đánh giá tìm kiếm theo chiều rộng**
+
+| Depth | Nodes | Time | Memory |
+| --- | --- | --- | --- |
+| 2 | 110 | .11 milliseconds | 107 kilobytes |
+| 4 | 11,110 | 11 milliseconds | 10.6 megabytes |
+| 6 | $10^6$ | 1.1 seconds | 1 gigabyte |
+| 8 | $10^8$ | 2 minutes | 103 gigabytes |
+| 10 | $10^{10}$ | 3 hours | 10 terabytes |
+| 12 | $10^{12}$ | 13 days | 1 petabyte |
+| 14 | $10^{14}$ | 3.5 years | 99 petabytes |
+| 16 | $10^{16}$ | 350 years | 10 exabytes |
+
+Với d = 16, có th $\hat { \hat { \mathbf { e } } }$ **g**iảm dung lượng bộ nhớ từ 10 exabyte trên BFS xuống **bao nhiêu ….. trên tìm kiếm theo chiều sâu(DFS) ?**
+
+## Tìm kiếm theo chiều sâu
+
+**● Quay trở lại với bảng đánh giá tìm kiếm theo chiều rộng**
+
+| Depth | Nodes | Time | Memory |
+| --- | --- | --- | --- |
+| 2 | 110 | .11 milliseconds | 107 kilobytes |
+| 4 | 11,110 | 11 milliseconds | 10.6 megabytes |
+| 6 | $10^6$ | 1.1 seconds | 1 gigabyte |
+| 8 | $10^8$ | 2 minutes | 103 gigabytes |
+| 10 | $10^{10}$ | 3 hours | 10 terabytes |
+| 12 | $10^{12}$ | 13 days | 1 petabyte |
+| 14 | $10^{14}$ | 3.5 years | 99 petabytes |
+| 16 | $10^{16}$ | 350 years | 10 exabytes |
+
+Với d = 16, có th $\hat { \hat { \mathbf { e } } }$ **g**iảm dung lượng bộ nhớ từ 10 exabytes trên BFS xuống **156 kilobytes DFS**
+
+## Tìm kiếm chiều sâu có giới hạn
+
+## 2 O
+
+## Tìm kiếm theo chiều sâu có giới hạn
+
+Giả thiết nếu biết trước bài toán thì **không duyệt hết độ sâu trong thuật toán tìm kiếm theo chiều sâu.**
+
+Chọn độ sâu L, để phát triển thuật toán **tìm kiếm theo chiều sâu (các đỉnh ở độ sâu L, không chứa đỉnh con, không chứa đỉnh cháu)**
+
+Ý tưởng: Qua thực nghiệm chỉ ra rằng **không có một thành phố nào tới thành phố khác với độ sâu vượt quá 36, nên L = 36**
+
+![](images/page_111_image_4.jpg)
+
+<strong><u>Tìm kiếm theo chiều sâu có giới hạn</u></strong>
+
+$$
+\text {Limit} = 0 \quad \text {A}
+$$
+
+## Tìm kiếm theo chiều sâu có giới hạn
+
+Limit = 1
+
+![](images/page_113_image_2.jpg)
+
+## Tìm kiếm theo chiều sâu có giới hạn
+
+![](images/page_114_image_1.jpg)
+
+## Tìm kiếm theo chiều sâu có giới hạn
+
+![](images/page_115_image_1.jpg)
+
+## Bài tập 1
+
+Hãy xây dựng thứ tự khám phá và đường đi của các đỉnh sử kỷ tìm kiếm **theo chiều rộng, tìm kiếm theo chiều sâu và tìm kiếm đều giá.**
+
+![](images/page_116_image_2.jpg)
+
+## Bài tập 2
+
+Hãy viết chương trình với các thuật toán tìm kiếm theo chiều rộng, **thuật toán tìm kiếm theo chiều sâu.**
+
+**Tìm kiếm đều giá (Uniform-cost search)**
+
+## 2 O
+
+## Tìm kiếm đều giá (Uniform-cost search)
+
+Tương như tìm kiếm theo chiều rộng nếu các đỉnh có **“giá” như nhau**
+
+**● Ý tưởng: xét đỉnh có “giá” nhỏ nhất trước**
+
+**● Cài đặt: sử dụng hàng đợi có sự ưu tiên về “giá”**
+
+**● Cải tiến BFS: ưu tiên chi phí, không ưu tiên độ sâu.**
+
+**● Mỗi đỉnh n viếng thăm có hàm chi phí bé nhất g(n)**
+
+## Tìm kiếm đều giá (Uniform-cost search)
+
+**● Mỗi đỉnh n viếng thăm có hàm chi phí bé nhất g(n)**
+
+![](images/page_120_image_2.jpg)
+
+Từ Hà Nội đến Thanh Hoá. Sử dụng BFS, thì cho đường đi Hà Nội - Nam **Định - Thanh Hoá, nhưng sử dụng UCS, thì cho đường đi Hà Nội - Phú Lý - Ninh Bình - Thanh Hóa với khoảng cách ngắn hơn.**
+
+## Tìm kiếm đều giá (Uniform-cost search)
+
+**● Mỗi đỉnh n viếng thăm có hàm chi phí bé nhất g(n)**
+
+Thuật toán tìm kiếm đều giá được mô tả bởi thủ tục:
+
+```python
+function UNIFORM-COST-SEARCH(initialState, goalTest)
+    returns SUCCESS or FAILURE : /* Cost f(n) = g(n) */
+
+    frontier = Heap.new(initialState)
+    explored = Set.new()
+
+    while not frontier.isEmpty():
+        state = frontier.deleteMin()
+        explored.add(state)
+
+        if goalTest(state):
+            return SUCCESS(state)
+
+        for neighbor in state.neighbors():
+            if neighbor not in frontier ∪ explored:
+                frontier.insert(neighbor)
+        else if neighbor in frontier:
+            frontier.decreaseKey(neighbor)
+
+    return FAILURE
+Cập nhật "giá"
+```
+
+## Tìm kiếm đều giá
+
+**● Hãy làm rõ quá trình biến đổi của danh sách frontier ?**
+
+```lua
+frontier = {A(0)}
+frontier = {B(2), C(1), D(3)}
+frontier = {B(2), G(1+6), H(1+3), D(3)}
+frontier =
+{E(2+5), F(2+4), G(7), H(4), D(3)}
+```
+
+**frontier = …**
+
+![](images/page_122_image_4.jpg)
+
+functionUNIFORM-COST-SEARCH(initialState, goalTest) returns SUCCESS or FAILURE : /\* Cost f(n) = g(n) \*/
+
+frontier = Heap.new(initialState) explored = Set.new()
+
+while not frontier.isEmpty(): state = frontier.deleteMin() explored.add(state)
+
+if goalTest(state): return SucCEss(state)
+
+for neighbor in state.neighbors(): if neighbor not in frontier ∪ explored: frontier.insert(neighbor) else if neighbor in frontier:
+
+## ustrating uninformed searcUninformed Search
+
+![](images/page_123_image_1.jpg)
+
+## Uninformed Search
+
+![](images/page_124_image_1.jpg)
+
+## Breadth-First Search
+
+| Expanded node | Nodes list |
+| --- | --- |
+|  | $\{ S^0 \}$ |
+| $S^0$ | $\{ A^3 B^1 C^8 \}$ |
+| $A^3$ | $\{ B^1 C^8 D^6 E^{10} G^{18} \}$ |
+| $B^1$ | $\{ C^8 D^6 E^{10} G^{18} G^{21} \}$ |
+| $C^8$ | $\{ D^6 E^{10} G^{18} G^{21} G^{13} \}$ |
+| $D^6$ | $\{ E^{10} G^{18} G^{21} G^{13} \}$ |
+| $E^{10}$ | $\{ G^{18} G^{21} G^{13} \}$ |
+| $G^{18}$ | $\{ G^{21} G^{13} \}$ |
+
+Solution path found is S A G , cost 18
+
+Number of nodes expanded (including goal node) = 7
+
+## Depth-First Search
+
+| Expanded node | Nodes list |
+| --- | --- |
+|  | { S0 } |
+| S0 | { A3 B1 C8 } |
+| A3 | { D6 E10 G18 B1 C8 } |
+| D6 | { E10 G18 B1 C8 } |
+| E10 | { G18 B1 C8 } |
+| G18 | { B1 C8 } |
+
+Solution path found is S A G, cost 18
+
+Number of nodes expanded (including goal node) = 5
+
+## Uniform-Cost Search
+
+| Expanded node | Nodes list |
+| --- | --- |
+|  | { S0 } |
+| S0 | { B1 A3 C8 } |
+| B1 | { A3 C8 G21 } |
+| A3 | { D6 C8 E10 G18 G21 } |
+| D6 | { C8 E10 G18 G1 } |
+| C8 | { E10 G13 G18 G21 } |
+| E10 | { G13 G18 G21 } |
+| G13 | { G18 G21 } |
+
+Solution path found is S B G, cost 13
+
+Number of nodes expanded (including goal node) = 7
+
+## TRÍ TUỆ NHÂN TẠO
+
+**Chương 3: Kỹ thuật tìm kiếm có sử dụng thông tin**
+
+## Chương 3: Kỹ thuật tìm kiếm có sử dụng thông tin Nội dung
+
+**• Giới thiệu**
+
+**• Tìm kiếm tham lam tốt nhất**
+
+• Tìm kiếm $\mathrm { A } ^ { * }$
+
+**• Bài tập**
+
+**• Tìm kiếm leo đồi**
+
+## Giới thiệu
+
+**• Tối ưu tìm kiếm (Search Optimization):**
+
+**o Trạng thái s**
+
+**o Hành động a từ trạng thái s dẫn đến trạng thái Suss(s,a)**
+
+o Mục tiêu xây dựng chuỗi hành động $( a _ { 1 } , a _ { 2 } , a _ { \mathrm { n } } , \ldots , )$ **từ trạng thái ban đầu đến trạng thái kết thúc.**
+
+**o Vấn đề: Cần tìm đường đi với chi phí bé nhất**
+
+## Giới thiệu
+
+**• Cây tìm kiếm (Tree search):**
+
+**o Khám phá tất cả các trạng thái và hành động có thể có**
+
+**o Kỹ thuật tìm với không gian bộ nhớ phù hợp ( như DFS O(b.m))**
+
+**o Hạn chế** $\mathrm { v } \dot { \hat { \mathbf { e } } }$ **thời gian thực thi thường khai triển theo cấp số nhân (như BFS và DFD O(b**<strong><sup>d</sup></strong>**)).**
+
+![](images/page_131_image_5.jpg)
+
+Self-loop
+
+![](images/page_131_image_7.jpg)
+
+More than a parent
+
+![](images/page_131_image_9.jpg)
+
+Cycle
+
+![](images/page_131_image_11.jpg)
+
+More than a root
+
+![](images/page_131_image_13.jpg)
+
+Valid tree
+
+## Giới thiệu
+
+**• Vấn đề tìm kiếm (Search problem) được định nghĩa:**
+
+**o Trạng thái ban đầu s**
+
+**o Tập hành động từ trạng thái s: Action (s)**
+
+**o Chi phí thực hiện hành động a từ trạng thái s: Cost(s,a)**
+
+**o Kết quả thực hiện trạng thái s bởi hành động a: Suss(s,a)**
+
+**o Trạng thái kết thúc g**
+
+![](images/page_132_image_7.jpg)
+
+## Giới thiệu
+
+**● Kỹ thuật tìm kiếm mù:**
+
+**○ Kỹ thuật BFS và DFS kém hiệu quả.**
+
+**● Khắc phục:**
+
+**○ Tìm trạng thái đang hướng tới trạng thái đích.**
+
+**○ Tìm hàm đo khoảng cách đến trạng thái đích.**
+
+**● Hàm kinh nghiệm (Heuristic function)**
+
+**○ Hàm heuristic là hàm h tại trạng thái s và được ước lượng tới trạng thái đích h(s) = FutureCost(s)**
+
+![](images/page_133_image_8.jpg)
+
+## Giới thiệu
+
+**● Kỹ thuật tìm kiếm có thông tin**
+
+**○ Xây dựng hàm đánh giá có vai trò then chốt.**
+
+**○ Tính hiệu quả của thuật toán phụ thuộc vào hàm đánh giá.**
+
+**● Hàm đánh giá trong bài toán tìm đường đi:**
+
+**○ Hàm đánh giá là đường chim bay.**
+
+**○ Hàm đánh giá là khoảng cách thực giữa hai địa điểm.**
+
+**○ Hàm đánh giá là khoảng cách thực và trọng số bổ sung trên đường đi.**
+
+**● Tóm lại: Hàm đánh giá tùy thuộc vào vấn đề cần giải.**
+
+## Giới thiệu
+
+**● Kỹ thuật tìm kiếm có thông tin được dạy**
+
+**○ Tìm kiếm ăn tham tốt nhất đầu tiên (Greedy bestfirst search).**
+
+**○ Tìm kiếm** $\mathbf { A } ^ { \star }$ **(A star search).**
+
+**○ Thuật toán leo đồi (Hill-climbing search).**
+
+## Heuristic
+
+## Heuristic là gì?
+
+**Heuristic là những tri thức được rút tỉa từ những kinh nghiệm, “trực giác” của con người.**
+
+**Heuristic có thể là những tri thức “đúng” hay “sai”.**
+
+Heuristic là những meta knowledge và “thường đúng”.
+
+## • Heuristic dùng để làm gì?
+
+**Trong những bài toán tìm kiếm trên không gian trạng thái, có 2 trường hợp cần đến heuristic:**
+
+**1. Vấn đề có thể không có nghiệm chính xác do các mệnh đề không phát biểu chặt chẽ hay thiếu dữ liệu để khẳng định kết quả.**
+
+**2. Vấn đề có nghiệm chính xác nhưng phí tổn tính toán để tìm ra nghiệm là quá lớn (hệ quả của bùng nỗ tổ hợp)**
+
+**Heuristic giúp tìm kiếm đạt kết quả với chi phí thấp hơn**
+
+## Heuristic (tt)
+
+## • Heuristic dùng như thế nào trong SSS?
+
+**• Tìm kiếm trên không gian trạng thái theo chiều nào? Sâu hay rộng?**
+
+Tìm theo Heuristic : Heuristic định hướng quá trình tìm **kiếm theo hướng mà “nó” cho rằng khả năng đạt tới nghiệm là cao nhất. Không “sâu” cũng không “rộng”**
+
+## • Kết quả của tìm kiếm với Heuristic
+
+Việc tìm kiếm theo định hướng của heuristic có kết quả **tốt hay xấu tùy theo heuristic “đúng” hay “sai”.**
+
+**• Heuristic có khả năng bỏ xót nghiệm**
+
+**• Heuristic càng tốt càng dẫn đến kết quả nhanh và tốt.**
+
+**• Làm sao tìm được Heuristic tốt???**
+
+**Tìm kiếm tham lam tốt nhất đầu tiên (Greedy best-first search)**
+
+**Tìm kiếm tham lam tốt nhất đầu tiên (Greedy best-first search)**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+**● Ý tưởng:**
+
+**○ sử dụng hàm đánh giá.**
+
+**○ sử dụng tìm kiếm theo chiều rộng.**
+
+**● Hàm đánh giá h(u)**
+
+**○ Hàm ước lượng đến trạng thái kết thúc.**
+
+**● Tìm kiếm tham lam tốt nhất đầu tiên**
+
+**○ Các trạng thái được phát dựa vào hàm đánh giá.**
+
+**○ Các trạng thái không được phát sinh lần lượt theo BFS.**
+
+**● Hướng cài đặt**
+
+**○ Dùng hàng đợi có sự ưu tiên dựa vào hàm đánh giá.**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+**● Ý tưởng:**
+
+**○ sử dụng hàm đánh giá.**
+
+**○ sử dụng tìm kiếm theo chiều rộng.**
+
+**● Hàm đánh giá h(u)**
+
+**○ Hàm ước lượng đến trạng thái kết thúc.**
+
+**● Tìm kiếm tham lam tốt nhất đầu tiên**
+
+**○ Các trạng thái được phát dựa vào hàm đánh giá.**
+
+**○ Các trạng thái không được phát sinh lần lượt theo BFS.**
+
+**● Hướng cài đặt**
+
+**○ Dùng hàng đợi có sự ưu tiên dựa vào hàm đánh giá.**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+## ● Ý tưởng: h(u) và Queue
+
+```python
+function GREEDY-BEST-FIRST-SEARCH(initialState, goalTest)
+    returns SUCCESS or FAILURE : /* Cost f(n) = h(n) */
+    frontier = Heap.new(initialState)
+    explored = Set.new()
+    while not frontier.isEmpty():
+        state = frontier.deleteMin()
+        explored.add(state)
+        if goalTest(state):
+            return SUCCESS(state)
+        for neighbor in state.neighbors():
+            if neighbor not in frontier ∪ explored:
+                frontier.insert(neighbor)
+            else if neighbor in frontier:
+                frontier.decreaseKey(neighbor)
+    return FAILURE
+```
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+![](images/page_143_image_1.jpg)
+
+<table><tr><td colspan="2">Straight-line distance to Bucharest</td></tr><tr><td>Arad</td><td>366</td></tr><tr><td>Bucharest</td><td>0</td></tr><tr><td>Craiova</td><td>160</td></tr><tr><td>Dobreta</td><td>242</td></tr><tr><td>Eforie</td><td>161</td></tr><tr><td>Fagaras</td><td>178</td></tr><tr><td>Giurgiu</td><td>77</td></tr><tr><td>Hirsova</td><td>151</td></tr><tr><td>Iasi</td><td>226</td></tr><tr><td>Lugoj</td><td>244</td></tr><tr><td>Mehadia</td><td>241</td></tr><tr><td>Neamt</td><td>234</td></tr><tr><td>Oradea</td><td>380</td></tr><tr><td>Pitesti</td><td>98</td></tr><tr><td>Rimnicu Vilcea</td><td>193</td></tr><tr><td>Sibiu</td><td>253</td></tr><tr><td>Timisoara</td><td>329</td></tr><tr><td>Urziceni</td><td>80</td></tr><tr><td>Vaslui</td><td>199</td></tr><tr><td>Zerind</td><td>374</td></tr></table>
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+**Arad (366)**
+
+Assume that we want to use greedy search **to solve the problem of travelling from Arad to Bucharest.**
+
+**• The initial state=Arad**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+![](images/page_145_image_1.jpg)
+
+**The first expansion step produces: Sibiu, Timisoara and Zerind Greedy best-first will select Sibiu.**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+![](images/page_146_image_1.jpg)
+
+**If Sibiu is expanded we get: Arad, Fagaras, Oradea and Rimnicu Vilcea Greedy best-first search will select: Fagaras**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+![](images/page_147_image_1.jpg)
+
+**If Fagaras is expanded we get: Sibiu and Bucharest Goal reached !! Yet not optimal (see Arad, Sibiu, Rimnicu Vilcea, Pitesti)**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+**● Quá trình biến đổi frontier ?**
+
+**Frontier = {A(6)}**
+
+**Frontier = {B(3), C(4),D(5)}**
+
+**Frontier = {F(1),E(3), C(4), D(5)}**
+
+```txt
+Frontier = {L(0), K(2), M(4), E(3), C(4), D(5)}}
+```
+
+**Frontier = ….**
+
+![](images/page_148_image_7.jpg)
+
+function GREEDY-BEST-FIRST-SEARCH(initialState, goalTest) returns SUCCESs or FAILURE : /\*Cost f(n) = h(n) \*/
+
+frontier = Heap.new(initialState) explored = Set.new()
+
+while not frontier.isEmpty(): state = frontier.deleteMin() explored.add(state)
+
+if goalTest(state): return SUCCEss(state)
+
+for neighbor in state.neighbors(): if neighbor notin frontier ∪explored: frontier.insert(neighbor) else if neighbor in frontier: frontier.decreaseKey(neighbor)
+
+## Bài tập tại lớp
+
+![](images/page_149_image_1.jpg)
+
+| NODES | HEURISTICS |
+| --- | --- |
+| A | 13 |
+| B | 12 |
+| C | 4 |
+| D | 7 |
+| E | 3 |
+| F | 8 |
+| G | 2 |
+| H | 0 |
+
+**Tìm đường đi từ A-H**
+
+**1) Tìm kiếm theo chiều rộng,**
+
+**2) Tìm kiếm theo chiều sâu**
+
+**3) TÌm kiếm tham lam tốt nhất**
+
+## Tìm kiếm tham lam tốt nhất đầu tiên
+
+![](images/page_150_image_1.jpg)
+
+## Demo(10 phút)
+
+```python
+import heapq
+from TreeNode import Tree
+def update_frontier(frontier, new_node):
+    for idx, n in enumerate(array_of_node):
+        if n == new_node:
+            if frontier[idx].goal_cost > new_node.goal_cost:
+                frontier[idx] = new_node
+def GBF_search(initial_state, goalTest):
+    frontier = []
+    explored = []
+    heapq.heapify(frontier)
+    heapq.heappush(frontier, initial_state)
+    while len(frontier) > 0:
+        state = heapq.heappop(frontier)
+        explored.append(state)
+        if state == goalTest:
+            return explored;
+        for neighbor in state.get_children():
+            if neighbor not in (frontier and explored):
+                heapq.heappush(frontier, neighbor)
+            elif neighbor in frontier:
+                update_frontier(frontier=frontier, new_node=neighbor)
+    return False
+```
+
+## màu đ là giá tr hàm đánh giá
+
+![](images/page_151_image_3.jpg)
+
+function GREEDY-BEST-FIRST-SEARCH(initialState, goalTest) returns SUCCESS or FAILURE : /\*Cost f(n) = h(n)\*/
+
+frontier = Heap.new(initialState) explored = Set.new()
+
+while not frontier.isEmpty(): state = frontier.deleteMin() explored.add(state)
+
+if goalTest(state): return SuccEss(state)
+
+for neighbor in state.neighbors(): if neighbor not in frontier ∪explored: frontier.insert(neighbor) else if neighbor in frontier: frontier.decreaseKey(neighbor) **152**
+
+return FAILURE
+
+## Demo(7 phút)
+
+```python
+if __name__ == '__main__':
+    A = Tree("A",6)
+    B = Tree("B",3)
+    C = Tree("C",4)
+    D = Tree("D",5)
+    E = Tree("E",3)
+    F = Tree("F",1)
+    G = Tree("G",6)
+    H = Tree("H",2)
+    I = Tree("I",5)
+    J = Tree("J",4)
+    K = Tree("K",2)
+    L = Tree("L",0)
+    M = Tree("M",4)
+    N = Tree("N",0)
+    O = Tree("O",4)
+    A.add_child(B)
+    A.add_child(C)
+    A.add_child(D)
+    B.add_child(E)
+    B.add_child(F)
+    C.add_child(G)
+    C.add_child(H)
+    D.add_child(I)
+    D.add_child(J)
+    F.add_child(K)
+    F.add_child(L)
+    F.add_child(M)
+    H.add_child(N)
+    H.add_child(O)
+    result = GBF_search(A,L)
+    if result:
+        s = 'explored: '
+        for i in result:
+            s+=i.data + " "
+            print(s)
+    else:
+        print('404 not Found!')
+```
+
+![](images/page_152_image_2.jpg)
+
+**Tìm kiếm A \* (A Star search )**
+
+## Tìm kiếm A \*
+
+**● Tìm kiếm đường đi tốt nhất từ trạng thái đầu đến trạng thái đích**
+
+**● Ý tưởng:**
+
+**○ sử dụng hàm kinh nghiệm chấp nhận được**
+
+**○ kỹ thuật tìm kiếm BFS**
+
+**● Khám phá trạng thái s**
+
+**○ g(u) - độ dài từ trạng thái đầu đến trạng thái u**
+
+**○ h(u) - hàm heuristic**
+
+**● Hàm h(u) chấp nhận được**
+
+○ $\mathbf { h } ( \mathbf { u } ) \Longleftarrow \mathbf { h } ^ { \star } ( \mathbf { u } ) ,$
+
+**○ h\*(u)- giá trị thực tế từ u đến trạng thái đích.**
+
+● Đề tăng hiệu quả tìm kiếm: $\mathbf { f } ( \mathbf { u } ) = \mathbf { g } ( \mathbf { u } ) + \mathbf { h } ( \mathbf { u } )$
+
+**○ f(u) - lượng giá từ trạng thái đầu tới đích qua trạng thái u**
+
+## Tìm kiếm A \*
+
+**● Tìm kiếm đường đi tốt nhất từ trạng thái đầu đến trạng thái đích**
+
+**● Ý tưởng:**
+
+**○ sử dụng hàm kinh nghiệm chấp nhận được**
+
+**○ kỹ thuật tìm kiếm BFS**
+
+**● Khám phá trạng thái s**
+
+**○ c(u) - độ dài từ trạng thái đầu đến trạng thái u**
+
+**○ h(u) - hàm heuristic**
+
+**● Hàm h(u) chấp nhận được**
+
+○ $\mathbf { h } ( \mathbf { u } ) < = \mathbf { h } ^ { \star } ( \mathbf { u } ) ,$
+
+**○ h\*(u)- giá trị thực tế từ u đến trạng thái đích.**
+
+● Đề tăng hiệu quả tìm kiếm: $\mathbf { f } ( \mathbf { u } ) = \mathbf { c } ( \mathbf { u } ) + \mathbf { h } ( \mathbf { u } )$
+
+**○ f(u) - lượng giá từ trạng thái đầu tới đích qua trạng thái u**
+
+## Tìm kiếm A \*
+
+**● Kết hợp giữa hàm Heuristic và BFS.**
+
+```python
+function A-STAR-SEARCH(initialState, goalTest)
+    returns SUCCESS or FAILURE : /* Cost f(n) = g(n) + h(n) */
+
+    frontier = Heap.new(initialState)
+    explored = Set.new()
+
+    while not frontier.isEmpty():
+        state = frontier.deleteMin()
+        explored.add(state)
+
+        if goalTest(state):
+            return SUCCESS(state)
+
+        for neighbor in state.neighbors():
+            if neighbor not in frontier ∪ explored:
+                frontier.insert(neighbor)
+            else if neighbor in frontier:
+                frontier.decreaseKey(neighbor)
+```
+
+return FAILURE
+
+## Tìm kiếm A \*
+
+![](images/page_157_image_1.jpg)
+
+<table><tr><td colspan="2">Straight-line distance to Bucharest</td></tr><tr><td>Arad</td><td>366</td></tr><tr><td>Bucharest</td><td>0</td></tr><tr><td>Craiova</td><td>160</td></tr><tr><td>Dobreta</td><td>242</td></tr><tr><td>Eforie</td><td>161</td></tr><tr><td>Fagaras</td><td>178</td></tr><tr><td>Giurgiu</td><td>77</td></tr><tr><td>Hirsova</td><td>151</td></tr><tr><td>Iasi</td><td>226</td></tr><tr><td>Lugoj</td><td>244</td></tr><tr><td>Mehadia</td><td>241</td></tr><tr><td>Neamt</td><td>234</td></tr><tr><td>Oradea</td><td>380</td></tr><tr><td>Pitesti</td><td>98</td></tr><tr><td>Rimnicu Vilcea</td><td>193</td></tr><tr><td>Sibiu</td><td>253</td></tr><tr><td>Timisoara</td><td>329</td></tr><tr><td>Urziceni</td><td>80</td></tr><tr><td>Vaslui</td><td>199</td></tr><tr><td>Zerind</td><td>374</td></tr></table>
+
+**Find Bucharest starting at Arad**
+
+$$
+f (\text {Arad}) = g (\text {Arad,Arad}) + h (\text {Arad}) = 0 + 3 6 6 = 3 6 6
+$$
+
+## Tìm kiếm A \*
+
+![](images/page_159_image_1.jpg)
+
+<div class="docvortex-algorithm" style="white-space: pre-wrap; font-family:monospace;">
+Expand Arrad and determine $f(n)$ for each node
+    $f(\text{Sibiu}) = g(\text{Arad}, \text{Sibiu}) + h(\text{Sibiu}) = 140 + 253 = 393$
+    $f(\text{Timisoara}) = g(\text{Arad}, \text{Timisoara}) + h(\text{Timisoara}) = 118 + 329 = 447$
+    $f(\text{Zerind}) = g(\text{Arad}, \text{Zerind}) + h(\text{Zerind}) = 75 + 374 = 449$
+Best choice is Sibiu
+</div>
+
+## Tìm kiếm A \*
+
+![](images/page_160_image_1.jpg)
+
+**Expand Sibiu and determine** $f ( n )$ **for each node** $- \mathsf{f}(\mathsf{A}\mathsf{rad}) = \mathsf{g}(\mathsf{S}\mathsf{b}\mathsf{i}\mathsf{u},\mathsf{A}\mathsf{rad}) + \mathsf{h}(\mathsf{A}\mathsf{rad}) = 280 + 366 = 646$ $- \mathsf{f}(\mathsf{Fagaras}) = \mathsf{g}(\mathsf{Sibiu},\mathsf{Fagaras}) + \mathsf{h}(\mathsf{Fagaras}) = 239 + 179 = 415$ $- \mathsf { f } ( \mathsf { O r a d e a } ) { = } \mathsf { g } ( \mathsf { S i b i u } , \mathsf { O r a d e a } ) { + } \mathsf { h } ( \mathsf { O r a d e a } ) { = } 2 9 1 { + } 3 8 0 { = } 6 7 1$ $- \mathsf { f } ( \mathsf { R i m n i c u } \; \mathsf { V i l c e a } ) { = } \mathsf { g } ( \mathsf { S i b i u } , \mathsf { R i m n i c u } \; \mathsf { V i l c e a } ) +$ $h(RimricuVilcea)=220+192=413$
+
+**Best choice is Rimnicu Vilcea**
+
+## Tìm kiếm A \*
+
+![](images/page_161_image_1.jpg)
+
+**Expand Rimnicu Vilcea and determine** $f ( n )$ **for each node f(Craiova)=g(Rimnicu Vilcea, Craiova)+h(Craiova)=360+160=526** ${ \sf f ( P i t e s t i ) { = } g ( R i m n i c u ~ V i l c e a , P i t e s t i ) { + } h ( P i t e s t i ) { = } 3 1 7 { + } 1 0 0 { = } 4 1 7 }$ $\mathsf { f ( S i b i u ) { = } g ( R i m n i c u \; V i l c e a , } \mathsf { S i b i u ) { + } h ( S i b i u ) { = } 3 0 0 { + } 2 5 3 { = } 5 5 3 }$ **Best choice is Fagaras**
+
+## Tìm kiếm A \*
+
+![](images/page_162_image_1.jpg)
+
+**Expand Fagaras and determine f(n) for each node f(Sibiu)=g(Fagaras, Sibiu)+h(Sibiu)=338+253=591 f(Bucharest)=g(Fagaras,Bucharest)+h(Bucharest)=450+0=450 Best choice is Pitesti !!!**
+
+## Tìm kiếm A \*
+
+![](images/page_163_image_1.jpg)
+
+Expand Pitesti and determine $f ( n )$ for each node f(Bucharest)=g(Pitesti,Bucharest)+h(Bucharest)=418+0=418
+
+**Best choice is Bucharest !!! Optimal solution (only if** $h ( n )$ **is admissible) Note values along optimal path !!**
+
+## Tìm kiếm A\*
+
+**● Quá trình biến đổi frontier ?**
+
+```hcl
+frontier = {A(0+6)}
+```
+
+**frontier = {**<strong><u>B(2+3)</u></strong>**, C(1+4),D(3+5)}**
+
+```txt
+frontier = {E(10),
+F(7),G(7+6),H(4+2),D(8)}
+```
+
+```txt
+frontier = {E(10),
+F(7),G(7+6),N(6+0),O(8+4),D(8)
+}
+```
+
+```python
+frontier = ...
+```
+
+đ -> h(u), đen -> g(u)
+
+![](images/page_164_image_8.jpg)
+
+function A-STAR-SEARCH(initialState, goalTest) returns SUCCESs or FAILURE : /\* Cost f(n) = g(n) + h(n) \*/
+
+frontier = Heap.new(initialState) explored = Set.new()
+
+while not frontier.isEmpty(): state = frontier.deleteMin() explored.add(state)
+
+if goalTest(state): return SUCCEss(state)
+
+for neighbor in state.neighbors(): if neighbor not in frontier ∪ explored: frontier.insert(neighbor) else if neighbor in frontier: frontier.decreaseKey(neighbor)
+
+return FAILURE
+
+## Tìm kiếm A \*
+
+Ví dụ hàm Heuristic chấp nhận được của bài toán $8 ~ \mathrm { s } \hat { \hat { 0 } }$
+
+$\mathbf { h } _ { 1 } ( \mathbf { u } ) - \hat { \mathbf { s } \hat { \mathbf { o } } }$ **lượng ô bị sai.**
+
+$\mathbf { h } _ { 2 } ( \mathbf { u } ) - \mathrm { t } \hat { 0 } \mathrm { n g } \mathrm { s } \hat { 0 }$ **lượng ô từ ô hiện tại đến trạng thái đích**
+
+![](images/page_165_image_4.jpg)
+
+Start State
+
+![](images/page_165_image_6.jpg)
+
+Goal State
+
+$\mathbf { h } _ { 1 } ( \mathbf { u } ) = ? \quad \mathbf { h } _ { 2 } ( \mathbf { u } ) = ?$
+
+## Tìm kiếm A \*
+
+Ví dụ hàm Heuristic chấp nhận được của bài toán $8 ~ \mathrm { s } \hat { \hat { 0 } }$
+
+![](images/page_166_image_2.jpg)
+
+Start State
+
+![](images/page_166_image_4.jpg)
+
+Goal State
+
+$\mathbf { h } _ { 1 } ( \mathbf { u } ) = 8$
+
+$h_{2}(u)=3+1+2+2+2+3+3+2=18$
+
+• Nếu $\mathbf { h } _ { 2 } ( \mathbf { u } ) \mathrm { > } = \mathbf { h } _ { 1 } ( \mathbf { u } )$ **với mọi u.**
+
+$\Rightarrow \mathrm { h } _ { 2 } ( \mathbf { u } )$ mạnh hơn $\mathbf { h } _ { 1 } ( \mathbf { u } )$ có nghĩa $\mathbf { h } _ { 2 } ( \mathbf { u } )$ tốt hơn $\mathbf { h _ { j } ( u ) }$
+
+## Demo(15 phút)
+
+```python
+if __name__ == "__main__":
+    tree = Tree()
+    tree.add_nodes([
+        Node("A", 6),
+        Node("B", 3),
+        Node("C", 4),
+        Node("D", 5),
+        Node("E", 3),
+        Node("F", 1),
+        Node("G", 6),
+        Node("H", 2),
+        Node("I", 5),
+        Node("J", 4),
+        Node("K", 2),
+        Node("L", 0),
+        Node("M", 4),
+        Node("N", 0),
+        Node("O", 4)
+    ])
+    tree.add_edges([
+        ("A", "B", 2),
+        ("A", "C", 1),
+        ("A", "D", 3),
+        ("B", "E", 5),
+        ("B", "F", 4),
+        ("C", "G", 6),
+        ("C", "H", 3),
+        ("D", "I", 2),
+        ("D", "J", 4),
+        ("F", "K", 2),
+        ("F", "L", 1),
+        ("F", "M", 4),
+        ("H", "N", 2),
+        ("H", "O", 4),
+    ])
+    tree.nodes[0].cost = 0
+    #print(tree.edges)
+    result = A_Star(tree, tree.nodes[0], tree.nodes[14])
+    if result:
+        s = 'explored: '
+        for i in result:
+            s += i.label + " "
+            print(s);
+    else:
+        print('404 Not Found!')
+```
+
+![](images/page_167_image_2.jpg)
+
+function A-STAR-SEARCH(initialState, goalTest) returns SUCCESS orFAILURE : /\*Cost f(n) =g(n) + h(n)\*/
+
+frontier = Heap.new(initialState) explored = Set.new()
+
+while not frontier.isEmpty(): state = frontier.deleteMin() explored.add(state)
+
+if goalTest(state): return SuCCEss(state)
+
+for neighbor in state.neighbors(): if neighbor not in frontier ∪ explored: frontier.insert(neighbor) else if neighbor in frontier: frontier.decreaseKey(neighbor)
+
+return FAILURE
+
+## Demo(15 phút)
+
+```python
+def update_cost(tree, current_node, prev_node):
+    if tree.get_edge(prev_node, current_node) is not None:
+        #print("OK")
+        if current_node.cost > prev_node.cost + tree.get_edge(prev_node, current_node)[2]:
+            current_node.cost = prev_node.cost + tree.get_edge(prev_node, current_node)[2]
+def A_Star(tree, start, end):
+    frontier = [start]
+    heapq.heapify(frontier)
+    explored = []
+    while len(frontier) > 0:
+        state = heapq.heappop(frontier)
+        explored.append(state)
+        print(state)
+        if state == end:
+            return explored
+        for child in state.neighbors():
+            update_cost(tree, child, state)
+            if child.get_label() not in list(set(node.get_label() for node in frontier + explored)):
+                heapq.heappush(frontier, child)
+    return False
+```
+
+## Demo(15 phút)
+
+```python
+import heapq
+class Node:
+    def __init__(self, label, goal_cost):
+        self.label = label
+        self.cost = 10000
+        self.goal_cost = goal_cost
+        self.save_cost = None
+        self.pr = []
+        self.chld = []
+    def __repr__(self):
+        return str(dict({
+            "label": self.label,
+            "cost" : self.cost,
+            "goal cost": self.goal_cost
+        "))
+    def __eq__(self, other):
+        return self.label == other.label
+    def __lt__(self, other):
+        if self.save_cost == 10000:
+            return self.goal_cost + self.cost < other.goal_cost + other.cost
+        else:
+            return self.cost < other.cost
+    def get_label(self):
+        return self.label
+    def neighbors(self):
+        return self.chld + self.pr
+```
+
+## Demo(15 phút)
+
+```python
+class Tree:
+    def __init__(self):
+        self.nodes = []
+        self.edges = []
+    def add_nodes(self, data):
+        for node in data:
+            self.nodes.append(node)
+    def add_node(self, node):
+        self.nodes.append(node)
+
+    def get_index(self, node):
+        for i, n in enumerate(self.nodes):
+            if n.get_label() == node.get_label():
+                return i
+        return -1
+    def add_edges(self, tuple_edges):
+        for t in tuple_edges:
+            start_label = t[0]
+            end_label = t[1]
+            w = t[2]
+            index_start_label = self.get_index(Node(start_label, None))
+            index_end_label = self.get_index(Node(end_label, None))
+
+            self.nodes[index_start_label].chld.append(self.nodes[index_end_label])
+            self.nodes[index_end_label].pr.append(self.nodes[index_start_label])
+            self.edges.append((self.nodes[index_start_label], self.nodes[index_end_label],t[2]))
+
+    def show_nodes(self):
+        return [node.get_data() for node in self.nodes]
+    def get_edge(self, start_node, end_node):
+        try:
+            return [edges for edges in self.edges if edges[0] == start_node
+                and edges[1] == end_node][0]
+        except:
+            return None
+```
+
+## Bài tập 1
+
+**● Xây dựng chương trình cài đặt kỹ thuật tìm kiếm** tham lam tốt nhất đầu tiên và kỹ thuật tìm kiếm $\mathrm { A } ^ { * }$
+
+## 2 O
+
+**Tìm kiếm leo đồi (Hill-climbing search )**
+
+## Tìm kiếm leo đồi
+
+Chọn một trạng thái tốt hơn trạng thái hiện hành để **mở rộng. Nếu không, thuật toán phải dừng**
+
+**● Nếu chỉ chọn một trạng thái tốt hơn: leo đồi đơn giản; trạng thái tốt nhất: leo đồi dốc đứng**
+
+**● Sử dụng hàm H để biết trạng thái nào tốt hơn**
+
+Khác với tìm kiếm sâu, leo đồi không lưu tất cả các **con mà chỉ lưu đúng một trạng thái được chọn nếu có**
+
+## Tìm kiếm leo đồi
+
+**● Ý tưởng:**
+
+**○ Sử dụng hàm đánh giá.**
+
+**○ Sử dụng tìm kiếm theo chiều sâu.**
+
+**● Hàm đánh giá h(u)**
+
+**○ Hàm ước lượng đến trạng thái kết thúc.**
+
+**● Tìm kiếm leo đồi**
+
+**○ Các trạng thái được phát dựa vào hàm đánh giá.**
+
+**○ Các trạng thái không được phát sinh lần lượt theo DFS.**
+
+**● Hướng cài đặt**
+
+**○ Dùng ngăn xếp có sự ưu tiên dựa vào hàm đánh giá.**
+
+## Tìm kiếm leo đồi
+
+**Ý nghĩa:**
+
+**• Phương pháp này được thực hiện nhờ hàm đánh giá.**
+
+Khác với phương pháp tìm kiếm theo chiều sâu, khi phát triển **đỉnh u, chọn trong số các đỉnh con của u, đỉnh nào có nhiều hứa hẹn nhất thì phát triển.**
+
+## Tìm kiếm leo đồi
+
+## • Đầu vào:
+
+**- Trạng thái đầu là A,**
+
+**- Trạng thái kết thúc là B.**
+
+## Thực hiện:
+
+**- A được xét → C, D, E.**
+
+**- Chọn D, vì h(D) = 6 (min), sinh ra F,I.**
+
+**- Trong sốcác đỉnh con của D, chọn I, vì h(I) = 8.**
+
+**- Với I được chọn, sinh ra B và G.**
+
+**- B là trạng thái kết thúc.**
+
+![](images/page_176_image_10.jpg)
+
+![](images/page_176_image_11.jpg)
+
+## Tìm kiếm leo đồi
+
+![](images/page_177_image_1.jpg)
+
+## Cài đặt Hill-Climbing Search
+
+## Procedure Hill\_Climbing\_Search;
+
+## Begin
+
+**1. Khởi tạo danh sách L chỉ chứa trạng thái đầu;**
+
+## 2. Loop do
+
+**1. If L rỗng then { thông báo thất bại; stop; }**
+
+**2. Loại trạng thái u đầu danh sách L;**
+
+**If u là trạng thái kết thúc then { thông báo thành công; stop; }**
+
+**4. For mỗi trạng thái v kề u đặt v vào L sao cho các phần tử được đưa vào đầu danh sách L có đánh giá giảm dần;**
+
+## 3. End;
+
+## Cài đặt Hill-Climbing Search
+
+```javascript
+function HILL-CLIMBING(problem) returns a state that is a local maximum
+  inputs: problem, a problem
+  local variables: current, a node
+    neighbor, a node
+  current←MAKE-NODE(INITIAL-STATE[problem])
+  loop do
+    neighbor←a highest-valued successor of current
+    if VALUE[neighbor] ≤ VALUE[current] then return STATE[current]
+    current←neighbor
+```
+
+## Hill-Climbing Search
+
+**Giới hạn**
+
+**• Có khuynh hướng bị sa lầy ở những cực đại cục bộ**
+
+**• Lời giải tìm được không tối ưu**
+
+**• Không tìm được lời giải mặc dù có tồn tại lời giải** **• Có thể gặp vòng lặp vô hạn do không lưu giữ thông tin về các trạng thái đã duyệt**
+
+![](images/page_180_chart_6.jpg)
+
+## Bài tập 2
+
+Mỗi sinh viên chọn 01 kỹ thuật tìm kiếm bên dưới để nghiên cứu **để hiểu kỹ thuật tìm kiếm đã chọn:**
+
+**○ Tìm kiếm nhánh và cận (Branch and Bound)**
+
+**○ Tìm kiếm cục bộ (Local search algorithms)**
+
+**○ Tìm kiếm mô phỏng luyện kim (Simulated annealing search)**
+
+**○ Thuật toán gen (Genetic algorithms)**
+
+Bài tập 3: Cho mê cung như bên dưới, tìm đường đi ngắn nhất theo thuật toán BFS, DFS, $\mathbf { A } ^ { * }$
+
+```python
+maze = [
+    ['0', '0', '0', '0', '0', '0', '0', '0', '0'],
+    ['0', 'E', '*', '*', '*', '', '*, '*', '*', '0'],
+    ['0', '*', '0', '*', '*', '0', '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '*', '', '*, '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '*', '0', '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '*', '0', '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '*', '0', '*', '*', '*', '0'],
+    ['0', '*', '0', '*', '*', '0', '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '*', '', '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '*', '0', '*', '*', '*', '0'],
+    ['0', '*', '*', '*', '0', '*', '*', '*', '*', '0'],
+    ['0', '*', '*', 'X', '*', '0', '*', '*', '*', '0']
+```
+
+**TRÍ TUỆ NHÂN TẠO**
+
+**Chương 4: Tìm kiếm có đối thủ**
+
+## Chương 4: Tìm kiếm có đối thủ
+
+## Nội dung
+
+**● Giới thiệu**
+
+**● Cây trò chơi**
+
+**● Chiến lược Minimax**
+
+**● Chiến lược cắt tỉa Alpha-Beta**
+
+## Giới thiệu
+
+**● Trò chơi:**
+
+**○ Đặc tính thông minh của con người**
+
+○ **Phiên bản “F1” của trí tuệ nhân tạo**
+
+**● Trò chơi đối kháng phổ biến:**
+
+**○ Cờ caro**
+
+**○ Cờ tướng**
+
+**○ Cờ vua**
+
+**○ Cờ vây**
+
+**● Kỹ thuật tìm kiếm mù, tìm kiếm có thông tin:**
+
+**○ Không giải quyết được cho trò chơi đối kháng**
+
+## Giới thiệu
+
+## ● Trò chơi cờ vua
+
+**○ Deep Blue được phát triển bởi IBM**
+
+**○ Đại kiện tướng Garry Kimovich Kasparov**
+
+**○ Năm 1997, Deep Blue 3.5 - 2.5 Kasparov**
+
+**○ Bí quyết của DeepBlue**
+
+**■ Tìm kiếm với độ sâu từ 8 hoặc 10 hoặc nhiều hơn.**
+
+**■ Cứ 1s tính được** $2 \mathrm { x } 1 0 ^ { 8 }$ **nước đi (99.99% nước đi được xem là tồi)**
+
+## Giới thiệu
+
+## ● Trò chơi cờ vây
+
+**○ Lee Sedol - 18 lần vô địch thế giới**
+
+**○ AlphaGo của Google DeepMind**
+
+**Nguồn Wikipedia.org**
+
+| AlphaGoLee | 48TPUs,distributed | 3,739 | 4:1againstLeeSedol | 3/2016 |
+| --- | --- | --- | --- | --- |
+| AlphaGoMaster | 4TPUs,singlemachine | 4,858 | 60:0 against professionalplayers; | 5/2017 |
+| AlphaGoZero(40block) | 4 TPUs,single machine | 5,185 | 100:0againstAlphaGoLee89:11againstAlphaGoMaster | 10/2017 |
+| AlphaGoZero(20block) | 4 TPUs,single machine | 5,018 | 60:40againstAlphaGoZero(20block) | 12/2017 |
+
+## Cây trò chơi và tìm kiếm trên cây trò chơi
+
+**● Trong bài, nghiên cứu các trò chơi có hai người tham gia; như ○ cờ vua, ○ cờ ca rô, ○ cờ tướng...**
+
+Người chơi là quân Trắng, đối thủ là quân Đen.
+
+**● Mục tiêu: nghiên cứu giải thuật cho quân Trắng đi.**
+
+## Cây trò chơi (Game tree)
+
+Cây trò chơi mô tả khả năng của trò chơi
+
+**• Mỗi đỉnh của cây trò chơi là một quyết định của người chơi**
+
+**• Mỗi tầng của cây trò chơi ứng với khả năng của mỗi người chơi**
+
+**• Kết quả của trò chơi - đường đi từ đỉnh góc đến lá**
+
+**• Độ sâu cây trò chơi - số lượt đi của hai người chơi**
+
+## Cây trò chơi
+
+Hai người chơi hiểu rõ luật chơi và quan sát đầy đủ **tình thế, có cùng mức cố gắng thắng như nhau**
+
+**• 2 người thay phiên đưa ra các nước đi tuân theo một luật nào đó**
+
+**• Các luật trên là như nhau cho cả 2 người.**
+
+**• Tìm kiếm trên cây trò chơi:**
+
+Xác định nước đi đủ tốt, để sau nước đi đó, mọi **nước đi dẫn đến trạng thái kết thúc.**
+
+## Cây trò chơi
+
+Vấn đề tìm kiếm ở đây khó khăn hơn với việc tìm **kiếm trong các bài trước, vì:**
+
+**- Ở trong vấn đề này, có đối thủ, nên không biết đối thủ sẽ đi như thế nào.**
+
+**- Nếu có thể tổng quát, cũng sẽ rất khó vìkhônggian tìm kiếm quá rộng.**
+
+**- Nhìn chung, không thể tìm được lời giải tối ưu, chỉ tìm được lời giải xấp xỉ.**
+
+## Cây trò chơi
+
+Giải pháp: trong trò chơi, có thể coi như tìm kiếm trong **không gian trạng thái, mỗi trạng thái là một tình thế của trò chơi. Có thể tóm tắt giải pháp:**
+
+**- Trạng thái ban đầu là sự sắp xếp các quân cờ trong lúc đầu của cuộc chơi.**
+
+**- Các nước đi hợp lệ là các toán tử.**
+
+Các trạng thái kết thúc là các tình thế mà cuộc chơi dừng, **thường đã xác định, có thể thông qua hàm kết quả.**
+
+**- Có thể biểu diễn không gian trạng thái trên cây trò chơi.**
+
+## Cây trò chơi
+
+## Cây trò chơi:
+
+**-** $\mathbf { S _ { s t a r t } }$ **: trạng thái ban đầu của trò chơi**
+
+**- Actions(s): tập hành động - nước đi hợp lệ với trạng thái s.**
+
+Suss(s,a): trạng thái trò chơi sinh ra từ s bởi hành động a.
+
+IsEnd(s)-trạng thái kết thúc- tình thế mà trò chơi dừng, **đặc trưng bởi hàm lợi ít: Utility(s)**
+
+## • Xây dựng cây trò chơi:
+
+Gốc của cây ứng với trạng thái s
+
+Trạng thái con ứng với nước đi hợp lệ
+
+## Chiến lược Minimax
+
+## • Ý tưởng:
+
+Tại thời điểm hiện tại mong muốn xây dựng cách đi tốt **nhất cho trạng thái s (xem như gốc của cây trò chơi).**
+
+**- Xây dựng nước đi hợp lệ cho trạng thái s**
+
+**- Nước đi hợp lệ tốt nhất: đỉnh con có giá trị tốt nhất**
+
+![](images/page_194_image_5.jpg)
+
+## Chiến lược Minimax
+
+## • Đỉnh con có giá trị tốt:
+
+**- Đỉnh con phải có giá trị**
+
+Giá trị được tính từ đỉnh lá tới các đỉnh con.
+
+**• Cây trò chơi sự luân phiên giữa 2 người chơi:**
+
+**- Người chơi max: tối đa hóa hàm lợi ít**
+
+**- Người chơi min: tối thiểu hóa hàm lợi ít**
+
+## Chiến lược Minimax
+
+**• Cách tính điểm cho các đỉnh trên cây trò chơi:**
+
+**- Để xác định giá trị các đỉnh có gốc là u, ta đi từ mức thấp nhất đến u.**
+
+**- Cây trò chơi sẽ được phân thành các lớp Min-Max xen kẽ lẫn nhau:**
+
+**Lớp Min: lấy giá trị nhỏ nhất của các node con**
+
+**Lớp Max: lấy giá trị lớn nhất của các node con**
+
+## Minh hoạ Minimax
+
+![](images/page_197_image_1.jpg)
+
+## Minh hoạ Minimax
+
+![](images/page_198_image_1.jpg)
+
+## Minh hoạ Minimax
+
+![](images/page_199_image_1.jpg)
+
+## Minh hoạ Minimax
+
+![](images/page_200_image_1.jpg)
+
+## Minh hoạ Minimax
+
+![](images/page_201_image_1.jpg)
+
+## Chiến lược Minimax
+
+![](images/page_202_image_1.jpg)
+
+**Gán giá trị cho các đỉnh của cây trò chơi.**
+
+**Ví dụ:**
+
+đỉnh f là đỉnh Trắng, giá của đỉnh $\mathsf{f} = \max(5,2,-3) = 5$
+
+đỉnh d là đỉnh Đen, giá của đỉnh $d = \min(2,3,4) = 2$
+
+## Minh hoạ “Tic Tac Toe”
+
+| ○○× | ○ | ○ | ○ |
+| --- | --- | --- | --- |
+| × | × | × | × |
+| ○ | ○ | × | × |
+| × | × | ○ | × |
+| ○ | ○ | × | × |
+| × | × | ○ | × |
+| ○ | ○ | × | × |
+| × | × | ○ | × |
+| ○ | ○ | × | × |
+| × | × | ○ | × |
+| ○ | ○ | × | × |
+| × | × | ○ | × |
+| ○ | ○ | × | × |
+| × | × | ● | × |
+| ○ | ○ | × | × |
+| × | × | ○ | × |
+| ○ | ○ | × | × |
+
+## MiniMax với độ sâu giới hạn
+
+Minimax như đã xét buộc phải có toàn bộ không **gian trạng thái đã được triển khai để có thể gán trị cho các nút lá và tính ngược lại  Không khả thi vì không gian bài toán lớn**
+
+Giải pháp: Giới hạn không gian trạng thái theo nột **độ sâu nào đó và giới hạn các node con theo một quy tắc nào đó**
+
+## Thuật toán MiniMax
+
+```python
+function minimax (node, depth, maximizingPlayer)
+    if node is "End Node" or depth = 0
+        return value(node)
+    if maximizingPlayer
+        Max=-∞
+        foreach child of node
+            Max= max(Max, minimax(child, depth-1, False))
+        return Max
+
+    else
+        Min=∞
+        foreach child of node
+            Min := min(Min, minimax(child, depth-1, True))
+        return Min
+```
+
+## Demo chiến lược MiniMax (10 phút)
+
+```python
+class Tree:
+    def __init__(self, data, cost=100000):
+        self.data = data
+        self.cost = cost
+        self.children = []
+        self.parent = None
+    def add_child(self, child):
+        child.parent = self
+        self.children.append(child)
+        def get_data(self):
+            return self.data
+        def get_children(self):
+            return self.children
+        def get_parent(self):
+            return self.parent
+    def __lt__(self, other):
+        return self.cost < other.cost
+```
+
+![](images/page_206_image_2.jpg)
+
+## Demo chiến lược MiniMax (10 phút)
+
+```python
+if __name__ == "__main__":
+    A = Tree("A")          B.add_child(E)
+    B = Tree("B")          C.add_child(F)
+    C = Tree("C")          C.add_child(G)
+    D = Tree("D")          D.add_child(H)
+    E = Tree("E")          D.add_child(I)
+    F = Tree("F")          E.add_child(J)
+    G = Tree("G")          E.add_child(K)
+    H = Tree("H")          F.add_child(M)
+    I = Tree("I")          F.add_child(N)
+    J = Tree("J")          G.add_child(L)
+    K = Tree("K")          G.add_child(Z)
+    L = Tree("L")          H.value = 2
+    M = Tree("M")          I.value = 9
+    N = Tree("N")          J.value = 7
+    Z = Tree("Z")          K.value = 4
+    A.add_child(B)         L.value = 3
+    A.add_child(C)         Z.value = 5
+    B.add_child(D)         Minimax_Search(A)
+        print(A.value)
+```
+
+![](images/page_207_image_2.jpg)
+
+## Demo chiến lược MiniMax (10 phút)
+
+```python
+Chiến lược người chơi Max
+from TreeNode import Tree
+def MaxValue(node):
+    if len(node.children) == 0:
+        return node
+    node.value = -100000
+    for child in node.children:
+        temp = MinValue(child)
+        if temp.value > node.value:
+            node.value = temp.value
+    return node
+```
+
+```python
+Chiến lược cho người chơi cho Min
+def MinValue(node):
+    if len(node.children) == 0:
+        return node
+    node.value = 100000
+    for child in node.children:
+        temp = MaxValue(child)
+        if temp.value < node.value:
+            node.value = temp.value
+    return node
+```
+
+**Chiến lược Max def Minimax\_Search(state): MaxValue(state)**
+
+## Chiến lược Minimax
+
+**● Thành công của Minimax**
+
+○ **Cần xác định giá trị của tất cả các nút là trên cây trò chơi**
+
+○ **Để chọn trạng thái “tốt nhất” thì phải tính ngược từ nút lá đến trạng thái** 7 **đó.**
+
+Vấn đề: trong trò chơi thực tế, chúng ta bị hạn chế về mặt thời gian nên không **thể tìm kiếm tất cả các lá**
+
+Để thiết thực và chạy trong một khoảng thời gian nhất định, Minimax chỉ tìm **kiếm theo giới hạn độ sâu hoặc giới hạn các node theo một quy tắc nào đó.**
+
+**○ Tạo nên sự khác biệt**
+
+## Chiến lược Minimax
+
+**Trong việc tìm kiếm Minimax, cho dù giới hạn độ sâu thì số đỉnh con của một đỉnh bất kỳ vẫn rất lớn trong thực tế**
+
+• **Ví du:**
+
+• **Cờ vua: số nhánh trung bình khoảng 35.**
+
+• Vậy nếu cần suy nghĩ độ sâu là 4 thì phải mất ít nhất $3 5 ^ { 4 }$ $= 1.5^{\ast}10^{6}$ **số phép đánh giá.**
+
+**•  Cần một phương pháp làm giảm số nhánh**
+
+**● Giải pháp: phương pháp cắt tỉa alpha-beta**
+
+○ **Mục đích làm giảm số nhánh trong cây tìm kiếm và**
+
+○ **Không làm ảnh hưởng đến sự đánh giá của đỉnh đang xét.**
+
+○ **Loại bỏ những phần lớn các nhánh của cây.**
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+![](images/page_211_image_1.jpg)
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+![](images/page_212_image_1.jpg)
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+![](images/page_213_image_1.jpg)
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+**• Nên cắt bỏ nhánh không cần thiết**
+
+![](images/page_214_image_2.jpg)
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+![](images/page_215_image_1.jpg)
+
+$$
+\begin{array}{r l} \text {Minimax(root)} & = \max (\min (3, 1 2, 8), \min (2, X, Y), \min (1 4, 5, 2)) \\ & = \max (3, \min (2, X, Y), 2) \\ & = \max (3, Z, 2) \qquad \text {where} Z = \min (2, X, Y) \leq 2 \\ & = 3 \end{array}
+$$
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+**Tham số Alpha: giá trị lớn nhất trong các đỉnh con của tầng Max**
+
+![](images/page_216_image_2.jpg)
+
+## Chiến lược cắt tỉa Alpha-Beta
+
+• **Tham** $\mathrm { s } \hat { 0 }$ **Beta- giá trị nhỏ nhất trong các đỉnh con của tầng Min**
+
+![](images/page_217_image_2.jpg)
+
+## Minh họa cắt tỉa alpha-beta
+
+![](images/page_218_image_1.jpg)
+
+## Cắt tỉa Alpha beta- Thuật Toán 1
+
+```matlab
+function minimax (node, depth, maximizingPlayer)
+    return alphabeta(node, depth, -∞, ∞, maximizingPlayer)
+
+function alphabeta (node, depth, a, b, maximizingPlayer)
+    if node is “End Node” or depth = 0
+        return value(node)
+    if maximizingPlayer
+        foreach child of node
+            a= max(a, alphabeta (child, depth-1, a, b, False))
+                if a>=b break;
+        return a
+    else
+        foreach child of node
+            b := min(b, alphabeta (child, depth-1, a, b, True))
+                if a>=b break;
+    return b
+```
+
+## Cắt tỉa Alpha beta – Thuật Toán 2
+
+```matlab
+function minimax (node, depth)
+    return alphabeta(node, depth, -∞, ∞)
+
+function alphabeta (node, depth, a, b)
+    if node is “End Node” or depth = 0
+        return value(node)
+    foreach child of node
+        a= max(a, -alphabeta (child, depth-1, -b, -a))
+            if a>=b break;
+        return a
+```
+
+## Demo cắt tỉa alpha-beta
+
+```python
+from TreeNode import Tree
+def MaxValue(node, alpha, beta):
+    if len(node.children) == 0:
+        return node
+    node.value = -100000
+    for child in node.children:
+        temp = MinValue(child, alpha, beta)
+        if temp.value > node.value:
+            node.value = temp.value
+        if child.value >= beta:
+            return child
+        if child.value > alpha:
+            alpha = child.value
+    return node
+```
+
+## Demo cắt tỉa alpha-beta
+
+```python
+def MinValue(node, alpha, beta):
+    if len(node.children) == 0:
+        return node
+    node.value = 100000
+    for child in node.children:
+        temp = MaxValue(child, alpha, beta)
+        if temp.value < node.value:
+            node.value = temp.value
+        if child.value <= alpha:
+            return child
+        if child.value < beta:
+            beta = child.value
+    return node
+
+def Alpha_Beta_Search(state):
+    MaxValue(state, -100000, 100000)
+```
+
+## Demo cắt tỉa alpha-beta
+
+```python
+if __name__ == "__main__":
+    A = Tree("A")
+    B = Tree("B")
+    C = Tree("C")
+    D = Tree("D")
+    E = Tree("E")
+    F = Tree("F")
+    G = Tree("G")
+    H = Tree("H")
+    I = Tree("I")
+    J = Tree("J")
+    K = Tree("K")
+    L = Tree("L")
+    M = Tree("M")
+    N = Tree("N")
+    Z = Tree("Z")
+    A.add_child(B)
+    A.add_child(C)
+    B.add_child(D)
+    B.add_child(E)
+```
