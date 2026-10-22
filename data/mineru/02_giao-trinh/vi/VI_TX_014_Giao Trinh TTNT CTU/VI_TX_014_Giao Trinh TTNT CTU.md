@@ -13,8 +13,6 @@ TRÍ TUÊ NHÂN TẠO
 
 <!-- page: 3 -->
 
-![](images/page_2_image_0.jpg)
-
 BIÊN MỤC TRƯỚC XUẤT BẢN THỰC HIỆN BỔI
 TRUNG TÂM HỌC LIỆU TRƯỜNG ĐẠI HỌC CẦN THƠ
 
@@ -44,7 +42,7 @@ Nhà Xuất bản Đại học Cần Thơ trận trọng giới thiệu đến s
 
 <!-- page: 5 -->
 
-| NHÀ XUÁT BẢNĐẠI HỌC CẢN THƠ' |
+| NHÀ XUẤT BẢN ĐẠI HỌC CẦN THƠ |
 | --- |
 
 <!-- page: 6 -->
@@ -250,8 +248,6 @@ NHÓM TÁC GIẢ
 - Bảng 2.4 Đánh giá các chiến lược tìm kiếm không có thông tin bổ sung 45
 - Bảng 3.1 So sánh chi phí tìm kiếm và hệ số phân nhánh hiệu quả của tìm kiếm sâu đần (IDS) và A\* 72
 
-![](images/page_12_image_2.jpg)
-
 <!-- page: 14 -->
 
 ## DANH MỤC THUẬT NGỮ VÀ TỪ VIẾT TẮT
@@ -269,7 +265,7 @@ NHÓM TÁC GIẢ
 
 <!-- page: 15 -->
 
-| NHÀ XUÁT BẢNĐẠI HỌC CẢN THƠ' |
+| NHÀ XUẤT BẢN ĐẠI HỌC CẦN THƠ |
 | --- |
 
 <!-- page: 16 -->
