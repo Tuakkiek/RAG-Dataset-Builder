@@ -1,0 +1,30 @@
+{
+  "input_file": "data\\processed\\day18.json",
+  "output_file": "data\\processed\\day20.json",
+  "encoding": "cl100k_base",
+  "config": {
+    "min_tokens": 200,
+    "target_tokens": 500,
+    "max_tokens": 800
+  },
+  "input_chunks": 1148,
+  "output_chunks": 869,
+  "chunks_split": 0,
+  "merge_operations": 279,
+  "chunks_merged_from_multiple_sources": 279,
+  "token_count": {
+    "min": 2,
+    "max": 799,
+    "average": 416.97,
+    "below_min": 166,
+    "within_min_max": 703,
+    "above_max": 0
+  },
+  "input_errors": 0,
+  "validation_issues": 0,
+  "notes": [
+    "TARGET_TOKENS là mục tiêu, không phải giới hạn cứng.",
+    "Chunk dưới MIN có thể vẫn tồn tại nếu không có chunk cùng section để ghép an toàn.",
+    "Khi tách một chunk lớn, metadata như images được sao chép sang từng phần vì không thể suy ra vị trí tương ứng chỉ từ text đã ghép."
+  ]
+}
