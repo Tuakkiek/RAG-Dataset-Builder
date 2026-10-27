@@ -1,0 +1,409 @@
+/* Design System: Academic Slate & Knowledge Library (Perplexity & Academic Slate)
+   - Tone sáng dịu mắt pha xanh chàm (Indigo) và xanh lá (Emerald) cho các đoạn trích dẫn và nhãn sách
+   - Nền Slate-50 (#f8fafc) êm dịu, không chói mắt khi đọc tài liệu lâu
+   - Thẻ card trắng tinh khôi (#ffffff), viền Slate-200 (#e2e8f0) sắc nét
+   - Chữ Slate-900 (#0f172a) tương phản cao tuyệt đối, không nhạt nhòa */
+
+:root {
+  /* Slate Neutral Backgrounds */
+  --bg-page: #f8fafc;          /* Slate-50: Nền trang dịu mắt, học thuật */
+  --bg-sidebar: #ffffff;       /* Sidebar trắng tinh khiết hoặc slate nhẹ */
+  --bg-surface: #ffffff;       /* Thẻ / Bề mặt trắng tinh khôi */
+  --bg-surface-hover: #f1f5f9; /* Slate-100 khi hover */
+  --bg-input: #ffffff;
+  --bg-elevated: #f8fafc;
+
+  /* Crisp Slate Hairline Borders */
+  --border-subtle: #e2e8f0;    /* Slate-200: Viền mảnh rõ nét */
+  --border-medium: #cbd5e1;    /* Slate-300: Viền input, nút phân định */
+  --border-focus: #4f46e5;     /* Indigo-600 khi focus */
+
+  /* Academic Slate Typography */
+  --text-primary: #0f172a;     /* Slate-900: Đen than đậm sắc sảo, siêu rõ */
+  --text-secondary: #334155;   /* Slate-700: Chữ phụ đọc thoải mái */
+  --text-muted: #64748b;       /* Slate-500: Chú thích, thông tin bên lề */
+  --text-faint: #94a3b8;       /* Slate-400 */
+
+  /* Academic Indigo (Màu thương hiệu / Điều hướng tri thức) */
+  --accent-indigo: #4f46e5;
+  --accent-indigo-hover: #4338ca;
+  --accent-indigo-subtle: #eef2ff;
+  --accent-indigo-border: #c7d2fe;
+  --accent-indigo-text: #3730a3;
+
+  /* Knowledge Emerald (Màu trích dẫn giáo trình / Đối soát chính xác) */
+  --accent-emerald: #059669;
+  --accent-emerald-hover: #047857;
+  --accent-emerald-subtle: #ecfdf5;
+  --accent-emerald-border: #a7f3d0;
+  --accent-emerald-text: #065f46;
+
+  /* Scholarly Amber (Màu cảnh báo token / Lưu ý học thuật) */
+  --accent-amber: #d97706;
+  --accent-amber-subtle: #fffbeb;
+  --accent-amber-border: #fde68a;
+  --accent-amber-text: #92400e;
+
+  /* Tech Blue / Sky (Phân đoạn / Khối dữ liệu) */
+  --accent-blue: #2563eb;
+  --accent-blue-subtle: #eff6ff;
+  --accent-blue-border: #bfdbfe;
+  --accent-blue-text: #1d4ed8;
+
+  /* Purple (Công thức toán / Chuyên đề mở rộng) */
+  --accent-purple: #7c3aed;
+  --accent-purple-subtle: #faf5ff;
+  --accent-purple-border: #ddd6fe;
+  --accent-purple-text: #6d28d9;
+
+  /* Rose (Kiểm định lỗi / Cảnh báo) */
+  --accent-rose: #e11d48;
+  --accent-rose-subtle: #fff1f2;
+  --accent-rose-border: #fecdd3;
+  --accent-rose-text: #9f1239;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  --shadow-dropdown: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--bg-page);
+}
+
+.page-wrapper {
+  padding: 28px 36px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Titles */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.02em;
+}
+
+.page-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Crisp Academic Card System */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--border-medium);
+}
+
+.card-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* Metrics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--accent-indigo-border);
+  transform: translateY(-1px);
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  font-family: var(--font-sans);
+}
+
+.stat-label {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Academic Badges & Citation Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  border: 1px solid transparent;
+}
+
+.badge-indigo {
+  background: var(--accent-indigo-subtle);
+  color: var(--accent-indigo-text);
+  border-color: var(--accent-indigo-border);
+}
+
+.badge-emerald {
+  background: var(--accent-emerald-subtle);
+  color: var(--accent-emerald-text);
+  border-color: var(--accent-emerald-border);
+}
+
+.badge-amber {
+  background: var(--accent-amber-subtle);
+  color: var(--accent-amber-text);
+  border-color: var(--accent-amber-border);
+}
+
+.badge-blue {
+  background: var(--accent-blue-subtle);
+  color: var(--accent-blue-text);
+  border-color: var(--accent-blue-border);
+}
+
+.badge-purple {
+  background: var(--accent-purple-subtle);
+  color: var(--accent-purple-text);
+  border-color: var(--accent-purple-border);
+}
+
+.badge-rose {
+  background: var(--accent-rose-subtle);
+  color: var(--accent-rose-text);
+  border-color: var(--accent-rose-border);
+}
+
+/* Citation Chip (Perplexity Style) */
+.citation-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: var(--accent-emerald-subtle);
+  border: 1px solid var(--accent-emerald-border);
+  color: var(--accent-emerald-text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.citation-chip:hover {
+  background-color: #d1fae5;
+  border-color: #6ee7b7;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--font-sans);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent-indigo);
+  color: #ffffff;
+  border: 1px solid var(--accent-indigo-hover);
+  box-shadow: 0 1px 2px 0 rgba(79, 70, 229, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--accent-indigo-hover);
+  border-color: #3730a3;
+}
+
+.btn-emerald {
+  background: var(--accent-emerald);
+  color: #ffffff;
+  border: 1px solid #047857;
+  box-shadow: 0 1px 2px 0 rgba(5, 150, 105, 0.25);
+}
+
+.btn-emerald:hover {
+  background: #047857;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-hover);
+  border-color: #94a3b8;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+/* Inputs */
+.input-control {
+  background: var(--bg-input);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+}
+
+.input-control:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.data-table th {
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-medium);
+  background: #f8fafc;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.data-table tr:hover td {
+  background: #f8fafc;
+}
+
+pre, code {
+  font-family: var(--font-mono);
+}
