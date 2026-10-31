@@ -1,19 +1,67 @@
 {
-  "doc_id": "VI_TX_010_Machine_Learning_co_ban",
-  "input_file": "day18.json",
-  "child_max_tokens": 500,
-  "parent_max_tokens": 1500,
-  "total_children": 1148,
-  "total_parents": 638,
-  "average_child_tokens": 315.59,
-  "min_child_tokens": 2,
-  "max_child_tokens": 500,
-  "average_parent_tokens": 568.02,
-  "min_parent_tokens": 2,
-  "max_parent_tokens": 1500,
-  "children_spanning_multiple_pages": 244,
-  "parents_spanning_multiple_pages": 256,
-  "children_with_images": 90,
-  "children_with_tables": 23,
-  "children_with_equations": 389
+  "pipeline": "chunk_dataset.py",
+  "source_file": "structured_content.json",
+  "encoding": "cl100k_base",
+  "config": {
+    "min_tokens": 200,
+    "target_tokens": 500,
+    "max_tokens": 800,
+    "parent_max_tokens": 1500,
+    "excluded_types": [
+      "footer",
+      "header",
+      "index",
+      "page_number"
+    ]
+  },
+  "blocks": {
+    "raw": 5661,
+    "kept_after_filter": 4409,
+    "filtered_by_type": {
+      "header": 433,
+      "footer": 403,
+      "index": 11,
+      "page_number": 405
+    }
+  },
+  "chunks": {
+    "child_count": 1042,
+    "parent_count": 647,
+    "split_groups": 583,
+    "merge_operations": 98,
+    "token_count": {
+      "min": 2,
+      "max": 799,
+      "average": 357.83,
+      "below_min": 165,
+      "within_min_max": 877,
+      "above_max": 0
+    },
+    "parent_token_count": {
+      "min": 2,
+      "max": 1498,
+      "average": 576.39
+    },
+    "with_image": 141,
+    "with_table": 22,
+    "with_equation": 380
+  },
+  "errors_and_warnings": 3,
+  "notes": [
+    "TARGET_TOKENS là mục tiêu, không phải kích thước bắt buộc.",
+    "Chunk dưới MIN_TOKENS có thể được giữ lại nếu không thể ghép mà không vượt section hoặc MAX_TOKENS.",
+    "Page boundary không tự động kết thúc chunk; section boundary thì có.",
+    "Image path được lưu trong metadata, không chèn đường dẫn ảnh vào text embedding.",
+    "Table được giữ dạng Markdown; khi tách bảng lớn, header được lặp lại theo từng phần nếu nhận diện được cấu trúc Markdown."
+  ],
+  "document": {
+    "doc_id": "VI_TX_010",
+    "document_title": "Machine Learning co ban"
+  },
+  "output_files": {
+    "chunks": "D:\\RAG-Dataset-Builder\\data\\chunked\\chunks.jsonl",
+    "parents": "D:\\RAG-Dataset-Builder\\data\\chunked\\parents.jsonl",
+    "stats": "D:\\RAG-Dataset-Builder\\data\\chunked\\chunk_stats.json",
+    "errors": "D:\\RAG-Dataset-Builder\\data\\chunked\\errors.jsonl"
+  }
 }
