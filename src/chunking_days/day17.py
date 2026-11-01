@@ -4,7 +4,7 @@ from pathlib import Path
 
 import tiktoken
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 STRUCTURED_PATH = (
     BASE_DIR
@@ -16,12 +16,14 @@ STRUCTURED_PATH = (
     / "structured_content.json"
 )
 
-INPUT_PATH = BASE_DIR / "data" / "processed" / "day13.json"
-OUTPUT_PATH = BASE_DIR / "data" / "processed" / "day18.json"
+NORMALIZED_PATH = BASE_DIR / "data" / "processed" / "day13.json"
+OUTPUT_PATH = BASE_DIR / "data" / "processed" / "day17.json"
 
 MAX_TOKENS = 500
 
 ENCODING = tiktoken.get_encoding("cl100k_base")
+
+IMAGE_TYPE = "image"
 
 IGNORE_TYPES = {
     "header",
@@ -29,24 +31,28 @@ IGNORE_TYPES = {
     "page_number",
 }
 
-IMAGE_TYPE = "image"
+def count_tokens(text):
+    return len(ENCODING.encode(text))
 
 def load_json(input_path):
     with input_path.open("r", encoding="utf-8") as file:
         return json.load(file)
 
-def count_tokens(text):
-    return len(ENCODING.encode(text))
-
 def index_raw_blocks(data):
+    pages = data.get("pages", [])
+
+    if not isinstance(pages, list):
+        raise ValueError(
+            "structured_content.json does not contain a valid pages list."
+        )
+
     block_index = {}
 
-    for page in data.get("pages", []):
+    for page in pages:
         page_idx = page.get("page_idx")
+        blocks = page.get("blocks", [])
 
-        for source_index, block in enumerate(
-            page.get("blocks", [])
-        ):
+        for source_index, block in enumerate(blocks):
             if not isinstance(block, dict):
                 continue
 
@@ -125,10 +131,50 @@ def get_source_info(record):
         "type": record.get("type", "unknown"),
     }
 
-def split_long_word(
-    word,
-    max_tokens,
-):
+def extract_caption(record):
+    captions = record.get("captions", [])
+
+    if isinstance(captions, str):
+        return captions.strip()
+
+    if not isinstance(captions, list):
+        return ""
+
+    caption_texts = []
+
+    for caption in captions:
+        if isinstance(caption, str):
+            content = caption.strip()
+
+        elif isinstance(caption, dict):
+            content = str(
+                caption.get("content", "")
+            ).strip()
+
+        else:
+            continue
+
+        if content and content not in caption_texts:
+            caption_texts.append(content)
+
+    return " ".join(caption_texts)
+
+def get_image_ref(record):
+    raw_path = record.get("image_source")
+
+    if isinstance(raw_path, str):
+        raw_path = raw_path.strip()
+    else:
+        raw_path = None
+
+    return {
+        "path": raw_path or None,
+        "caption": extract_caption(record),
+        "page_idx": record.get("page_idx"),
+        "source_index": record.get("source_index"),
+    }
+
+def split_long_word(word, max_tokens):
     pieces = []
     current = ""
 
@@ -144,18 +190,14 @@ def split_long_word(
     if current:
         pieces.append(current)
 
-    for piece in pieces:
-        if count_tokens(piece) > max_tokens:
-            raise ValueError(
-                "Unable to split string to meet MAX_TOKENS."
-            )
+    if any(count_tokens(piece) > max_tokens for piece in pieces):
+        raise ValueError(
+            "Unable to split string to meet token limit."
+        )
 
     return pieces
 
-def split_by_words(
-    text,
-    max_tokens,
-):
+def split_by_words(text, max_tokens):
     chunks = []
     current_words = []
 
@@ -186,10 +228,7 @@ def split_by_words(
 
     return chunks
 
-def split_text_to_fit(
-    text,
-    max_tokens,
-):
+def split_text_to_fit(text, max_tokens):
     text = text.strip()
 
     if not text:
@@ -242,49 +281,6 @@ def split_text_to_fit(
 
     return chunks
 
-def extract_caption(record):
-    captions = record.get("captions", [])
-
-    if isinstance(captions, str):
-        return captions.strip()
-
-    if not isinstance(captions, list):
-        return ""
-
-    results = []
-
-    for caption in captions:
-        if isinstance(caption, str):
-            text = caption.strip()
-
-        elif isinstance(caption, dict):
-            text = str(
-                caption.get("content", "")
-            ).strip()
-
-        else:
-            continue
-
-        if text and text not in results:
-            results.append(text)
-
-    return " ".join(results)
-
-def get_image_ref(record):
-    path = record.get("image_source")
-
-    if isinstance(path, str):
-        path = path.strip() or None
-    else:
-        path = None
-
-    return {
-        "path": path,
-        "caption": extract_caption(record),
-        "page_idx": record.get("page_idx"),
-        "source_index": record.get("source_index"),
-    }
-
 def create_empty_chunk(section_path):
     return {
         "section_path": list(section_path),
@@ -313,41 +309,37 @@ def attach_image(
     current,
     record,
 ):
-    image = get_image_ref(record)
+    image_ref = get_image_ref(record)
 
     key = (
-        image["page_idx"],
-        image["source_index"],
-        image["path"],
+        image_ref["page_idx"],
+        image_ref["source_index"],
+        image_ref["path"],
     )
 
-    existing = {
+    existing_keys = {
         (
-            item["page_idx"],
-            item["source_index"],
-            item["path"],
+            image.get("page_idx"),
+            image.get("source_index"),
+            image.get("path"),
         )
-        for item in current["images"]
+        for image in current["images"]
     }
 
-    if key not in existing:
-        current["images"].append(image)
+    if key not in existing_keys:
+        current["images"].append(image_ref)
         add_source_metadata(current, record)
 
-def finalize_chunk(
-    current,
-    chunks,
-):
+def finalize_chunk(current, chunks):
     if current is None:
         return
 
-    text = "\n\n".join(current["texts"]).strip()
-    images = list(current["images"])
-
-    if not text and not images:
+    if not current["texts"] and not current["images"]:
         return
 
-    valid_pages = [
+    text = "\n\n".join(current["texts"]).strip()
+
+    pages = [
         page
         for page in current["pages"]
         if isinstance(page, int)
@@ -372,11 +364,13 @@ def finalize_chunk(
         current["block_types"]
     ))
 
+    images = list(current["images"])
+
     chunks.append({
-        "chunk_id": f"day18_chunk_{len(chunks) + 1:06d}",
+        "chunk_id": f"day17_chunk_{len(chunks) + 1:06d}",
         "section_path": list(current["section_path"]),
-        "page_start": min(valid_pages) if valid_pages else None,
-        "page_end": max(valid_pages) if valid_pages else None,
+        "page_start": min(pages) if pages else None,
+        "page_end": max(pages) if pages else None,
         "text": text,
         "token_count": count_tokens(text),
         "block_types": block_types,
@@ -388,7 +382,7 @@ def finalize_chunk(
         "source_blocks": source_blocks,
     })
 
-def process_section(
+def build_section_chunks(
     records,
     section_path,
     chunks,
@@ -413,10 +407,7 @@ def process_section(
         if not content:
             continue
 
-        pieces = split_text_to_fit(
-            content,
-            max_tokens,
-        )
+        pieces = split_text_to_fit(content, max_tokens)
 
         for piece in pieces:
             if current is None:
@@ -440,20 +431,21 @@ def process_section(
                 current = create_empty_chunk(section_path)
 
             current["texts"].append(piece)
+
             add_source_metadata(current, record)
 
     if current is not None:
         finalize_chunk(current, chunks)
 
     if pending_images:
-        image_chunk = create_empty_chunk(section_path)
+        image_only_chunk = create_empty_chunk(section_path)
 
         for image_record in pending_images:
-            attach_image(image_chunk, image_record)
+            attach_image(image_only_chunk, image_record)
 
-        finalize_chunk(image_chunk, chunks)
+        finalize_chunk(image_only_chunk, chunks)
 
-def build_page_continuity_chunks(
+def build_image_aware_chunks(
     records,
     max_tokens=MAX_TOKENS,
 ):
@@ -465,9 +457,6 @@ def build_page_continuity_chunks(
     current_section_path = None
 
     for record in records:
-        if not isinstance(record, dict):
-            continue
-
         if not should_keep_record(record):
             continue
 
@@ -477,7 +466,7 @@ def build_page_continuity_chunks(
             section_records
             and section_path != current_section_path
         ):
-            process_section(
+            build_section_chunks(
                 section_records,
                 current_section_path,
                 chunks,
@@ -492,7 +481,7 @@ def build_page_continuity_chunks(
         section_records.append(record)
 
     if section_records:
-        process_section(
+        build_section_chunks(
             section_records,
             current_section_path,
             chunks,
@@ -540,7 +529,7 @@ def validate_chunks(
 
         if chunk["has_image"] != bool(images):
             raise ValueError(
-                f"has_image inconsistency: {chunk_id}"
+                f"has_image metadata mismatch: {chunk_id}"
             )
 
         if chunk["image_count"] != len(images):
@@ -548,22 +537,19 @@ def validate_chunks(
                 f"image_count mismatch: {chunk_id}"
             )
 
-        start = chunk["page_start"]
-        end = chunk["page_end"]
+        page_start = chunk["page_start"]
+        page_end = chunk["page_end"]
 
         if (
-            start is not None
-            and end is not None
-            and start > end
+            page_start is not None
+            and page_end is not None
+            and page_start > page_end
         ):
             raise ValueError(
                 f"Invalid page range: {chunk_id}"
             )
 
-def save_data(
-    data,
-    output_path,
-):
+def save_data(data, output_path):
     output_path.parent.mkdir(
         parents=True,
         exist_ok=True,
@@ -578,13 +564,13 @@ def save_data(
         )
 
 def main():
-    for path in (INPUT_PATH, STRUCTURED_PATH):
+    for path in (NORMALIZED_PATH, STRUCTURED_PATH):
         if not path.exists():
             print(f"File not found: {path}")
             return
 
     try:
-        records = load_json(INPUT_PATH)
+        records = load_json(NORMALIZED_PATH)
 
         if not isinstance(records, list):
             raise ValueError(
@@ -605,11 +591,18 @@ def main():
             raw_block_index,
         )
 
-        print(f"Input: {INPUT_PATH}")
-        print(f"Original source: {STRUCTURED_PATH}")
+        print(f"Normalized input: {NORMALIZED_PATH}")
+        print(f"Original input: {STRUCTURED_PATH}")
         print(f"Total input records: {len(records)}")
 
-        chunks = build_page_continuity_chunks(
+        image_blocks = [
+            record for record in records
+            if record.get("type") == IMAGE_TYPE
+        ]
+
+        print(f"Image blocks found: {len(image_blocks)}")
+
+        chunks = build_image_aware_chunks(
             records,
             max_tokens=MAX_TOKENS,
         )
@@ -621,29 +614,37 @@ def main():
 
         save_data(chunks, OUTPUT_PATH)
 
-        token_counts = [
-            chunk["token_count"]
-            for chunk in chunks
-        ]
-
-        cross_page_chunks = [
-            chunk
-            for chunk in chunks
-            if (
-                chunk["page_start"] is not None
-                and chunk["page_end"] is not None
-                and chunk["page_start"] != chunk["page_end"]
-            )
-        ]
-
         chunks_with_images = [
             chunk for chunk in chunks
             if chunk["has_image"]
         ]
 
+        image_refs = [
+            image
+            for chunk in chunks
+            for image in chunk["images"]
+        ]
+
+        missing_paths = [
+            image for image in image_refs
+            if not image["path"]
+        ]
+
+        missing_captions = [
+            image for image in image_refs
+            if not image["caption"]
+        ]
+
+        token_counts = [
+            chunk["token_count"]
+            for chunk in chunks
+        ]
+
         print(f"\nTotal chunks: {len(chunks)}")
-        print(f"Chunks spanning multiple pages: {len(cross_page_chunks)}")
         print(f"Chunks with images: {len(chunks_with_images)}")
+        print(f"Total image references: {len(image_refs)}")
+        print(f"Images missing paths: {len(missing_paths)}")
+        print(f"Images missing captions: {len(missing_captions)}")
         print(f"MAX_TOKENS: {MAX_TOKENS}")
 
         if token_counts:
@@ -664,6 +665,7 @@ def main():
                 "page_end": chunk["page_end"],
                 "token_count": chunk["token_count"],
                 "has_image": chunk["has_image"],
+                "image_count": chunk["image_count"],
             })
 
         print("\nValidation passed.")

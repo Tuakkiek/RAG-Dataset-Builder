@@ -23,7 +23,7 @@ TARGET_TOKENS = 500
 MAX_TOKENS = 800
 ENCODING_NAME = "cl100k_base"
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 INPUT_PATH = BASE_DIR / "data" / "processed" / "day18.json"
 OUTPUT_PATH = BASE_DIR / "data" / "processed" / "day20.json"
 STATS_PATH = BASE_DIR / "data" / "processed" / "day20_stats.json"

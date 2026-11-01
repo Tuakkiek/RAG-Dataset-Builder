@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from statistics import mean
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 INPUT_PATH = BASE_DIR / "data" / "processed" / "day18.json"
 

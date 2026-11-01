@@ -4,7 +4,7 @@ from pathlib import Path
 
 import tiktoken
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 INPUT_PATH = BASE_DIR / "data" / "processed" / "day13.json"
 

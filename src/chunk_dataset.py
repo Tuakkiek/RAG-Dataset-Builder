@@ -26,10 +26,6 @@ DEFAULT_INPUT = (
     BASE_DIR
     / "data"
     / "mineru"
-    / "02_giao-trinh"
-    / "vi"
-    / "VI_TX_010_Machine Learning co ban"
-    / "structured_content.json"
 )
 DEFAULT_OUTPUT_DIR = BASE_DIR / "data" / "chunked"
 
@@ -57,16 +53,22 @@ ENCODING = tiktoken.get_encoding(ENCODING_NAME)
 # =====================================================================
 # 2. SMALL UTILITIES
 # =====================================================================
-def count_tokens(text: str) -> int:
+def count_tokens(
+    text: str,
+) -> int:
     """Count tokens using the configured tokenizer."""
     return len(ENCODING.encode(text or ""))
 
 
-def json_key(value: Any) -> str:
+def json_key(
+    value: Any,
+) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, default=str)
 
 
-def unique_items(items: Iterable[Any]) -> list[Any]:
+def unique_items(
+    items: Iterable[Any],
+) -> list[Any]:
     """Deduplicate JSON-compatible objects without changing their order."""
     result: list[Any] = []
     seen: set[str] = set()
@@ -78,7 +80,9 @@ def unique_items(items: Iterable[Any]) -> list[Any]:
     return result
 
 
-def as_int(value: Any) -> int | None:
+def as_int(
+    value: Any,
+) -> int | None:
     if value is None or isinstance(value, bool):
         return None
     try:
@@ -87,7 +91,9 @@ def as_int(value: Any) -> int | None:
         return None
 
 
-def clean_text(value: Any) -> str:
+def clean_text(
+    value: Any,
+) -> str:
     if value is None:
         return ""
     if isinstance(value, str):
@@ -95,7 +101,9 @@ def clean_text(value: Any) -> str:
     return str(value).strip()
 
 
-def get_captions(block: dict[str, Any]) -> list[str]:
+def get_captions(
+    block: dict[str, Any],
+) -> list[str]:
     captions: list[str] = []
     raw = block.get("captions", [])
     if isinstance(raw, list):
@@ -113,7 +121,9 @@ def get_captions(block: dict[str, Any]) -> list[str]:
     return captions
 
 
-def get_footnotes(block: dict[str, Any]) -> list[str]:
+def get_footnotes(
+    block: dict[str, Any],
+) -> list[str]:
     footnotes: list[str] = []
     raw = block.get("footnotes", [])
     if isinstance(raw, list):
@@ -127,7 +137,9 @@ def get_footnotes(block: dict[str, Any]) -> list[str]:
     return footnotes
 
 
-def safe_relative_path(value: Any) -> str | None:
+def safe_relative_path(
+    value: Any,
+) -> str | None:
     value = clean_text(value)
     if not value:
         return None
@@ -138,7 +150,9 @@ def safe_relative_path(value: Any) -> str | None:
 # =====================================================================
 # 3. LOADING
 # =====================================================================
-def load_structured_content(path: Path) -> dict[str, Any]:
+def load_structured_content(
+    path: Path,
+) -> dict[str, Any]:
     """Load a MinerU structured_content.json document."""
     if not path.exists():
         raise FileNotFoundError(
@@ -155,7 +169,52 @@ def load_structured_content(path: Path) -> dict[str, Any]:
     return data
 
 
-def flatten_pages(document: dict[str, Any]) -> list[dict[str, Any]]:
+def discover_input_files(
+    input_path: Path,
+) -> list[Path]:
+    """Return one input file or all MinerU documents below a directory."""
+    input_path = input_path.expanduser().resolve()
+    if input_path.is_file():
+        return [input_path]
+    if not input_path.is_dir():
+        raise FileNotFoundError(f"Không tìm thấy đường dẫn đầu vào: {input_path}")
+
+    files = sorted(
+        (path for path in input_path.rglob("structured_content.json") if path.is_file()),
+        key=lambda path: path.as_posix().casefold(),
+    )
+    if not files:
+        raise FileNotFoundError(
+            f"Không tìm thấy structured_content.json trong thư mục: {input_path}"
+        )
+    return files
+
+
+def make_doc_id(
+    path: Path,
+) -> str:
+    """Build a stable document ID from the MinerU document directory name."""
+    value = path.parent.name.strip() or path.stem.strip()
+    value = re.sub(r"\s+", "_", value)
+    value = re.sub(r"[^A-Za-z0-9_-]+", "_", value).strip("_")
+    return value or "DOC"
+
+
+def relative_source_path(
+    path: Path,
+    input_root: Path,
+) -> str:
+    """Return a portable source path for logs, errors, and document metadata."""
+    base = input_root if input_root.is_dir() else input_root.parent
+    try:
+        return path.resolve().relative_to(base.resolve()).as_posix()
+    except ValueError:
+        return path.name
+
+
+def flatten_pages(
+    document: dict[str, Any],
+) -> list[dict[str, Any]]:
     """Flatten pages into blocks while preserving page and source order."""
     flattened: list[dict[str, Any]] = []
     for page in document.get("pages", []):
@@ -185,7 +244,9 @@ def flatten_pages(document: dict[str, Any]) -> list[dict[str, Any]]:
 # =====================================================================
 # 4. SPECIAL BLOCKS: TABLE / EQUATION / IMAGE
 # =====================================================================
-def handle_table(block: dict[str, Any]) -> dict[str, Any]:
+def handle_table(
+    block: dict[str, Any],
+) -> dict[str, Any]:
     """Convert a MinerU table to searchable markdown plus table metadata."""
     content = clean_text(block.get("content"))
     captions = get_captions(block)
@@ -223,7 +284,9 @@ def handle_table(block: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def handle_equation(block: dict[str, Any]) -> dict[str, Any]:
+def handle_equation(
+    block: dict[str, Any],
+) -> dict[str, Any]:
     """Keep the equation as LaTeX text; retain its optional rendered image ref."""
     latex = clean_text(block.get("content"))
     if latex:
@@ -240,7 +303,9 @@ def handle_equation(block: dict[str, Any]) -> dict[str, Any]:
     return {"text": text, "equations": [equation_meta], "images": []}
 
 
-def handle_image(block: dict[str, Any]) -> dict[str, Any]:
+def handle_image(
+    block: dict[str, Any],
+) -> dict[str, Any]:
     """Keep image/chart captions in text and the image path in metadata only."""
     captions = get_captions(block)
     footnotes = get_footnotes(block)
@@ -264,7 +329,10 @@ def handle_image(block: dict[str, Any]) -> dict[str, Any]:
 # =====================================================================
 # 5. NORMALIZATION AND FILTERING
 # =====================================================================
-def normalize_block(block: dict[str, Any], section_path: list[str]) -> dict[str, Any] | None:
+def normalize_block(
+    block: dict[str, Any],
+    section_path: list[str],
+) -> dict[str, Any] | None:
     """Map one raw MinerU block to a common internal block representation."""
     block_type = clean_text(block.get("type")).lower()
     if not block_type:
@@ -375,7 +443,9 @@ def filter_blocks(
 # =====================================================================
 # 6. HEADING HIERARCHY
 # =====================================================================
-def infer_heading_level(block: dict[str, Any]) -> int:
+def infer_heading_level(
+    block: dict[str, Any],
+) -> int:
     level = as_int(block.get("level"))
     if level is not None and level > 0:
         return min(level, 12)
@@ -387,7 +457,8 @@ def infer_heading_level(block: dict[str, Any]) -> int:
 
 
 def update_heading_stack(
-    heading_stack: list[dict[str, Any]], block: dict[str, Any]
+    heading_stack: list[dict[str, Any]],
+    block: dict[str, Any],
 ) -> list[str]:
     """Update hierarchical path when a MinerU title block is encountered."""
     block_type = clean_text(block.get("type")).lower()
@@ -404,7 +475,11 @@ def update_heading_stack(
 # =====================================================================
 # 7. TOKEN-AWARE TEXT SPLITTING
 # =====================================================================
-def _largest_char_prefix(text: str, start: int, max_tokens: int) -> int:
+def _largest_char_prefix(
+    text: str,
+    start: int,
+    max_tokens: int,
+) -> int:
     low, high = start + 1, len(text)
     best = start
     while low <= high:
@@ -417,7 +492,11 @@ def _largest_char_prefix(text: str, start: int, max_tokens: int) -> int:
     return best if best > start else min(start + 1, len(text))
 
 
-def _natural_boundary(text: str, start: int, max_end: int) -> int:
+def _natural_boundary(
+    text: str,
+    start: int,
+    max_end: int,
+) -> int:
     if max_end >= len(text):
         return max_end
     lower = start + max(1, int((max_end - start) * 0.72))
@@ -439,7 +518,10 @@ def _natural_boundary(text: str, start: int, max_end: int) -> int:
     return min(pos + (2 if text[pos:pos + 2] in {". ", "! ", "? ", "; "} else 1), max_end)
 
 
-def split_text_by_tokens(text: str, max_tokens: int) -> list[str]:
+def split_text_by_tokens(
+    text: str,
+    max_tokens: int,
+) -> list[str]:
     """Split oversized text, preferring paragraph/sentence/word boundaries."""
     text = text.strip()
     if not text:
@@ -478,7 +560,10 @@ def split_text_by_tokens(text: str, max_tokens: int) -> list[str]:
     return [piece for piece in result if piece]
 
 
-def split_table_content(text: str, max_tokens: int) -> list[str]:
+def split_table_content(
+    text: str,
+    max_tokens: int,
+) -> list[str]:
     """Split Markdown or HTML tables by rows and repeat the header row."""
     # MinerU may serialize tables as HTML (including embedded <img> tags).
     html_match = re.search(r"(<table\b[^>]*>)(.*?)(</table>)", text, flags=re.IGNORECASE | re.DOTALL)
@@ -553,7 +638,9 @@ def split_table_content(text: str, max_tokens: int) -> list[str]:
 # =====================================================================
 # 8. SEMANTIC GROUPING AND CHUNK SPLITTING
 # =====================================================================
-def group_blocks(blocks: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+def group_blocks(
+    blocks: list[dict[str, Any]],
+) -> list[list[dict[str, Any]]]:
     """Group sequential blocks by section path; page changes are not boundaries."""
     groups: list[list[dict[str, Any]]] = []
     current: list[dict[str, Any]] = []
@@ -572,13 +659,18 @@ def group_blocks(blocks: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
     return groups
 
 
-def _metadata_only_unit(unit: dict[str, Any]) -> bool:
+def _metadata_only_unit(
+    unit: dict[str, Any],
+) -> bool:
     return not clean_text(unit.get("text")) and bool(
         unit.get("images") or unit.get("tables") or unit.get("equations")
     )
 
 
-def _split_unit(unit: dict[str, Any], errors: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _split_unit(
+    unit: dict[str, Any],
+    errors: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
     text = clean_text(unit.get("text"))
     if not text or count_tokens(text) <= MAX_TOKENS:
         copied = deepcopy(unit)
@@ -614,7 +706,9 @@ def _split_unit(unit: dict[str, Any], errors: list[dict[str, Any]]) -> list[dict
     return output
 
 
-def _empty_chunk(section_path: list[str]) -> dict[str, Any]:
+def _empty_chunk(
+    section_path: list[str],
+) -> dict[str, Any]:
     return {
         "text": "",
         "section_path": deepcopy(section_path),
@@ -630,7 +724,10 @@ def _empty_chunk(section_path: list[str]) -> dict[str, Any]:
     }
 
 
-def _add_unit_to_chunk(chunk: dict[str, Any], unit: dict[str, Any]) -> None:
+def _add_unit_to_chunk(
+    chunk: dict[str, Any],
+    unit: dict[str, Any],
+) -> None:
     unit_text = clean_text(unit.get("text"))
     if unit_text:
         if chunk["text"]:
@@ -651,7 +748,9 @@ def _add_unit_to_chunk(chunk: dict[str, Any], unit: dict[str, Any]) -> None:
     chunk["has_equation"] = chunk["has_equation"] or bool(unit.get("has_equation"))
 
 
-def _finalize_chunk(chunk: dict[str, Any]) -> dict[str, Any] | None:
+def _finalize_chunk(
+    chunk: dict[str, Any],
+) -> dict[str, Any] | None:
     text = clean_text(chunk.get("text"))
     if not text:
         return None
@@ -675,7 +774,10 @@ def _finalize_chunk(chunk: dict[str, Any]) -> dict[str, Any] | None:
     return output
 
 
-def _merge_chunk_drafts(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
+def _merge_chunk_drafts(
+    left: dict[str, Any],
+    right: dict[str, Any],
+) -> dict[str, Any]:
     merged = deepcopy(left)
     merged["text"] = "\n\n".join(
         value for value in (clean_text(left.get("text")), clean_text(right.get("text"))) if value
@@ -688,7 +790,9 @@ def _merge_chunk_drafts(left: dict[str, Any], right: dict[str, Any]) -> dict[str
 
 
 def split_group(
-    group: list[dict[str, Any]], errors: list[dict[str, Any]], counters: dict[str, int]
+    group: list[dict[str, Any]],
+    errors: list[dict[str, Any]],
+    counters: dict[str, int],
 ) -> list[dict[str, Any]]:
     """Adaptive chunking within one section, preserving block order."""
     if not group:
@@ -805,11 +909,15 @@ def split_group(
 # =====================================================================
 # 9. ADAPTIVE CHILD CHUNKS -> PARENT CHUNKS
 # =====================================================================
-def _section_key(record: dict[str, Any]) -> str:
+def _section_key(
+    record: dict[str, Any],
+) -> str:
     return json_key(record.get("section_path") or ["__root__"])
 
 
-def _new_parent_draft(section_path: list[str]) -> dict[str, Any]:
+def _new_parent_draft(
+    section_path: list[str],
+) -> dict[str, Any]:
     return {
         "text": "",
         "section_path": deepcopy(section_path),
@@ -998,13 +1106,19 @@ def validate_chunk(
 # =====================================================================
 # 11. EXPORT
 # =====================================================================
-def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
+def write_jsonl(
+    path: Path,
+    records: list[dict[str, Any]],
+) -> None:
     with path.open("w", encoding="utf-8") as file:
         for record in records:
             file.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
 
 
-def write_json(path: Path, payload: dict[str, Any]) -> None:
+def write_json(
+    path: Path,
+    payload: dict[str, Any],
+) -> None:
     with path.open("w", encoding="utf-8") as file:
         json.dump(payload, file, ensure_ascii=False, indent=2, default=str)
 

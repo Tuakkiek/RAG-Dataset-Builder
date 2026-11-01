@@ -1,6 +1,6 @@
 {
   "pipeline": "chunk_dataset.py",
-  "source_file": "structured_content.json",
+  "source_file": "mineru",
   "encoding": "cl100k_base",
   "config": {
     "min_tokens": 200,
@@ -15,38 +15,38 @@
     ]
   },
   "blocks": {
-    "raw": 5661,
-    "kept_after_filter": 4409,
+    "raw": 524010,
+    "kept_after_filter": 431230,
     "filtered_by_type": {
-      "header": 433,
-      "footer": 403,
-      "index": 11,
-      "page_number": 405
+      "index": 788,
+      "page_number": 41439,
+      "header": 39652,
+      "footer": 10901
     }
   },
   "chunks": {
-    "child_count": 1042,
-    "parent_count": 647,
-    "split_groups": 583,
-    "merge_operations": 98,
+    "child_count": 82604,
+    "parent_count": 53305,
+    "split_groups": 46317,
+    "merge_operations": 5999,
     "token_count": {
-      "min": 2,
-      "max": 799,
-      "average": 357.83,
-      "below_min": 165,
-      "within_min_max": 877,
+      "min": 1,
+      "max": 800,
+      "average": 342.51,
+      "below_min": 17976,
+      "within_min_max": 64628,
       "above_max": 0
     },
     "parent_token_count": {
-      "min": 2,
-      "max": 1498,
-      "average": 576.39
+      "min": 1,
+      "max": 1500,
+      "average": 530.89
     },
-    "with_image": 141,
-    "with_table": 22,
-    "with_equation": 380
+    "with_image": 16715,
+    "with_table": 4758,
+    "with_equation": 20058
   },
-  "errors_and_warnings": 3,
+  "errors_and_warnings": 464,
   "notes": [
     "TARGET_TOKENS là mục tiêu, không phải kích thước bắt buộc.",
     "Chunk dưới MIN_TOKENS có thể được giữ lại nếu không thể ghép mà không vượt section hoặc MAX_TOKENS.",
@@ -54,10 +54,3814 @@
     "Image path được lưu trong metadata, không chèn đường dẫn ảnh vào text embedding.",
     "Table được giữ dạng Markdown; khi tách bảng lớn, header được lặp lại theo từng phần nếu nhận diện được cấu trúc Markdown."
   ],
-  "document": {
-    "doc_id": "VI_TX_010",
-    "document_title": "Machine Learning co ban"
+  "input": {
+    "path": "D:\\RAG-Dataset-Builder\\data\\mineru",
+    "document_count": 380,
+    "completed_count": 380,
+    "failed_count": 0
   },
+  "documents": [
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_001_AI_Agents_in_Depth",
+      "document_title": "AI Agents in Depth: Design Principles and Engineering Practice",
+      "source_path": "01_sach/en/EN_BK_001_AI Agents in Depth/structured_content.json",
+      "child_count": 670,
+      "parent_count": 475,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_002_AI_Art_Joanna_Zylinska",
+      "document_title": "EN_BK_002_AI Art Joanna Zylinska",
+      "source_path": "01_sach/en/EN_BK_002_AI Art Joanna Zylinska/structured_content.json",
+      "child_count": 119,
+      "parent_count": 46,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_003_AI_Index_Report_2024_Stanford",
+      "document_title": "EN_BK_003_AI Index Report 2024 Stanford",
+      "source_path": "01_sach/en/EN_BK_003_AI Index Report 2024 Stanford/structured_content.json",
+      "child_count": 714,
+      "parent_count": 625,
+      "error_count": 0,
+      "warning_count": 6
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_004_AI_Student_Handbook_Class_XI",
+      "document_title": "EN_BK_004_AI Student Handbook Class XI",
+      "source_path": "01_sach/en/EN_BK_004_AI Student Handbook Class XI/structured_content.json",
+      "child_count": 398,
+      "parent_count": 386,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_005_AI_Technology_Huawei",
+      "document_title": "EN_BK_005_AI Technology Huawei",
+      "source_path": "01_sach/en/EN_BK_005_AI Technology Huawei/structured_content.json",
+      "child_count": 480,
+      "parent_count": 417,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_006_AI_and_Librarianship_Martin_Frick",
+      "document_title": "EN_BK_006_AI and Librarianship Martin Frick",
+      "source_path": "01_sach/en/EN_BK_006_AI and Librarianship Martin Frick/structured_content.json",
+      "child_count": 674,
+      "parent_count": 531,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_007_AI_and_Privacy_Datatilsynet",
+      "document_title": "EN_BK_007_AI and Privacy Datatilsynet",
+      "source_path": "01_sach/en/EN_BK_007_AI and Privacy Datatilsynet/structured_content.json",
+      "child_count": 75,
+      "parent_count": 74,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_008_Agents_in_the_Long_Game_of_AI",
+      "document_title": "Agents in the Long Game of AI",
+      "source_path": "01_sach/en/EN_BK_008_Agents in the Long Game of AI/structured_content.json",
+      "child_count": 392,
+      "parent_count": 203,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_009_AI_Mother_Cyborg",
+      "document_title": "EN_BK_009_AI Mother Cyborg",
+      "source_path": "01_sach/en/EN_BK_009_AI Mother Cyborg/structured_content.json",
+      "child_count": 71,
+      "parent_count": 61,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_010_AI_ThaiNguyen_University",
+      "document_title": "EN_BK_010_AI ThaiNguyen University",
+      "source_path": "01_sach/en/EN_BK_010_AI ThaiNguyen University/structured_content.json",
+      "child_count": 315,
+      "parent_count": 242,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_011_Computer_Vision_Models_Learning",
+      "document_title": "EN_BK_011_Computer Vision Models Learning",
+      "source_path": "01_sach/en/EN_BK_011_Computer Vision Models Learning/structured_content.json",
+      "child_count": 1127,
+      "parent_count": 648,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_012_Deep_Learning_Algorithms_Gacovski",
+      "document_title": "Deep Learning Algorithms",
+      "source_path": "01_sach/en/EN_BK_012_Deep Learning Algorithms Gacovski/structured_content.json",
+      "child_count": 601,
+      "parent_count": 460,
+      "error_count": 0,
+      "warning_count": 7
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_013_Deep_Learning_in_Computer_Vision",
+      "document_title": "Deep Learning in Computer Vision: Principles and Applications",
+      "source_path": "01_sach/en/EN_BK_013_Deep Learning in Computer Vision/structured_content.json",
+      "child_count": 579,
+      "parent_count": 363,
+      "error_count": 0,
+      "warning_count": 5
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_014_Explorations_in_AI_and_ML",
+      "document_title": "AI FreeBook.pdf",
+      "source_path": "01_sach/en/EN_BK_014_Explorations in AI and ML/structured_content.json",
+      "child_count": 295,
+      "parent_count": 162,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_015_Generative_AI_on_AWS",
+      "document_title": "Fairness and Machine Learning",
+      "source_path": "01_sach/en/EN_BK_015_Generative AI on AWS/structured_content.json",
+      "child_count": 448,
+      "parent_count": 259,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_016_Handbook_of_Artificial_Intelligence",
+      "document_title": "Foundation Models for Natural Language Processing",
+      "source_path": "01_sach/en/EN_BK_016_Handbook of Artificial Intelligence/structured_content.json",
+      "child_count": 785,
+      "parent_count": 429,
+      "error_count": 0,
+      "warning_count": 6
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_017_How_Artificial_Intelligence_Works",
+      "document_title": "Foundations of Large Language Models",
+      "source_path": "01_sach/en/EN_BK_017_How Artificial Intelligence Works/structured_content.json",
+      "child_count": 507,
+      "parent_count": 248,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_018_IT_Artificial_Intelligence",
+      "document_title": "Foundations of Machine Learning (second edition)",
+      "source_path": "01_sach/en/EN_BK_018_IT Artificial Intelligence/structured_content.json",
+      "child_count": 1141,
+      "parent_count": 505,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_019_Intro_to_AI_Ethics",
+      "document_title": "Gaussian Processes for Machine Learning",
+      "source_path": "01_sach/en/EN_BK_019_Intro to AI Ethics/structured_content.json",
+      "child_count": 590,
+      "parent_count": 289,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_020_Intro_to_Deep_Learning_Business",
+      "document_title": "Introduction to Artificial Intelligence",
+      "source_path": "01_sach/en/EN_BK_020_Intro to Deep Learning Business/structured_content.json",
+      "child_count": 492,
+      "parent_count": 467,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_021_Intro_to_Deep_Learning_MIT",
+      "document_title": "Introduction to Machine Learning with Python",
+      "source_path": "01_sach/en/EN_BK_021_Intro to Deep Learning MIT/structured_content.json",
+      "child_count": 758,
+      "parent_count": 698,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_022_Intro_to_ML_Foundations",
+      "document_title": "EN_BK_022_Intro to ML Foundations",
+      "source_path": "01_sach/en/EN_BK_022_Intro to ML Foundations/structured_content.json",
+      "child_count": 136,
+      "parent_count": 111,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_023_Introduction_to_AI",
+      "document_title": "Multi-Agent Reinforcement Learning: Foundations and Modern Approaches",
+      "source_path": "01_sach/en/EN_BK_023_Introduction to AI/structured_content.json",
+      "child_count": 585,
+      "parent_count": 282,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_024_Life_3_0_Being_Human_in_Age_of_AI",
+      "document_title": "Natural Language Processing",
+      "source_path": "01_sach/en/EN_BK_024_Life 3.0 Being Human in Age of AI/structured_content.json",
+      "child_count": 959,
+      "parent_count": 553,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_025_Neural_Networks_and_Deep_Learning",
+      "document_title": "Neural Networks and Deep Learning",
+      "source_path": "01_sach/en/EN_BK_025_Neural Networks and Deep Learning/structured_content.json",
+      "child_count": 359,
+      "parent_count": 162,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_026_Programming_Computer_Vision",
+      "document_title": "Programming Computer Vision with Python",
+      "source_path": "01_sach/en/EN_BK_026_Programming Computer Vision/structured_content.json",
+      "child_count": 352,
+      "parent_count": 239,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_027_Prompt_Engineering_Lee_Boonstra",
+      "document_title": "Prompt Engineering",
+      "source_path": "01_sach/en/EN_BK_027_Prompt Engineering Lee Boonstra/structured_content.json",
+      "child_count": 71,
+      "parent_count": 54,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_028_Science_in_the_Age_of_AI_Report",
+      "document_title": "EN_BK_028_Science in the Age of AI Report",
+      "source_path": "01_sach/en/EN_BK_028_Science in the Age of AI Report/structured_content.json",
+      "child_count": 183,
+      "parent_count": 127,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_029_Speech_and_Language_Processing",
+      "document_title": "EN_BK_029_Speech and Language Processing",
+      "source_path": "01_sach/en/EN_BK_029_Speech and Language Processing/structured_content.json",
+      "child_count": 1264,
+      "parent_count": 697,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_030_Student_Guide_to_AI",
+      "document_title": "Student Guide to Artificial Intelligence",
+      "source_path": "01_sach/en/EN_BK_030_Student Guide to AI/structured_content.json",
+      "child_count": 105,
+      "parent_count": 105,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_031_The_Little_Book_of_Deep_Learning",
+      "document_title": "The Little Book of Deep Learning",
+      "source_path": "01_sach/en/EN_BK_031_The Little Book of Deep Learning/structured_content.json",
+      "child_count": 116,
+      "parent_count": 89,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_032_Understanding_Deep_Learning",
+      "document_title": "EN_BK_032_Understanding Deep Learning",
+      "source_path": "01_sach/en/EN_BK_032_Understanding Deep Learning/structured_content.json",
+      "child_count": 1039,
+      "parent_count": 634,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_033_Understanding_Machine_Learning",
+      "document_title": "EN_BK_033_Understanding Machine Learning",
+      "source_path": "01_sach/en/EN_BK_033_Understanding Machine Learning/structured_content.json",
+      "child_count": 984,
+      "parent_count": 501,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_034_Intro_to_Artificial_Intelligence",
+      "document_title": "Introduction to Artificial Intelligence",
+      "source_path": "01_sach/en/EN_BK_034_Intro to Artificial Intelligence/structured_content.json",
+      "child_count": 70,
+      "parent_count": 44,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_BK_035_Max_Tegmark_Life_3_0_Being_Human",
+      "document_title": "Life 3.0: Being Human in the Age of Artificial Intelligence",
+      "source_path": "01_sach/en/EN_BK_035_Max Tegmark Life 3.0 Being Human/structured_content.json",
+      "child_count": 389,
+      "parent_count": 215,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_001_AI_Agents_in_Depth_Tieng_Viet",
+      "document_title": "Hiểu sâu về AI Agent: Nguyên lý thiết kế và thực hành kỹ thuật",
+      "source_path": "01_sach/vi/VI_BK_001_AI Agents in Depth Tieng Viet/structured_content.json",
+      "child_count": 1465,
+      "parent_count": 659,
+      "error_count": 0,
+      "warning_count": 8
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_002_Co_so_tri_tue_nhan_tao",
+      "document_title": "VI_BK_002_Co so tri tue nhan tao",
+      "source_path": "01_sach/vi/VI_BK_002_Co so tri tue nhan tao/structured_content.json",
+      "child_count": 439,
+      "parent_count": 245,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_003_Giao_trinh_thuat_toan",
+      "document_title": "VI_BK_003_Giao trinh thuat toan",
+      "source_path": "01_sach/vi/VI_BK_003_Giao trinh thuat toan/structured_content.json",
+      "child_count": 3364,
+      "parent_count": 2232,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_004_Giao_trinh_tri_tue_nhan_tao",
+      "document_title": "VI_BK_004_Giao trinh tri tue nhan tao",
+      "source_path": "01_sach/vi/VI_BK_004_Giao trinh tri tue nhan tao/structured_content.json",
+      "child_count": 215,
+      "parent_count": 122,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_005_He_mo_mang_noron_va_ung_dung",
+      "document_title": "VI_BK_005_He mo mang noron va ung dung",
+      "source_path": "01_sach/vi/VI_BK_005_He mo mang noron va ung dung/structured_content.json",
+      "child_count": 716,
+      "parent_count": 409,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_006_Phan_tich_thong_ke_khai_pha_du_lieu",
+      "document_title": "VI_BK_006_Phan tich thong ke khai pha du lieu",
+      "source_path": "01_sach/vi/VI_BK_006_Phan tich thong ke khai pha du lieu/structured_content.json",
+      "child_count": 1359,
+      "parent_count": 747,
+      "error_count": 0,
+      "warning_count": 6
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_007_Tri_tue_nhan_tao_Do_Trung_Tuan",
+      "document_title": "VI_BK_007_Tri tue nhan tao Do Trung Tuan",
+      "source_path": "01_sach/vi/VI_BK_007_Tri tue nhan tao Do Trung Tuan/structured_content.json",
+      "child_count": 971,
+      "parent_count": 688,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_008_Tri_tue_nhan_tao_Lap_trinh_tien_hoa",
+      "document_title": "VI_BK_008_Tri tue nhan tao Lap trinh tien hoa",
+      "source_path": "01_sach/vi/VI_BK_008_Tri tue nhan tao Lap trinh tien hoa/structured_content.json",
+      "child_count": 611,
+      "parent_count": 299,
+      "error_count": 0,
+      "warning_count": 7
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_009_Dai_so_tuyen_tinh_ung_dung_AI_NLP",
+      "document_title": "VI_BK_009_Dai so tuyen tinh ung dung AI NLP",
+      "source_path": "01_sach/vi/VI_BK_009_Dai so tuyen tinh ung dung AI NLP/structured_content.json",
+      "child_count": 498,
+      "parent_count": 394,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_010_AI_trong_hoc_tap_nghe_nghiep",
+      "document_title": "Ứng dụng trí tuệ nhân tạo trong học tập và nghề nghiệp",
+      "source_path": "01_sach/vi/VI_BK_010_AI trong hoc tap nghe nghiep/structured_content.json",
+      "child_count": 1132,
+      "parent_count": 739,
+      "error_count": 0,
+      "warning_count": 4
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_BK_011_Khung_nang_luc_AI_sinh_vien",
+      "document_title": "Khung năng lực trí tuệ nhân tạo dành cho sinh viên",
+      "source_path": "01_sach/vi/VI_BK_011_Khung nang luc AI sinh vien/structured_content.json",
+      "child_count": 116,
+      "parent_count": 84,
+      "error_count": 0,
+      "warning_count": 13
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_001_R17A1204_Artificial_Intelligence",
+      "document_title": "EN_TX_001_R17A1204 Artificial Intelligence",
+      "source_path": "02_giao-trinh/en/EN_TX_001_R17A1204 Artificial Intelligence/structured_content.json",
+      "child_count": 296,
+      "parent_count": 266,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_002_AI_Lecture_Notes_271",
+      "document_title": "EN_TX_002_AI Lecture Notes 271",
+      "source_path": "02_giao-trinh/en/EN_TX_002_AI Lecture Notes 271/structured_content.json",
+      "child_count": 349,
+      "parent_count": 332,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_003_CS8691_Artificial_Intelligence",
+      "document_title": "EN_TX_003_CS8691 Artificial Intelligence",
+      "source_path": "02_giao-trinh/en/EN_TX_003_CS8691 Artificial Intelligence/structured_content.json",
+      "child_count": 290,
+      "parent_count": 168,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_004_CSCI415_Artificial_Intelligence",
+      "document_title": "EN_TX_004_CSCI415 Artificial Intelligence",
+      "source_path": "02_giao-trinh/en/EN_TX_004_CSCI415 Artificial Intelligence/structured_content.json",
+      "child_count": 278,
+      "parent_count": 248,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_005_R20CSE3122_Artificial_Intelligence",
+      "document_title": "EN_TX_005_R20CSE3122 Artificial Intelligence",
+      "source_path": "02_giao-trinh/en/EN_TX_005_R20CSE3122 Artificial Intelligence/structured_content.json",
+      "child_count": 545,
+      "parent_count": 329,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_006_Artificial_Intelligence_Textbook",
+      "document_title": "EN_TX_006_Artificial Intelligence Textbook",
+      "source_path": "02_giao-trinh/en/EN_TX_006_Artificial Intelligence Textbook/structured_content.json",
+      "child_count": 546,
+      "parent_count": 330,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_007_Data_Learning_Model_Order",
+      "document_title": "A Gentle Introduction to Data, Learning, and Model Order Reduction",
+      "source_path": "02_giao-trinh/en/EN_TX_007_Data Learning Model Order/structured_content.json",
+      "child_count": 396,
+      "parent_count": 274,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_008_AI_in_Learning_Designing",
+      "document_title": "EN_TX_008_AI in Learning Designing",
+      "source_path": "02_giao-trinh/en/EN_TX_008_AI in Learning Designing/structured_content.json",
+      "child_count": 601,
+      "parent_count": 390,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_009_ML_in_Science_Education",
+      "document_title": "Applying Machine Learning in Science Education Research",
+      "source_path": "02_giao-trinh/en/EN_TX_009_ML in Science Education/structured_content.json",
+      "child_count": 600,
+      "parent_count": 451,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_010_AI_and_Intelligent_Matter",
+      "document_title": "Artificial Intelligence and Intelligent Matter",
+      "source_path": "02_giao-trinh/en/EN_TX_010_AI and Intelligent Matter/structured_content.json",
+      "child_count": 865,
+      "parent_count": 432,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_011_AI_and_ML_in_Health_Care",
+      "document_title": "Artificial Intelligence and Machine Learning in Health Care and Medical Sciences",
+      "source_path": "02_giao-trinh/en/EN_TX_011_AI and ML in Health Care/structured_content.json",
+      "child_count": 1480,
+      "parent_count": 1073,
+      "error_count": 0,
+      "warning_count": 6
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_012_AI_Data_and_Robotics",
+      "document_title": "Artificial Intelligence, Data and Robotics",
+      "source_path": "02_giao-trinh/en/EN_TX_012_AI Data and Robotics/structured_content.json",
+      "child_count": 1119,
+      "parent_count": 788,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_013_Automated_Machine_Learning",
+      "document_title": "EN_TX_013_Automated Machine Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_013_Automated Machine Learning/structured_content.json",
+      "child_count": 373,
+      "parent_count": 217,
+      "error_count": 0,
+      "warning_count": 9
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_014_Bandit_Algorithms",
+      "document_title": "Bandit Algorithms",
+      "source_path": "02_giao-trinh/en/EN_TX_014_Bandit Algorithms/structured_content.json",
+      "child_count": 1297,
+      "parent_count": 613,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_015_Bioimage_Data_Analysis",
+      "document_title": "EN_TX_015_Bioimage Data Analysis",
+      "source_path": "02_giao-trinh/en/EN_TX_015_Bioimage Data Analysis/structured_content.json",
+      "child_count": 403,
+      "parent_count": 329,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_016_Computer_Vision_Metrics",
+      "document_title": "EN_TX_016_Computer Vision Metrics",
+      "source_path": "02_giao-trinh/en/EN_TX_016_Computer Vision Metrics/structured_content.json",
+      "child_count": 858,
+      "parent_count": 707,
+      "error_count": 0,
+      "warning_count": 64
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_017_Convex_Optimization",
+      "document_title": "EN_TX_017_Convex Optimization",
+      "source_path": "02_giao-trinh/en/EN_TX_017_Convex Optimization/structured_content.json",
+      "child_count": 1669,
+      "parent_count": 1019,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_018_Dive_into_Deep_Learning",
+      "document_title": "EN_TX_018_Dive into Deep Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_018_Dive into Deep Learning/structured_content.json",
+      "child_count": 2032,
+      "parent_count": 1521,
+      "error_count": 0,
+      "warning_count": 12
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_019_Elements_of_Robotics",
+      "document_title": "419055_Print.indd",
+      "source_path": "02_giao-trinh/en/EN_TX_019_Elements of Robotics/structured_content.json",
+      "child_count": 489,
+      "parent_count": 398,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_020_Foundations_of_Robotics",
+      "document_title": "EN_TX_020_Foundations of Robotics",
+      "source_path": "02_giao-trinh/en/EN_TX_020_Foundations of Robotics/structured_content.json",
+      "child_count": 975,
+      "parent_count": 746,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_021_Geometric_Deep_Learning",
+      "document_title": "Geometric Deep Learning, A Mathematical Perspective",
+      "source_path": "02_giao-trinh/en/EN_TX_021_Geometric Deep Learning/structured_content.json",
+      "child_count": 1204,
+      "parent_count": 706,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_022_Graph_Representation_Learning",
+      "document_title": "EN_TX_022_Graph Representation Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_022_Graph Representation Learning/structured_content.json",
+      "child_count": 261,
+      "parent_count": 176,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_023_Hyperparameter_Tuning_with_R",
+      "document_title": "EN_TX_023_Hyperparameter Tuning with R",
+      "source_path": "02_giao-trinh/en/EN_TX_023_Hyperparameter Tuning with R/structured_content.json",
+      "child_count": 534,
+      "parent_count": 391,
+      "error_count": 0,
+      "warning_count": 6
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_024_Informed_Machine_Learning",
+      "document_title": "Informed Machine Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_024_Informed Machine Learning/structured_content.json",
+      "child_count": 577,
+      "parent_count": 341,
+      "error_count": 0,
+      "warning_count": 6
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_025_Intro_Information_Retrieval",
+      "document_title": "Introduction to Information Retrieval",
+      "source_path": "02_giao-trinh/en/EN_TX_025_Intro Information Retrieval/structured_content.json",
+      "child_count": 1128,
+      "parent_count": 770,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_026_Intro_Artificial_Intelligence",
+      "document_title": "EN_TX_026_Intro Artificial Intelligence",
+      "source_path": "02_giao-trinh/en/EN_TX_026_Intro Artificial Intelligence/structured_content.json",
+      "child_count": 312,
+      "parent_count": 216,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_027_ML_in_Social_Science",
+      "document_title": "Machine Learning in Social Science",
+      "source_path": "02_giao-trinh/en/EN_TX_027_ML in Social Science/structured_content.json",
+      "child_count": 462,
+      "parent_count": 258,
+      "error_count": 0,
+      "warning_count": 11
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_028_Math_Foundations_GDL",
+      "document_title": "Mathematical Foundations of Geometric Deep Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_028_Math Foundations GDL/structured_content.json",
+      "child_count": 148,
+      "parent_count": 74,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_029_Mathematics_for_ML",
+      "document_title": "Mathematics for Machine Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_029_Mathematics for ML/structured_content.json",
+      "child_count": 864,
+      "parent_count": 473,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_030_Multiagent_Systems",
+      "document_title": "Multiagent Systems: Algorithmic, Game-Theoretic, and Logical Foundations",
+      "source_path": "02_giao-trinh/en/EN_TX_030_Multiagent Systems/structured_content.json",
+      "child_count": 928,
+      "parent_count": 489,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_031_NLP_and_Large_Language_Models",
+      "document_title": "Natural Language Processing and Large Language Models",
+      "source_path": "02_giao-trinh/en/EN_TX_031_NLP and Large Language Models/structured_content.json",
+      "child_count": 527,
+      "parent_count": 381,
+      "error_count": 0,
+      "warning_count": 7
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_032_Philosophy_Science_for_ML",
+      "document_title": "Philosophy of Science for Machine Learning",
+      "source_path": "02_giao-trinh/en/EN_TX_032_Philosophy Science for ML/structured_content.json",
+      "child_count": 904,
+      "parent_count": 440,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_034_Probabilistic_ML_Intro",
+      "document_title": "EN_TX_034_Probabilistic ML Intro",
+      "source_path": "02_giao-trinh/en/EN_TX_034_Probabilistic ML Intro/structured_content.json",
+      "child_count": 1973,
+      "parent_count": 1246,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_035_Reinforcement_Learning_Sutton",
+      "document_title": "EN_TX_035_Reinforcement Learning Sutton",
+      "source_path": "02_giao-trinh/en/EN_TX_035_Reinforcement Learning Sutton/structured_content.json",
+      "child_count": 971,
+      "parent_count": 405,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_036_Representation_Learning_NLP",
+      "document_title": "385018_1_En_Print.indd",
+      "source_path": "02_giao-trinh/en/EN_TX_036_Representation Learning NLP/structured_content.json",
+      "child_count": 526,
+      "parent_count": 338,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_037_Robotics_AI_and_Humanity",
+      "document_title": "EN_TX_037_Robotics AI and Humanity",
+      "source_path": "02_giao-trinh/en/EN_TX_037_Robotics AI and Humanity/structured_content.json",
+      "child_count": 743,
+      "parent_count": 456,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TX_038_Unlocking_AI_Applications",
+      "document_title": "EN_TX_038_Unlocking AI Applications",
+      "source_path": "02_giao-trinh/en/EN_TX_038_Unlocking AI Applications/structured_content.json",
+      "child_count": 609,
+      "parent_count": 389,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_001_Tri_tue_nhan_tao_he_chuyen_gia",
+      "document_title": "AI HOC QUOC GIA",
+      "source_path": "02_giao-trinh/vi/VI_TX_001_Tri tue nhan tao he chuyen gia/structured_content.json",
+      "child_count": 228,
+      "parent_count": 112,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_002_Giao_trinh_TTNT_Tap_1",
+      "document_title": "VI_TX_002_Giao trinh TTNT Tap 1",
+      "source_path": "02_giao-trinh/vi/VI_TX_002_Giao trinh TTNT Tap 1/structured_content.json",
+      "child_count": 59,
+      "parent_count": 27,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_003_Giao_trinh_TTNT_Tap_2",
+      "document_title": "VI_TX_003_Giao trinh TTNT Tap 2",
+      "source_path": "02_giao-trinh/vi/VI_TX_003_Giao trinh TTNT Tap 2/structured_content.json",
+      "child_count": 6,
+      "parent_count": 5,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_004_AI_for_Student_Tieng_Viet",
+      "document_title": "PowerPoint Presentation",
+      "source_path": "02_giao-trinh/vi/VI_TX_004_AI for Student Tieng Viet/structured_content.json",
+      "child_count": 199,
+      "parent_count": 198,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_005_Giao_trinh_khai_pha_du_lieu",
+      "document_title": "VI_TX_005_Giao trinh khai pha du lieu",
+      "source_path": "02_giao-trinh/vi/VI_TX_005_Giao trinh khai pha du lieu/structured_content.json",
+      "child_count": 8,
+      "parent_count": 5,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_006_Machine_Learning_Andrew_Ng",
+      "document_title": "book_vn.md - Grip",
+      "source_path": "02_giao-trinh/vi/VI_TX_006_Machine Learning Andrew Ng/structured_content.json",
+      "child_count": 212,
+      "parent_count": 105,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_007_Machine_Learning_Deep_Learning_Book",
+      "document_title": "VI_TX_007_Machine Learning Deep Learning Book",
+      "source_path": "02_giao-trinh/vi/VI_TX_007_Machine Learning Deep Learning Book/structured_content.json",
+      "child_count": 395,
+      "parent_count": 229,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_008_Nhap_mon_hoc_may_khai_pha_du_lieu",
+      "document_title": "VI_TX_008_Nhap mon hoc may khai pha du lieu",
+      "source_path": "02_giao-trinh/vi/VI_TX_008_Nhap mon hoc may khai pha du lieu/structured_content.json",
+      "child_count": 241,
+      "parent_count": 173,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_009_Giao_trinh_tri_tue_nhan_tao_tong_hop",
+      "document_title": "Microsoft Word - GTXulyanh.doc",
+      "source_path": "02_giao-trinh/vi/VI_TX_009_Giao trinh tri tue nhan tao tong hop/structured_content.json",
+      "child_count": 186,
+      "parent_count": 140,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_010_Machine_Learning_co_ban",
+      "document_title": "Machine Learning co ban",
+      "source_path": "02_giao-trinh/vi/VI_TX_010_Machine Learning co ban/structured_content.json",
+      "child_count": 1042,
+      "parent_count": 647,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_011_Giao_trinh_xu_ly_anh",
+      "document_title": "Microsoft Word - GTXulyanh.doc",
+      "source_path": "02_giao-trinh/vi/VI_TX_011_Giao trinh xu ly anh/structured_content.json",
+      "child_count": 185,
+      "parent_count": 138,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_012_Giao_trinh_tri_tue_nhan_tao",
+      "document_title": "VI_TX_012_Giao trinh tri tue nhan tao",
+      "source_path": "02_giao-trinh/vi/VI_TX_012_Giao trinh tri tue nhan tao/structured_content.json",
+      "child_count": 187,
+      "parent_count": 106,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_013_TTNT_Tran_Ngan_Binh",
+      "document_title": "Trí tuệ nhân tạo - essays",
+      "source_path": "02_giao-trinh/vi/VI_TX_013_TTNT Tran Ngan Binh/structured_content.json",
+      "child_count": 431,
+      "parent_count": 254,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_014_Giao_Trinh_TTNT_CTU",
+      "document_title": "VI_TX_014_Giao Trinh TTNT CTU",
+      "source_path": "02_giao-trinh/vi/VI_TX_014_Giao Trinh TTNT CTU/structured_content.json",
+      "child_count": 344,
+      "parent_count": 196,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_015_Giao_Trinh_TTNT_PTIT",
+      "document_title": "trí tuệ nhân tạo,nguyễn quang hoan,hvcnbcvt",
+      "source_path": "02_giao-trinh/vi/VI_TX_015_Giao Trinh TTNT PTIT/structured_content.json",
+      "child_count": 575,
+      "parent_count": 355,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_016_Giao_trinh_TTNT_VNU",
+      "document_title": "Giao-trinh-tri-tue-nhan-tao-Dinh-Manh-Tuong",
+      "source_path": "02_giao-trinh/vi/VI_TX_016_Giao trinh TTNT VNU/structured_content.json",
+      "child_count": 438,
+      "parent_count": 243,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_017_Giao_trinh_TTNT_SPS",
+      "document_title": "Ttnttgd - tài liệu trí tuệ nhân tạo trong giáo dục",
+      "source_path": "02_giao-trinh/vi/VI_TX_017_Giao trinh TTNT SPS/structured_content.json",
+      "child_count": 34,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_018_Giao_Trinh_TTNT_GTVT",
+      "document_title": "VI_TX_018_Giao_Trinh_TTNT_GTVT",
+      "source_path": "02_giao-trinh/vi/VI_TX_018_Giao_Trinh_TTNT_GTVT/structured_content.json",
+      "child_count": 362,
+      "parent_count": 230,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TX_019_Giao_trinh_TTNT_VNU_HCM",
+      "document_title": "VI_TX_019_Giao trinh TTNT VNU HCM",
+      "source_path": "02_giao-trinh/vi/VI_TX_019_Giao trinh TTNT VNU HCM/structured_content.json",
+      "child_count": 204,
+      "parent_count": 108,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_001_Adam_Stochastic_Optimization",
+      "document_title": "Adam: A Method for Stochastic Optimization",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_001_Adam Stochastic Optimization/structured_content.json",
+      "child_count": 50,
+      "parent_count": 27,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_002_Analyzing_Attention_Transformer",
+      "document_title": "Analyzing the Structure of Attention in a Transformer Language Model",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_002_Analyzing Attention Transformer/structured_content.json",
+      "child_count": 34,
+      "parent_count": 28,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_003_The_Annotated_Transformer",
+      "document_title": "The Annotated Transformer",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_003_The Annotated Transformer/structured_content.json",
+      "child_count": 34,
+      "parent_count": 28,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_004_Auto-Encoding_Bayes_VAE",
+      "document_title": "EN_PP_004_Auto-Encoding Bayes VAE",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_004_Auto-Encoding Bayes VAE/structured_content.json",
+      "child_count": 49,
+      "parent_count": 26,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_005_BERT_Pre-training_Language",
+      "document_title": "EN_PP_005_BERT Pre-training Language",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_005_BERT Pre-training Language/structured_content.json",
+      "child_count": 53,
+      "parent_count": 37,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_006_Cross-Attention_Translation",
+      "document_title": "Cross-Attention is All You Need: Adapting Pretrained Transformers for Machine Translation",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_006_Cross-Attention Translation/structured_content.json",
+      "child_count": 38,
+      "parent_count": 22,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_007_Deep_Learning_Nature_Review",
+      "document_title": "EN_PP_007_Deep Learning Nature Review",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_007_Deep Learning Nature Review/structured_content.json",
+      "child_count": 33,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_008_Deep_Residual_Learning_ResNet",
+      "document_title": "EN_PP_008_Deep Residual Learning ResNet",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_008_Deep Residual Learning ResNet/structured_content.json",
+      "child_count": 48,
+      "parent_count": 28,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_009_Denoising_Diffusion_Models",
+      "document_title": "EN_PP_009_Denoising Diffusion Models",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_009_Denoising Diffusion Models/structured_content.json",
+      "child_count": 54,
+      "parent_count": 31,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_010_Generative_Adversarial_Nets",
+      "document_title": "EN_PP_010_Generative Adversarial Nets",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_010_Generative Adversarial Nets/structured_content.json",
+      "child_count": 24,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_011_Human-Level_Control_Deep_RL",
+      "document_title": "Human-level control through deep reinforcement learning",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_011_Human-Level Control Deep RL/structured_content.json",
+      "child_count": 34,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_012_Deep_Learning_Diagnosis_X-Ray",
+      "document_title": "EN_PP_012_Deep Learning Diagnosis X-Ray",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_012_Deep Learning Diagnosis X-Ray/structured_content.json",
+      "child_count": 22,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_013_Neural_Machine_Translation_Align",
+      "document_title": "EN_PP_013_Neural Machine Translation Align",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_013_Neural Machine Translation Align/structured_content.json",
+      "child_count": 48,
+      "parent_count": 37,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_014_Only_5_Percent_Attention_NMT",
+      "document_title": "Only 5% Attention Is All You Need: Efficient Long-range Document-level Neural Machine Translation",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_014_Only 5 Percent Attention NMT/structured_content.json",
+      "child_count": 41,
+      "parent_count": 31,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_015_Playing_Atari_with_Deep_RL",
+      "document_title": "EN_PP_015_Playing Atari with Deep RL",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_015_Playing Atari with Deep RL/structured_content.json",
+      "child_count": 25,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_016_Retrieval-Augmented_Generation",
+      "document_title": "EN_PP_016_Retrieval-Augmented Generation",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_016_Retrieval-Augmented Generation/structured_content.json",
+      "child_count": 63,
+      "parent_count": 41,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_PP_017_Long_Short-Term_Memory",
+      "document_title": "EN_PP_017_Long Short-Term Memory",
+      "source_path": "03_bai-bao-khoa-hoc/en/EN_PP_017_Long Short-Term Memory/structured_content.json",
+      "child_count": 87,
+      "parent_count": 43,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_001_Cai_tien_dich_may_no-ron_Anh_Viet",
+      "document_title": "ON THE EXISTENCE OF SOLUTIONS FOR VECTOR QUASIEQUILIBRIUM PROBLEMS",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_001_Cai tien dich may no-ron Anh Viet/structured_content.json",
+      "child_count": 37,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_002_Mo_hinh_chu_y_ngu_canh_VQA_tieng_Viet",
+      "document_title": "ON THE EXISTENCE OF SOLUTIONS FOR VECTOR QUASIEQUILIBRIUM PROBLEMS",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_002_Mo hinh chu y ngu canh VQA tieng Viet/structured_content.json",
+      "child_count": 38,
+      "parent_count": 24,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_003_Nhan_dang_khuon_mat_bang_hoc_may",
+      "document_title": "ON THE EXISTENCE OF SOLUTIONS FOR VECTOR QUASIEQUILIBRIUM PROBLEMS",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_003_Nhan dang khuon mat bang hoc may/structured_content.json",
+      "child_count": 43,
+      "parent_count": 29,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_004_Nhan_dang_la_nhan_bang_hoc_sau",
+      "document_title": "VI_PP_004_Nhan dang la nhan bang hoc sau",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_004_Nhan dang la nhan bang hoc sau/structured_content.json",
+      "child_count": 31,
+      "parent_count": 19,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_005_Nhan_dang_ki_tu_so_viet_tay",
+      "document_title": "ON THE EXISTENCE OF SOLUTIONS FOR VECTOR QUASIEQUILIBRIUM PROBLEMS",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_005_Nhan dang ki tu so viet tay/structured_content.json",
+      "child_count": 23,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_006_AI_phat_hien_tan_cong_tu_choi_dich_vu",
+      "document_title": "VI_PP_006_AI phat hien tan cong tu choi dich vu",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_006_AI phat hien tan cong tu choi dich vu/structured_content.json",
+      "child_count": 26,
+      "parent_count": 20,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_007_Nhan_dang_bien_so_xe_oto_tu_dong",
+      "document_title": "JMST_Template",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_007_Nhan dang bien so xe oto tu dong/structured_content.json",
+      "child_count": 26,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_008_Ung_dung_MLP_du_bao_nguy_co_sut_lun",
+      "document_title": "VI_PP_008_Ung dung MLP du bao nguy co sut lun",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_008_Ung dung MLP du bao nguy co sut lun/structured_content.json",
+      "child_count": 55,
+      "parent_count": 27,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_009_Nhan_dien_ngon_ngu_ki_hieu_tieng",
+      "document_title": "Microsoft Word - 25.#12708 - Le Luong Thai - 26.6.2025.docx",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_009_Nhan dien ngon ngu ki hieu tieng/structured_content.json",
+      "child_count": 22,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_010_NovaLog_AI_He_thong_hoc_may_du_bao",
+      "document_title": "VI_PP_010_NovaLog AI He thong hoc may du bao",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_010_NovaLog AI He thong hoc may du bao/structured_content.json",
+      "child_count": 66,
+      "parent_count": 35,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_PP_011_PHAN_CUM_DULIEU_DUA_TREN_MANG_NO",
+      "document_title": "VI_PP_011_PHAN CUM DULIEU DUA TREN MANG NO",
+      "source_path": "03_bai-bao-khoa-hoc/vi/VI_PP_011_PHAN CUM DULIEU DUA TREN MANG NO/structured_content.json",
+      "child_count": 27,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_001_Deep_Learning_for_Visual",
+      "document_title": "EN_TH_001_Deep Learning for Visual",
+      "source_path": "04_luan-van-do-an/en/EN_TH_001_Deep Learning for Visual/structured_content.json",
+      "child_count": 85,
+      "parent_count": 72,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_002_Improving_DL_through_Automatic",
+      "document_title": "Improving Deep Learning through Automatic Programming",
+      "source_path": "04_luan-van-do-an/en/EN_TH_002_Improving DL through Automatic/structured_content.json",
+      "child_count": 203,
+      "parent_count": 148,
+      "error_count": 0,
+      "warning_count": 4
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_003_Communication_channels_between_DL",
+      "document_title": "EN_TH_003_Communication channels between DL",
+      "source_path": "04_luan-van-do-an/en/EN_TH_003_Communication channels between DL/structured_content.json",
+      "child_count": 113,
+      "parent_count": 96,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_004_Compositional_Deep_Learning",
+      "document_title": "EN_TH_004_Compositional Deep Learning",
+      "source_path": "04_luan-van-do-an/en/EN_TH_004_Compositional Deep Learning/structured_content.json",
+      "child_count": 88,
+      "parent_count": 52,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_005_Weakly_Supervised_to_Active",
+      "document_title": "EN_TH_005_Weakly Supervised to Active",
+      "source_path": "04_luan-van-do-an/en/EN_TH_005_Weakly Supervised to Active/structured_content.json",
+      "child_count": 808,
+      "parent_count": 410,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_006_Epistemic_Deep_Learning",
+      "document_title": "Epistemic Deep Learning: Enabling Machine Learning Models to Know When They Do Not Know",
+      "source_path": "04_luan-van-do-an/en/EN_TH_006_Epistemic Deep Learning/structured_content.json",
+      "child_count": 331,
+      "parent_count": 199,
+      "error_count": 0,
+      "warning_count": 9
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TH_007_Towards_Improvement_of_Automated",
+      "document_title": "Towards the Improvement of Automated Scientific Document Categorization by Deep Learning",
+      "source_path": "04_luan-van-do-an/en/EN_TH_007_Towards Improvement of Automated/structured_content.json",
+      "child_count": 200,
+      "parent_count": 183,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_001_Xac_thuc_nguoi_noi_dung_hoc_sau",
+      "document_title": "VI_TH_001_Xac thuc nguoi noi dung hoc sau",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_001_Xac thuc nguoi noi dung hoc sau/structured_content.json",
+      "child_count": 245,
+      "parent_count": 169,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_002_Nhan_dang_mat_duong_giao_thong",
+      "document_title": "VI_TH_002_Nhan dang mat duong giao thong",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_002_Nhan dang mat duong giao thong/structured_content.json",
+      "child_count": 267,
+      "parent_count": 120,
+      "error_count": 0,
+      "warning_count": 8
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_003_Chan_doan_ung_thu_vu_bang_AI",
+      "document_title": "VI_TH_003_Chan doan ung thu vu bang AI",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_003_Chan doan ung thu vu bang AI/structured_content.json",
+      "child_count": 371,
+      "parent_count": 192,
+      "error_count": 0,
+      "warning_count": 5
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_004_Ky_thuat_phan_loai_du_lieu",
+      "document_title": "VI_TH_004_Ky thuat phan loai du lieu",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_004_Ky thuat phan loai du lieu/structured_content.json",
+      "child_count": 307,
+      "parent_count": 166,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_005_AI_toi_uu_hoa_luoi_dien",
+      "document_title": "MỤC LỤC",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_005_AI toi uu hoa luoi dien/structured_content.json",
+      "child_count": 348,
+      "parent_count": 199,
+      "error_count": 0,
+      "warning_count": 21
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_006_Chuan_hoa_van_ban_va_NER_tieng_noi",
+      "document_title": "VI_TH_006_Chuan hoa van ban va NER tieng noi",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_006_Chuan hoa van ban va NER tieng noi/structured_content.json",
+      "child_count": 236,
+      "parent_count": 131,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_007_Goi_y_mua_hang_theo_phien_bang_hoc_sau",
+      "document_title": "VI_TH_007_Goi y mua hang theo phien bang hoc sau",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_007_Goi y mua hang theo phien bang hoc sau/structured_content.json",
+      "child_count": 296,
+      "parent_count": 185,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_008_Phan_loai_DGA_Botnet_bang_hoc_sau",
+      "document_title": "VI_TH_008_Phan loai DGA Botnet bang hoc sau",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_008_Phan loai DGA Botnet bang hoc sau/structured_content.json",
+      "child_count": 307,
+      "parent_count": 166,
+      "error_count": 0,
+      "warning_count": 13
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_009_Tong_hop_giong_noi_tieng_Viet",
+      "document_title": "Microsoft Word - 8. LATS PhuongPN chinh sua sau PBÄ’L final v3.docx",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_009_Tong hop giong noi tieng Viet/structured_content.json",
+      "child_count": 307,
+      "parent_count": 171,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_010_Chu_thich_anh_bang_mang_hoc_sau",
+      "document_title": "VI_TH_010_Chu thich anh bang mang hoc sau",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_010_Chu thich anh bang mang hoc sau/structured_content.json",
+      "child_count": 77,
+      "parent_count": 69,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_011_Mang_no-ron_trong_nhan_dang",
+      "document_title": "Chuyên đề 2: Quá trình học của mạng nơ-ron",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_011_Mang no-ron trong nhan dang/structured_content.json",
+      "child_count": 286,
+      "parent_count": 169,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_012_Dieu_khien_PID_no-ron_tau_thuy",
+      "document_title": "LỜI CAM ĐOAN",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_012_Dieu khien PID no-ron tau thuy/structured_content.json",
+      "child_count": 219,
+      "parent_count": 126,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_013_AI_Cuckoo_Crow_Search_toi_uu",
+      "document_title": "VI_TH_013_AI Cuckoo Crow Search toi uu",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_013_AI Cuckoo Crow Search toi uu/structured_content.json",
+      "child_count": 526,
+      "parent_count": 291,
+      "error_count": 0,
+      "warning_count": 47
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_014_Hoc_tang_cuong_trong_phan_loai",
+      "document_title": "VI_TH_014_Hoc tang cuong trong phan loai",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_014_Hoc tang cuong trong phan loai/structured_content.json",
+      "child_count": 160,
+      "parent_count": 113,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_015_Ung_dung_ho_tro_chan_doan_y_te",
+      "document_title": "VI_TH_015_Ung dung ho tro chan doan y te",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_015_Ung dung ho tro chan doan y te/structured_content.json",
+      "child_count": 181,
+      "parent_count": 142,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TH_016_Mo_hinh_tao_sinh_trong_nhan_dang",
+      "document_title": "VI_TH_016_Mo hinh tao sinh trong nhan dang",
+      "source_path": "04_luan-van-do-an/vi/VI_TH_016_Mo hinh tao sinh trong nhan dang/structured_content.json",
+      "child_count": 147,
+      "parent_count": 82,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TR_001_Deep_Learning_Technical",
+      "document_title": "EN_TR_001_Deep Learning Technical",
+      "source_path": "05_bao-cao-ky-thuat/en/EN_TR_001_Deep Learning Technical/structured_content.json",
+      "child_count": 214,
+      "parent_count": 152,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TR_002_DL_in_Neural_Networks_An_Overview",
+      "document_title": "EN_TR_002_DL in Neural Networks An Overview",
+      "source_path": "05_bao-cao-ky-thuat/en/EN_TR_002_DL in Neural Networks An Overview/structured_content.json",
+      "child_count": 194,
+      "parent_count": 92,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TR_003_NIST_AI_RMF_1_0",
+      "document_title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "source_path": "05_bao-cao-ky-thuat/en/EN_TR_003_NIST AI RMF 1.0/structured_content.json",
+      "child_count": 63,
+      "parent_count": 46,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TR_004_NIST_Generative_AI_Profile",
+      "document_title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+      "source_path": "05_bao-cao-ky-thuat/en/EN_TR_004_NIST Generative AI Profile/structured_content.json",
+      "child_count": 128,
+      "parent_count": 71,
+      "error_count": 0,
+      "warning_count": 5
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TR_005_RAG_from_PDFs_experience_report",
+      "document_title": "EN_TR_005_RAG from PDFs experience report",
+      "source_path": "05_bao-cao-ky-thuat/en/EN_TR_005_RAG from PDFs experience report/structured_content.json",
+      "child_count": 65,
+      "parent_count": 60,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_TR_006_Foundations_of_Reinforcement",
+      "document_title": "EN_TR_006_Foundations of Reinforcement",
+      "source_path": "05_bao-cao-ky-thuat/en/EN_TR_006_Foundations of Reinforcement/structured_content.json",
+      "child_count": 432,
+      "parent_count": 189,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_TR_001_VNIES_AI_booklet_Day_va_Hoc",
+      "document_title": "VI_TR_001_VNIES AI booklet Day va Hoc",
+      "source_path": "05_bao-cao-ky-thuat/vi/VI_TR_001_VNIES AI booklet Day va Hoc/structured_content.json",
+      "child_count": 154,
+      "parent_count": 70,
+      "error_count": 0,
+      "warning_count": 12
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_001_Artificial_Intelligence__Overview",
+      "document_title": "EN_SL_001_Artificial Intelligence, Overview",
+      "source_path": "06_slide-bai-giang/en/EN_SL_001_Artificial Intelligence, Overview/structured_content.json",
+      "child_count": 12,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_002_Artificial_Neural_Networks_1",
+      "document_title": "EN_SL_002_Artificial Neural Networks 1",
+      "source_path": "06_slide-bai-giang/en/EN_SL_002_Artificial Neural Networks 1/structured_content.json",
+      "child_count": 53,
+      "parent_count": 48,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_003_Artificial_Neural_Networks_2",
+      "document_title": "EN_SL_003_Artificial Neural Networks 2",
+      "source_path": "06_slide-bai-giang/en/EN_SL_003_Artificial Neural Networks 2/structured_content.json",
+      "child_count": 24,
+      "parent_count": 22,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_004_Computer___Machine_Vision",
+      "document_title": "EN_SL_004_Computer & Machine Vision",
+      "source_path": "06_slide-bai-giang/en/EN_SL_004_Computer & Machine Vision/structured_content.json",
+      "child_count": 42,
+      "parent_count": 39,
+      "error_count": 0,
+      "warning_count": 10
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_005_Evolutionary_Computation",
+      "document_title": "EN_SL_005_Evolutionary Computation",
+      "source_path": "06_slide-bai-giang/en/EN_SL_005_Evolutionary Computation/structured_content.json",
+      "child_count": 21,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_006_Introduction_to_Knowledge_Based",
+      "document_title": "KNOWLEDGE ELICITATION METHODS",
+      "source_path": "06_slide-bai-giang/en/EN_SL_006_Introduction to Knowledge Based/structured_content.json",
+      "child_count": 14,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_007_Knowledge___Reasoning",
+      "document_title": "EN_SL_007_Knowledge & Reasoning",
+      "source_path": "06_slide-bai-giang/en/EN_SL_007_Knowledge & Reasoning/structured_content.json",
+      "child_count": 27,
+      "parent_count": 27,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_008_Knowledge_Elicitation_Methods",
+      "document_title": "EN_SL_008_Knowledge Elicitation Methods",
+      "source_path": "06_slide-bai-giang/en/EN_SL_008_Knowledge Elicitation Methods/structured_content.json",
+      "child_count": 24,
+      "parent_count": 24,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_009_Knowledge_Representation___Expert",
+      "document_title": "EN_SL_009_Knowledge Representation & Expert",
+      "source_path": "06_slide-bai-giang/en/EN_SL_009_Knowledge Representation & Expert/structured_content.json",
+      "child_count": 27,
+      "parent_count": 19,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_010_Neural_Networks_Slides",
+      "document_title": "EN_SL_010_Neural Networks Slides",
+      "source_path": "06_slide-bai-giang/en/EN_SL_010_Neural Networks Slides/structured_content.json",
+      "child_count": 23,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_011_Rule_Based_Expert_System",
+      "document_title": "EN_SL_011_Rule Based Expert System",
+      "source_path": "06_slide-bai-giang/en/EN_SL_011_Rule Based Expert System/structured_content.json",
+      "child_count": 26,
+      "parent_count": 26,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_SL_012_Uncertainty_Management",
+      "document_title": "EN_SL_012_Uncertainty Management",
+      "source_path": "06_slide-bai-giang/en/EN_SL_012_Uncertainty Management/structured_content.json",
+      "child_count": 29,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_001_Bai_12_13_ML_Logistic_regression",
+      "document_title": "Bai 12-13: ML- Logistic regression_01",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_001_Bai 12 13 ML Logistic regression/structured_content.json",
+      "child_count": 26,
+      "parent_count": 25,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_002_Bai_14_15_Neural_Network",
+      "document_title": "Bai 14-15 Neural Network",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_002_Bai 14 15 Neural Network/structured_content.json",
+      "child_count": 16,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_003_Bai_16_K_means_Clustering",
+      "document_title": "Bai 16: K means Clustering",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_003_Bai 16 K means Clustering/structured_content.json",
+      "child_count": 13,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_004_Bai_1_Gioithieu",
+      "document_title": "Bai 1: Gioithieu",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_004_Bai 1 Gioithieu/structured_content.json",
+      "child_count": 43,
+      "parent_count": 42,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_005_Bai_4_5_Timkiemcosudungthongtin",
+      "document_title": "Bai 4_5:Timkiemcosudungthongtin",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_005_Bai 4 5 Timkiemcosudungthongtin/structured_content.json",
+      "child_count": 15,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_006_Bai_6_7_Timkiemcodoithu",
+      "document_title": "Bai 6-7: Timkiemcodoithu",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_006_Bai 6 7 Timkiemcodoithu/structured_content.json",
+      "child_count": 35,
+      "parent_count": 35,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_007_Bai_8_9_ML_Linear_Regression",
+      "document_title": "Bai 8-9:ML-Linear Regression",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_007_Bai 8 9 ML Linear Regression/structured_content.json",
+      "child_count": 29,
+      "parent_count": 28,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_008_Bai_10_11_Perceptron",
+      "document_title": "Bài 10-11: - Perceptron",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_008_Bai 10 11 Perceptron/structured_content.json",
+      "child_count": 18,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_009_Copy_of_Bai_2_3_Timkiemmua",
+      "document_title": "Copy of Bai 2_3: Timkiemmua",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_009_Copy of Bai 2 3 Timkiemmua/structured_content.json",
+      "child_count": 39,
+      "parent_count": 34,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_010_Nhap_mon_Tri_tue_nhan_tao",
+      "document_title": "Slide 1",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_010_Nhap mon Tri tue nhan tao/structured_content.json",
+      "child_count": 575,
+      "parent_count": 561,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_011_TS__Dao_Duy_Tuan",
+      "document_title": "Tri tue nhan tao..1 - Tri tue nhan tao..123",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_011_TS. Dao Duy Tuan/structured_content.json",
+      "child_count": 183,
+      "parent_count": 173,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_012_Tri_tue_nhan_tao_DH_An_Giang",
+      "document_title": "VI_SL_012_Tri tue nhan tao DH An Giang",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_012_Tri tue nhan tao DH An Giang/structured_content.json",
+      "child_count": 278,
+      "parent_count": 271,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_013_Gioi_thieu_TTNT_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_013_Gioi thieu TTNT HUST/structured_content.json",
+      "child_count": 80,
+      "parent_count": 80,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_014_Tac_tu_thong_minh_HUST",
+      "document_title": "C2.timkiem2008",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_014_Tac tu thong minh HUST/structured_content.json",
+      "child_count": 43,
+      "parent_count": 43,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_015_Tim_kiem_co_ban_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_015_Tim kiem co ban HUST/structured_content.json",
+      "child_count": 89,
+      "parent_count": 89,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_016_Tim_kiem_Heuristic_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_016_Tim kiem Heuristic HUST/structured_content.json",
+      "child_count": 80,
+      "parent_count": 80,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_017_Thoa_man_rang_buoc_HUST",
+      "document_title": "Artificial Intelligence",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_017_Thoa man rang buoc HUST/structured_content.json",
+      "child_count": 40,
+      "parent_count": 40,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_018_Logic_va_suy_dien_1_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_018_Logic va suy dien 1 HUST/structured_content.json",
+      "child_count": 93,
+      "parent_count": 92,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_019_Logic_va_suy_dien_2_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_019_Logic va suy dien 2 HUST/structured_content.json",
+      "child_count": 35,
+      "parent_count": 35,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_020_Bieu_dien_tri_thuc_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_020_Bieu dien tri thuc HUST/structured_content.json",
+      "child_count": 102,
+      "parent_count": 102,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_021_Hoc_may_can_ban_1_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_021_Hoc may can ban 1 HUST/structured_content.json",
+      "child_count": 77,
+      "parent_count": 77,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "VI_SL_022_Hoc_may_can_ban_2_HUST",
+      "document_title": "Trí Tuệ Nhân Tạo",
+      "source_path": "06_slide-bai-giang/vi/VI_SL_022_Hoc may can ban 2 HUST/structured_content.json",
+      "child_count": 59,
+      "parent_count": 54,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_001_Stanford_CS229_ML_Main_Notes",
+      "document_title": "EN_LN_001_Stanford CS229 ML Main Notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_001_Stanford CS229 ML Main Notes/structured_content.json",
+      "child_count": 451,
+      "parent_count": 221,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_002_Machine_Learning_Lecture_Notes",
+      "document_title": "Machine Learning: a Lecture Note",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_002_Machine Learning Lecture Notes/structured_content.json",
+      "child_count": 200,
+      "parent_count": 94,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_003_STAT479_Machine_Learning_Notes",
+      "document_title": "EN_LN_003_STAT479 Machine Learning Notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_003_STAT479 Machine Learning Notes/structured_content.json",
+      "child_count": 41,
+      "parent_count": 34,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_004_CMU_10-701_Machine_Learning_Notes",
+      "document_title": "Introduction to Machine Learning — Lecture notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_004_CMU 10-701 Machine Learning Notes/structured_content.json",
+      "child_count": 240,
+      "parent_count": 153,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_005_CS231n_CNN_Computer_Vision_Notes",
+      "document_title": "EN_LN_005_CS231n CNN Computer Vision Notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_005_CS231n CNN Computer Vision Notes/structured_content.json",
+      "child_count": 970,
+      "parent_count": 627,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_006_NYU_MLU_Intro_to_ML_Lecture_1",
+      "document_title": "EN_LN_006_NYU MLU Intro to ML Lecture 1",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_006_NYU MLU Intro to ML Lecture 1/structured_content.json",
+      "child_count": 18,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_007_NYU_MLU_Intro_to_ML_Lecture_2",
+      "document_title": "EN_LN_007_NYU MLU Intro to ML Lecture 2",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_007_NYU MLU Intro to ML Lecture 2/structured_content.json",
+      "child_count": 137,
+      "parent_count": 105,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_008_MIT_6_034_AI_Lecture_Notes",
+      "document_title": "EN_LN_008_MIT 6.034 AI Lecture Notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_008_MIT 6.034 AI Lecture Notes/structured_content.json",
+      "child_count": 102,
+      "parent_count": 46,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_009_Deep_Learning_Study_Notes",
+      "document_title": "An Introduction to Flow Matching and Diffusion Models",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_009_Deep Learning Study Notes/structured_content.json",
+      "child_count": 204,
+      "parent_count": 107,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_010_Reinforcement_Learning_Notes",
+      "document_title": "EN_LN_010_Reinforcement Learning Notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_010_Reinforcement Learning Notes/structured_content.json",
+      "child_count": 229,
+      "parent_count": 110,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_LN_011_R17A0534_Machine_Learning_Notes",
+      "document_title": "EN_LN_011_R17A0534 Machine Learning Notes",
+      "source_path": "07_tai-lieu-hoc-tap-notes/en/EN_LN_011_R17A0534 Machine Learning Notes/structured_content.json",
+      "child_count": 289,
+      "parent_count": 254,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_001_Tutorial_on_DNN_Intelligent_Systems",
+      "document_title": "EN_GD_001_Tutorial on DNN Intelligent Systems",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_001_Tutorial on DNN Intelligent Systems/structured_content.json",
+      "child_count": 46,
+      "parent_count": 32,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_002_Deep_Learning_Tutorial_Polson",
+      "document_title": "Deep Learning: A Tutorial",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_002_Deep Learning Tutorial Polson/structured_content.json",
+      "child_count": 23,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_003_DL_for_Human_Activity_Recognition",
+      "document_title": "Tutorial on Deep Learning for Human Activity Recognition",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_003_DL for Human Activity Recognition/structured_content.json",
+      "child_count": 30,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_004_Intro_to_Deep_Reinforcement_Learning",
+      "document_title": "A Practical Introduction to Deep Reinforcement Learning",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_004_Intro to Deep Reinforcement Learning/structured_content.json",
+      "child_count": 83,
+      "parent_count": 46,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_005_Introduction_to_Reinforcement_Learning",
+      "document_title": "EN_GD_005_Introduction to Reinforcement Learning",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_005_Introduction to Reinforcement Learning/structured_content.json",
+      "child_count": 50,
+      "parent_count": 29,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_006_Tutorial_on_Multi-Task_Learning",
+      "document_title": "A Practical Tutorial on Graph Neural Networks",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_006_Tutorial on Multi-Task Learning/structured_content.json",
+      "child_count": 86,
+      "parent_count": 54,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_007_A_Tutorial_on_Deep_Learning",
+      "document_title": "A Gentle Introduction to Deep Learning for Graphs",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_007_A Tutorial on Deep Learning/structured_content.json",
+      "child_count": 85,
+      "parent_count": 50,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_008_Tutorial_on_Diffusion_Models",
+      "document_title": "EN_GD_008_Tutorial on Diffusion Models",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_008_Tutorial on Diffusion Models/structured_content.json",
+      "child_count": 42,
+      "parent_count": 26,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_009_Tutorial_on_Generative_AI_Models",
+      "document_title": "arXiv:2304.00803v1  [cs.LG]  3 Apr 2023",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_009_Tutorial on Generative AI Models/structured_content.json",
+      "child_count": 88,
+      "parent_count": 45,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_010_Tutorial_on_Graph_Neural_Networks",
+      "document_title": "EN_GD_010_Tutorial on Graph Neural Networks",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_010_Tutorial on Graph Neural Networks/structured_content.json",
+      "child_count": 294,
+      "parent_count": 119,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_011_Tutorial_on_Transformer_Models",
+      "document_title": "Step-by-Step Diffusion: An Elementary Tutorial",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_011_Tutorial on Transformer Models/structured_content.json",
+      "child_count": 111,
+      "parent_count": 59,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_GD_012_Tutorial_on_Diffusion_Theory",
+      "document_title": "A Tutorial on Diffusion Theory: From Differential Equations to Diffusion Models",
+      "source_path": "08_tai-lieu-huong-dan-guides/en/EN_GD_012_Tutorial on Diffusion Theory/structured_content.json",
+      "child_count": 159,
+      "parent_count": 89,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_CS6700_00_Projects_Overview",
+      "document_title": "CS6700-00-Projects-Overview_v3_short",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/advanced-ai/DOC CS6700 00 Projects Overview/structured_content.json",
+      "child_count": 5,
+      "parent_count": 5,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-ADV_002_CS6700-01-Intro_The",
+      "document_title": "CS6700-01-Intro_The_Emergence_of_Intelligent_Machines_v1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/advanced-ai/EN_UM_COR-ADV_002_CS6700-01-Intro The/structured_content.json",
+      "child_count": 18,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-ADV_003_CS6700-02-Crowdsourcing",
+      "document_title": "CS6700-02-Crowdsourcing_Discovery_v5",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/advanced-ai/EN_UM_COR-ADV_003_CS6700-02-Crowdsourcing/structured_content.json",
+      "child_count": 83,
+      "parent_count": 70,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-ADV_004_CS6700-03-The_Emergence_of",
+      "document_title": "CS6700-03-The _Emergence_of_Non-Human_Intelligencen_v1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/advanced-ai/EN_UM_COR-ADV_004_CS6700-03-The Emergence of/structured_content.json",
+      "child_count": 22,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-ADV_005_CS6700-04-SAT_physics",
+      "document_title": "CS6700-04-SAT_physics_Selman_updated_v1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/advanced-ai/EN_UM_COR-ADV_005_CS6700-04-SAT physics/structured_content.json",
+      "child_count": 38,
+      "parent_count": 38,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-ADV_006_CS6700-05-SAT_physics",
+      "document_title": "CS6700-05-SAT_physics_structure_update_v3",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/advanced-ai/EN_UM_COR-ADV_006_CS6700-05-SAT physics/structured_content.json",
+      "child_count": 86,
+      "parent_count": 84,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_CS4700_DT_v9_CPG",
+      "document_title": "CS4700-DT_v9-CPG",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/DOC CS4700 DT v9 CPG/structured_content.json",
+      "child_count": 76,
+      "parent_count": 72,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_002_CS4700-Games1_v5",
+      "document_title": "EN_UM_COR-CS47_002_CS4700-Games1 v5",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_002_CS4700-Games1 v5/structured_content.json",
+      "child_count": 36,
+      "parent_count": 36,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_003_CS4700-Intro_part1_v8",
+      "document_title": "EN_UM_COR-CS47_003_CS4700-Intro part1 v8",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_003_CS4700-Intro part1 v8/structured_content.json",
+      "child_count": 25,
+      "parent_count": 25,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_004_CS4700-Intro_part2_v7",
+      "document_title": "EN_UM_COR-CS47_004_CS4700-Intro part2 v7",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_004_CS4700-Intro part2 v7/structured_content.json",
+      "child_count": 35,
+      "parent_count": 34,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_005_CS4700-KR-cpg-Oct5_v2",
+      "document_title": "CS4700-KR-cpg-Oct5_v2",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_005_CS4700-KR-cpg-Oct5 v2/structured_content.json",
+      "child_count": 36,
+      "parent_count": 36,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_007_CS4700-LS_v10",
+      "document_title": "EN_UM_COR-CS47_007_CS4700-LS v10",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_007_CS4700-LS v10/structured_content.json",
+      "child_count": 46,
+      "parent_count": 39,
+      "error_count": 0,
+      "warning_count": 3
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_008_CS4700-Markov_Chains_SA",
+      "document_title": "My PDF File",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_008_CS4700-Markov Chains SA/structured_content.json",
+      "child_count": 6,
+      "parent_count": 4,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_009_CS4700-NN-part_1_cpg_v2",
+      "document_title": "CS4700-NN-part_1_cpg_v2",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_009_CS4700-NN-part 1 cpg v2/structured_content.json",
+      "child_count": 58,
+      "parent_count": 48,
+      "error_count": 0,
+      "warning_count": 4
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_010_CS4700-NN_part_2_v8",
+      "document_title": "CS4700-NN_part_2_v8",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_010_CS4700-NN part 2 v8/structured_content.json",
+      "child_count": 16,
+      "parent_count": 10,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_011_CS4700-RL_intro_v4",
+      "document_title": "CS4700-RL_intro_v4",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_011_CS4700-RL intro v4/structured_content.json",
+      "child_count": 14,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_012_CS4700-Search1_v9",
+      "document_title": "EN_UM_COR-CS47_012_CS4700-Search1 v9",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_012_CS4700-Search1 v9/structured_content.json",
+      "child_count": 43,
+      "parent_count": 42,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_013_CS4700-Search2_v8",
+      "document_title": "EN_UM_COR-CS47_013_CS4700-Search2 v8",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_013_CS4700-Search2 v8/structured_content.json",
+      "child_count": 39,
+      "parent_count": 35,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_014_CS4700-admin_v3",
+      "document_title": "EN_UM_COR-CS47_014_CS4700-admin v3",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_014_CS4700-admin v3/structured_content.json",
+      "child_count": 5,
+      "parent_count": 5,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_015_CS4700-knowl-repr-first-or",
+      "document_title": "CS4700-knowl-repr-first-order_v5",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_015_CS4700-knowl-repr-first-or/structured_content.json",
+      "child_count": 37,
+      "parent_count": 35,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_017_CS4700_knowl_repr_reas",
+      "document_title": "CS4700-knowl-repr-reas_part_2_v3",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_017_CS4700 knowl repr reas/structured_content.json",
+      "child_count": 29,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_COR-CS47_018_selman-non-human_AI_v1",
+      "document_title": "EN_UM_COR-CS47_018_selman-non-human AI v1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/cornell/cs4700/EN_UM_COR-CS47_018_selman-non-human AI v1/structured_content.json",
+      "child_count": 26,
+      "parent_count": 22,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_chap1",
+      "document_title": "DOC chap1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/DOC chap1/structured_content.json",
+      "child_count": 39,
+      "parent_count": 39,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_002_chap10",
+      "document_title": "EN_UM_UMD-PLAN_002_chap10",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_002_chap10/structured_content.json",
+      "child_count": 25,
+      "parent_count": 20,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_003_chap11",
+      "document_title": "EN_UM_UMD-PLAN_003_chap11",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_003_chap11/structured_content.json",
+      "child_count": 22,
+      "parent_count": 22,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_004_chap12",
+      "document_title": "EN_UM_UMD-PLAN_004_chap12",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_004_chap12/structured_content.json",
+      "child_count": 54,
+      "parent_count": 31,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_005_chap14",
+      "document_title": "EN_UM_UMD-PLAN_005_chap14",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_005_chap14/structured_content.json",
+      "child_count": 22,
+      "parent_count": 20,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_006_chap15-16",
+      "document_title": "EN_UM_UMD-PLAN_006_chap15-16",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_006_chap15-16/structured_content.json",
+      "child_count": 45,
+      "parent_count": 45,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_007_chap17-18",
+      "document_title": "EN_UM_UMD-PLAN_007_chap17-18",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_007_chap17-18/structured_content.json",
+      "child_count": 56,
+      "parent_count": 53,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_008_chap2",
+      "document_title": "EN_UM_UMD-PLAN_008_chap2",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_008_chap2/structured_content.json",
+      "child_count": 61,
+      "parent_count": 58,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_009_chap3_sec1_2",
+      "document_title": "EN_UM_UMD-PLAN_009_chap3 sec1,2",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_009_chap3 sec1,2/structured_content.json",
+      "child_count": 76,
+      "parent_count": 56,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_010_chap3_sec3_4",
+      "document_title": "EN_UM_UMD-PLAN_010_chap3 sec3,4",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_010_chap3 sec3,4/structured_content.json",
+      "child_count": 31,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_011_chap4",
+      "document_title": "EN_UM_UMD-PLAN_011_chap4",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_011_chap4/structured_content.json",
+      "child_count": 14,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_012_chap5",
+      "document_title": "EN_UM_UMD-PLAN_012_chap5",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_012_chap5/structured_content.json",
+      "child_count": 42,
+      "parent_count": 37,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_013_chap6",
+      "document_title": "EN_UM_UMD-PLAN_013_chap6",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_013_chap6/structured_content.json",
+      "child_count": 17,
+      "parent_count": 16,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_014_chap8",
+      "document_title": "EN_UM_UMD-PLAN_014_chap8",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_014_chap8/structured_content.json",
+      "child_count": 22,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UMD-PLAN_015_chap9",
+      "document_title": "EN_UM_UMD-PLAN_015_chap9",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/maryland/ai-planning-learning/EN_UM_UMD-PLAN_015_chap9/structured_content.json",
+      "child_count": 64,
+      "parent_count": 39,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_presentation_slides",
+      "document_title": "Presentation slides for AI 101 - RES.6-013",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-101/DOC presentation slides/structured_content.json",
+      "child_count": 18,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_q1_soln",
+      "document_title": "q1_soln.pdf",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-exams/DOC q1 soln/structured_content.json",
+      "child_count": 13,
+      "parent_count": 8,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-EXAM_002_q2_soln",
+      "document_title": "EN_UM_MIT-AI-EXAM_002_q2 soln",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-exams/EN_UM_MIT-AI-EXAM_002_q2 soln/structured_content.json",
+      "child_count": 16,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-EXAM_003_quiz1_review",
+      "document_title": "Problem 1 â€“ Search",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-exams/EN_UM_MIT-AI-EXAM_003_quiz1 review/structured_content.json",
+      "child_count": 17,
+      "parent_count": 16,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-EXAM_004_quiz1_review_sol",
+      "document_title": "Problem 1 â€“ Search",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-exams/EN_UM_MIT-AI-EXAM_004_quiz1 review sol/structured_content.json",
+      "child_count": 25,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-EXAM_005_quiz2_review",
+      "document_title": "EN_UM_MIT-AI-EXAM_005_quiz2 review",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-exams/EN_UM_MIT-AI-EXAM_005_quiz2 review/structured_content.json",
+      "child_count": 27,
+      "parent_count": 24,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-EXAM_006_quiz2_review_sol",
+      "document_title": "EN_UM_MIT-AI-EXAM_006_quiz2 review sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-exams/EN_UM_MIT-AI-EXAM_006_quiz2 review sol/structured_content.json",
+      "child_count": 34,
+      "parent_count": 25,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_ch10_logic2a",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/DOC ch10 logic2a/structured_content.json",
+      "child_count": 107,
+      "parent_count": 107,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_002_ch10_logic2b",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_002_ch10 logic2b/structured_content.json",
+      "child_count": 105,
+      "parent_count": 100,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_003_ch11_logicprog",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_003_ch11 logicprog/structured_content.json",
+      "child_count": 46,
+      "parent_count": 45,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_004_ch12_language1",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_004_ch12 language1/structured_content.json",
+      "child_count": 73,
+      "parent_count": 72,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_005_ch12_language2",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_005_ch12 language2/structured_content.json",
+      "child_count": 45,
+      "parent_count": 45,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_006_ch1_intro",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_006_ch1 intro/structured_content.json",
+      "child_count": 18,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_007_ch2_search1",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_007_ch2 search1/structured_content.json",
+      "child_count": 45,
+      "parent_count": 42,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_008_ch2_search2",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_008_ch2 search2/structured_content.json",
+      "child_count": 23,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_009_ch2_search3",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_009_ch2 search3/structured_content.json",
+      "child_count": 43,
+      "parent_count": 43,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_010_ch3_csp_games1",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_010_ch3 csp games1/structured_content.json",
+      "child_count": 41,
+      "parent_count": 40,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_011_ch3_csp_games2",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_011_ch3 csp games2/structured_content.json",
+      "child_count": 23,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_012_ch4_learnintro",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_012_ch4 learnintro/structured_content.json",
+      "child_count": 120,
+      "parent_count": 119,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_013_ch5_mach1",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_013_ch5 mach1/structured_content.json",
+      "child_count": 67,
+      "parent_count": 64,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_014_ch6_mach2",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_014_ch6 mach2/structured_content.json",
+      "child_count": 78,
+      "parent_count": 75,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_015_ch7_mach3",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_015_ch7 mach3/structured_content.json",
+      "child_count": 67,
+      "parent_count": 63,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_016_ch8_mach4",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2005 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_016_ch8 mach4/structured_content.json",
+      "child_count": 131,
+      "parent_count": 131,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_017_ch9_logic1a",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_017_ch9 logic1a/structured_content.json",
+      "child_count": 106,
+      "parent_count": 106,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-LN_018_ch9_logic1b",
+      "document_title": "6.034 Artificial Intelligence. Copyright © 2004 by Massachusetts Institute of Technology. All rights reserved",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-lecture-notes/EN_UM_MIT-AI-LN_018_ch9 logic1b/structured_content.json",
+      "child_count": 119,
+      "parent_count": 117,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_dp1",
+      "document_title": "dp1.pdf",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-projects/DOC dp1/structured_content.json",
+      "child_count": 35,
+      "parent_count": 34,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-PRJ_002_dp2",
+      "document_title": "EN_UM_MIT-AI-PRJ_002_dp2",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-projects/EN_UM_MIT-AI-PRJ_002_dp2/structured_content.json",
+      "child_count": 12,
+      "parent_count": 9,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_learningatglance",
+      "document_title": "DOC learningatglance",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-study-materials/DOC learningatglance/structured_content.json",
+      "child_count": 1,
+      "parent_count": 1,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-AI-SM_002_searchataglance",
+      "document_title": "EN_UM_MIT-AI-SM_002_searchataglance",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/ai-study-materials/EN_UM_MIT-AI-SM_002_searchataglance/structured_content.json",
+      "child_count": 1,
+      "parent_count": 1,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Homework_1_2",
+      "document_title": "Tài liệu không có tiêu đề",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-assignments/DOC Homework 1 2/structured_content.json",
+      "child_count": 39,
+      "parent_count": 39,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-ASN_002_hwk3",
+      "document_title": "EN_UM_MIT-TIA-ASN_002_hwk3",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-assignments/EN_UM_MIT-TIA-ASN_002_hwk3/structured_content.json",
+      "child_count": 7,
+      "parent_count": 7,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-ASN_003_hwk3solutions",
+      "document_title": "EN_UM_MIT-TIA-ASN_003_hwk3solutions",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-assignments/EN_UM_MIT-TIA-ASN_003_hwk3solutions/structured_content.json",
+      "child_count": 12,
+      "parent_count": 9,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_fall01final",
+      "document_title": "DOC fall01final",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/DOC fall01final/structured_content.json",
+      "child_count": 17,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_002_fall01solutions",
+      "document_title": "EN_UM_MIT-TIA-EXAM_002_fall01solutions",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_002_fall01solutions/structured_content.json",
+      "child_count": 15,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_003_midterm",
+      "document_title": "EN_UM_MIT-TIA-EXAM_003_midterm",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_003_midterm/structured_content.json",
+      "child_count": 12,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_004_s2001final",
+      "document_title": "final_dvi",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_004_s2001final/structured_content.json",
+      "child_count": 11,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_005_s2001final_sol",
+      "document_title": "sol_final_dvi",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_005_s2001final sol/structured_content.json",
+      "child_count": 10,
+      "parent_count": 10,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_006_samp_sol",
+      "document_title": "solutions_dvi",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_006_samp sol/structured_content.json",
+      "child_count": 23,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_007_samples",
+      "document_title": "samples_dvi",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_007_samples/structured_content.json",
+      "child_count": 16,
+      "parent_count": 16,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-EXAM_008_solutions",
+      "document_title": "EN_UM_MIT-TIA-EXAM_008_solutions",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-exams/EN_UM_MIT-TIA-EXAM_008_solutions/structured_content.json",
+      "child_count": 13,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Lecture10FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture10Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/DOC Lecture10FinalPart1/structured_content.json",
+      "child_count": 31,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_002_Lecture11FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture11Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_002_Lecture11FinalPart1/structured_content.json",
+      "child_count": 24,
+      "parent_count": 19,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_003_Lecture12FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture12Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_003_Lecture12FinalPart1/structured_content.json",
+      "child_count": 33,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_004_Lecture13FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture13Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_004_Lecture13FinalPart1/structured_content.json",
+      "child_count": 41,
+      "parent_count": 26,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_005_Lecture14FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture14Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_005_Lecture14FinalPart1/structured_content.json",
+      "child_count": 40,
+      "parent_count": 26,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_006_Lecture15FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture15Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_006_Lecture15FinalPart1/structured_content.json",
+      "child_count": 39,
+      "parent_count": 29,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_007_Lecture16FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture16Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_007_Lecture16FinalPart1/structured_content.json",
+      "child_count": 20,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_008_Lecture17FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture17Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_008_Lecture17FinalPart1/structured_content.json",
+      "child_count": 32,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_009_Lecture18FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture18Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_009_Lecture18FinalPart1/structured_content.json",
+      "child_count": 26,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_010_Lecture19FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture19Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_010_Lecture19FinalPart1/structured_content.json",
+      "child_count": 25,
+      "parent_count": 20,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_011_Lecture1Final",
+      "document_title": "Microsoft PowerPoint - Lecture1Final.ppt",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_011_Lecture1Final/structured_content.json",
+      "child_count": 35,
+      "parent_count": 25,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_012_Lecture20FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture20Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_012_Lecture20FinalPart1/structured_content.json",
+      "child_count": 20,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_013_Lecture22Final",
+      "document_title": "Microsoft PowerPoint - Lecture22Final",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_013_Lecture22Final/structured_content.json",
+      "child_count": 11,
+      "parent_count": 8,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_014_Lecture2Final",
+      "document_title": "No Slide Title",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_014_Lecture2Final/structured_content.json",
+      "child_count": 44,
+      "parent_count": 32,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_015_Lecture3Final",
+      "document_title": "Microsoft PowerPoint - Lecture3Final",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_015_Lecture3Final/structured_content.json",
+      "child_count": 25,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_016_Lecture4RevisedPart1",
+      "document_title": "Microsoft PowerPoint - Lecture4Revised-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_016_Lecture4RevisedPart1/structured_content.json",
+      "child_count": 32,
+      "parent_count": 27,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_017_Lecture5FinalPart1Save",
+      "document_title": "Microsoft PowerPoint - Lecture5Final-Part1-Save",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_017_Lecture5FinalPart1Save/structured_content.json",
+      "child_count": 32,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_018_Lecture7FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture7Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_018_Lecture7FinalPart1/structured_content.json",
+      "child_count": 28,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_019_Lecture8FinalPart1",
+      "document_title": "Microsoft PowerPoint - Lecture8Final-Part1",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_019_Lecture8FinalPart1/structured_content.json",
+      "child_count": 33,
+      "parent_count": 20,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_020_Lecture9Final",
+      "document_title": "Microsoft PowerPoint - Lecture9Final",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_020_Lecture9Final/structured_content.json",
+      "child_count": 8,
+      "parent_count": 7,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_MIT-TIA-LN_021_adaptiveproc",
+      "document_title": "Microsoft PowerPoint - AdaptiveProc",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/mit/techniques-ai-lecture-notes/EN_UM_MIT-TIA-LN_021_adaptiveproc/structured_content.json",
+      "child_count": 19,
+      "parent_count": 19,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2013",
+      "document_title": "DOC Fall 2013",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2013/DOC Fall 2013/structured_content.json",
+      "child_count": 21,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2013_002_Fall_2013sol",
+      "document_title": "EN_UM_UCB-2013_002_Fall 2013sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2013/EN_UM_UCB-2013_002_Fall 2013sol/structured_content.json",
+      "child_count": 40,
+      "parent_count": 19,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2013_003_Spring_2013",
+      "document_title": "EN_UM_UCB-2013_003_Spring 2013",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2013/EN_UM_UCB-2013_003_Spring 2013/structured_content.json",
+      "child_count": 19,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2013_004_Spring_2013sol",
+      "document_title": "EN_UM_UCB-2013_004_Spring 2013sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2013/EN_UM_UCB-2013_004_Spring 2013sol/structured_content.json",
+      "child_count": 29,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2014",
+      "document_title": "DOC Fall 2014",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2014/DOC Fall 2014/structured_content.json",
+      "child_count": 16,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2014_002_Fall_2014sol",
+      "document_title": "EN_UM_UCB-2014_002_Fall 2014sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2014/EN_UM_UCB-2014_002_Fall 2014sol/structured_content.json",
+      "child_count": 25,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2014_003_Summer_2014",
+      "document_title": "EN_UM_UCB-2014_003_Summer 2014",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2014/EN_UM_UCB-2014_003_Summer 2014/structured_content.json",
+      "child_count": 25,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2014_004_Summer_2014sol",
+      "document_title": "EN_UM_UCB-2014_004_Summer 2014sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2014/EN_UM_UCB-2014_004_Summer 2014sol/structured_content.json",
+      "child_count": 25,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Summer_2015",
+      "document_title": "DOC Summer 2015",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2015/DOC Summer 2015/structured_content.json",
+      "child_count": 11,
+      "parent_count": 9,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2015_002_Summer_2015sol",
+      "document_title": "EN_UM_UCB-2015_002_Summer 2015sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2015/EN_UM_UCB-2015_002_Summer 2015sol/structured_content.json",
+      "child_count": 18,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2016",
+      "document_title": "DOC Fall 2016",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2016/DOC Fall 2016/structured_content.json",
+      "child_count": 16,
+      "parent_count": 8,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2016_002_Fall_2016sol",
+      "document_title": "EN_UM_UCB-2016_002_Fall 2016sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2016/EN_UM_UCB-2016_002_Fall 2016sol/structured_content.json",
+      "child_count": 43,
+      "parent_count": 22,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2016_003_Summer_2016",
+      "document_title": "EN_UM_UCB-2016_003_Summer 2016",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2016/EN_UM_UCB-2016_003_Summer 2016/structured_content.json",
+      "child_count": 26,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2016_004_Summer_2016sol",
+      "document_title": "EN_UM_UCB-2016_004_Summer 2016sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2016/EN_UM_UCB-2016_004_Summer 2016sol/structured_content.json",
+      "child_count": 34,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2017",
+      "document_title": "DOC Fall 2017",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2017/DOC Fall 2017/structured_content.json",
+      "child_count": 28,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2017_002_Fall_2017sol",
+      "document_title": "EN_UM_UCB-2017_002_Fall 2017sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2017/EN_UM_UCB-2017_002_Fall 2017sol/structured_content.json",
+      "child_count": 32,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2017_003_Spring_2017",
+      "document_title": "EN_UM_UCB-2017_003_Spring 2017",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2017/EN_UM_UCB-2017_003_Spring 2017/structured_content.json",
+      "child_count": 25,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2017_004_Spring_2017sol",
+      "document_title": "EN_UM_UCB-2017_004_Spring 2017sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2017/EN_UM_UCB-2017_004_Spring 2017sol/structured_content.json",
+      "child_count": 33,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2019",
+      "document_title": "DOC Fall 2019",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2019/DOC Fall 2019/structured_content.json",
+      "child_count": 49,
+      "parent_count": 20,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2019_002_Fall_2019sol",
+      "document_title": "EN_UM_UCB-2019_002_Fall 2019sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2019/EN_UM_UCB-2019_002_Fall 2019sol/structured_content.json",
+      "child_count": 70,
+      "parent_count": 27,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2019_003_Spring_2019",
+      "document_title": "EN_UM_UCB-2019_003_Spring 2019",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2019/EN_UM_UCB-2019_003_Spring 2019/structured_content.json",
+      "child_count": 26,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2019_004_Spring_2019sol",
+      "document_title": "EN_UM_UCB-2019_004_Spring 2019sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2019/EN_UM_UCB-2019_004_Spring 2019sol/structured_content.json",
+      "child_count": 40,
+      "parent_count": 16,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2019_005_Summer_2019",
+      "document_title": "EN_UM_UCB-2019_005_Summer 2019",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2019/EN_UM_UCB-2019_005_Summer 2019/structured_content.json",
+      "child_count": 27,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2019_006_Summer_2019sol",
+      "document_title": "EN_UM_UCB-2019_006_Summer 2019sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2019/EN_UM_UCB-2019_006_Summer 2019sol/structured_content.json",
+      "child_count": 21,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2020",
+      "document_title": "DOC Fall 2020",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2020/DOC Fall 2020/structured_content.json",
+      "child_count": 23,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2020_002_Fall_2020sol",
+      "document_title": "EN_UM_UCB-2020_002_Fall 2020sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2020/EN_UM_UCB-2020_002_Fall 2020sol/structured_content.json",
+      "child_count": 32,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2020_003_Spring_2020",
+      "document_title": "EN_UM_UCB-2020_003_Spring 2020",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2020/EN_UM_UCB-2020_003_Spring 2020/structured_content.json",
+      "child_count": 41,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2020_004_Spring_2020sol",
+      "document_title": "EN_UM_UCB-2020_004_Spring 2020sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2020/EN_UM_UCB-2020_004_Spring 2020sol/structured_content.json",
+      "child_count": 61,
+      "parent_count": 31,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2020_005_Summer_2020",
+      "document_title": "EN_UM_UCB-2020_005_Summer 2020",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2020/EN_UM_UCB-2020_005_Summer 2020/structured_content.json",
+      "child_count": 27,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2020_006_Summer_2020sol",
+      "document_title": "EN_UM_UCB-2020_006_Summer 2020sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2020/EN_UM_UCB-2020_006_Summer 2020sol/structured_content.json",
+      "child_count": 52,
+      "parent_count": 23,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Spring_2021",
+      "document_title": "DOC Spring 2021",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2021/DOC Spring 2021/structured_content.json",
+      "child_count": 36,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2021_002_Spring_2021sol",
+      "document_title": "EN_UM_UCB-2021_002_Spring 2021sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2021/EN_UM_UCB-2021_002_Spring 2021sol/structured_content.json",
+      "child_count": 48,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2021_003_Summer_2021",
+      "document_title": "EN_UM_UCB-2021_003_Summer 2021",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2021/EN_UM_UCB-2021_003_Summer 2021/structured_content.json",
+      "child_count": 34,
+      "parent_count": 18,
+      "error_count": 0,
+      "warning_count": 2
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2021_004_Summer_2021sol",
+      "document_title": "EN_UM_UCB-2021_004_Summer 2021sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2021/EN_UM_UCB-2021_004_Summer 2021sol/structured_content.json",
+      "child_count": 47,
+      "parent_count": 21,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2022",
+      "document_title": "DOC Fall 2022",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2022/DOC Fall 2022/structured_content.json",
+      "child_count": 25,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2022_002_Fall_2022sol",
+      "document_title": "EN_UM_UCB-2022_002_Fall 2022sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2022/EN_UM_UCB-2022_002_Fall 2022sol/structured_content.json",
+      "child_count": 36,
+      "parent_count": 19,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2022_003_Spring_2022",
+      "document_title": "EN_UM_UCB-2022_003_Spring 2022",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2022/EN_UM_UCB-2022_003_Spring 2022/structured_content.json",
+      "child_count": 25,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2022_004_Spring_2022sol",
+      "document_title": "EN_UM_UCB-2022_004_Spring 2022sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2022/EN_UM_UCB-2022_004_Spring 2022sol/structured_content.json",
+      "child_count": 27,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2022_005_Summer_2022",
+      "document_title": "EN_UM_UCB-2022_005_Summer 2022",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2022/EN_UM_UCB-2022_005_Summer 2022/structured_content.json",
+      "child_count": 24,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2022_006_Summer_2022sol",
+      "document_title": "EN_UM_UCB-2022_006_Summer 2022sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2022/EN_UM_UCB-2022_006_Summer 2022sol/structured_content.json",
+      "child_count": 29,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2023",
+      "document_title": "DOC Fall 2023",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/DOC Fall 2023/structured_content.json",
+      "child_count": 21,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Summer_2023",
+      "document_title": "DOC Summer 2023",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/DOC Summer 2023/structured_content.json",
+      "child_count": 20,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Summer_2023sol",
+      "document_title": "DOC Summer 2023sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/DOC Summer 2023sol/structured_content.json",
+      "child_count": 29,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2023_002_Fall_2023",
+      "document_title": "EN_UM_UCB-2023_002_Fall 2023",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/EN_UM_UCB-2023_002_Fall 2023/structured_content.json",
+      "child_count": 32,
+      "parent_count": 17,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2023_003_Fall_2023sol",
+      "document_title": "EN_UM_UCB-2023_003_Fall 2023sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/EN_UM_UCB-2023_003_Fall 2023sol/structured_content.json",
+      "child_count": 57,
+      "parent_count": 25,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2023_004_Spring_2023",
+      "document_title": "EN_UM_UCB-2023_004_Spring 2023",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/EN_UM_UCB-2023_004_Spring 2023/structured_content.json",
+      "child_count": 25,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2023_005_Spring_2023",
+      "document_title": "EN_UM_UCB-2023_005_Spring 2023",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/EN_UM_UCB-2023_005_Spring 2023/structured_content.json",
+      "child_count": 20,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2023_006_Spring_2023sol",
+      "document_title": "EN_UM_UCB-2023_006_Spring 2023sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2023/EN_UM_UCB-2023_006_Spring 2023sol/structured_content.json",
+      "child_count": 29,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2024_video",
+      "document_title": "DOC Fall 2024 video",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/DOC Fall 2024 video/structured_content.json",
+      "child_count": 22,
+      "parent_count": 10,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Summer_2024",
+      "document_title": "DOC Summer 2024",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/DOC Summer 2024/structured_content.json",
+      "child_count": 25,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Summer_2024sol",
+      "document_title": "DOC Summer 2024sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/DOC Summer 2024sol/structured_content.json",
+      "child_count": 34,
+      "parent_count": 15,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2024_002_Fall_2024",
+      "document_title": "EN_UM_UCB-2024_002_Fall 2024",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/EN_UM_UCB-2024_002_Fall 2024/structured_content.json",
+      "child_count": 56,
+      "parent_count": 32,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2024_003_Fall_2024sol",
+      "document_title": "EN_UM_UCB-2024_003_Fall 2024sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/EN_UM_UCB-2024_003_Fall 2024sol/structured_content.json",
+      "child_count": 29,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2024_004_Spring_2024",
+      "document_title": "EN_UM_UCB-2024_004_Spring 2024",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/EN_UM_UCB-2024_004_Spring 2024/structured_content.json",
+      "child_count": 24,
+      "parent_count": 12,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2024_005_Spring_2024",
+      "document_title": "EN_UM_UCB-2024_005_Spring 2024",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/EN_UM_UCB-2024_005_Spring 2024/structured_content.json",
+      "child_count": 25,
+      "parent_count": 11,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2024_006_Spring_2024sol",
+      "document_title": "EN_UM_UCB-2024_006_Spring 2024sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2024/EN_UM_UCB-2024_006_Spring 2024sol/structured_content.json",
+      "child_count": 35,
+      "parent_count": 16,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Fall_2025",
+      "document_title": "DOC Fall 2025",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2025/DOC Fall 2025/structured_content.json",
+      "child_count": 18,
+      "parent_count": 7,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2025_002_Fall_2025sol",
+      "document_title": "EN_UM_UCB-2025_002_Fall 2025sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2025/EN_UM_UCB-2025_002_Fall 2025sol/structured_content.json",
+      "child_count": 32,
+      "parent_count": 16,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2025_003_Spring_2025",
+      "document_title": "EN_UM_UCB-2025_003_Spring 2025",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2025/EN_UM_UCB-2025_003_Spring 2025/structured_content.json",
+      "child_count": 18,
+      "parent_count": 6,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2025_004_Spring_2025sol",
+      "document_title": "EN_UM_UCB-2025_004_Spring 2025sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2025/EN_UM_UCB-2025_004_Spring 2025sol/structured_content.json",
+      "child_count": 41,
+      "parent_count": 25,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2025_005_Summer_2025",
+      "document_title": "EN_UM_UCB-2025_005_Summer 2025",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2025/EN_UM_UCB-2025_005_Summer 2025/structured_content.json",
+      "child_count": 17,
+      "parent_count": 6,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2025_006_Summer_2025sol",
+      "document_title": "EN_UM_UCB-2025_006_Summer 2025sol",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2025/EN_UM_UCB-2025_006_Summer 2025sol/structured_content.json",
+      "child_count": 31,
+      "parent_count": 13,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "DOC_Spring_2026",
+      "document_title": "DOC Spring 2026",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2026/DOC Spring 2026/structured_content.json",
+      "child_count": 24,
+      "parent_count": 10,
+      "error_count": 0,
+      "warning_count": 1
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB-2026_002_Spring_2026_final",
+      "document_title": "EN_UM_UCB-2026_002_Spring 2026 final",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/2026/EN_UM_UCB-2026_002_Spring 2026 final/structured_content.json",
+      "child_count": 36,
+      "parent_count": 14,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    {
+      "status": "completed",
+      "doc_id": "EN_UM_UCB_000_lec01",
+      "document_title": "lecture 01.pptx",
+      "source_path": "09_tai-lieu-dai-hoc-quoc-te/uc-berkeley/EN_UM_UCB_000_lec01/structured_content.json",
+      "child_count": 86,
+      "parent_count": 86,
+      "error_count": 0,
+      "warning_count": 0
+    }
+  ],
   "output_files": {
     "chunks": "D:\\RAG-Dataset-Builder\\data\\chunked\\chunks.jsonl",
     "parents": "D:\\RAG-Dataset-Builder\\data\\chunked\\parents.jsonl",
